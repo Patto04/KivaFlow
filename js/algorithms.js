@@ -356,9 +356,20 @@
   };
 
   /* ---------- Ruta de pedido multi-destino (Vecino más cercano) ---------- */
-  KF.rutaPedido = function (data, profile, start, destinations, alg, record, returnToStart) {
+  KF.rutaPedido = function (data, profile, start, destinations, alg, record, returnToStart, blockedNodesSet) {
     const { adj, directed } = data.graphs[profile];
-    const pending = new Set(destinations.filter((d) => d !== start));
+    const blockedNodes = blockedNodesSet && blockedNodesSet.size > 0 ? blockedNodesSet : null;
+    let blockedEdgeKeys = null;
+    if (blockedNodes) {
+      blockedEdgeKeys = new Set();
+      for (const nid of blockedNodes) {
+        for (const nb of adj[nid] || []) {
+          blockedEdgeKeys.add(KF.edgeKey(nid, nb.to));
+        }
+      }
+    }
+
+    const pending = new Set(destinations.filter((d) => d !== start && !(blockedNodes && blockedNodes.has(d))));
     let cur = start;
     const fullPath = [start];
     const order = [];
@@ -374,13 +385,13 @@
       const steps = record ? [] : null;
 
       if (alg === "bfs") {
-        const r = KF.bfs(adj, cur, pending, steps);
+        const r = KF.bfs(adj, cur, pending, steps, blockedNodes);
         segPath = r.path;
         nextNode = r.reached;
         totalVisited += r.visited;
         totalEdgesChecked += r.edgesChecked;
       } else {
-        const r = KF.bellmanFord(data.ids, directed, cur, steps);
+        const r = KF.bellmanFord(data.ids, directed, cur, steps, blockedEdgeKeys);
         totalRounds += r.stats.rounds;
         totalRelaxations += r.stats.relaxations;
         totalEdgesChecked += r.stats.edgesChecked;
@@ -407,25 +418,26 @@
       const steps = record ? [] : null;
       let segPath = [];
       if (alg === "bfs") {
-        const r = KF.bfs(adj, cur, start, steps);
+        const r = KF.bfs(adj, cur, start, steps, blockedNodes);
         segPath = r.path;
         totalVisited += r.visited;
         totalEdgesChecked += r.edgesChecked;
       } else {
-        const r = KF.bellmanFord(data.ids, directed, cur, steps);
+        const r = KF.bellmanFord(data.ids, directed, cur, steps, blockedEdgeKeys);
         totalRounds += r.stats.rounds;
         totalRelaxations += r.stats.relaxations;
         totalEdgesChecked += r.stats.edgesChecked;
-        segPath = reconstruct(r.parent, start);
+        segPath = Number.isFinite(r.dist.get(start)) ? reconstruct(r.parent, start) : [];
       }
       for (let i = 1; i < segPath.length; i++) fullPath.push(segPath[i]);
-      if (record) segments.push({ from: cur, to: start, path: segPath, steps });
+      if (record && segPath.length > 0) segments.push({ from: cur, to: start, path: segPath, steps });
     }
 
     return {
       path: fullPath,
       order,
       segments,
+      unreachable: pending.size > 0,
       stats: {
         visited: totalVisited,
         rounds: totalRounds,
@@ -592,20 +604,24 @@
       }
     }
 
-    // Terciles sobre los pasillos usados para asignar congestión dinámica
+    // Terciles sobre los pasillos usados para elevar la congestión base del almacén de forma coherente
     const usedCounts = Array.from(usage.values()).sort((a, b) => a - b);
     const t1 = usedCounts.length ? usedCounts[Math.floor(usedCounts.length / 3)] : 1;
     const t2 = usedCounts.length ? usedCounts[Math.floor((2 * usedCounts.length) / 3)] : 2;
+    const rank = { Baja: 0, Media: 1, Alta: 2 };
+    const byRank = ["Baja", "Media", "Alta"];
 
     const dynamicLevels = new Map();
     let maxUsage = 0;
     for (const e of data.aristas) {
       const c = usage.get(e.key) || 0;
       if (c > maxUsage) maxUsage = c;
-      let lvl = "Baja";
-      if (c > t2 && c > 0) lvl = "Alta";
-      else if (c > t1 && c > 0) lvl = "Media";
-      dynamicLevels.set(e.key, lvl);
+      let shiftLvl = "Baja";
+      if (c > t2 && c >= 2) shiftLvl = "Alta";
+      else if (c > t1 && c >= 1) shiftLvl = "Media";
+      // El tráfico del turno incrementa o mantiene la congestión base del pasillo
+      const combined = byRank[Math.min(2, Math.max(rank[e.frec] || 0, rank[shiftLvl]) + (c > t2 ? 1 : 0))];
+      dynamicLevels.set(e.key, combined);
     }
 
     const dynCaps = data.buildCapacities(dynamicLevels);

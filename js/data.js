@@ -17,16 +17,17 @@
     ALGORITMO: {
       bfs: "#3365A0",
       bellman_ford: "#00296B",
-      edmonds_karp: "#D49B00",
+      edmonds_karp: "#C1121F",
     },
     ALGORITMO_CLARO: {
       bfs: "#CDE0F5",
       bellman_ford: "#BCCFE8",
-      edmonds_karp: "#FFF2B2",
+      edmonds_karp: "#F7CFD2",
     },
     FRENTE: "#FDC500",
-    CONGESTION: { Baja: "#DFE6EF", Media: "#FFE45C", Alta: "#FDC500" },
-    CONGESTION_SUAVE: { Baja: "#E5EBF2", Media: "#F5E599", Alta: "#E8B923" },
+    AVERIA: "#C1121F",
+    CONGESTION: { Baja: "#DCE4EE", Media: "#EAB308", Alta: "#E05A2B" },
+    CONGESTION_SUAVE: { Baja: "#E3EAF2", Media: "#E8C65A", Alta: "#E67E53" },
     ZONA: {
       "Recepción y Almacenamiento": "#00296B",
       Picking: "#3365A0",
@@ -83,6 +84,15 @@
     return Math.round(n)
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
+  KF.escapeHtml = function (str) {
+    return String(str ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   };
 
   function parseCSV(text) {

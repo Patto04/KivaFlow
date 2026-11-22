@@ -10,6 +10,7 @@
     page: "inicio",
     inicio: "F22_C39",
     destinos: ["F05_C05", "F39_C10", "F11_C29"],
+    bloqueados: [],
     perfil: "punta",
     regresar: false,
     clickModo: "Inicio",
@@ -32,6 +33,43 @@
 
   let activeCleanups = [];
 
+  function saveSessionState() {
+    try {
+      sessionStorage.setItem(
+        "kf_state_v1",
+        JSON.stringify({
+          inicio: STATE.inicio,
+          destinos: STATE.destinos,
+          bloqueados: STATE.bloqueados,
+          perfil: STATE.perfil,
+          regresar: STATE.regresar,
+          exploreAlg: STATE.exploreAlg,
+        })
+      );
+    } catch (_) { }
+  }
+
+  function restoreSessionState(data) {
+    try {
+      const raw = sessionStorage.getItem("kf_state_v1");
+      if (!raw) return;
+      const saved = JSON.parse(raw);
+      if (saved.inicio && data.nodos[saved.inicio]) STATE.inicio = saved.inicio;
+      if (Array.isArray(saved.destinos)) {
+        const valid = saved.destinos.filter((id) => data.nodos[id] && id !== STATE.inicio).slice(0, 10);
+        if (valid.length > 0) STATE.destinos = valid;
+      }
+      if (Array.isArray(saved.bloqueados)) {
+        STATE.bloqueados = saved.bloqueados.filter((id) => data.nodos[id] && id !== STATE.inicio && !STATE.destinos.includes(id));
+      }
+      if (saved.perfil === "punta" || saved.perfil === "valle") STATE.perfil = saved.perfil;
+      if (typeof saved.regresar === "boolean") STATE.regresar = saved.regresar;
+      if (["bfs", "bellman_ford", "edmonds_karp"].includes(saved.exploreAlg)) {
+        STATE.exploreAlg = saved.exploreAlg;
+      }
+    } catch (_) { }
+  }
+
   function registerCleanup(fn) {
     activeCleanups.push(fn);
   }
@@ -45,10 +83,10 @@
     activeCleanups = [];
   }
 
-  function pageHeader(title, italic, sub) {
+  function pageHeader(title, accent, sub) {
     return `
       <header class="page-header">
-        <h1>${title} <em>${italic}</em></h1>
+        <h1>${title} <span class="title-accent">${accent}</span></h1>
         <p class="page-sub">${sub}</p>
       </header>
     `;
@@ -124,14 +162,15 @@
               <div class="segmented" data-seg="modo">
                 <button type="button" data-val="Inicio" class="${STATE.clickModo === "Inicio" ? "active" : ""}">Inicio</button>
                 <button type="button" data-val="Destino" class="${STATE.clickModo === "Destino" ? "active" : ""}">Destino</button>
+                <button type="button" data-val="Bloquear" class="${STATE.clickModo === "Bloquear" ? "active" : ""}">Bloquear </button>
               </div>
             </div>
 
             <div class="control-group">
-              <span class="control-label">Perfil horario</span>
+              <span class="control-label">Escenario de pesos</span>
               <div class="segmented" data-seg="perfil">
-                <button type="button" data-val="punta" class="${STATE.perfil === "punta" ? "active" : ""}">Hora punta</button>
-                <button type="button" data-val="valle" class="${STATE.perfil === "valle" ? "active" : ""}">Hora valle</button>
+                <button type="button" data-val="punta" class="${STATE.perfil === "punta" ? "active" : ""}">Dataset (punta)</button>
+                <button type="button" data-val="valle" class="${STATE.perfil === "valle" ? "active" : ""}">Sensibilidad (valle)</button>
               </div>
             </div>
 
@@ -146,6 +185,16 @@
 
           <div class="row">
             <div class="control-group">
+              <span class="control-label">Agregar por SKU (${data.skuMap.size} disponibles)</span>
+              <div class="row" style="gap:6px">
+                <input type="text" id="sel-sku-input" class="input" list="kf-sku-list" placeholder="Ej. SKU-0512" style="width:142px" />
+                <datalist id="kf-sku-list">
+                  ${Array.from(data.skuMap.keys()).sort().map((sku) => `<option value="${sku}"></option>`).join("")}
+                </datalist>
+                <button type="button" id="sel-sku-add" class="btn">Agregar SKU</button>
+              </div>
+            </div>
+            <div class="control-group">
               <span class="control-label">Cant. destinos</span>
               <input type="number" id="sel-n" class="input" min="1" max="10" value="${Math.max(1, STATE.destinos.length)}" style="width:74px" />
             </div>
@@ -155,6 +204,7 @@
             </div>
           </div>
         </div>
+        <div id="sel-sku-msg" class="card-note" aria-live="polite" hidden></div>
 
         <div class="canvas-card" style="padding:10px 12px">
           <div class="canvas-wrap"><canvas id="sel-canvas"></canvas></div>
@@ -165,8 +215,17 @@
           <span class="chip chip-dark">${STATE.inicio}</span>
           <span class="card-note" style="margin-left:6px">Destinos (${STATE.destinos.length}):</span>
           ${STATE.destinos.length
-        ? STATE.destinos.map((d) => `<span class="chip">${d}</span>`).join("")
-        : `<span class="card-note">— haz clic en el mapa para agregar</span>`
+        ? STATE.destinos.map((d) => {
+          const sku = data.nodos[d] && data.nodos[d].sku ? ` · ${data.nodos[d].sku}` : "";
+          return `<span class="chip">${d}${sku}<button type="button" class="chip-remove" data-rm="${d}" aria-label="Quitar destino ${d}" title="Quitar">×</button></span>`;
+        }).join("")
+        : `<span class="card-note">— haz clic en el mapa o busca un SKU para agregar</span>`
+      }
+          ${STATE.bloqueados.length
+        ? `<span class="card-note" style="margin-left:8px">Bloqueados (${STATE.bloqueados.length}):</span>` +
+        STATE.bloqueados.map((b) => `<span class="chip" style="background:var(--ek-soft);color:var(--ek)">${b}<button type="button" class="chip-remove" data-rm-blk="${b}" aria-label="Desbloquear ${b}" title="Quitar bloqueo">×</button></span>`).join("") +
+        `<button type="button" id="sel-clear-blk" class="btn btn-sm" style="margin-left:4px">Limpiar ×</button>`
+        : ""
       }
         </div>
       </div>
@@ -180,18 +239,58 @@
       onNodeClick: (nodeId) => {
         if (STATE.clickModo === "Inicio") {
           STATE.inicio = nodeId;
+          STATE.bloqueados = STATE.bloqueados.filter((b) => b !== nodeId);
+        } else if (STATE.clickModo === "Bloquear") {
+          const idx = STATE.bloqueados.indexOf(nodeId);
+          if (idx >= 0) STATE.bloqueados.splice(idx, 1);
+          else if (nodeId !== STATE.inicio && !STATE.destinos.includes(nodeId)) {
+            STATE.bloqueados.push(nodeId);
+          }
         } else {
           const idx = STATE.destinos.indexOf(nodeId);
           if (idx >= 0) STATE.destinos.splice(idx, 1);
           else if (STATE.destinos.length < 10 && nodeId !== STATE.inicio) {
+            STATE.bloqueados = STATE.bloqueados.filter((b) => b !== nodeId);
             STATE.destinos.push(nodeId);
           }
         }
+        saveSessionState();
         onChange();
       },
     });
-    map.render({ start: STATE.inicio, destinations: STATE.destinos });
+    map.render({ start: STATE.inicio, destinations: STATE.destinos, blockedList: STATE.bloqueados });
     registerCleanup(() => map.destroy());
+
+    container.querySelectorAll(".chip-remove[data-rm]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = STATE.destinos.indexOf(btn.dataset.rm);
+        if (idx >= 0) {
+          STATE.destinos.splice(idx, 1);
+          saveSessionState();
+          onChange();
+        }
+      });
+    });
+
+    container.querySelectorAll(".chip-remove[data-rm-blk]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = STATE.bloqueados.indexOf(btn.dataset.rmBlk);
+        if (idx >= 0) {
+          STATE.bloqueados.splice(idx, 1);
+          saveSessionState();
+          onChange();
+        }
+      });
+    });
+
+    const clearBlkBtn = container.querySelector("#sel-clear-blk");
+    if (clearBlkBtn) {
+      clearBlkBtn.addEventListener("click", () => {
+        STATE.bloqueados = [];
+        saveSessionState();
+        onChange();
+      });
+    }
 
     container.querySelectorAll('[data-seg="modo"] button').forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -212,6 +311,39 @@
     container.querySelector("#sel-regresar").addEventListener("change", (ev) => {
       STATE.regresar = ev.target.checked;
       onChange();
+    });
+
+    const skuInput = container.querySelector("#sel-sku-input");
+    const skuMsg = container.querySelector("#sel-sku-msg");
+    function addSkuTarget() {
+      const val = (skuInput.value || "").trim().toUpperCase();
+      if (!val) return;
+      const racks = data.skuMap.get(val);
+      if (!racks || racks.length === 0) {
+        skuMsg.textContent = `No se encontró el producto ${val} en el inventario del almacén.`;
+        skuMsg.hidden = false;
+        return;
+      }
+      const chosen = racks.find((id) => id !== STATE.inicio && !STATE.destinos.includes(id)) || racks[0];
+      if (STATE.destinos.includes(chosen)) {
+        skuMsg.textContent = `${val} (${chosen}) ya está en la lista de destinos.`;
+        skuMsg.hidden = false;
+        return;
+      }
+      if (STATE.destinos.length >= 10) {
+        skuMsg.textContent = "Máximo 10 destinos por pedido.";
+        skuMsg.hidden = false;
+        return;
+      }
+      STATE.destinos.push(chosen);
+      onChange();
+    }
+    container.querySelector("#sel-sku-add").addEventListener("click", addSkuTarget);
+    skuInput.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter") {
+        ev.preventDefault();
+        addSkuTarget();
+      }
     });
 
     container.querySelector("#sel-azar").addEventListener("click", () => {
@@ -240,52 +372,124 @@
     const destId = "F08_C03";
     const { directed } = data.graphs.punta;
 
-    // Ruta inicial con Bellman-Ford
-    const initial = KF.bellmanFordPath(data.ids, directed, startId, destId);
-    const fullInitPath = initial.path;
-    const midIdx = Math.floor(fullInitPath.length * 0.48);
-    const fromNode = fullInitPath[midIdx];
-    const blockedNode = fullInitPath[midIdx + 2] || fullInitPath[midIdx + 1];
-
-    // Bloquear todos los pasillos incidentes al nodo averiado
-    const blockedKeys = new Set();
-    for (const nb of data.graphs.punta.adj[blockedNode] || []) {
-      blockedKeys.add(KF.edgeKey(blockedNode, nb.to));
+    // Ruta inicial con Bellman-Ford (registrando rondas reales para la animación de búsqueda)
+    const initSteps = [];
+    const initFull = KF.bellmanFord(data.ids, directed, startId, initSteps);
+    const fullInitPath = [];
+    for (let cur = destId; cur !== null && cur !== undefined; cur = initFull.parent.get(cur)) {
+      fullInitPath.push(cur);
     }
-    const recalc = KF.bellmanFordPath(data.ids, directed, fromNode, destId, blockedKeys);
+    fullInitPath.reverse();
 
-    // Armar cuadros de la historia
+    // Elegir el incidente en el primer tramo de congestión Alta después del 25% del recorrido (coherencia operativa)
+    let hitEdgeIdx = -1;
+    const minIdx = Math.max(4, Math.floor(fullInitPath.length * 0.25));
+    const maxIdx = Math.min(fullInitPath.length - 5, Math.floor(fullInitPath.length * 0.72));
+    for (let i = minIdx; i <= maxIdx; i++) {
+      const e = data.edgeMap.get(KF.edgeKey(fullInitPath[i], fullInitPath[i + 1]));
+      if (e && e.frec === "Alta") {
+        hitEdgeIdx = i + 1;
+        break;
+      }
+    }
+    const blockedIdx = hitEdgeIdx > 0 ? hitEdgeIdx : Math.floor(fullInitPath.length * 0.48);
+    // El operario avanza hasta el nodo inmediatamente anterior al bloqueo antes de detectar la avería
+    const midIdx = Math.max(2, blockedIdx - 1);
+    const fromNode = fullInitPath[midIdx];
+    const blockedNode = fullInitPath[blockedIdx];
+
+    // Bloquear un corredor completo de 7 filas en la columna averiada para forzar un desvío real y visible
+    const bn = data.nodos[blockedNode];
+    const blockedCorridor = [];
+    const blockedKeys = new Set();
+    for (let dr = -3; dr <= 3; dr++) {
+      const r = bn.fila + dr;
+      if (r < 0 || r >= data.rows) continue;
+      const nid = `F${String(r).padStart(2, "0")}_C${String(bn.col).padStart(2, "0")}`;
+      if (nid === fromNode || nid === destId || !data.nodos[nid]) continue;
+      blockedCorridor.push(nid);
+      for (const nb of data.graphs.punta.adj[nid] || []) {
+        blockedKeys.add(KF.edgeKey(nid, nb.to));
+      }
+    }
+
+    const recalcSteps = [];
+    const recalcFull = KF.bellmanFord(data.ids, directed, fromNode, recalcSteps, blockedKeys);
+    const recalcPath = [];
+    for (let cur = destId; cur !== null && cur !== undefined; cur = recalcFull.parent.get(cur)) {
+      recalcPath.push(cur);
+    }
+    recalcPath.reverse();
+
+    const initMetrics = KF.medirRuta(fullInitPath, data.edgeMap, "punta");
+    const finalWalkedPath = fullInitPath.slice(0, midIdx + 1).concat(recalcPath.slice(1));
+    const finalMetrics = KF.medirRuta(finalWalkedPath, data.edgeMap, "punta");
+
+    function appendSearchPhase(framesArr, rawSteps, maxFrames, baseOverlay, captionFn) {
+      const stride = Math.max(1, Math.ceil(rawSteps.length / maxFrames));
+      const acc = new Set();
+      for (let r = 0; r < rawSteps.length; r++) {
+        const improved = rawSteps[r];
+        for (let k = 0; k < improved.length; k++) acc.add(improved[k]);
+        const isLast = r === rawSteps.length - 1;
+        if (r % stride === 0 || isLast) {
+          framesArr.push(
+            Object.assign({}, baseOverlay, {
+              visited: new Set(acc),
+              frontier: new Set(improved),
+              caption: captionFn(r + 1, rawSteps.length, acc.size, isLast),
+            })
+          );
+        }
+      }
+    }
+
+    // Armar cuadros de la historia: búsqueda inicial -> caminata -> incidencia + rebúsqueda -> desvío
     const frames = [];
+    appendSearchPhase(
+      frames,
+      initSteps,
+      12,
+      { phase: "search1", worker: startId, walked: [], blocked: false },
+      (r, tot, n, isLast) =>
+        isLast
+          ? `Ruta óptima inicial calculada (${initMetrics.tiempoS} s · ${initMetrics.pasillos} pasillos). El operario inicia el recorrido.`
+          : `Buscando ruta inicial con Bellman-Ford (ronda ${r}/${tot}): ${KF.formatNum(n)} ubicaciones relajadas.`
+    );
     for (let i = 0; i <= midIdx; i++) {
       frames.push({
         phase: "walk1",
         worker: fullInitPath[i],
         walked: fullInitPath.slice(0, i + 1),
-        planned: fullInitPath,
         blocked: false,
-        caption: `Paso ${i + 1}: el operario avanza por la ruta óptima inicial (${startId} → ${destId}).`,
+        caption: `Paso ${i + 1}/${fullInitPath.length - 1}: el operario avanza por la ruta óptima inicial (${startId} → ${destId}).`,
       });
     }
-    // Pausa dramática: robot averiado
-    for (let p = 0; p < 5; p++) {
-      frames.push({
-        phase: "incident",
+    // Incidencia justo frente al nodo bloqueado + onda real de rebúsqueda evitando el corredor bloqueado
+    appendSearchPhase(
+      frames,
+      recalcSteps,
+      12,
+      {
+        phase: "search2",
         worker: fromNode,
         walked: fullInitPath.slice(0, midIdx + 1),
-        planned: fullInitPath,
-        blocked: true,
-        caption: `¡Incidencia! Un robot se avería en ${blockedNode}. Bellman-Ford recalcula desde ${fromNode} sin volver al inicio.`,
-      });
-    }
-    for (let i = 1; i < recalc.path.length; i++) {
-      frames.push({
-        phase: "walk2",
-        worker: recalc.path[i],
-        walked: fullInitPath.slice(0, midIdx + 1).concat(recalc.path.slice(1, i + 1)),
-        planned: recalc.path,
         oldPlan: fullInitPath.slice(midIdx),
         blocked: true,
-        caption: `Desvío activo (${i}/${recalc.path.length - 1}): nueva ruta de menor tiempo evitando ${blockedNode}.`,
+      },
+      (r, tot, n, isLast) =>
+        isLast
+          ? `¡Desvío óptimo hallado desde ${fromNode}! Rodea las ${blockedCorridor.length} ubicaciones cerradas del pasillo PV${String(bn.col).padStart(2, "0")}.`
+          : `¡Avería frente al operario en ${blockedNode}! Bellman-Ford explora rutas alternas desde ${fromNode} (ronda ${r}/${tot}).`
+    );
+    for (let i = 1; i < recalcPath.length; i++) {
+      frames.push({
+        phase: "walk2",
+        worker: recalcPath[i],
+        walked: fullInitPath.slice(0, midIdx + 1).concat(recalcPath.slice(1, i + 1)),
+        oldPlan: fullInitPath.slice(midIdx),
+        blocked: true,
+        caption: `Desvío activo (${i}/${recalcPath.length - 1}): completando entrega hacia ${destId} (${finalMetrics.tiempoS} s totales).`,
       });
     }
 
@@ -293,34 +497,66 @@
       ${pageHeader(
       "Bienvenido a",
       "KivaFlow",
-      "Un laboratorio de rutas de picking sobre un almacén inteligente tipo Amazon modelado como grafo."
+      "Sistema de simulación basado en grafos para la optimización de rutas de picking y análisis de flujo en almacenes inteligentes tipo Amazon."
     )}
 
-      <div class="grid-hero" style="margin-bottom:18px">
-        <div class="stack">
-          <div class="card card-warm" style="padding:26px;flex:1;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="grid-hero" style="margin-bottom:20px">
+        <div class="hero-card">
+          <div>
+            <span class="hero-badge"><span class="hero-badge-dot"></span>Rutas · Congestión · Capacidad</span>
+            <h2 class="hero-title">
+              Encuentra la ruta, <span class="title-accent">entiende la congestión.</span>
+            </h2>
+            <p class="hero-lead">
+              Modelamos un centro de cumplimiento de <strong>1 800 ubicaciones</strong> y <strong>3 515 pasillos</strong>
+              para comparar caminos mínimos, penalizaciones de tráfico y cuellos de botella en tiempo real.
+            </p>
+          </div>
+
+          <div class="hero-alg-list">
+            <div class="hero-alg-item" style="border-left-color:${KF.PALETA.ALGORITMO.bfs}">
+              <span class="hero-alg-name">BFS</span>
+              <span class="hero-alg-desc">Línea base por niveles: halla el camino con menos pasillos sin ponderar tráfico.</span>
+              <span class="chip">O(V + E)</span>
+            </div>
+            <div class="hero-alg-item" style="border-left-color:${KF.PALETA.ALGORITMO.bellman_ford}">
+              <span class="hero-alg-name">Bellman-Ford</span>
+              <span class="hero-alg-desc">Relaja aristas ponderadas para minimizar el tiempo de caminata y esquivar averías.</span>
+              <span class="chip">O(V · E)</span>
+            </div>
+            <div class="hero-alg-item" style="border-left-color:${KF.PALETA.ALGORITMO.edmonds_karp}">
+              <span class="hero-alg-name">Edmonds-Karp</span>
+              <span class="hero-alg-desc">Calcula el flujo máximo entre zonas y localiza el corte mínimo de pasillos saturados.</span>
+              <span class="chip">O(V · E²)</span>
+            </div>
+          </div>
+
+          <div class="hero-telemetry">
             <div>
-              <div class="card-label">Rutas · congestión · capacidad</div>
-              <h2 style="font-size:2.15rem;line-height:1.15;margin:16px 0">
-                Encuentra la ruta, <em>entiende la congestión.</em>
-              </h2>
-              <p class="card-note" style="font-size:14px;margin:0">
-                Compara <strong>BFS</strong> y <strong>Bellman-Ford</strong> sobre tu dataset de 1 800 ubicaciones,
-                observa cada paso con su pseudocódigo en vivo y descubre con <strong>Edmonds-Karp</strong> dónde se
-                atasca el almacén.
-              </p>
+              <div class="hero-tel-lbl">Trayecto demo</div>
+              <div class="hero-tel-val">${startId} → ${destId}</div>
             </div>
-            <div class="row" style="margin-top:22px">
-              <a href="#comparar" class="btn btn-primary" data-nav="comparar">Comparar algoritmos</a>
-              <a href="#explorar" class="btn" data-nav="explorar">Explorar paso a paso</a>
+            <div>
+              <div class="hero-tel-lbl">Avería en ruta</div>
+              <div class="hero-tel-val">${blockedNode} (×${blockedCorridor.length})</div>
             </div>
+            <div>
+              <div class="hero-tel-lbl">Tiempo original / desvío</div>
+              <div class="hero-tel-val">${initMetrics.tiempoS}s → ${finalMetrics.tiempoS}s</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <a href="#comparar" class="btn btn-primary" data-nav="comparar">Comparar algoritmos</a>
+            <a href="#explorar" class="btn" data-nav="explorar">Explorar paso a paso</a>
+            <a href="#simular" class="btn" data-nav="simular">Simular turno</a>
           </div>
         </div>
 
         <div class="canvas-card">
           <div class="canvas-title">El operario que recalcula</div>
-          <div class="canvas-subtitle" id="story-caption">
-            Dale play: un robot se avería en <strong>${blockedNode}</strong> a mitad de camino y Bellman-Ford recalcula desde <strong>${fromNode}</strong>.
+          <div class="canvas-subtitle" id="story-caption" aria-live="polite">
+            Dale play: la congestión alta (naranja) es lenta pero transitable; cuando un pasillo saturado sufre una <strong>avería (×)</strong> en <strong>${blockedNode}</strong>, Bellman-Ford recalcula desde <strong>${fromNode}</strong>.
           </div>
           <div class="canvas-wrap"><canvas id="story-canvas"></canvas></div>
           ${renderLegend([
@@ -389,11 +625,15 @@
         canvas.render({
           start: startId,
           destinations: [destId],
+          visited: f.visited || null,
+          visitedColor: KF.PALETA.ALGORITMO_CLARO.bfs,
+          frontier: f.frontier || null,
           path: f.walked,
           pathColor: KF.PALETA.ALGORITMO.bellman_ford,
           secondaryPath: f.oldPlan || null,
-          secondaryColor: KF.PALETA.ALGORITMO.edmonds_karp,
+          secondaryColor: "rgba(193, 18, 31, 0.5)",
           blockedNode: f.blocked ? blockedNode : null,
+          blockedNodes: f.blocked ? blockedCorridor : null,
           workers: [{ node: f.worker, color: KF.PALETA.TINTA, radius: 6.2 }],
         });
       },
@@ -444,7 +684,7 @@
               <strong style="font-size:14px">Pseudocódigo · ${KF.NOMBRE[STATE.exploreAlg]}</strong>
               <span class="chip chip-sans" id="exp-step-badge">Paso 1</span>
             </div>
-            <div class="pseudo-narration" id="exp-narration"></div>
+            <div class="pseudo-narration" id="exp-narration" aria-live="polite"></div>
             <div class="pseudo-code" id="exp-code"></div>
             <div class="pseudo-stats" id="exp-stats"></div>
           </div>
@@ -616,6 +856,7 @@
       return;
     }
 
+    const blockedSet = new Set(STATE.bloqueados);
     const r = KF.rutaPedido(
       data,
       STATE.perfil,
@@ -623,12 +864,17 @@
       STATE.destinos,
       STATE.exploreAlg,
       true,
-      STATE.regresar
+      STATE.regresar,
+      blockedSet
     );
     const frames = KF.buildSearchFrames(r.segments, STATE.exploreAlg, data, 180);
     const met = KF.medirRuta(r.path, data.edgeMap, STATE.perfil);
 
-    titleEl.textContent = `${KF.NOMBRE[STATE.exploreAlg]} · ${met.tiempoS} s (${met.pasillos} pasillos · ${met.distFisica} m)`;
+    const orderedDests =
+      r.order && r.order.length === STATE.destinos.length ? r.order : STATE.destinos;
+    titleEl.textContent = r.unreachable
+      ? `${KF.NOMBRE[STATE.exploreAlg]} · Ruta parcial (algunos destinos están bloqueados por ×)`
+      : `${KF.NOMBRE[STATE.exploreAlg]} · ${met.tiempoS} s (${met.pasillos} pasillos · ${met.distFisica} m)`;
     legendEl.innerHTML = renderLegend([
       { color: KF.PALETA.ALGORITMO[STATE.exploreAlg], label: `Ruta ${KF.NOMBRE[STATE.exploreAlg]}` },
       { color: KF.PALETA.ALGORITMO_CLARO[STATE.exploreAlg], label: "Explorados / relajados" },
@@ -667,7 +913,8 @@
           `;
         canvas.render({
           start: STATE.inicio,
-          destinations: STATE.destinos,
+          destinations: orderedDests,
+          blockedList: STATE.bloqueados,
           visited: f.visited,
           visitedColor: KF.PALETA.ALGORITMO_CLARO[STATE.exploreAlg],
           frontier: f.frontier,
@@ -703,14 +950,29 @@
 
     const resEl = main.querySelector("#cmp-results");
     if (!STATE.inicio || STATE.destinos.length === 0) {
-      resEl.innerHTML = `<div class="card">Marca un inicio y al menos un destino en el mapa para comparar BFS y Bellman-Ford.</div>`;
+      resEl.innerHTML = `
+        <div class="card row-between">
+          <div>
+            <strong>Sin destinos seleccionados</strong>
+            <div class="card-note">Marca al menos un rack en el mapa o carga un pedido de ejemplo para comparar BFS y Bellman-Ford.</div>
+          </div>
+          <button type="button" id="cmp-load-sample" class="btn btn-primary">Cargar pedido de ejemplo</button>
+        </div>
+      `;
+      resEl.querySelector("#cmp-load-sample").addEventListener("click", () => {
+        STATE.inicio = "F22_C39";
+        STATE.destinos = ["F05_C05", "F39_C10", "F11_C29"];
+        saveSessionState();
+        navigate("comparar");
+      });
       return;
     }
 
+    const blockedSet = new Set(STATE.bloqueados);
     const results = {};
     for (const alg of ["bfs", "bellman_ford"]) {
       const t0 = performance.now();
-      const r = KF.rutaPedido(data, STATE.perfil, STATE.inicio, STATE.destinos, alg, true, STATE.regresar);
+      const r = KF.rutaPedido(data, STATE.perfil, STATE.inicio, STATE.destinos, alg, true, STATE.regresar, blockedSet);
       const ms = performance.now() - t0;
       const m = KF.medirRuta(r.path, data.edgeMap, STATE.perfil);
       const frames = KF.buildSearchFrames(r.segments, alg, data, 120);
@@ -724,13 +986,20 @@
     const veces = f.work / Math.max(1, b.work);
 
     const conclusion =
-      ahorro > 0.05
-        ? `<strong>Bellman-Ford ahorra ${ahorro.toFixed(1)} s</strong> de caminata (${pct.toFixed(1)} %) esquivando pasillos congestionados (${f.m.alta} tramos de congestión alta frente a ${b.m.alta} de BFS), pero revisa <strong>${veces.toFixed(0)}× más aristas</strong> que BFS.`
-        : `Ambas rutas cuestan prácticamente lo mismo en este trayecto (el camino mínimo en pasillos no atravesaba congestión crítica), pero Bellman-Ford revisó <strong>${veces.toFixed(0)}× más aristas</strong>.`;
+      b.r.unreachable || f.r.unreachable
+        ? `<strong>Atención:</strong> los bloqueos (×) colocados en el mapa impiden alcanzar todos los destinos seleccionados (${b.r.order.length} de ${STATE.destinos.length} alcanzados). Quita o mueve algún bloqueo para completar el pedido.`
+        : ahorro > 0.05
+          ? `<strong>Bellman-Ford ahorra ${ahorro.toFixed(1)} s</strong> de caminata (${pct.toFixed(1)} %) esquivando pasillos congestionados (${f.m.alta} tramos de congestión alta frente a ${b.m.alta} de BFS), pero revisa <strong>${veces.toFixed(0)}× más aristas</strong> que BFS.`
+          : `Ambas rutas cuestan prácticamente lo mismo en este trayecto (el camino mínimo en pasillos no atravesaba congestión crítica), pero Bellman-Ford revisó <strong>${veces.toFixed(0)}× más aristas</strong>.`;
 
-    // Reloj común por trabajo (aristas revisadas)
+    // Construir línea de tiempo en 2 fases para que AMBOS mapas tengan animación completa:
+    // Fase 1 (50 cuadros): Exploración de ondas (escala progresiva donde se ve la onda completa de BFS y la de Bellman-Ford).
+    // Fase 2 (45 cuadros): Carrera en tiempo real de caminata (los dos operarios recorren sus rutas según los segundos de cada pasillo).
+    const searchPhaseFrames = 50;
+    const walkPhaseFrames = 45;
+    const totalSyncFrames = searchPhaseFrames + walkPhaseFrames;
     const maxWork = Math.max(b.work, f.work, 1);
-    const totalSyncFrames = 85;
+
     function frameAtWork(frames, targetWork) {
       let chosen = frames[0];
       for (let i = 0; i < frames.length; i++) {
@@ -740,54 +1009,84 @@
       return chosen;
     }
 
+    function buildWalkTimeline(path) {
+      const cumTimes = [0];
+      let acc = 0;
+      for (let i = 0; i < path.length - 1; i++) {
+        const e = data.edgeMap.get(KF.edgeKey(path[i], path[i + 1]));
+        const dt = e ? (STATE.perfil === "valle" ? e.tiempoValle : e.tiempoPunta) : 1.5;
+        acc += dt;
+        cumTimes.push(acc);
+      }
+      return { path, cumTimes, totalTime: acc };
+    }
+
+    function walkStateAtTime(tl, tSec) {
+      if (tl.path.length <= 1) return { walked: tl.path, worker: tl.path[0], done: true };
+      let idx = 0;
+      while (idx < tl.cumTimes.length - 1 && tl.cumTimes[idx + 1] <= tSec) {
+        idx++;
+      }
+      return {
+        walked: tl.path.slice(0, idx + 1),
+        worker: tl.path[idx],
+        done: tSec >= tl.totalTime - 0.05,
+        timeNow: Math.min(tSec, tl.totalTime),
+      };
+    }
+
+    const tlBfs = buildWalkTimeline(b.r.path);
+    const tlBf = buildWalkTimeline(f.r.path);
+    const maxWalkTime = Math.max(tlBfs.totalTime, tlBf.totalTime, 1);
+
     resEl.innerHTML = `
       <div class="stack">
-        <div class="grid-2">
-          ${["bfs", "bellman_ford"]
+        <div class="canvas-card" style="padding:22px 24px">
+          <div class="row-between" style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div>
+              <div class="canvas-title" style="font-size:1.35rem">Sincronizados por trabajo (aristas revisadas)</div>
+              <div class="canvas-subtitle" style="margin-bottom:0">
+                Ambos mapas avanzan al mismo ritmo de trabajo computacional: BFS termina casi de inmediato mientras Bellman-Ford continúa relajando pasillos.
+              </div>
+            </div>
+            <span class="chip chip-dark" id="cmp-work-chip" style="font-size:13px;padding:5px 12px">0 aristas</span>
+          </div>
+
+          <div class="grid-2" style="gap:22px">
+            ${["bfs", "bellman_ford"]
         .map((alg) => {
           const d = results[alg];
+          const stId = alg === "bfs" ? "cmp-bfs-st" : "cmp-bf-st";
+          const cvId = alg === "bfs" ? "cmp-bfs-canvas" : "cmp-bf-canvas";
           return `
-              <div class="stack" style="gap:10px">
-                <div class="row">
-                  <h3 style="color:${KF.PALETA.ALGORITMO[alg]}">${KF.NOMBRE[alg]}</h3>
-                  <span class="chip">${KF.COMPLEJIDAD[alg].tiempo}</span>
-                  <span class="chip">espacio ${KF.COMPLEJIDAD[alg].espacio}</span>
+              <div class="stack" style="gap:12px">
+                <div class="row-between">
+                  <div class="row">
+                    <h3 style="color:${KF.PALETA.ALGORITMO[alg]}">${KF.NOMBRE[alg]}</h3>
+                    <span class="chip">${KF.COMPLEJIDAD[alg].tiempo}</span>
+                    <span class="chip">espacio ${KF.COMPLEJIDAD[alg].espacio}</span>
+                  </div>
+                  <span class="chip" id="${stId}">en curso</span>
                 </div>
                 <div class="mini-metrics">
                   <div class="mini-metric"><div class="card-label">Caminata</div><div class="card-num">${d.m.tiempoS} s</div></div>
-                  <div class="mini-metric"><div class="card-label">Pasillos</div><div class="card-num">${d.m.pasillos}</div></div>
-                  <div class="mini-metric"><div class="card-label">Distancia</div><div class="card-num">${d.m.distFisica} m</div></div>
+                  <div class="mini-metric"><div class="card-label">Dist. ajustada</div><div class="card-num">${d.m.distAjustada} m</div></div>
+                  <div class="mini-metric"><div class="card-label">Dist. física (${d.m.pasillos})</div><div class="card-num">${d.m.distFisica} m</div></div>
                   <div class="mini-metric"><div class="card-label">Cálculo</div><div class="card-num">${d.ms.toFixed(1)} ms</div></div>
                 </div>
+                <div class="canvas-wrap"><canvas id="${cvId}"></canvas></div>
               </div>`;
         })
         .join("")}
-        </div>
-
-        <div class="grid-compare">
-          <div class="canvas-card">
-            <div class="row-between" style="margin-bottom:8px">
-              <div class="canvas-title">Sincronizados por trabajo (aristas revisadas)</div>
-              <span class="chip" id="cmp-work-chip">0 aristas</span>
-            </div>
-            <div class="grid-2" style="gap:10px">
-              <div>
-                <div class="card-label" style="margin-bottom:4px;color:${KF.PALETA.ALGORITMO.bfs}">BFS · <span id="cmp-bfs-st">en curso</span></div>
-                <div class="canvas-wrap"><canvas id="cmp-bfs-canvas"></canvas></div>
-              </div>
-              <div>
-                <div class="card-label" style="margin-bottom:4px;color:${KF.PALETA.ALGORITMO.bellman_ford}">Bellman-Ford · <span id="cmp-bf-st">en curso</span></div>
-                <div class="canvas-wrap"><canvas id="cmp-bf-canvas"></canvas></div>
-              </div>
-            </div>
-            <div id="cmp-controls"></div>
-            <p class="card-note" style="margin:8px 0 0">
-              En cada cuadro ambos algoritmos llevan, como mucho, la misma cantidad de aristas revisadas. Por eso BFS termina casi de inmediato mientras Bellman-Ford continúa relajando pasillos.
-            </p>
           </div>
 
-          <div class="card stack" style="gap:6px">
-            ${renderBars(
+          <div id="cmp-controls" style="margin-top:6px"></div>
+        </div>
+
+        <div class="card stack" style="gap:16px">
+          <div class="grid-3" style="gap:22px">
+            <div>
+              ${renderBars(
           "Tiempo de caminata (s)",
           [
             { alg: "bfs", val: b.m.tiempoS },
@@ -795,7 +1094,9 @@
           ],
           (v) => `${v.toFixed(1)} s`
         )}
-            ${renderBars(
+            </div>
+            <div>
+              ${renderBars(
           "Aristas revisadas",
           [
             { alg: "bfs", val: b.work },
@@ -803,7 +1104,9 @@
           ],
           (v) => KF.formatNum(v)
         )}
-            ${renderBars(
+            </div>
+            <div>
+              ${renderBars(
           "Tiempo de cálculo (ms)",
           [
             { alg: "bfs", val: b.ms },
@@ -812,19 +1115,20 @@
           (v) => `${v.toFixed(1)} ms`,
           "depende de la PC"
         )}
-            <div class="conclusion-box">${conclusion}</div>
+            </div>
           </div>
+          <div class="conclusion-box">${conclusion}</div>
         </div>
       </div>
     `;
 
     const cBfs = new KF.WarehouseCanvas(resEl.querySelector("#cmp-bfs-canvas"), data, {
-      width: 440,
-      height: 360,
+      width: 640,
+      height: 440,
     });
     const cBf = new KF.WarehouseCanvas(resEl.querySelector("#cmp-bf-canvas"), data, {
-      width: 440,
-      height: 360,
+      width: 640,
+      height: 440,
     });
     const workChip = resEl.querySelector("#cmp-work-chip");
     const bfsSt = resEl.querySelector("#cmp-bfs-st");
@@ -834,36 +1138,80 @@
       resEl.querySelector("#cmp-controls"),
       totalSyncFrames,
       (idx) => {
-        const wNow = Math.round((idx / (totalSyncFrames - 1)) * maxWork);
-        workChip.textContent = `${KF.formatNum(wNow)} aristas`;
-        const fb = frameAtWork(b.frames, wNow);
-        const ff = frameAtWork(f.frames, wNow);
-        bfsSt.textContent = wNow >= b.work ? "terminado ✓" : `${KF.formatNum(fb.work)} aristas`;
-        bfSt.textContent = wNow >= f.work ? "terminado ✓" : `${KF.formatNum(ff.work)} aristas`;
+        const bDests = b.r.order && b.r.order.length === STATE.destinos.length ? b.r.order : STATE.destinos;
+        const fDests = f.r.order && f.r.order.length === STATE.destinos.length ? f.r.order : STATE.destinos;
 
-        cBfs.render({
-          start: STATE.inicio,
-          destinations: STATE.destinos,
-          visited: fb.visited,
-          visitedColor: KF.PALETA.ALGORITMO_CLARO.bfs,
-          frontier: fb.frontier,
-          path: fb.path,
-          pathColor: KF.PALETA.ALGORITMO.bfs,
-        });
-        cBf.render({
-          start: STATE.inicio,
-          destinations: STATE.destinos,
-          visited: ff.visited,
-          visitedColor: KF.PALETA.ALGORITMO_CLARO.bellman_ford,
-          frontier: ff.frontier,
-          path: ff.path,
-          pathColor: KF.PALETA.ALGORITMO.bellman_ford,
-        });
+        if (idx < searchPhaseFrames) {
+          // Fase 1: Exploración de ondas (primeros 24 cuadros muestran toda la onda de BFS paso a paso; luego B-F termina sus rondas)
+          const bfsIdx = Math.min(b.frames.length - 1, Math.round((idx / 23) * (b.frames.length - 1)));
+          const fb = b.frames[bfsIdx];
+          const wNow =
+            idx <= 23
+              ? Math.round((idx / 23) * b.work)
+              : Math.round(b.work + ((idx - 23) / (searchPhaseFrames - 1 - 23)) * Math.max(0, maxWork - b.work));
+          const ff = frameAtWork(f.frames, Math.max(wNow, Math.round((idx / (searchPhaseFrames - 1)) * f.work)));
+
+          workChip.textContent = `Fase 1 · Exploración: ${KF.formatNum(Math.max(fb.work, ff.work))} aristas`;
+          bfsSt.textContent = idx >= 23 ? `ruta lista ✓ (${KF.formatNum(b.work)} aristas)` : `explorando · ${KF.formatNum(fb.work)} aristas`;
+          bfSt.textContent = idx >= searchPhaseFrames - 1 ? `ruta lista ✓ (${KF.formatNum(f.work)} aristas)` : `relajando · ${KF.formatNum(ff.work)} aristas`;
+
+          cBfs.render({
+            start: STATE.inicio,
+            destinations: bDests,
+            blockedList: STATE.bloqueados,
+            visited: fb.visited,
+            visitedColor: KF.PALETA.ALGORITMO_CLARO.bfs,
+            frontier: idx >= 23 ? null : fb.frontier,
+            path: fb.path,
+            pathColor: KF.PALETA.ALGORITMO.bfs,
+          });
+          cBf.render({
+            start: STATE.inicio,
+            destinations: fDests,
+            blockedList: STATE.bloqueados,
+            visited: ff.visited,
+            visitedColor: KF.PALETA.ALGORITMO_CLARO.bellman_ford,
+            frontier: idx >= searchPhaseFrames - 1 ? null : ff.frontier,
+            path: ff.path,
+            pathColor: KF.PALETA.ALGORITMO.bellman_ford,
+          });
+        } else {
+          // Fase 2: Carrera en tiempo real de caminata de ambos operarios sobre las rutas calculadas
+          const walkStep = idx - searchPhaseFrames;
+          const tSec = (walkStep / Math.max(1, walkPhaseFrames - 1)) * maxWalkTime;
+          const wb = walkStateAtTime(tlBfs, tSec);
+          const wf = walkStateAtTime(tlBf, tSec);
+
+          workChip.textContent = `Fase 2 · Caminata en vivo: ${tSec.toFixed(1)} s / ${maxWalkTime.toFixed(1)} s`;
+          bfsSt.textContent = wb.done ? `llegó en ${tlBfs.totalTime.toFixed(1)} s ✓` : `caminando · ${wb.timeNow.toFixed(1)} s`;
+          bfSt.textContent = wf.done ? `¡llegó en ${tlBf.totalTime.toFixed(1)} s! ✓` : `caminando · ${wf.timeNow.toFixed(1)} s`;
+
+          cBfs.render({
+            start: STATE.inicio,
+            destinations: bDests,
+            blockedList: STATE.bloqueados,
+            secondaryPath: b.r.path,
+            secondaryColor: "rgba(51, 101, 160, 0.32)",
+            path: wb.walked,
+            pathColor: KF.PALETA.ALGORITMO.bfs,
+            workers: [{ node: wb.worker, color: KF.PALETA.ALGORITMO.bfs, radius: 6.4 }],
+          });
+          cBf.render({
+            start: STATE.inicio,
+            destinations: fDests,
+            blockedList: STATE.bloqueados,
+            secondaryPath: f.r.path,
+            secondaryColor: "rgba(0, 41, 107, 0.25)",
+            path: wf.walked,
+            pathColor: KF.PALETA.ALGORITMO.bellman_ford,
+            workers: [{ node: wf.worker, color: KF.PALETA.ALGORITMO.bellman_ford, radius: 6.4 }],
+          });
+        }
       },
-      90
+      75
     );
-    // Mostrar estado final al cargar para que las rutas se aprecien de inmediato
-    ctrl.goTo(totalSyncFrames - 1);
+    // Reproducir automáticamente al entrar o cambiar puntos para que ambos mapas cobren vida de inmediato
+    ctrl.play(1);
 
     registerCleanup(() => {
       ctrl.destroy();
@@ -1008,16 +1356,56 @@
 
   function renderSimResult(outEl, data, s) {
     const r = s.result;
+    const ekSteps = r.ekSteps || [];
+
+    // Precalcular cuadros acumulativos de Edmonds-Karp para sincronizarlos con el reloj del turno
+    const ekFrames = [{ edges: new Map(), aug: [], cut: [], flow: 0, paths: 0 }];
+    const accEdges = new Map();
+    let accFlow = 0;
+    for (let i = 0; i < ekSteps.length; i++) {
+      const st = ekSteps[i];
+      accFlow += st.delta;
+      for (let j = 0; j < st.path.length - 1; j++) {
+        const k = KF.edgeKey(st.path[j], st.path[j + 1]);
+        accEdges.set(k, (accEdges.get(k) || 0) + st.delta);
+      }
+      ekFrames.push({
+        edges: new Map(accEdges),
+        aug: st.path,
+        cut: [],
+        flow: accFlow,
+        paths: i + 1,
+      });
+    }
+    ekFrames.push({
+      edges: new Map(accEdges),
+      aug: [],
+      cut: r.flowRes.minCut,
+      flow: r.flowRes.maxFlow,
+      paths: ekSteps.length,
+    });
+
+    // Conteo de niveles de congestión resultantes tras el turno
+    const lvlCounts = { Baja: 0, Media: 0, Alta: 0 };
+    for (const lvl of r.dynamicLevels.values()) {
+      lvlCounts[lvl] = (lvlCounts[lvl] || 0) + 1;
+    }
+    const flowDiff = r.baseFlow - r.flowRes.maxFlow;
+    const simConclusion =
+      flowDiff > 0
+        ? `El tráfico simultáneo de <strong>${r.operators.length} operarios</strong> (${KF.NOMBRE[s.alg]}) elevó a <strong>${KF.formatNum(lvlCounts.Alta)} pasillos</strong> en congestión Alta, reduciendo la capacidad máxima entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em> de <strong>${r.baseFlow}</strong> a <strong>${r.flowRes.maxFlow} op/min</strong> (−${flowDiff} op/min) con un corte mínimo de <strong>${r.flowRes.minCut.length} pasillos</strong>.`
+        : `Con <strong>${r.operators.length} operarios</strong> (${KF.NOMBRE[s.alg]}), los cruces adicionales se distribuyeron sin reducir el cuello principal entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em>, manteniendo un flujo máximo de <strong>${r.flowRes.maxFlow} op/min</strong> (${r.flowRes.minCut.length} pasillos en el corte mínimo).`;
+
     outEl.innerHTML = `
       <div class="stack">
         <div class="grid-4">
           <div class="card kpi-1">
-            <div class="card-label">Operarios</div>
+            <div class="card-label">Operarios en turno</div>
             <div class="card-num">${r.operators.length}</div>
-            <div class="card-note">un pedido cada uno (${KF.NOMBRE[s.alg]})</div>
+            <div class="card-note">un pedido cada uno (${KF.NOMBRE[s.alg]} · hora ${s.hora})</div>
           </div>
           <div class="card kpi-2">
-            <div class="card-label">Pasillos usados</div>
+            <div class="card-label">Pasillos transitados</div>
             <div class="card-num">${KF.formatNum(r.usage.size)}</div>
             <div class="card-note">de ${KF.formatNum(data.aristas.length)} pasillos totales</div>
           </div>
@@ -1027,78 +1415,147 @@
             <div class="card-note">cruces acumulados en el turno</div>
           </div>
           <div class="card kpi-4">
-            <div class="card-label">Flujo máximo</div>
+            <div class="card-label">Flujo máximo resultante</div>
             <div class="card-num">${r.flowRes.maxFlow}<small>op/min</small></div>
-            <div class="card-note">con congestión base del dataset: ${r.baseFlow} op/min</div>
+            <div class="card-note">capacidad base del dataset: ${r.baseFlow} op/min</div>
           </div>
         </div>
 
-        <div class="grid-2">
-          <div class="canvas-card">
-            <div class="canvas-title">Movimiento de operarios y mapa de calor</div>
-            <div class="canvas-subtitle">Los pasillos cambian de color conforme acumulan cruces durante el turno.</div>
-            <div class="canvas-wrap"><canvas id="sim-turn-canvas"></canvas></div>
-            ${renderLegend([
-      { dot: true, color: KF.PALETA.TINTA, label: "Operario activo" },
-      { color: KF.PALETA.ALGORITMO.bfs, label: "Tráfico bajo" },
-      { color: KF.PALETA.FRENTE, label: "Tráfico medio" },
-      { color: KF.PALETA.ALGORITMO.edmonds_karp, label: "Tráfico alto" },
-    ])}
-            <div id="sim-turn-ctrl"></div>
+        <div class="canvas-card" style="padding:22px 24px">
+          <div class="row-between" style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div>
+              <div class="canvas-title" style="font-size:1.35rem">Cadena operativa en vivo: Tráfico del turno → Flujo y Corte Mínimo</div>
+              <div class="canvas-subtitle" style="margin-bottom:0">
+                A la izquierda los operarios recorren el almacén formando el mapa de calor; a la derecha Edmonds-Karp empuja caminos de aumento y revela los cuellos de botella.
+              </div>
+            </div>
+            <span class="chip chip-dark" id="sim-step-chip" style="font-size:13px;padding:5px 12px">Paso 1</span>
           </div>
 
-          <div class="canvas-card">
-            <div class="canvas-title">Edmonds-Karp · <em>${s.zOrigen} → ${s.zDestino}</em></div>
-            <div class="canvas-subtitle">
-              Corte mínimo con la congestión generada por el turno: <strong>${r.flowRes.minCut.length} pasillos</strong> saturados (${r.flowRes.maxFlow} op/min).
-            </div>
-            <div class="canvas-wrap"><canvas id="sim-flow-canvas"></canvas></div>
-            ${renderLegend([
-      { color: KF.PALETA.ALGORITMO.edmonds_karp, label: "Corte mínimo (cuellos de botella)" },
-      { color: KF.PALETA.CONGESTION.Alta, label: "Congestión alta del turno" },
-      { color: KF.PALETA.CONGESTION.Media, label: "Congestión media" },
+          <div class="grid-2" style="gap:22px">
+            <div class="stack" style="gap:12px">
+              <div class="row-between">
+                <div class="row">
+                  <h3 style="color:${KF.PALETA.ALGORITMO[s.alg]}">1. Movimiento y Mapa de Calor</h3>
+                  <span class="chip">${KF.NOMBRE[s.alg]}</span>
+                </div>
+                <span class="chip" id="sim-turn-st">en curso</span>
+              </div>
+              <div class="mini-metrics">
+                <div class="mini-metric"><div class="card-label">Operarios</div><div class="card-num">${r.operators.length}</div></div>
+                <div class="mini-metric"><div class="card-label">Pasillos usados</div><div class="card-num">${KF.formatNum(r.usage.size)}</div></div>
+                <div class="mini-metric"><div class="card-label">Cruces máx.</div><div class="card-num">${r.maxUsage}</div></div>
+                <div class="mini-metric"><div class="card-label">Duración</div><div class="card-num">${r.maxStep} p.</div></div>
+              </div>
+              <div class="canvas-wrap"><canvas id="sim-turn-canvas"></canvas></div>
+              ${renderLegend([
+      { dot: true, color: KF.PALETA.TINTA, label: "Operario activo" },
+      { color: KF.PALETA.ALGORITMO.bfs, label: "Tráfico bajo" },
+      { color: KF.PALETA.CONGESTION.Alta, label: "Tráfico medio" },
+      { color: KF.PALETA.ALGORITMO.edmonds_karp, label: "Tráfico alto" },
     ])}
+            </div>
+
+            <div class="stack" style="gap:12px">
+              <div class="row-between">
+                <div class="row">
+                  <h3 style="color:${KF.PALETA.ALGORITMO[s.alg]}">2. Edmonds-Karp · Corte Mínimo</h3>
+                  <span class="chip">O(V · E²)</span>
+                </div>
+                <span class="chip" id="sim-flow-st">calculando</span>
+              </div>
+              <div class="mini-metrics">
+                <div class="mini-metric"><div class="card-label">Flujo turno</div><div class="card-num">${r.flowRes.maxFlow}</div></div>
+                <div class="mini-metric"><div class="card-label">Flujo base</div><div class="card-num">${r.baseFlow}</div></div>
+                <div class="mini-metric"><div class="card-label">Caminos aum.</div><div class="card-num">${ekSteps.length}</div></div>
+                <div class="mini-metric"><div class="card-label">Corte mín.</div><div class="card-num">${r.flowRes.minCut.length}</div></div>
+              </div>
+              <div class="canvas-wrap"><canvas id="sim-flow-canvas"></canvas></div>
+              ${renderLegend([
+      { color: KF.PALETA.ALGORITMO.edmonds_karp, label: "Corte mínimo (cuellos de botella)" },
+      { color: KF.PALETA.FRENTE, label: "Camino de aumento activo" },
+      { color: KF.PALETA.CONGESTION.Alta, label: "Congestión alta del turno" },
+    ])}
+            </div>
           </div>
+
+          <div id="sim-turn-ctrl" style="margin-top:6px"></div>
+        </div>
+
+        <div class="card stack" style="gap:14px">
+          <div class="row-between">
+            <strong>Impacto del turno sobre la congestión y capacidad entre zonas (${s.zOrigen} → ${s.zDestino})</strong>
+            <span class="card-note">Pasillos tras el turno: ${KF.formatNum(lvlCounts.Baja)} Baja (cap. 3) · ${KF.formatNum(lvlCounts.Media)} Media (cap. 2) · ${KF.formatNum(lvlCounts.Alta)} Alta (cap. 1)</span>
+          </div>
+          <div class="conclusion-box">${simConclusion}</div>
         </div>
       </div>
     `;
 
     const cTurn = new KF.WarehouseCanvas(outEl.querySelector("#sim-turn-canvas"), data, {
-      width: 620,
-      height: 410,
+      width: 640,
+      height: 440,
     });
     const cFlow = new KF.WarehouseCanvas(outEl.querySelector("#sim-flow-canvas"), data, {
-      width: 620,
-      height: 410,
+      width: 640,
+      height: 440,
       customLevels: r.dynamicLevels,
       strongCongestion: true,
     });
-    cFlow.render({ minCut: r.flowRes.minCut });
 
-    const totalSteps = Math.max(1, r.maxStep);
+    const stepChip = outEl.querySelector("#sim-step-chip");
+    const turnSt = outEl.querySelector("#sim-turn-st");
+    const flowSt = outEl.querySelector("#sim-flow-st");
+
+    const totalSteps = Math.max(2, r.maxStep);
     const ctrl = new KF.PlaybackController(
       outEl.querySelector("#sim-turn-ctrl"),
       totalSteps,
       (t) => {
         const partialUsage = new Map();
         const workers = [];
+        let activeCount = 0;
         for (const op of r.operators) {
           const lim = Math.min(t, op.path.length - 1);
-          workers.push({ node: op.path[lim], color: KF.PALETA.TINTA, radius: 4.4 });
+          if (t < op.path.length - 1) activeCount++;
+          workers.push({ node: op.path[lim], color: KF.PALETA.TINTA, radius: 4.6 });
           for (let i = 0; i < lim; i++) {
             const k = KF.edgeKey(op.path[i], op.path[i + 1]);
             partialUsage.set(k, (partialUsage.get(k) || 0) + 1);
           }
         }
+
+        // Sincronizar cuadro de Edmonds-Karp con el avance del turno
+        const ekIdx = Math.min(
+          ekFrames.length - 1,
+          Math.round((t / Math.max(1, totalSteps - 1)) * (ekFrames.length - 1))
+        );
+        const ef = ekFrames[ekIdx];
+
+        stepChip.textContent = `Paso ${t + 1} / ${totalSteps}`;
+        turnSt.textContent =
+          activeCount === 0
+            ? `turno completado ✓ (${partialUsage.size} pasillos)`
+            : `${activeCount} operarios en ruta · ${partialUsage.size} pasillos`;
+        flowSt.textContent =
+          ekIdx === ekFrames.length - 1
+            ? `corte mínimo: ${ef.cut.length} pasillos (${ef.flow} op/min) ✓`
+            : `flujo: ${ef.flow} op/min (camino #${ef.paths})`;
+
         cTurn.render({
           usageMap: partialUsage,
           maxUsage: Math.max(1, r.maxUsage),
           workers,
         });
+        cFlow.render({
+          flowEdges: ef.edges,
+          augmentingPath: ef.aug,
+          minCut: ef.cut,
+        });
       },
-      75
+      70
     );
-    ctrl.goTo(Math.floor(totalSteps * 0.55));
+    ctrl.play(1);
 
     registerCleanup(() => {
       ctrl.destroy();
@@ -1108,23 +1565,42 @@
   }
 
   /* =======================================================
-     5. RESULTADOS DE EXPERIMENTOS
+     5. RESULTADOS DE EXPERIMENTOS (Interactivo)
      ======================================================= */
   function renderResultados(main, data) {
+    STATE.expConfig = STATE.expConfig || { perScenario: 10, seed: 42, selectedRow: 3 };
+    const cfg = STATE.expConfig;
+
     main.innerHTML = `
       ${pageHeader(
       "Resultados",
       "del experimento",
-      "Comparativa controlada de BFS contra Bellman-Ford en hora valle y hora punta, más el análisis de flujo máximo de Edmonds-Karp sobre tu dataset."
+      "Ejecuta baterías de pedidos controladas, compara escenarios de congestión y haz clic en cualquier fila de la tabla para inspeccionar sus rutas en el mapa."
     )}
       <div class="stack">
         <div class="card row-between">
-          <div>
-            <strong>Experimento reproducible sobre el dataset (1 800 nodos · 3 515 aristas)</strong>
-            <div class="card-note">Escenarios de 1, 5 y 10 productos por pedido (salida y retorno a estación de despacho).</div>
+          <div class="row" style="gap:18px">
+            <div class="control-group">
+              <span class="control-label">Muestra por escenario (6 escenarios)</span>
+              <div class="segmented" id="exp-size-seg">
+                <button type="button" data-n="5" class="${cfg.perScenario === 5 ? "active" : ""}">30 pedidos (5×6)</button>
+                <button type="button" data-n="10" class="${cfg.perScenario === 10 ? "active" : ""}">60 pedidos (10×6)</button>
+                <button type="button" data-n="20" class="${cfg.perScenario === 20 ? "active" : ""}">120 pedidos (20×6)</button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <span class="control-label">Semilla reproducible</span>
+              <div class="row" style="gap:6px">
+                <input type="number" id="exp-seed-input" class="input" min="1" max="9999" value="${cfg.seed}" style="width:88px" />
+                <button type="button" id="exp-random-btn" class="btn" title="Generar otra muestra aleatoria de pedidos">Otra muestra al azar</button>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <button type="button" id="exp-run-btn" class="btn btn-primary">Ejecutar experimento (60 pedidos)</button>
+
+          <div class="control-group">
+            <span class="control-label">&nbsp;</span>
+            <button type="button" id="exp-run-btn" class="btn btn-primary">Ejecutar experimento</button>
           </div>
         </div>
         <div id="exp-progress-wrap" hidden>
@@ -1138,8 +1614,28 @@
     const progWrap = main.querySelector("#exp-progress-wrap");
     const progFill = main.querySelector("#exp-progress-fill");
     const runBtn = main.querySelector("#exp-run-btn");
+    const seedInput = main.querySelector("#exp-seed-input");
 
-    async function runExperiments(perScenario = 10) {
+    main.querySelectorAll("#exp-size-seg button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        cfg.perScenario = parseInt(btn.dataset.n, 10);
+        main.querySelectorAll("#exp-size-seg button").forEach((b) => b.classList.toggle("active", b === btn));
+        runBtn.textContent = `Ejecutar experimento (${cfg.perScenario * 6} pedidos)`;
+        runExperiments(cfg.perScenario, cfg.seed);
+      });
+    });
+
+    seedInput.addEventListener("change", () => {
+      cfg.seed = Math.max(1, parseInt(seedInput.value, 10) || 42);
+    });
+
+    main.querySelector("#exp-random-btn").addEventListener("click", () => {
+      cfg.seed = Math.floor(1 + Math.random() * 9000);
+      seedInput.value = String(cfg.seed);
+      runExperiments(cfg.perScenario, cfg.seed);
+    });
+
+    async function runExperiments(perScenario = cfg.perScenario, seed = cfg.seed) {
       runBtn.disabled = true;
       progWrap.hidden = false;
       progFill.style.width = "5%";
@@ -1154,7 +1650,7 @@
         { hora: "punta", prod: 10 },
       ];
 
-      const rng = KF.mulberry32(42);
+      const rng = KF.mulberry32(seed);
       const muelles = data.estacionesDespacho;
       const rows = [];
 
@@ -1162,12 +1658,15 @@
         const sc = scenarios[sIdx];
         let sumPasBfs = 0,
           sumPasBf = 0,
+          sumDistAdjBfs = 0,
+          sumDistAdjBf = 0,
           sumTBfs = 0,
           sumTBf = 0,
           sumVisBfs = 0,
           sumRelBf = 0,
           sumMsBfs = 0,
           sumMsBf = 0;
+        let bestSample = null;
 
         for (let k = 0; k < perScenario; k++) {
           const start = muelles[Math.floor(rng() * muelles.length)];
@@ -1186,6 +1685,7 @@
           sumMsBfs += performance.now() - t0;
           const mb = KF.medirRuta(rb.path, data.edgeMap, sc.hora);
           sumPasBfs += mb.pasillos;
+          sumDistAdjBfs += mb.distAjustada;
           sumTBfs += mb.tiempoS;
           sumVisBfs += rb.stats.visited;
 
@@ -1194,17 +1694,35 @@
           sumMsBf += performance.now() - t1;
           const mf = KF.medirRuta(rf.path, data.edgeMap, sc.hora);
           sumPasBf += mf.pasillos;
+          sumDistAdjBf += mf.distAjustada;
           sumTBf += mf.tiempoS;
           sumRelBf += rf.stats.relaxations;
+
+          const diff = mb.tiempoS - mf.tiempoS;
+          if (!bestSample || diff > bestSample.diff) {
+            bestSample = {
+              start,
+              picks: picks.slice(),
+              bfsPath: rb.path,
+              bfPath: rf.path,
+              bfOrder: rf.order,
+              mb,
+              mf,
+              diff,
+            };
+          }
         }
 
         const avgTBfs = sumTBfs / perScenario;
         const avgTBf = sumTBf / perScenario;
         rows.push({
+          idx: sIdx,
           hora: sc.hora,
           prod: sc.prod,
           pasBfs: sumPasBfs / perScenario,
           pasBf: sumPasBf / perScenario,
+          distAdjBfs: sumDistAdjBfs / perScenario,
+          distAdjBf: sumDistAdjBf / perScenario,
           tBfs: avgTBfs,
           tBf: avgTBf,
           ahorro: ((avgTBfs - avgTBf) / avgTBfs) * 100,
@@ -1212,6 +1730,7 @@
           relBf: sumRelBf / perScenario,
           msBfs: sumMsBfs / perScenario,
           msBf: sumMsBf / perScenario,
+          sample: bestSample,
         });
 
         progFill.style.width = `${Math.round(((sIdx + 1) / (scenarios.length + 1)) * 100)}%`;
@@ -1233,7 +1752,7 @@
         if (e) cutFreq[e.frec] = (cutFreq[e.frec] || 0) + 1;
       }
 
-      STATE.expCache = { rows, ekRes, ekMs, cutFreq, perScenario };
+      STATE.expCache = { rows, ekRes, ekMs, cutFreq, perScenario, seed };
       progFill.style.width = "100%";
       setTimeout(() => {
         progWrap.hidden = true;
@@ -1242,19 +1761,24 @@
       drawExpResults(bodyEl, data, STATE.expCache);
     }
 
-    runBtn.addEventListener("click", () => runExperiments(10));
+    runBtn.addEventListener("click", () => runExperiments(cfg.perScenario, cfg.seed));
 
-    if (STATE.expCache) {
+    if (STATE.expCache && STATE.expCache.perScenario === cfg.perScenario && STATE.expCache.seed === cfg.seed) {
       drawExpResults(bodyEl, data, STATE.expCache);
     } else {
-      runExperiments(6);
+      runExperiments(cfg.perScenario, cfg.seed);
     }
   }
 
   function drawExpResults(bodyEl, data, exp) {
+    const cfg = (STATE.expConfig = STATE.expConfig || { perScenario: 10, seed: 42, selectedRow: 3 });
     const avgPuntaSave =
       exp.rows
         .filter((r) => r.hora === "punta")
+        .reduce((a, r) => a + r.ahorro, 0) / 3;
+    const avgValleSave =
+      exp.rows
+        .filter((r) => r.hora === "valle")
         .reduce((a, r) => a + r.ahorro, 0) / 3;
 
     bodyEl.innerHTML = `
@@ -1263,7 +1787,7 @@
           <div class="card kpi-1">
             <div class="card-label">Ahorro medio en hora punta</div>
             <div class="card-num">${avgPuntaSave.toFixed(1)}<small>%</small></div>
-            <div class="card-note">menos tiempo de caminata con Bellman-Ford</div>
+            <div class="card-note">menos tiempo de caminata con Bellman-Ford (${exp.perScenario * 6} pedidos · semilla #${exp.seed})</div>
           </div>
           <div class="card kpi-3">
             <div class="card-label">Flujo máximo (Recepción → Despacho)</div>
@@ -1277,15 +1801,23 @@
           </div>
         </div>
 
-        <h3 style="margin-top:6px">Rutas de picking: BFS vs. Bellman-Ford (promedios por pedido)</h3>
+        <div class="row-between" style="margin-top:6px">
+          <div>
+            <h3>Rutas de picking: BFS vs. Bellman-Ford (promedios por pedido)</h3>
+            <span class="card-note">Haz clic en cualquier fila para visualizar y comparar un pedido real de ese escenario en el mapa inferior.</span>
+          </div>
+          <button type="button" id="exp-csv-btn" class="btn">Exportar CSV</button>
+        </div>
         <div class="table-wrap">
-          <table class="data-table">
+          <table class="data-table" id="exp-table">
             <thead>
               <tr>
-                <th>Hora</th>
+                <th>Escenario</th>
                 <th class="num">Productos</th>
                 <th class="num">Pasillos BFS</th>
                 <th class="num">Pasillos B-F</th>
+                <th class="num">Dist. Aj. BFS (m)</th>
+                <th class="num">Dist. Aj. B-F (m)</th>
                 <th class="num">Tiempo BFS (s)</th>
                 <th class="num">Tiempo B-F (s)</th>
                 <th class="num">Ahorro B-F</th>
@@ -1299,11 +1831,13 @@
               ${exp.rows
         .map(
           (r) => `
-                <tr>
-                  <td>${r.hora}</td>
+                <tr class="exp-row ${r.idx === cfg.selectedRow ? "active" : ""}" data-row="${r.idx}" title="Clic para inspeccionar un pedido de este escenario">
+                  <td>${r.hora === "punta" ? "Dataset (punta)" : "Sensibilidad (valle)"}</td>
                   <td class="num">${r.prod}</td>
                   <td class="num">${r.pasBfs.toFixed(1)}</td>
                   <td class="num">${r.pasBf.toFixed(1)}</td>
+                  <td class="num">${r.distAdjBfs.toFixed(1)}</td>
+                  <td class="num">${r.distAdjBf.toFixed(1)}</td>
                   <td class="num">${r.tBfs.toFixed(1)}</td>
                   <td class="num">${r.tBf.toFixed(1)}</td>
                   <td class="num"><span class="badge-ok">${r.ahorro.toFixed(1)} %</span></td>
@@ -1318,21 +1852,127 @@
           </table>
         </div>
 
-        <div class="canvas-card">
-          <div class="canvas-title">Visualización del corte mínimo · Recepción y Almacenamiento → Empaque y Despacho</div>
-          <div class="canvas-subtitle">Los ${exp.ekRes.minCut.length} pasillos resaltados en ladrillo saturan la capacidad de ${exp.ekRes.maxFlow} operarios/min.</div>
-          <div class="canvas-wrap"><canvas id="res-cut-canvas"></canvas></div>
+        <div class="conclusion-box">
+          <strong>Interpretación de resultados (TB2):</strong> en el escenario base del dataset (<em>hora punta</em>),
+          <strong>Bellman-Ford</strong> reduce el tiempo de caminata en <strong>${avgPuntaSave.toFixed(1)} %</strong> en promedio
+          (y <strong>${avgValleSave.toFixed(1)} %</strong> en <em>hora valle</em>) recorriendo casi la misma cantidad de pasillos que BFS,
+          ya que desvía al operario hacia pasillos de congestión Baja/Media. A cambio, BFS se ejecuta en ~1 ms porque detiene la búsqueda al tocar el primer rack, mientras Bellman-Ford relaja globalmente la red.
+        </div>
+
+        <div class="grid-2">
+          <div class="canvas-card">
+            <div class="row-between" style="margin-bottom:6px">
+              <div>
+                <div class="canvas-title" id="exp-sample-title">Inspector del escenario seleccionado</div>
+                <div class="canvas-subtitle" id="exp-sample-sub"></div>
+              </div>
+              <button type="button" id="exp-open-cmp" class="btn btn-sm">Abrir en Comparar →</button>
+            </div>
+            <div class="canvas-wrap"><canvas id="res-sample-canvas"></canvas></div>
+            ${renderLegend([
+          { color: KF.PALETA.ALGORITMO.bellman_ford, label: "Ruta Bellman-Ford (óptima en tiempo)" },
+          { color: KF.PALETA.ALGORITMO.bfs, label: "Ruta BFS (punteada, menos pasillos)" },
+          { dot: true, color: KF.PALETA.TINTA, label: "Estación de despacho" },
+          { dot: true, color: "#FFFFFF", border: KF.PALETA.TINTA, label: "Racks del pedido (1..k)" },
+        ])}
+          </div>
+
+          <div class="canvas-card">
+            <div class="canvas-title">Corte mínimo (Edmonds-Karp) · Recepción → Despacho</div>
+            <div class="canvas-subtitle">Los ${exp.ekRes.minCut.length} pasillos resaltados en rojo carmesí saturan la capacidad máxima de ${exp.ekRes.maxFlow} operarios/min.</div>
+            <div class="canvas-wrap"><canvas id="res-cut-canvas"></canvas></div>
+            ${renderLegend([
+          { color: KF.PALETA.ALGORITMO.edmonds_karp, label: "Corte mínimo (45 pasillos cuello de botella)" },
+          { color: KF.PALETA.CONGESTION.Alta, label: "Congestión alta" },
+          { color: KF.PALETA.CONGESTION.Media, label: "Congestión media" },
+        ])}
+          </div>
         </div>
       </div>
     `;
 
+    const cSample = new KF.WarehouseCanvas(bodyEl.querySelector("#res-sample-canvas"), data, {
+      width: 620,
+      height: 410,
+    });
     const cCut = new KF.WarehouseCanvas(bodyEl.querySelector("#res-cut-canvas"), data, {
-      width: 820,
+      width: 620,
       height: 410,
       strongCongestion: true,
     });
     cCut.render({ minCut: exp.ekRes.minCut });
-    registerCleanup(() => cCut.destroy());
+    registerCleanup(() => {
+      cSample.destroy();
+      cCut.destroy();
+    });
+
+    const sampleTitle = bodyEl.querySelector("#exp-sample-title");
+    const sampleSub = bodyEl.querySelector("#exp-sample-sub");
+    const openCmpBtn = bodyEl.querySelector("#exp-open-cmp");
+
+    function selectScenarioRow(idx) {
+      cfg.selectedRow = idx;
+      const row = exp.rows[idx] || exp.rows[0];
+      bodyEl.querySelectorAll("#exp-table tbody tr.exp-row").forEach((tr) => {
+        tr.classList.toggle("active", parseInt(tr.dataset.row, 10) === row.idx);
+      });
+      const smp = row.sample;
+      const escLabel = row.hora === "punta" ? "Dataset (punta)" : "Sensibilidad (valle)";
+      sampleTitle.textContent = `Pedido del escenario: ${escLabel} · ${row.prod} ${row.prod === 1 ? "producto" : "productos"}`;
+      sampleSub.innerHTML = `Salida y retorno en <strong>${smp.start}</strong> · BFS: <strong>${smp.mb.tiempoS} s</strong> vs. Bellman-Ford: <strong>${smp.mf.tiempoS} s</strong> (ahorra <strong>${smp.diff.toFixed(1)} s</strong>).`;
+      cSample.render({
+        start: smp.start,
+        destinations: smp.bfOrder && smp.bfOrder.length ? smp.bfOrder : smp.picks,
+        secondaryPath: smp.bfsPath,
+        secondaryColor: KF.PALETA.ALGORITMO.bfs,
+        path: smp.bfPath,
+        pathColor: KF.PALETA.ALGORITMO.bellman_ford,
+      });
+    }
+
+    bodyEl.querySelectorAll("#exp-table tbody tr.exp-row").forEach((tr) => {
+      tr.addEventListener("click", () => {
+        selectScenarioRow(parseInt(tr.dataset.row, 10));
+      });
+    });
+
+    openCmpBtn.addEventListener("click", () => {
+      const row = exp.rows[cfg.selectedRow] || exp.rows[0];
+      const smp = row.sample;
+      STATE.inicio = smp.start;
+      STATE.destinos = smp.picks.slice();
+      STATE.perfil = row.hora;
+      STATE.regresar = true;
+      STATE.bloqueados = [];
+      saveSessionState();
+      navigate("comparar");
+    });
+
+    selectScenarioRow(cfg.selectedRow);
+
+    bodyEl.querySelector("#exp-csv-btn").addEventListener("click", () => {
+      const headers = [
+        "Escenario", "Productos", "Pasillos_BFS", "Pasillos_BF",
+        "Distancia_Ajustada_BFS_m", "Distancia_Ajustada_BF_m",
+        "Tiempo_BFS_s", "Tiempo_BF_s", "Ahorro_BF_pct",
+        "Visitados_BFS", "Relajaciones_BF", "ms_BFS", "ms_BF",
+      ];
+      const csvLines = [headers.join(",")].concat(
+        exp.rows.map((r) => [
+          r.hora, r.prod, r.pasBfs.toFixed(2), r.pasBf.toFixed(2),
+          r.distAdjBfs.toFixed(2), r.distAdjBf.toFixed(2),
+          r.tBfs.toFixed(2), r.tBf.toFixed(2), r.ahorro.toFixed(2),
+          Math.round(r.visBfs), Math.round(r.relBf), r.msBfs.toFixed(3), r.msBf.toFixed(2),
+        ].join(","))
+      );
+      const blob = new Blob([csvLines.join("\n")], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "kivaflow_resultados_tb1.csv";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
   }
 
   /* =======================================================
@@ -1398,19 +2038,24 @@
       fill.style.width = "55%";
       await new Promise((r) => setTimeout(r, 15));
 
-      // 3. Bellman-Ford vs Dijkstra (24 consultas: 12 punta + 12 valle)
+      // 3. Bellman-Ford vs oráculo independiente (24 consultas) + detección de ciclos negativos
       let bfOk = 0;
       let bfMaxErr = 0;
+      let ciclosNeg = 0;
       const bfN = 24;
       for (let i = 0; i < bfN; i++) {
         const prof = i % 2 === 0 ? "punta" : "valle";
         const s = data.ids[Math.floor(rng() * data.ids.length)];
         const t = data.ids[Math.floor(rng() * data.ids.length)];
-        const rbf = KF.bellmanFordPath(data.ids, data.graphs[prof].directed, s, t);
-        const ref = KF.dijkstraOracle(data.graphs[prof].adj, s, t);
-        const err = Math.abs(rbf.cost - ref);
-        if (err > bfMaxErr) bfMaxErr = err;
-        if (err < 1e-6) bfOk++;
+        try {
+          const rbf = KF.bellmanFordPath(data.ids, data.graphs[prof].directed, s, t);
+          const ref = KF.dijkstraOracle(data.graphs[prof].adj, s, t);
+          const err = Math.abs(rbf.cost - ref);
+          if (err > bfMaxErr) bfMaxErr = err;
+          if (err < 1e-6) bfOk++;
+        } catch (_) {
+          ciclosNeg++;
+        }
       }
       fill.style.width = "85%";
       await new Promise((r) => setTimeout(r, 15));
@@ -1440,6 +2085,7 @@
         bfOk,
         bfN,
         bfMaxErr,
+        ciclosNeg,
         ekOk,
         ekN: 6,
         ekPairs,
@@ -1470,7 +2116,7 @@
           <div class="card kpi-2">
             <div class="card-label">Bellman-Ford</div>
             <div class="card-num">${v.bfOk}<small>/ ${v.bfN}</small></div>
-            <div class="card-note">exactamente igual al oráculo Dijkstra (error máx. ${v.bfMaxErr.toExponential(1)})</div>
+            <div class="card-note">error máx. ${v.bfMaxErr.toExponential(1)} · ${v.ciclosNeg} ciclos negativos detectados</div>
           </div>
           <div class="card kpi-3">
             <div class="card-label">Edmonds-Karp</div>
@@ -1479,9 +2125,15 @@
           </div>
           <div class="card kpi-4">
             <div class="card-label">Integridad del grafo</div>
-            <div class="card-num">${v.conexo && v.sinAislados && v.pesosPos ? "100 %" : "Error"}</div>
-            <div class="card-note">conexo, 0 nodos aislados, pesos positivos · ${v.elapsed} s</div>
+            <div class="card-num">${v.conexo && v.sinAislados && v.pesosPos && v.ciclosNeg === 0 ? "100 %" : "Error"}</div>
+            <div class="card-note">conexo, 0 aislados, pesos positivos, 0 ciclos negativos · ${v.elapsed} s</div>
           </div>
+        </div>
+
+        <div class="conclusion-box">
+          <strong>Nota metodológica (TB1):</strong> conforme a la propuesta aprobada del curso, los algoritmos del sistema son
+          <strong>BFS</strong>, <strong>Bellman-Ford</strong> y <strong>Edmonds-Karp</strong>. En esta pantalla se emplea un oráculo independiente
+          (<em>Dijkstra</em>, equivalente a la referencia de NetworkX) exclusivamente para comprobar la exactitud numérica de Bellman-Ford y la ausencia de ciclos negativos.
         </div>
 
         <div class="table-wrap">
@@ -1572,23 +2224,6 @@
 
         <div class="grid-2">
           <div class="card">
-            <h3>Equipo y curso</h3>
-            <p class="card-note" style="margin:6px 0 12px">Profesor: <strong>Johann Cristian Berny Perez Rojas</strong></p>
-            <div class="table-wrap">
-              <table class="data-table">
-                <thead>
-                  <tr><th>Código</th><th>Apellidos y Nombres</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td class="num" style="text-align:left">u202412270</td><td>Avila De La Cruz, Dario Fabian</td></tr>
-                  <tr><td class="num" style="text-align:left">u20231h117</td><td>Cobades Zamora, Yhoshua Hebert</td></tr>
-                  <tr><td class="num" style="text-align:left">u202411521</td><td>Morocho Pinedo, Mariana</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="card">
             <h3>Dataset y reglas del modelo</h3>
             <p style="margin:8px 0">
               Almacén sintético inspirado en los sistemas robóticos Kiva de Amazon (Wurman, D'Andrea y Mountz, 2008),
@@ -1607,18 +2242,92 @@
               Capacidades para flujo máximo: 3, 2 y 1 operarios/min respectivamente.
             </p>
           </div>
+
+          <div class="card" style="display:flex;flex-direction:column;justify-content:center">
+            <h3>Pregunta de investigación</h3>
+            <p style="margin:12px 0 0;font-family:var(--serif);font-size:1.22rem;line-height:1.5;color:var(--ink)">
+              «¿Cómo podemos modelar la infraestructura de un almacén inteligente tipo Amazon como un grafo que permita
+              encontrar la ruta de picking más conveniente entre múltiples ubicaciones, considerando la distancia recorrida
+              y las condiciones de congestión del entorno?»
+            </p>
+          </div>
+        </div>
+
+        <div class="canvas-card">
+          <div class="row-between" style="margin-bottom:10px">
+            <div>
+              <div class="canvas-title">Visualización del grafo completo y subgrafos por zona (TB1 · Sección 3)</div>
+              <div class="canvas-subtitle" id="subgrafo-desc">Mostrando las 1 800 ubicaciones y 3 515 pasillos del almacén completo.</div>
+            </div>
+            <div class="segmented" id="subgrafo-seg">
+              <button type="button" data-z="" class="active">Completo</button>
+              <button type="button" data-z="Recepción y Almacenamiento">Recepción (585)</button>
+              <button type="button" data-z="Picking">Picking (630)</button>
+              <button type="button" data-z="Empaque y Despacho">Empaque (585)</button>
+            </div>
+          </div>
+          <div class="canvas-wrap"><canvas id="subgrafo-canvas"></canvas></div>
         </div>
 
         <div class="card">
-          <h3>Pregunta de investigación</h3>
-          <p style="margin:8px 0 0;font-family:var(--serif);font-size:1.18rem;color:var(--ink)">
-            «¿Cómo podemos modelar la infraestructura de un almacén inteligente tipo Amazon como un grafo que permita
-            encontrar la ruta de picking más conveniente entre múltiples ubicaciones, considerando la distancia recorrida
-            y las condiciones de congestión del entorno?»
-          </p>
+          <h3>Anexos · Bitácora de uso de herramientas de IA (TB1)</h3>
+          <div class="table-wrap" style="margin-top:12px">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Fecha</th>
+                  <th>Herramienta</th>
+                  <th>Qué consultamos</th>
+                  <th>Resultado y validación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="num" style="text-align:left">1</td>
+                  <td>03-10-2026</td>
+                  <td>Claude</td>
+                  <td>Generación del dataset sintético del almacén</td>
+                  <td>Generación de <code>nodos.csv</code> y <code>aristas.csv</code>; validado: 1 800 nodos, 3 515 aristas, conexo y 0 aislados.</td>
+                </tr>
+                <tr>
+                  <td class="num" style="text-align:left">2</td>
+                  <td>04-10-2026</td>
+                  <td>Gemini</td>
+                  <td>Revisión del informe TB1 frente a los comentarios del profesor</td>
+                  <td>Se reemplazó Dijkstra por Bellman-Ford y se actualizaron secciones 2, 4.2, Conclusiones y Anexos.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     `;
+
+    const subCanvas = new KF.WarehouseCanvas(main.querySelector("#subgrafo-canvas"), data, {
+      width: 820,
+      height: 390,
+      strongCongestion: true,
+    });
+    subCanvas.render();
+    registerCleanup(() => subCanvas.destroy());
+
+    const subDesc = main.querySelector("#subgrafo-desc");
+    main.querySelectorAll("#subgrafo-seg button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const z = btn.dataset.z || null;
+        main.querySelectorAll("#subgrafo-seg button").forEach((b) => b.classList.toggle("active", b === btn));
+        subCanvas.setFocusZone(z);
+        subCanvas.render();
+        if (!z) {
+          subDesc.textContent = "Mostrando las 1 800 ubicaciones y 3 515 pasillos del almacén completo.";
+        } else {
+          const nZone = data.zoneCounts[z] || 0;
+          const eZone = data.aristas.filter((e) => e.zonaOrigen === z && e.zonaDestino === z).length;
+          subDesc.textContent = `Subgrafo ${z}: ${nZone} nodos y ${KF.formatNum(eZone)} pasillos internos.`;
+        }
+      });
+    });
   }
 
   /* =======================================================
@@ -1642,6 +2351,7 @@
     }
 
     runCleanups();
+    saveSessionState();
     document.querySelectorAll(".nav-link").forEach((a) => {
       const isActive = a.dataset.nav === page;
       a.classList.toggle("active", isActive);
@@ -1720,15 +2430,13 @@
 
     try {
       await KF.loadDataset();
+      restoreSessionState(KF.DATA);
       const initial = (location.hash || "#inicio").replace("#", "");
       navigate(ROUTES[initial] ? initial : "inicio");
     } catch (err) {
-      document.getElementById("app-main").innerHTML = `
-        <div class="card">
-          <h2>Error al cargar el dataset</h2>
-          <p class="card-note">${err.message}</p>
-        </div>
-      `;
+      const main = document.getElementById("app-main");
+      main.innerHTML = `<div class="card"><h2>Error al cargar el dataset</h2><p class="card-note" id="kf-err-msg"></p></div>`;
+      main.querySelector("#kf-err-msg").textContent = err && err.message ? err.message : "Error desconocido";
     }
   }
 
