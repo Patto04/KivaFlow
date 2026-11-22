@@ -1,0 +1,5322 @@
+// Auto-generated from data/nodos.csv and data/aristas.csv for instant offline & file:// loading
+window.KIVAFLOW_CSV = {
+  nodos: `Nodo,Fila,Columna,Zona,Tipo_Ubicacion,SKU_Principal
+F00_C00,0,0,Recepción y Almacenamiento,Estación de trabajo,
+F00_C01,0,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0512
+F00_C02,0,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0108
+F00_C03,0,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0016
+F00_C04,0,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0384
+F00_C05,0,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0220
+F00_C06,0,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0281
+F00_C07,0,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0048
+F00_C08,0,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0223
+F00_C09,0,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0387
+F00_C10,0,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0213
+F00_C11,0,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0499
+F00_C12,0,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0475
+F00_C13,0,13,Picking,Estación de trabajo,
+F00_C14,0,14,Picking,Rack de almacenamiento,SKU-0423
+F00_C15,0,15,Picking,Rack de almacenamiento,SKU-0544
+F00_C16,0,16,Picking,Rack de almacenamiento,SKU-0433
+F00_C17,0,17,Picking,Rack de almacenamiento,SKU-0107
+F00_C18,0,18,Picking,Rack de almacenamiento,SKU-0516
+F00_C19,0,19,Picking,Rack de almacenamiento,SKU-0392
+F00_C20,0,20,Picking,Rack de almacenamiento,SKU-0060
+F00_C21,0,21,Picking,Rack de almacenamiento,SKU-0179
+F00_C22,0,22,Picking,Rack de almacenamiento,SKU-0100
+F00_C23,0,23,Picking,Rack de almacenamiento,SKU-0581
+F00_C24,0,24,Picking,Rack de almacenamiento,SKU-0437
+F00_C25,0,25,Picking,Rack de almacenamiento,SKU-0552
+F00_C26,0,26,Picking,Estación de trabajo,
+F00_C27,0,27,Empaque y Despacho,Rack de almacenamiento,SKU-0170
+F00_C28,0,28,Empaque y Despacho,Rack de almacenamiento,SKU-0382
+F00_C29,0,29,Empaque y Despacho,Rack de almacenamiento,SKU-0363
+F00_C30,0,30,Empaque y Despacho,Rack de almacenamiento,SKU-0452
+F00_C31,0,31,Empaque y Despacho,Rack de almacenamiento,SKU-0071
+F00_C32,0,32,Empaque y Despacho,Rack de almacenamiento,SKU-0310
+F00_C33,0,33,Empaque y Despacho,Rack de almacenamiento,SKU-0387
+F00_C34,0,34,Empaque y Despacho,Rack de almacenamiento,SKU-0496
+F00_C35,0,35,Empaque y Despacho,Rack de almacenamiento,SKU-0394
+F00_C36,0,36,Empaque y Despacho,Rack de almacenamiento,SKU-0270
+F00_C37,0,37,Empaque y Despacho,Rack de almacenamiento,SKU-0277
+F00_C38,0,38,Empaque y Despacho,Rack de almacenamiento,SKU-0204
+F00_C39,0,39,Empaque y Despacho,Estación de trabajo,
+F01_C00,1,0,Recepción y Almacenamiento,Estación de trabajo,
+F01_C01,1,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0095
+F01_C02,1,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0167
+F01_C03,1,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0088
+F01_C04,1,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0136
+F01_C05,1,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0513
+F01_C06,1,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0316
+F01_C07,1,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0055
+F01_C08,1,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0259
+F01_C09,1,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0163
+F01_C10,1,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0398
+F01_C11,1,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0499
+F01_C12,1,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0008
+F01_C13,1,13,Picking,Rack de almacenamiento,SKU-0280
+F01_C14,1,14,Picking,Rack de almacenamiento,SKU-0269
+F01_C15,1,15,Picking,Rack de almacenamiento,SKU-0595
+F01_C16,1,16,Picking,Rack de almacenamiento,SKU-0220
+F01_C17,1,17,Picking,Rack de almacenamiento,SKU-0100
+F01_C18,1,18,Picking,Rack de almacenamiento,SKU-0118
+F01_C19,1,19,Picking,Rack de almacenamiento,SKU-0287
+F01_C20,1,20,Picking,Rack de almacenamiento,SKU-0357
+F01_C21,1,21,Picking,Rack de almacenamiento,SKU-0196
+F01_C22,1,22,Picking,Rack de almacenamiento,SKU-0262
+F01_C23,1,23,Picking,Rack de almacenamiento,SKU-0398
+F01_C24,1,24,Picking,Rack de almacenamiento,SKU-0180
+F01_C25,1,25,Picking,Rack de almacenamiento,SKU-0579
+F01_C26,1,26,Picking,Rack de almacenamiento,SKU-0126
+F01_C27,1,27,Empaque y Despacho,Rack de almacenamiento,SKU-0562
+F01_C28,1,28,Empaque y Despacho,Rack de almacenamiento,SKU-0525
+F01_C29,1,29,Empaque y Despacho,Rack de almacenamiento,SKU-0575
+F01_C30,1,30,Empaque y Despacho,Rack de almacenamiento,SKU-0479
+F01_C31,1,31,Empaque y Despacho,Rack de almacenamiento,SKU-0318
+F01_C32,1,32,Empaque y Despacho,Rack de almacenamiento,SKU-0365
+F01_C33,1,33,Empaque y Despacho,Rack de almacenamiento,SKU-0125
+F01_C34,1,34,Empaque y Despacho,Rack de almacenamiento,SKU-0208
+F01_C35,1,35,Empaque y Despacho,Rack de almacenamiento,SKU-0278
+F01_C36,1,36,Empaque y Despacho,Rack de almacenamiento,SKU-0569
+F01_C37,1,37,Empaque y Despacho,Rack de almacenamiento,SKU-0477
+F01_C38,1,38,Empaque y Despacho,Rack de almacenamiento,SKU-0339
+F01_C39,1,39,Empaque y Despacho,Estación de trabajo,
+F02_C00,2,0,Recepción y Almacenamiento,Estación de trabajo,
+F02_C01,2,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0358
+F02_C02,2,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0260
+F02_C03,2,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0252
+F02_C04,2,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0541
+F02_C05,2,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0003
+F02_C06,2,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0192
+F02_C07,2,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0246
+F02_C08,2,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0418
+F02_C09,2,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0248
+F02_C10,2,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0189
+F02_C11,2,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0048
+F02_C12,2,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0157
+F02_C13,2,13,Picking,Rack de almacenamiento,SKU-0064
+F02_C14,2,14,Picking,Rack de almacenamiento,SKU-0421
+F02_C15,2,15,Picking,Rack de almacenamiento,SKU-0257
+F02_C16,2,16,Picking,Rack de almacenamiento,SKU-0137
+F02_C17,2,17,Picking,Rack de almacenamiento,SKU-0325
+F02_C18,2,18,Picking,Rack de almacenamiento,SKU-0296
+F02_C19,2,19,Picking,Rack de almacenamiento,SKU-0284
+F02_C20,2,20,Picking,Rack de almacenamiento,SKU-0349
+F02_C21,2,21,Picking,Rack de almacenamiento,SKU-0376
+F02_C22,2,22,Picking,Rack de almacenamiento,SKU-0114
+F02_C23,2,23,Picking,Rack de almacenamiento,SKU-0094
+F02_C24,2,24,Picking,Rack de almacenamiento,SKU-0439
+F02_C25,2,25,Picking,Rack de almacenamiento,SKU-0584
+F02_C26,2,26,Picking,Rack de almacenamiento,SKU-0330
+F02_C27,2,27,Empaque y Despacho,Rack de almacenamiento,SKU-0271
+F02_C28,2,28,Empaque y Despacho,Rack de almacenamiento,SKU-0373
+F02_C29,2,29,Empaque y Despacho,Rack de almacenamiento,SKU-0021
+F02_C30,2,30,Empaque y Despacho,Rack de almacenamiento,SKU-0224
+F02_C31,2,31,Empaque y Despacho,Rack de almacenamiento,SKU-0216
+F02_C32,2,32,Empaque y Despacho,Rack de almacenamiento,SKU-0253
+F02_C33,2,33,Empaque y Despacho,Rack de almacenamiento,SKU-0447
+F02_C34,2,34,Empaque y Despacho,Rack de almacenamiento,SKU-0297
+F02_C35,2,35,Empaque y Despacho,Rack de almacenamiento,SKU-0514
+F02_C36,2,36,Empaque y Despacho,Rack de almacenamiento,SKU-0282
+F02_C37,2,37,Empaque y Despacho,Rack de almacenamiento,SKU-0021
+F02_C38,2,38,Empaque y Despacho,Rack de almacenamiento,SKU-0406
+F02_C39,2,39,Empaque y Despacho,Estación de trabajo,
+F03_C00,3,0,Recepción y Almacenamiento,Estación de trabajo,
+F03_C01,3,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0479
+F03_C02,3,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0347
+F03_C03,3,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0563
+F03_C04,3,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0250
+F03_C05,3,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0479
+F03_C06,3,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0002
+F03_C07,3,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0024
+F03_C08,3,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0477
+F03_C09,3,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0525
+F03_C10,3,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0312
+F03_C11,3,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0452
+F03_C12,3,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0196
+F03_C13,3,13,Picking,Rack de almacenamiento,SKU-0437
+F03_C14,3,14,Picking,Rack de almacenamiento,SKU-0300
+F03_C15,3,15,Picking,Rack de almacenamiento,SKU-0183
+F03_C16,3,16,Picking,Rack de almacenamiento,SKU-0057
+F03_C17,3,17,Picking,Rack de almacenamiento,SKU-0105
+F03_C18,3,18,Picking,Rack de almacenamiento,SKU-0543
+F03_C19,3,19,Picking,Rack de almacenamiento,SKU-0267
+F03_C20,3,20,Picking,Rack de almacenamiento,SKU-0594
+F03_C21,3,21,Picking,Rack de almacenamiento,SKU-0212
+F03_C22,3,22,Picking,Rack de almacenamiento,SKU-0036
+F03_C23,3,23,Picking,Rack de almacenamiento,SKU-0154
+F03_C24,3,24,Picking,Rack de almacenamiento,SKU-0215
+F03_C25,3,25,Picking,Rack de almacenamiento,SKU-0421
+F03_C26,3,26,Picking,Rack de almacenamiento,SKU-0439
+F03_C27,3,27,Empaque y Despacho,Rack de almacenamiento,SKU-0443
+F03_C28,3,28,Empaque y Despacho,Rack de almacenamiento,SKU-0189
+F03_C29,3,29,Empaque y Despacho,Rack de almacenamiento,SKU-0229
+F03_C30,3,30,Empaque y Despacho,Rack de almacenamiento,SKU-0341
+F03_C31,3,31,Empaque y Despacho,Rack de almacenamiento,SKU-0364
+F03_C32,3,32,Empaque y Despacho,Rack de almacenamiento,SKU-0250
+F03_C33,3,33,Empaque y Despacho,Rack de almacenamiento,SKU-0115
+F03_C34,3,34,Empaque y Despacho,Rack de almacenamiento,SKU-0465
+F03_C35,3,35,Empaque y Despacho,Rack de almacenamiento,SKU-0313
+F03_C36,3,36,Empaque y Despacho,Rack de almacenamiento,SKU-0576
+F03_C37,3,37,Empaque y Despacho,Rack de almacenamiento,SKU-0568
+F03_C38,3,38,Empaque y Despacho,Rack de almacenamiento,SKU-0534
+F03_C39,3,39,Empaque y Despacho,Estación de trabajo,
+F04_C00,4,0,Recepción y Almacenamiento,Estación de trabajo,
+F04_C01,4,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0577
+F04_C02,4,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0373
+F04_C03,4,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0179
+F04_C04,4,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0097
+F04_C05,4,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0064
+F04_C06,4,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0569
+F04_C07,4,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0163
+F04_C08,4,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0015
+F04_C09,4,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0023
+F04_C10,4,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0179
+F04_C11,4,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0588
+F04_C12,4,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0169
+F04_C13,4,13,Picking,Rack de almacenamiento,SKU-0062
+F04_C14,4,14,Picking,Rack de almacenamiento,SKU-0404
+F04_C15,4,15,Picking,Rack de almacenamiento,SKU-0036
+F04_C16,4,16,Picking,Rack de almacenamiento,SKU-0293
+F04_C17,4,17,Picking,Rack de almacenamiento,SKU-0052
+F04_C18,4,18,Picking,Rack de almacenamiento,SKU-0056
+F04_C19,4,19,Picking,Rack de almacenamiento,SKU-0217
+F04_C20,4,20,Picking,Rack de almacenamiento,SKU-0008
+F04_C21,4,21,Picking,Rack de almacenamiento,SKU-0511
+F04_C22,4,22,Picking,Rack de almacenamiento,SKU-0363
+F04_C23,4,23,Picking,Rack de almacenamiento,SKU-0561
+F04_C24,4,24,Picking,Rack de almacenamiento,SKU-0295
+F04_C25,4,25,Picking,Rack de almacenamiento,SKU-0334
+F04_C26,4,26,Picking,Rack de almacenamiento,SKU-0361
+F04_C27,4,27,Empaque y Despacho,Rack de almacenamiento,SKU-0280
+F04_C28,4,28,Empaque y Despacho,Rack de almacenamiento,SKU-0339
+F04_C29,4,29,Empaque y Despacho,Rack de almacenamiento,SKU-0344
+F04_C30,4,30,Empaque y Despacho,Rack de almacenamiento,SKU-0535
+F04_C31,4,31,Empaque y Despacho,Rack de almacenamiento,SKU-0183
+F04_C32,4,32,Empaque y Despacho,Rack de almacenamiento,SKU-0552
+F04_C33,4,33,Empaque y Despacho,Rack de almacenamiento,SKU-0104
+F04_C34,4,34,Empaque y Despacho,Rack de almacenamiento,SKU-0113
+F04_C35,4,35,Empaque y Despacho,Rack de almacenamiento,SKU-0154
+F04_C36,4,36,Empaque y Despacho,Rack de almacenamiento,SKU-0566
+F04_C37,4,37,Empaque y Despacho,Rack de almacenamiento,SKU-0147
+F04_C38,4,38,Empaque y Despacho,Rack de almacenamiento,SKU-0473
+F04_C39,4,39,Empaque y Despacho,Estación de trabajo,
+F05_C00,5,0,Recepción y Almacenamiento,Estación de trabajo,
+F05_C01,5,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0350
+F05_C02,5,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0384
+F05_C03,5,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0047
+F05_C04,5,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0396
+F05_C05,5,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0042
+F05_C06,5,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0328
+F05_C07,5,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0473
+F05_C08,5,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0551
+F05_C09,5,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0594
+F05_C10,5,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0140
+F05_C11,5,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0461
+F05_C12,5,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0360
+F05_C13,5,13,Picking,Rack de almacenamiento,SKU-0441
+F05_C14,5,14,Picking,Rack de almacenamiento,SKU-0489
+F05_C15,5,15,Picking,Rack de almacenamiento,SKU-0285
+F05_C16,5,16,Picking,Rack de almacenamiento,SKU-0081
+F05_C17,5,17,Picking,Rack de almacenamiento,SKU-0474
+F05_C18,5,18,Picking,Rack de almacenamiento,SKU-0370
+F05_C19,5,19,Picking,Rack de almacenamiento,SKU-0081
+F05_C20,5,20,Picking,Rack de almacenamiento,SKU-0242
+F05_C21,5,21,Picking,Rack de almacenamiento,SKU-0088
+F05_C22,5,22,Picking,Rack de almacenamiento,SKU-0460
+F05_C23,5,23,Picking,Rack de almacenamiento,SKU-0201
+F05_C24,5,24,Picking,Rack de almacenamiento,SKU-0041
+F05_C25,5,25,Picking,Rack de almacenamiento,SKU-0171
+F05_C26,5,26,Picking,Rack de almacenamiento,SKU-0365
+F05_C27,5,27,Empaque y Despacho,Rack de almacenamiento,SKU-0355
+F05_C28,5,28,Empaque y Despacho,Rack de almacenamiento,SKU-0515
+F05_C29,5,29,Empaque y Despacho,Rack de almacenamiento,SKU-0217
+F05_C30,5,30,Empaque y Despacho,Rack de almacenamiento,SKU-0378
+F05_C31,5,31,Empaque y Despacho,Rack de almacenamiento,SKU-0567
+F05_C32,5,32,Empaque y Despacho,Rack de almacenamiento,SKU-0193
+F05_C33,5,33,Empaque y Despacho,Rack de almacenamiento,SKU-0019
+F05_C34,5,34,Empaque y Despacho,Rack de almacenamiento,SKU-0394
+F05_C35,5,35,Empaque y Despacho,Rack de almacenamiento,SKU-0361
+F05_C36,5,36,Empaque y Despacho,Rack de almacenamiento,SKU-0203
+F05_C37,5,37,Empaque y Despacho,Rack de almacenamiento,SKU-0338
+F05_C38,5,38,Empaque y Despacho,Rack de almacenamiento,SKU-0402
+F05_C39,5,39,Empaque y Despacho,Estación de trabajo,
+F06_C00,6,0,Recepción y Almacenamiento,Estación de trabajo,
+F06_C01,6,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0491
+F06_C02,6,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0078
+F06_C03,6,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0283
+F06_C04,6,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0168
+F06_C05,6,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0201
+F06_C06,6,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0020
+F06_C07,6,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0254
+F06_C08,6,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0051
+F06_C09,6,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0556
+F06_C10,6,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0333
+F06_C11,6,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0253
+F06_C12,6,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0140
+F06_C13,6,13,Picking,Rack de almacenamiento,SKU-0564
+F06_C14,6,14,Picking,Rack de almacenamiento,SKU-0310
+F06_C15,6,15,Picking,Rack de almacenamiento,SKU-0592
+F06_C16,6,16,Picking,Rack de almacenamiento,SKU-0396
+F06_C17,6,17,Picking,Rack de almacenamiento,SKU-0597
+F06_C18,6,18,Picking,Rack de almacenamiento,SKU-0529
+F06_C19,6,19,Picking,Rack de almacenamiento,SKU-0446
+F06_C20,6,20,Picking,Rack de almacenamiento,SKU-0214
+F06_C21,6,21,Picking,Rack de almacenamiento,SKU-0467
+F06_C22,6,22,Picking,Rack de almacenamiento,SKU-0192
+F06_C23,6,23,Picking,Rack de almacenamiento,SKU-0516
+F06_C24,6,24,Picking,Rack de almacenamiento,SKU-0189
+F06_C25,6,25,Picking,Rack de almacenamiento,SKU-0047
+F06_C26,6,26,Picking,Rack de almacenamiento,SKU-0071
+F06_C27,6,27,Empaque y Despacho,Rack de almacenamiento,SKU-0273
+F06_C28,6,28,Empaque y Despacho,Rack de almacenamiento,SKU-0398
+F06_C29,6,29,Empaque y Despacho,Rack de almacenamiento,SKU-0174
+F06_C30,6,30,Empaque y Despacho,Rack de almacenamiento,SKU-0492
+F06_C31,6,31,Empaque y Despacho,Rack de almacenamiento,SKU-0154
+F06_C32,6,32,Empaque y Despacho,Rack de almacenamiento,SKU-0284
+F06_C33,6,33,Empaque y Despacho,Rack de almacenamiento,SKU-0202
+F06_C34,6,34,Empaque y Despacho,Rack de almacenamiento,SKU-0335
+F06_C35,6,35,Empaque y Despacho,Rack de almacenamiento,SKU-0114
+F06_C36,6,36,Empaque y Despacho,Rack de almacenamiento,SKU-0576
+F06_C37,6,37,Empaque y Despacho,Rack de almacenamiento,SKU-0556
+F06_C38,6,38,Empaque y Despacho,Rack de almacenamiento,SKU-0420
+F06_C39,6,39,Empaque y Despacho,Estación de trabajo,
+F07_C00,7,0,Recepción y Almacenamiento,Estación de trabajo,
+F07_C01,7,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0319
+F07_C02,7,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0448
+F07_C03,7,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0282
+F07_C04,7,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0534
+F07_C05,7,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0040
+F07_C06,7,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0130
+F07_C07,7,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0274
+F07_C08,7,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0391
+F07_C09,7,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0425
+F07_C10,7,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0431
+F07_C11,7,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0565
+F07_C12,7,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0506
+F07_C13,7,13,Picking,Rack de almacenamiento,SKU-0550
+F07_C14,7,14,Picking,Rack de almacenamiento,SKU-0207
+F07_C15,7,15,Picking,Rack de almacenamiento,SKU-0418
+F07_C16,7,16,Picking,Rack de almacenamiento,SKU-0414
+F07_C17,7,17,Picking,Rack de almacenamiento,SKU-0363
+F07_C18,7,18,Picking,Rack de almacenamiento,SKU-0363
+F07_C19,7,19,Picking,Rack de almacenamiento,SKU-0316
+F07_C20,7,20,Picking,Rack de almacenamiento,SKU-0246
+F07_C21,7,21,Picking,Rack de almacenamiento,SKU-0083
+F07_C22,7,22,Picking,Rack de almacenamiento,SKU-0062
+F07_C23,7,23,Picking,Rack de almacenamiento,SKU-0002
+F07_C24,7,24,Picking,Rack de almacenamiento,SKU-0212
+F07_C25,7,25,Picking,Rack de almacenamiento,SKU-0224
+F07_C26,7,26,Picking,Rack de almacenamiento,SKU-0579
+F07_C27,7,27,Empaque y Despacho,Rack de almacenamiento,SKU-0146
+F07_C28,7,28,Empaque y Despacho,Rack de almacenamiento,SKU-0130
+F07_C29,7,29,Empaque y Despacho,Rack de almacenamiento,SKU-0027
+F07_C30,7,30,Empaque y Despacho,Rack de almacenamiento,SKU-0069
+F07_C31,7,31,Empaque y Despacho,Rack de almacenamiento,SKU-0395
+F07_C32,7,32,Empaque y Despacho,Rack de almacenamiento,SKU-0221
+F07_C33,7,33,Empaque y Despacho,Rack de almacenamiento,SKU-0372
+F07_C34,7,34,Empaque y Despacho,Rack de almacenamiento,SKU-0061
+F07_C35,7,35,Empaque y Despacho,Rack de almacenamiento,SKU-0458
+F07_C36,7,36,Empaque y Despacho,Rack de almacenamiento,SKU-0161
+F07_C37,7,37,Empaque y Despacho,Rack de almacenamiento,SKU-0036
+F07_C38,7,38,Empaque y Despacho,Rack de almacenamiento,SKU-0549
+F07_C39,7,39,Empaque y Despacho,Estación de trabajo,
+F08_C00,8,0,Recepción y Almacenamiento,Estación de trabajo,
+F08_C01,8,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0216
+F08_C02,8,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0192
+F08_C03,8,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0029
+F08_C04,8,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0352
+F08_C05,8,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0168
+F08_C06,8,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0144
+F08_C07,8,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0406
+F08_C08,8,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0401
+F08_C09,8,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0088
+F08_C10,8,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0077
+F08_C11,8,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0146
+F08_C12,8,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0474
+F08_C13,8,13,Picking,Rack de almacenamiento,SKU-0160
+F08_C14,8,14,Picking,Rack de almacenamiento,SKU-0254
+F08_C15,8,15,Picking,Rack de almacenamiento,SKU-0078
+F08_C16,8,16,Picking,Rack de almacenamiento,SKU-0111
+F08_C17,8,17,Picking,Rack de almacenamiento,SKU-0400
+F08_C18,8,18,Picking,Rack de almacenamiento,SKU-0455
+F08_C19,8,19,Picking,Rack de almacenamiento,SKU-0520
+F08_C20,8,20,Picking,Rack de almacenamiento,SKU-0333
+F08_C21,8,21,Picking,Rack de almacenamiento,SKU-0167
+F08_C22,8,22,Picking,Rack de almacenamiento,SKU-0263
+F08_C23,8,23,Picking,Rack de almacenamiento,SKU-0094
+F08_C24,8,24,Picking,Rack de almacenamiento,SKU-0145
+F08_C25,8,25,Picking,Rack de almacenamiento,SKU-0289
+F08_C26,8,26,Picking,Rack de almacenamiento,SKU-0469
+F08_C27,8,27,Empaque y Despacho,Rack de almacenamiento,SKU-0156
+F08_C28,8,28,Empaque y Despacho,Rack de almacenamiento,SKU-0220
+F08_C29,8,29,Empaque y Despacho,Rack de almacenamiento,SKU-0023
+F08_C30,8,30,Empaque y Despacho,Rack de almacenamiento,SKU-0026
+F08_C31,8,31,Empaque y Despacho,Rack de almacenamiento,SKU-0328
+F08_C32,8,32,Empaque y Despacho,Rack de almacenamiento,SKU-0580
+F08_C33,8,33,Empaque y Despacho,Rack de almacenamiento,SKU-0346
+F08_C34,8,34,Empaque y Despacho,Rack de almacenamiento,SKU-0019
+F08_C35,8,35,Empaque y Despacho,Rack de almacenamiento,SKU-0345
+F08_C36,8,36,Empaque y Despacho,Rack de almacenamiento,SKU-0073
+F08_C37,8,37,Empaque y Despacho,Rack de almacenamiento,SKU-0416
+F08_C38,8,38,Empaque y Despacho,Rack de almacenamiento,SKU-0280
+F08_C39,8,39,Empaque y Despacho,Estación de trabajo,
+F09_C00,9,0,Recepción y Almacenamiento,Estación de trabajo,
+F09_C01,9,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0219
+F09_C02,9,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0125
+F09_C03,9,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0106
+F09_C04,9,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0202
+F09_C05,9,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0271
+F09_C06,9,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0341
+F09_C07,9,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0414
+F09_C08,9,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0575
+F09_C09,9,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0020
+F09_C10,9,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0562
+F09_C11,9,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0337
+F09_C12,9,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0045
+F09_C13,9,13,Picking,Estación de trabajo,
+F09_C14,9,14,Picking,Rack de almacenamiento,SKU-0521
+F09_C15,9,15,Picking,Rack de almacenamiento,SKU-0512
+F09_C16,9,16,Picking,Rack de almacenamiento,SKU-0173
+F09_C17,9,17,Picking,Rack de almacenamiento,SKU-0101
+F09_C18,9,18,Picking,Rack de almacenamiento,SKU-0181
+F09_C19,9,19,Picking,Rack de almacenamiento,SKU-0487
+F09_C20,9,20,Picking,Rack de almacenamiento,SKU-0552
+F09_C21,9,21,Picking,Rack de almacenamiento,SKU-0178
+F09_C22,9,22,Picking,Rack de almacenamiento,SKU-0286
+F09_C23,9,23,Picking,Rack de almacenamiento,SKU-0431
+F09_C24,9,24,Picking,Rack de almacenamiento,SKU-0109
+F09_C25,9,25,Picking,Rack de almacenamiento,SKU-0432
+F09_C26,9,26,Picking,Estación de trabajo,
+F09_C27,9,27,Empaque y Despacho,Rack de almacenamiento,SKU-0136
+F09_C28,9,28,Empaque y Despacho,Rack de almacenamiento,SKU-0511
+F09_C29,9,29,Empaque y Despacho,Rack de almacenamiento,SKU-0081
+F09_C30,9,30,Empaque y Despacho,Rack de almacenamiento,SKU-0588
+F09_C31,9,31,Empaque y Despacho,Rack de almacenamiento,SKU-0433
+F09_C32,9,32,Empaque y Despacho,Rack de almacenamiento,SKU-0166
+F09_C33,9,33,Empaque y Despacho,Rack de almacenamiento,SKU-0485
+F09_C34,9,34,Empaque y Despacho,Rack de almacenamiento,SKU-0377
+F09_C35,9,35,Empaque y Despacho,Rack de almacenamiento,SKU-0286
+F09_C36,9,36,Empaque y Despacho,Rack de almacenamiento,SKU-0444
+F09_C37,9,37,Empaque y Despacho,Rack de almacenamiento,SKU-0414
+F09_C38,9,38,Empaque y Despacho,Rack de almacenamiento,SKU-0048
+F09_C39,9,39,Empaque y Despacho,Estación de trabajo,
+F10_C00,10,0,Recepción y Almacenamiento,Estación de trabajo,
+F10_C01,10,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0138
+F10_C02,10,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0398
+F10_C03,10,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0244
+F10_C04,10,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0193
+F10_C05,10,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0328
+F10_C06,10,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0097
+F10_C07,10,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0590
+F10_C08,10,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0330
+F10_C09,10,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0005
+F10_C10,10,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0278
+F10_C11,10,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0447
+F10_C12,10,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0347
+F10_C13,10,13,Picking,Rack de almacenamiento,SKU-0306
+F10_C14,10,14,Picking,Rack de almacenamiento,SKU-0386
+F10_C15,10,15,Picking,Rack de almacenamiento,SKU-0016
+F10_C16,10,16,Picking,Rack de almacenamiento,SKU-0300
+F10_C17,10,17,Picking,Rack de almacenamiento,SKU-0242
+F10_C18,10,18,Picking,Rack de almacenamiento,SKU-0544
+F10_C19,10,19,Picking,Rack de almacenamiento,SKU-0351
+F10_C20,10,20,Picking,Rack de almacenamiento,SKU-0107
+F10_C21,10,21,Picking,Rack de almacenamiento,SKU-0513
+F10_C22,10,22,Picking,Rack de almacenamiento,SKU-0174
+F10_C23,10,23,Picking,Rack de almacenamiento,SKU-0598
+F10_C24,10,24,Picking,Rack de almacenamiento,SKU-0214
+F10_C25,10,25,Picking,Rack de almacenamiento,SKU-0509
+F10_C26,10,26,Picking,Rack de almacenamiento,SKU-0465
+F10_C27,10,27,Empaque y Despacho,Rack de almacenamiento,SKU-0434
+F10_C28,10,28,Empaque y Despacho,Rack de almacenamiento,SKU-0392
+F10_C29,10,29,Empaque y Despacho,Rack de almacenamiento,SKU-0014
+F10_C30,10,30,Empaque y Despacho,Rack de almacenamiento,SKU-0124
+F10_C31,10,31,Empaque y Despacho,Rack de almacenamiento,SKU-0524
+F10_C32,10,32,Empaque y Despacho,Rack de almacenamiento,SKU-0447
+F10_C33,10,33,Empaque y Despacho,Rack de almacenamiento,SKU-0278
+F10_C34,10,34,Empaque y Despacho,Rack de almacenamiento,SKU-0463
+F10_C35,10,35,Empaque y Despacho,Rack de almacenamiento,SKU-0395
+F10_C36,10,36,Empaque y Despacho,Rack de almacenamiento,SKU-0463
+F10_C37,10,37,Empaque y Despacho,Rack de almacenamiento,SKU-0320
+F10_C38,10,38,Empaque y Despacho,Rack de almacenamiento,SKU-0048
+F10_C39,10,39,Empaque y Despacho,Estación de trabajo,
+F11_C00,11,0,Recepción y Almacenamiento,Estación de trabajo,
+F11_C01,11,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0245
+F11_C02,11,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0128
+F11_C03,11,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0518
+F11_C04,11,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0538
+F11_C05,11,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0122
+F11_C06,11,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0528
+F11_C07,11,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0198
+F11_C08,11,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0124
+F11_C09,11,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0164
+F11_C10,11,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0331
+F11_C11,11,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0144
+F11_C12,11,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0158
+F11_C13,11,13,Picking,Rack de almacenamiento,SKU-0420
+F11_C14,11,14,Picking,Rack de almacenamiento,SKU-0250
+F11_C15,11,15,Picking,Rack de almacenamiento,SKU-0419
+F11_C16,11,16,Picking,Rack de almacenamiento,SKU-0013
+F11_C17,11,17,Picking,Rack de almacenamiento,SKU-0059
+F11_C18,11,18,Picking,Rack de almacenamiento,SKU-0170
+F11_C19,11,19,Picking,Rack de almacenamiento,SKU-0218
+F11_C20,11,20,Picking,Rack de almacenamiento,SKU-0163
+F11_C21,11,21,Picking,Rack de almacenamiento,SKU-0238
+F11_C22,11,22,Picking,Rack de almacenamiento,SKU-0552
+F11_C23,11,23,Picking,Rack de almacenamiento,SKU-0277
+F11_C24,11,24,Picking,Rack de almacenamiento,SKU-0353
+F11_C25,11,25,Picking,Rack de almacenamiento,SKU-0474
+F11_C26,11,26,Picking,Rack de almacenamiento,SKU-0107
+F11_C27,11,27,Empaque y Despacho,Rack de almacenamiento,SKU-0087
+F11_C28,11,28,Empaque y Despacho,Rack de almacenamiento,SKU-0257
+F11_C29,11,29,Empaque y Despacho,Rack de almacenamiento,SKU-0373
+F11_C30,11,30,Empaque y Despacho,Rack de almacenamiento,SKU-0296
+F11_C31,11,31,Empaque y Despacho,Rack de almacenamiento,SKU-0072
+F11_C32,11,32,Empaque y Despacho,Rack de almacenamiento,SKU-0383
+F11_C33,11,33,Empaque y Despacho,Rack de almacenamiento,SKU-0555
+F11_C34,11,34,Empaque y Despacho,Rack de almacenamiento,SKU-0320
+F11_C35,11,35,Empaque y Despacho,Rack de almacenamiento,SKU-0540
+F11_C36,11,36,Empaque y Despacho,Rack de almacenamiento,SKU-0253
+F11_C37,11,37,Empaque y Despacho,Rack de almacenamiento,SKU-0241
+F11_C38,11,38,Empaque y Despacho,Rack de almacenamiento,SKU-0187
+F11_C39,11,39,Empaque y Despacho,Estación de trabajo,
+F12_C00,12,0,Recepción y Almacenamiento,Estación de trabajo,
+F12_C01,12,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0313
+F12_C02,12,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0345
+F12_C03,12,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0064
+F12_C04,12,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0586
+F12_C05,12,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0092
+F12_C06,12,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0332
+F12_C07,12,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0187
+F12_C08,12,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0533
+F12_C09,12,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0387
+F12_C10,12,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0010
+F12_C11,12,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0017
+F12_C12,12,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0122
+F12_C13,12,13,Picking,Rack de almacenamiento,SKU-0493
+F12_C14,12,14,Picking,Rack de almacenamiento,SKU-0519
+F12_C15,12,15,Picking,Rack de almacenamiento,SKU-0331
+F12_C16,12,16,Picking,Rack de almacenamiento,SKU-0342
+F12_C17,12,17,Picking,Rack de almacenamiento,SKU-0389
+F12_C18,12,18,Picking,Rack de almacenamiento,SKU-0293
+F12_C19,12,19,Picking,Rack de almacenamiento,SKU-0307
+F12_C20,12,20,Picking,Rack de almacenamiento,SKU-0222
+F12_C21,12,21,Picking,Rack de almacenamiento,SKU-0295
+F12_C22,12,22,Picking,Rack de almacenamiento,SKU-0178
+F12_C23,12,23,Picking,Rack de almacenamiento,SKU-0449
+F12_C24,12,24,Picking,Rack de almacenamiento,SKU-0408
+F12_C25,12,25,Picking,Rack de almacenamiento,SKU-0431
+F12_C26,12,26,Picking,Rack de almacenamiento,SKU-0220
+F12_C27,12,27,Empaque y Despacho,Rack de almacenamiento,SKU-0238
+F12_C28,12,28,Empaque y Despacho,Rack de almacenamiento,SKU-0262
+F12_C29,12,29,Empaque y Despacho,Rack de almacenamiento,SKU-0362
+F12_C30,12,30,Empaque y Despacho,Rack de almacenamiento,SKU-0467
+F12_C31,12,31,Empaque y Despacho,Rack de almacenamiento,SKU-0006
+F12_C32,12,32,Empaque y Despacho,Rack de almacenamiento,SKU-0568
+F12_C33,12,33,Empaque y Despacho,Rack de almacenamiento,SKU-0518
+F12_C34,12,34,Empaque y Despacho,Rack de almacenamiento,SKU-0597
+F12_C35,12,35,Empaque y Despacho,Rack de almacenamiento,SKU-0167
+F12_C36,12,36,Empaque y Despacho,Rack de almacenamiento,SKU-0291
+F12_C37,12,37,Empaque y Despacho,Rack de almacenamiento,SKU-0328
+F12_C38,12,38,Empaque y Despacho,Rack de almacenamiento,SKU-0083
+F12_C39,12,39,Empaque y Despacho,Estación de trabajo,
+F13_C00,13,0,Recepción y Almacenamiento,Estación de trabajo,
+F13_C01,13,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0215
+F13_C02,13,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0015
+F13_C03,13,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0072
+F13_C04,13,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0297
+F13_C05,13,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0190
+F13_C06,13,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0046
+F13_C07,13,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0502
+F13_C08,13,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0071
+F13_C09,13,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0139
+F13_C10,13,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0141
+F13_C11,13,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0310
+F13_C12,13,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0596
+F13_C13,13,13,Picking,Rack de almacenamiento,SKU-0017
+F13_C14,13,14,Picking,Rack de almacenamiento,SKU-0098
+F13_C15,13,15,Picking,Rack de almacenamiento,SKU-0200
+F13_C16,13,16,Picking,Rack de almacenamiento,SKU-0067
+F13_C17,13,17,Picking,Rack de almacenamiento,SKU-0005
+F13_C18,13,18,Picking,Rack de almacenamiento,SKU-0550
+F13_C19,13,19,Picking,Rack de almacenamiento,SKU-0135
+F13_C20,13,20,Picking,Rack de almacenamiento,SKU-0374
+F13_C21,13,21,Picking,Rack de almacenamiento,SKU-0531
+F13_C22,13,22,Picking,Rack de almacenamiento,SKU-0444
+F13_C23,13,23,Picking,Rack de almacenamiento,SKU-0026
+F13_C24,13,24,Picking,Rack de almacenamiento,SKU-0213
+F13_C25,13,25,Picking,Rack de almacenamiento,SKU-0031
+F13_C26,13,26,Picking,Rack de almacenamiento,SKU-0561
+F13_C27,13,27,Empaque y Despacho,Rack de almacenamiento,SKU-0279
+F13_C28,13,28,Empaque y Despacho,Rack de almacenamiento,SKU-0586
+F13_C29,13,29,Empaque y Despacho,Rack de almacenamiento,SKU-0241
+F13_C30,13,30,Empaque y Despacho,Rack de almacenamiento,SKU-0336
+F13_C31,13,31,Empaque y Despacho,Rack de almacenamiento,SKU-0038
+F13_C32,13,32,Empaque y Despacho,Rack de almacenamiento,SKU-0593
+F13_C33,13,33,Empaque y Despacho,Rack de almacenamiento,SKU-0515
+F13_C34,13,34,Empaque y Despacho,Rack de almacenamiento,SKU-0304
+F13_C35,13,35,Empaque y Despacho,Rack de almacenamiento,SKU-0140
+F13_C36,13,36,Empaque y Despacho,Rack de almacenamiento,SKU-0264
+F13_C37,13,37,Empaque y Despacho,Rack de almacenamiento,SKU-0263
+F13_C38,13,38,Empaque y Despacho,Rack de almacenamiento,SKU-0472
+F13_C39,13,39,Empaque y Despacho,Estación de trabajo,
+F14_C00,14,0,Recepción y Almacenamiento,Estación de trabajo,
+F14_C01,14,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0179
+F14_C02,14,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0387
+F14_C03,14,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0486
+F14_C04,14,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0121
+F14_C05,14,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0467
+F14_C06,14,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0309
+F14_C07,14,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0123
+F14_C08,14,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0010
+F14_C09,14,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0531
+F14_C10,14,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0526
+F14_C11,14,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0038
+F14_C12,14,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0326
+F14_C13,14,13,Picking,Rack de almacenamiento,SKU-0057
+F14_C14,14,14,Picking,Rack de almacenamiento,SKU-0028
+F14_C15,14,15,Picking,Rack de almacenamiento,SKU-0035
+F14_C16,14,16,Picking,Rack de almacenamiento,SKU-0563
+F14_C17,14,17,Picking,Rack de almacenamiento,SKU-0305
+F14_C18,14,18,Picking,Rack de almacenamiento,SKU-0600
+F14_C19,14,19,Picking,Rack de almacenamiento,SKU-0464
+F14_C20,14,20,Picking,Rack de almacenamiento,SKU-0443
+F14_C21,14,21,Picking,Rack de almacenamiento,SKU-0065
+F14_C22,14,22,Picking,Rack de almacenamiento,SKU-0259
+F14_C23,14,23,Picking,Rack de almacenamiento,SKU-0338
+F14_C24,14,24,Picking,Rack de almacenamiento,SKU-0355
+F14_C25,14,25,Picking,Rack de almacenamiento,SKU-0084
+F14_C26,14,26,Picking,Rack de almacenamiento,SKU-0007
+F14_C27,14,27,Empaque y Despacho,Rack de almacenamiento,SKU-0368
+F14_C28,14,28,Empaque y Despacho,Rack de almacenamiento,SKU-0066
+F14_C29,14,29,Empaque y Despacho,Rack de almacenamiento,SKU-0562
+F14_C30,14,30,Empaque y Despacho,Rack de almacenamiento,SKU-0199
+F14_C31,14,31,Empaque y Despacho,Rack de almacenamiento,SKU-0557
+F14_C32,14,32,Empaque y Despacho,Rack de almacenamiento,SKU-0247
+F14_C33,14,33,Empaque y Despacho,Rack de almacenamiento,SKU-0254
+F14_C34,14,34,Empaque y Despacho,Rack de almacenamiento,SKU-0454
+F14_C35,14,35,Empaque y Despacho,Rack de almacenamiento,SKU-0540
+F14_C36,14,36,Empaque y Despacho,Rack de almacenamiento,SKU-0103
+F14_C37,14,37,Empaque y Despacho,Rack de almacenamiento,SKU-0266
+F14_C38,14,38,Empaque y Despacho,Rack de almacenamiento,SKU-0070
+F14_C39,14,39,Empaque y Despacho,Estación de trabajo,
+F15_C00,15,0,Recepción y Almacenamiento,Estación de trabajo,
+F15_C01,15,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0421
+F15_C02,15,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0419
+F15_C03,15,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0085
+F15_C04,15,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0533
+F15_C05,15,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0589
+F15_C06,15,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0528
+F15_C07,15,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0482
+F15_C08,15,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0446
+F15_C09,15,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0168
+F15_C10,15,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0591
+F15_C11,15,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0185
+F15_C12,15,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0314
+F15_C13,15,13,Picking,Rack de almacenamiento,SKU-0422
+F15_C14,15,14,Picking,Rack de almacenamiento,SKU-0465
+F15_C15,15,15,Picking,Rack de almacenamiento,SKU-0196
+F15_C16,15,16,Picking,Rack de almacenamiento,SKU-0251
+F15_C17,15,17,Picking,Rack de almacenamiento,SKU-0286
+F15_C18,15,18,Picking,Rack de almacenamiento,SKU-0212
+F15_C19,15,19,Picking,Rack de almacenamiento,SKU-0197
+F15_C20,15,20,Picking,Rack de almacenamiento,SKU-0547
+F15_C21,15,21,Picking,Rack de almacenamiento,SKU-0146
+F15_C22,15,22,Picking,Rack de almacenamiento,SKU-0259
+F15_C23,15,23,Picking,Rack de almacenamiento,SKU-0090
+F15_C24,15,24,Picking,Rack de almacenamiento,SKU-0448
+F15_C25,15,25,Picking,Rack de almacenamiento,SKU-0484
+F15_C26,15,26,Picking,Rack de almacenamiento,SKU-0299
+F15_C27,15,27,Empaque y Despacho,Rack de almacenamiento,SKU-0038
+F15_C28,15,28,Empaque y Despacho,Rack de almacenamiento,SKU-0068
+F15_C29,15,29,Empaque y Despacho,Rack de almacenamiento,SKU-0153
+F15_C30,15,30,Empaque y Despacho,Rack de almacenamiento,SKU-0077
+F15_C31,15,31,Empaque y Despacho,Rack de almacenamiento,SKU-0136
+F15_C32,15,32,Empaque y Despacho,Rack de almacenamiento,SKU-0307
+F15_C33,15,33,Empaque y Despacho,Rack de almacenamiento,SKU-0351
+F15_C34,15,34,Empaque y Despacho,Rack de almacenamiento,SKU-0425
+F15_C35,15,35,Empaque y Despacho,Rack de almacenamiento,SKU-0560
+F15_C36,15,36,Empaque y Despacho,Rack de almacenamiento,SKU-0446
+F15_C37,15,37,Empaque y Despacho,Rack de almacenamiento,SKU-0285
+F15_C38,15,38,Empaque y Despacho,Rack de almacenamiento,SKU-0202
+F15_C39,15,39,Empaque y Despacho,Estación de trabajo,
+F16_C00,16,0,Recepción y Almacenamiento,Estación de trabajo,
+F16_C01,16,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0522
+F16_C02,16,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0006
+F16_C03,16,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0439
+F16_C04,16,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0321
+F16_C05,16,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0296
+F16_C06,16,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0114
+F16_C07,16,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0171
+F16_C08,16,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0193
+F16_C09,16,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0025
+F16_C10,16,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0340
+F16_C11,16,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0342
+F16_C12,16,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0236
+F16_C13,16,13,Picking,Rack de almacenamiento,SKU-0541
+F16_C14,16,14,Picking,Rack de almacenamiento,SKU-0276
+F16_C15,16,15,Picking,Rack de almacenamiento,SKU-0044
+F16_C16,16,16,Picking,Rack de almacenamiento,SKU-0031
+F16_C17,16,17,Picking,Rack de almacenamiento,SKU-0221
+F16_C18,16,18,Picking,Rack de almacenamiento,SKU-0110
+F16_C19,16,19,Picking,Rack de almacenamiento,SKU-0517
+F16_C20,16,20,Picking,Rack de almacenamiento,SKU-0506
+F16_C21,16,21,Picking,Rack de almacenamiento,SKU-0579
+F16_C22,16,22,Picking,Rack de almacenamiento,SKU-0308
+F16_C23,16,23,Picking,Rack de almacenamiento,SKU-0294
+F16_C24,16,24,Picking,Rack de almacenamiento,SKU-0532
+F16_C25,16,25,Picking,Rack de almacenamiento,SKU-0382
+F16_C26,16,26,Picking,Rack de almacenamiento,SKU-0515
+F16_C27,16,27,Empaque y Despacho,Rack de almacenamiento,SKU-0117
+F16_C28,16,28,Empaque y Despacho,Rack de almacenamiento,SKU-0116
+F16_C29,16,29,Empaque y Despacho,Rack de almacenamiento,SKU-0034
+F16_C30,16,30,Empaque y Despacho,Rack de almacenamiento,SKU-0240
+F16_C31,16,31,Empaque y Despacho,Rack de almacenamiento,SKU-0473
+F16_C32,16,32,Empaque y Despacho,Rack de almacenamiento,SKU-0316
+F16_C33,16,33,Empaque y Despacho,Rack de almacenamiento,SKU-0330
+F16_C34,16,34,Empaque y Despacho,Rack de almacenamiento,SKU-0059
+F16_C35,16,35,Empaque y Despacho,Rack de almacenamiento,SKU-0077
+F16_C36,16,36,Empaque y Despacho,Rack de almacenamiento,SKU-0052
+F16_C37,16,37,Empaque y Despacho,Rack de almacenamiento,SKU-0221
+F16_C38,16,38,Empaque y Despacho,Rack de almacenamiento,SKU-0505
+F16_C39,16,39,Empaque y Despacho,Estación de trabajo,
+F17_C00,17,0,Recepción y Almacenamiento,Estación de trabajo,
+F17_C01,17,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0444
+F17_C02,17,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0497
+F17_C03,17,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0179
+F17_C04,17,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0230
+F17_C05,17,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0576
+F17_C06,17,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0424
+F17_C07,17,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0414
+F17_C08,17,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0311
+F17_C09,17,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0064
+F17_C10,17,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0449
+F17_C11,17,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0222
+F17_C12,17,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0190
+F17_C13,17,13,Picking,Rack de almacenamiento,SKU-0435
+F17_C14,17,14,Picking,Rack de almacenamiento,SKU-0285
+F17_C15,17,15,Picking,Rack de almacenamiento,SKU-0102
+F17_C16,17,16,Picking,Rack de almacenamiento,SKU-0536
+F17_C17,17,17,Picking,Rack de almacenamiento,SKU-0237
+F17_C18,17,18,Picking,Rack de almacenamiento,SKU-0490
+F17_C19,17,19,Picking,Rack de almacenamiento,SKU-0244
+F17_C20,17,20,Picking,Rack de almacenamiento,SKU-0186
+F17_C21,17,21,Picking,Rack de almacenamiento,SKU-0482
+F17_C22,17,22,Picking,Rack de almacenamiento,SKU-0530
+F17_C23,17,23,Picking,Rack de almacenamiento,SKU-0189
+F17_C24,17,24,Picking,Rack de almacenamiento,SKU-0240
+F17_C25,17,25,Picking,Rack de almacenamiento,SKU-0332
+F17_C26,17,26,Picking,Rack de almacenamiento,SKU-0410
+F17_C27,17,27,Empaque y Despacho,Rack de almacenamiento,SKU-0302
+F17_C28,17,28,Empaque y Despacho,Rack de almacenamiento,SKU-0427
+F17_C29,17,29,Empaque y Despacho,Rack de almacenamiento,SKU-0497
+F17_C30,17,30,Empaque y Despacho,Rack de almacenamiento,SKU-0242
+F17_C31,17,31,Empaque y Despacho,Rack de almacenamiento,SKU-0508
+F17_C32,17,32,Empaque y Despacho,Rack de almacenamiento,SKU-0497
+F17_C33,17,33,Empaque y Despacho,Rack de almacenamiento,SKU-0587
+F17_C34,17,34,Empaque y Despacho,Rack de almacenamiento,SKU-0280
+F17_C35,17,35,Empaque y Despacho,Rack de almacenamiento,SKU-0508
+F17_C36,17,36,Empaque y Despacho,Rack de almacenamiento,SKU-0577
+F17_C37,17,37,Empaque y Despacho,Rack de almacenamiento,SKU-0565
+F17_C38,17,38,Empaque y Despacho,Rack de almacenamiento,SKU-0563
+F17_C39,17,39,Empaque y Despacho,Estación de trabajo,
+F18_C00,18,0,Recepción y Almacenamiento,Estación de trabajo,
+F18_C01,18,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0235
+F18_C02,18,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0541
+F18_C03,18,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0263
+F18_C04,18,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0546
+F18_C05,18,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0486
+F18_C06,18,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0089
+F18_C07,18,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0077
+F18_C08,18,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0390
+F18_C09,18,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0148
+F18_C10,18,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0445
+F18_C11,18,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0469
+F18_C12,18,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0318
+F18_C13,18,13,Picking,Estación de trabajo,
+F18_C14,18,14,Picking,Rack de almacenamiento,SKU-0468
+F18_C15,18,15,Picking,Rack de almacenamiento,SKU-0318
+F18_C16,18,16,Picking,Rack de almacenamiento,SKU-0342
+F18_C17,18,17,Picking,Rack de almacenamiento,SKU-0121
+F18_C18,18,18,Picking,Rack de almacenamiento,SKU-0352
+F18_C19,18,19,Picking,Rack de almacenamiento,SKU-0097
+F18_C20,18,20,Picking,Rack de almacenamiento,SKU-0373
+F18_C21,18,21,Picking,Rack de almacenamiento,SKU-0470
+F18_C22,18,22,Picking,Rack de almacenamiento,SKU-0461
+F18_C23,18,23,Picking,Rack de almacenamiento,SKU-0090
+F18_C24,18,24,Picking,Rack de almacenamiento,SKU-0474
+F18_C25,18,25,Picking,Rack de almacenamiento,SKU-0437
+F18_C26,18,26,Picking,Estación de trabajo,
+F18_C27,18,27,Empaque y Despacho,Rack de almacenamiento,SKU-0090
+F18_C28,18,28,Empaque y Despacho,Rack de almacenamiento,SKU-0047
+F18_C29,18,29,Empaque y Despacho,Rack de almacenamiento,SKU-0391
+F18_C30,18,30,Empaque y Despacho,Rack de almacenamiento,SKU-0248
+F18_C31,18,31,Empaque y Despacho,Rack de almacenamiento,SKU-0299
+F18_C32,18,32,Empaque y Despacho,Rack de almacenamiento,SKU-0015
+F18_C33,18,33,Empaque y Despacho,Rack de almacenamiento,SKU-0144
+F18_C34,18,34,Empaque y Despacho,Rack de almacenamiento,SKU-0397
+F18_C35,18,35,Empaque y Despacho,Rack de almacenamiento,SKU-0380
+F18_C36,18,36,Empaque y Despacho,Rack de almacenamiento,SKU-0176
+F18_C37,18,37,Empaque y Despacho,Rack de almacenamiento,SKU-0206
+F18_C38,18,38,Empaque y Despacho,Rack de almacenamiento,SKU-0281
+F18_C39,18,39,Empaque y Despacho,Estación de trabajo,
+F19_C00,19,0,Recepción y Almacenamiento,Estación de trabajo,
+F19_C01,19,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0205
+F19_C02,19,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0172
+F19_C03,19,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0188
+F19_C04,19,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0310
+F19_C05,19,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0333
+F19_C06,19,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0395
+F19_C07,19,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0150
+F19_C08,19,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0101
+F19_C09,19,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0189
+F19_C10,19,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0467
+F19_C11,19,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0502
+F19_C12,19,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0470
+F19_C13,19,13,Picking,Rack de almacenamiento,SKU-0236
+F19_C14,19,14,Picking,Rack de almacenamiento,SKU-0566
+F19_C15,19,15,Picking,Rack de almacenamiento,SKU-0343
+F19_C16,19,16,Picking,Rack de almacenamiento,SKU-0229
+F19_C17,19,17,Picking,Rack de almacenamiento,SKU-0351
+F19_C18,19,18,Picking,Rack de almacenamiento,SKU-0524
+F19_C19,19,19,Picking,Rack de almacenamiento,SKU-0261
+F19_C20,19,20,Picking,Rack de almacenamiento,SKU-0057
+F19_C21,19,21,Picking,Rack de almacenamiento,SKU-0184
+F19_C22,19,22,Picking,Rack de almacenamiento,SKU-0597
+F19_C23,19,23,Picking,Rack de almacenamiento,SKU-0279
+F19_C24,19,24,Picking,Rack de almacenamiento,SKU-0128
+F19_C25,19,25,Picking,Rack de almacenamiento,SKU-0529
+F19_C26,19,26,Picking,Rack de almacenamiento,SKU-0225
+F19_C27,19,27,Empaque y Despacho,Rack de almacenamiento,SKU-0192
+F19_C28,19,28,Empaque y Despacho,Rack de almacenamiento,SKU-0057
+F19_C29,19,29,Empaque y Despacho,Rack de almacenamiento,SKU-0568
+F19_C30,19,30,Empaque y Despacho,Rack de almacenamiento,SKU-0502
+F19_C31,19,31,Empaque y Despacho,Rack de almacenamiento,SKU-0234
+F19_C32,19,32,Empaque y Despacho,Rack de almacenamiento,SKU-0292
+F19_C33,19,33,Empaque y Despacho,Rack de almacenamiento,SKU-0153
+F19_C34,19,34,Empaque y Despacho,Rack de almacenamiento,SKU-0578
+F19_C35,19,35,Empaque y Despacho,Rack de almacenamiento,SKU-0552
+F19_C36,19,36,Empaque y Despacho,Rack de almacenamiento,SKU-0087
+F19_C37,19,37,Empaque y Despacho,Rack de almacenamiento,SKU-0146
+F19_C38,19,38,Empaque y Despacho,Rack de almacenamiento,SKU-0536
+F19_C39,19,39,Empaque y Despacho,Estación de trabajo,
+F20_C00,20,0,Recepción y Almacenamiento,Estación de trabajo,
+F20_C01,20,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0131
+F20_C02,20,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0216
+F20_C03,20,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0486
+F20_C04,20,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0142
+F20_C05,20,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0508
+F20_C06,20,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0395
+F20_C07,20,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0112
+F20_C08,20,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0019
+F20_C09,20,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0104
+F20_C10,20,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0316
+F20_C11,20,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0576
+F20_C12,20,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0285
+F20_C13,20,13,Picking,Rack de almacenamiento,SKU-0078
+F20_C14,20,14,Picking,Rack de almacenamiento,SKU-0030
+F20_C15,20,15,Picking,Rack de almacenamiento,SKU-0113
+F20_C16,20,16,Picking,Rack de almacenamiento,SKU-0261
+F20_C17,20,17,Picking,Rack de almacenamiento,SKU-0266
+F20_C18,20,18,Picking,Rack de almacenamiento,SKU-0183
+F20_C19,20,19,Picking,Rack de almacenamiento,SKU-0373
+F20_C20,20,20,Picking,Rack de almacenamiento,SKU-0150
+F20_C21,20,21,Picking,Rack de almacenamiento,SKU-0153
+F20_C22,20,22,Picking,Rack de almacenamiento,SKU-0559
+F20_C23,20,23,Picking,Rack de almacenamiento,SKU-0321
+F20_C24,20,24,Picking,Rack de almacenamiento,SKU-0359
+F20_C25,20,25,Picking,Rack de almacenamiento,SKU-0344
+F20_C26,20,26,Picking,Rack de almacenamiento,SKU-0093
+F20_C27,20,27,Empaque y Despacho,Rack de almacenamiento,SKU-0350
+F20_C28,20,28,Empaque y Despacho,Rack de almacenamiento,SKU-0455
+F20_C29,20,29,Empaque y Despacho,Rack de almacenamiento,SKU-0026
+F20_C30,20,30,Empaque y Despacho,Rack de almacenamiento,SKU-0222
+F20_C31,20,31,Empaque y Despacho,Rack de almacenamiento,SKU-0168
+F20_C32,20,32,Empaque y Despacho,Rack de almacenamiento,SKU-0360
+F20_C33,20,33,Empaque y Despacho,Rack de almacenamiento,SKU-0544
+F20_C34,20,34,Empaque y Despacho,Rack de almacenamiento,SKU-0228
+F20_C35,20,35,Empaque y Despacho,Rack de almacenamiento,SKU-0040
+F20_C36,20,36,Empaque y Despacho,Rack de almacenamiento,SKU-0384
+F20_C37,20,37,Empaque y Despacho,Rack de almacenamiento,SKU-0186
+F20_C38,20,38,Empaque y Despacho,Rack de almacenamiento,SKU-0410
+F20_C39,20,39,Empaque y Despacho,Estación de trabajo,
+F21_C00,21,0,Recepción y Almacenamiento,Estación de trabajo,
+F21_C01,21,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0085
+F21_C02,21,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0171
+F21_C03,21,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0233
+F21_C04,21,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0499
+F21_C05,21,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0331
+F21_C06,21,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0371
+F21_C07,21,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0424
+F21_C08,21,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0364
+F21_C09,21,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0530
+F21_C10,21,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0131
+F21_C11,21,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0383
+F21_C12,21,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0153
+F21_C13,21,13,Picking,Rack de almacenamiento,SKU-0335
+F21_C14,21,14,Picking,Rack de almacenamiento,SKU-0238
+F21_C15,21,15,Picking,Rack de almacenamiento,SKU-0551
+F21_C16,21,16,Picking,Rack de almacenamiento,SKU-0021
+F21_C17,21,17,Picking,Rack de almacenamiento,SKU-0330
+F21_C18,21,18,Picking,Rack de almacenamiento,SKU-0033
+F21_C19,21,19,Picking,Rack de almacenamiento,SKU-0219
+F21_C20,21,20,Picking,Rack de almacenamiento,SKU-0398
+F21_C21,21,21,Picking,Rack de almacenamiento,SKU-0144
+F21_C22,21,22,Picking,Rack de almacenamiento,SKU-0190
+F21_C23,21,23,Picking,Rack de almacenamiento,SKU-0406
+F21_C24,21,24,Picking,Rack de almacenamiento,SKU-0433
+F21_C25,21,25,Picking,Rack de almacenamiento,SKU-0388
+F21_C26,21,26,Picking,Rack de almacenamiento,SKU-0045
+F21_C27,21,27,Empaque y Despacho,Rack de almacenamiento,SKU-0204
+F21_C28,21,28,Empaque y Despacho,Rack de almacenamiento,SKU-0445
+F21_C29,21,29,Empaque y Despacho,Rack de almacenamiento,SKU-0518
+F21_C30,21,30,Empaque y Despacho,Rack de almacenamiento,SKU-0129
+F21_C31,21,31,Empaque y Despacho,Rack de almacenamiento,SKU-0237
+F21_C32,21,32,Empaque y Despacho,Rack de almacenamiento,SKU-0522
+F21_C33,21,33,Empaque y Despacho,Rack de almacenamiento,SKU-0075
+F21_C34,21,34,Empaque y Despacho,Rack de almacenamiento,SKU-0544
+F21_C35,21,35,Empaque y Despacho,Rack de almacenamiento,SKU-0226
+F21_C36,21,36,Empaque y Despacho,Rack de almacenamiento,SKU-0414
+F21_C37,21,37,Empaque y Despacho,Rack de almacenamiento,SKU-0264
+F21_C38,21,38,Empaque y Despacho,Rack de almacenamiento,SKU-0237
+F21_C39,21,39,Empaque y Despacho,Estación de trabajo,
+F22_C00,22,0,Recepción y Almacenamiento,Estación de trabajo,
+F22_C01,22,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0226
+F22_C02,22,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0016
+F22_C03,22,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0547
+F22_C04,22,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0457
+F22_C05,22,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0554
+F22_C06,22,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0338
+F22_C07,22,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0577
+F22_C08,22,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0050
+F22_C09,22,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0215
+F22_C10,22,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0343
+F22_C11,22,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0289
+F22_C12,22,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0004
+F22_C13,22,13,Picking,Rack de almacenamiento,SKU-0062
+F22_C14,22,14,Picking,Rack de almacenamiento,SKU-0271
+F22_C15,22,15,Picking,Rack de almacenamiento,SKU-0497
+F22_C16,22,16,Picking,Rack de almacenamiento,SKU-0368
+F22_C17,22,17,Picking,Rack de almacenamiento,SKU-0172
+F22_C18,22,18,Picking,Rack de almacenamiento,SKU-0482
+F22_C19,22,19,Picking,Rack de almacenamiento,SKU-0534
+F22_C20,22,20,Picking,Rack de almacenamiento,SKU-0175
+F22_C21,22,21,Picking,Rack de almacenamiento,SKU-0552
+F22_C22,22,22,Picking,Rack de almacenamiento,SKU-0140
+F22_C23,22,23,Picking,Rack de almacenamiento,SKU-0346
+F22_C24,22,24,Picking,Rack de almacenamiento,SKU-0199
+F22_C25,22,25,Picking,Rack de almacenamiento,SKU-0432
+F22_C26,22,26,Picking,Rack de almacenamiento,SKU-0036
+F22_C27,22,27,Empaque y Despacho,Rack de almacenamiento,SKU-0033
+F22_C28,22,28,Empaque y Despacho,Rack de almacenamiento,SKU-0559
+F22_C29,22,29,Empaque y Despacho,Rack de almacenamiento,SKU-0107
+F22_C30,22,30,Empaque y Despacho,Rack de almacenamiento,SKU-0529
+F22_C31,22,31,Empaque y Despacho,Rack de almacenamiento,SKU-0401
+F22_C32,22,32,Empaque y Despacho,Rack de almacenamiento,SKU-0362
+F22_C33,22,33,Empaque y Despacho,Rack de almacenamiento,SKU-0436
+F22_C34,22,34,Empaque y Despacho,Rack de almacenamiento,SKU-0045
+F22_C35,22,35,Empaque y Despacho,Rack de almacenamiento,SKU-0031
+F22_C36,22,36,Empaque y Despacho,Rack de almacenamiento,SKU-0051
+F22_C37,22,37,Empaque y Despacho,Rack de almacenamiento,SKU-0013
+F22_C38,22,38,Empaque y Despacho,Rack de almacenamiento,SKU-0560
+F22_C39,22,39,Empaque y Despacho,Estación de trabajo,
+F23_C00,23,0,Recepción y Almacenamiento,Estación de trabajo,
+F23_C01,23,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0269
+F23_C02,23,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0075
+F23_C03,23,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0190
+F23_C04,23,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0088
+F23_C05,23,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0543
+F23_C06,23,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0472
+F23_C07,23,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0005
+F23_C08,23,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0181
+F23_C09,23,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0394
+F23_C10,23,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0247
+F23_C11,23,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0135
+F23_C12,23,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0247
+F23_C13,23,13,Picking,Rack de almacenamiento,SKU-0256
+F23_C14,23,14,Picking,Rack de almacenamiento,SKU-0421
+F23_C15,23,15,Picking,Rack de almacenamiento,SKU-0333
+F23_C16,23,16,Picking,Rack de almacenamiento,SKU-0284
+F23_C17,23,17,Picking,Rack de almacenamiento,SKU-0369
+F23_C18,23,18,Picking,Rack de almacenamiento,SKU-0488
+F23_C19,23,19,Picking,Rack de almacenamiento,SKU-0056
+F23_C20,23,20,Picking,Rack de almacenamiento,SKU-0298
+F23_C21,23,21,Picking,Rack de almacenamiento,SKU-0454
+F23_C22,23,22,Picking,Rack de almacenamiento,SKU-0175
+F23_C23,23,23,Picking,Rack de almacenamiento,SKU-0521
+F23_C24,23,24,Picking,Rack de almacenamiento,SKU-0117
+F23_C25,23,25,Picking,Rack de almacenamiento,SKU-0021
+F23_C26,23,26,Picking,Rack de almacenamiento,SKU-0454
+F23_C27,23,27,Empaque y Despacho,Rack de almacenamiento,SKU-0459
+F23_C28,23,28,Empaque y Despacho,Rack de almacenamiento,SKU-0132
+F23_C29,23,29,Empaque y Despacho,Rack de almacenamiento,SKU-0597
+F23_C30,23,30,Empaque y Despacho,Rack de almacenamiento,SKU-0366
+F23_C31,23,31,Empaque y Despacho,Rack de almacenamiento,SKU-0022
+F23_C32,23,32,Empaque y Despacho,Rack de almacenamiento,SKU-0361
+F23_C33,23,33,Empaque y Despacho,Rack de almacenamiento,SKU-0210
+F23_C34,23,34,Empaque y Despacho,Rack de almacenamiento,SKU-0578
+F23_C35,23,35,Empaque y Despacho,Rack de almacenamiento,SKU-0165
+F23_C36,23,36,Empaque y Despacho,Rack de almacenamiento,SKU-0054
+F23_C37,23,37,Empaque y Despacho,Rack de almacenamiento,SKU-0526
+F23_C38,23,38,Empaque y Despacho,Rack de almacenamiento,SKU-0125
+F23_C39,23,39,Empaque y Despacho,Estación de trabajo,
+F24_C00,24,0,Recepción y Almacenamiento,Estación de trabajo,
+F24_C01,24,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0197
+F24_C02,24,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0397
+F24_C03,24,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0197
+F24_C04,24,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0199
+F24_C05,24,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0298
+F24_C06,24,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0078
+F24_C07,24,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0326
+F24_C08,24,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0538
+F24_C09,24,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0596
+F24_C10,24,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0439
+F24_C11,24,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0357
+F24_C12,24,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0134
+F24_C13,24,13,Picking,Rack de almacenamiento,SKU-0524
+F24_C14,24,14,Picking,Rack de almacenamiento,SKU-0058
+F24_C15,24,15,Picking,Rack de almacenamiento,SKU-0427
+F24_C16,24,16,Picking,Rack de almacenamiento,SKU-0506
+F24_C17,24,17,Picking,Rack de almacenamiento,SKU-0279
+F24_C18,24,18,Picking,Rack de almacenamiento,SKU-0342
+F24_C19,24,19,Picking,Rack de almacenamiento,SKU-0487
+F24_C20,24,20,Picking,Rack de almacenamiento,SKU-0558
+F24_C21,24,21,Picking,Rack de almacenamiento,SKU-0020
+F24_C22,24,22,Picking,Rack de almacenamiento,SKU-0311
+F24_C23,24,23,Picking,Rack de almacenamiento,SKU-0246
+F24_C24,24,24,Picking,Rack de almacenamiento,SKU-0139
+F24_C25,24,25,Picking,Rack de almacenamiento,SKU-0519
+F24_C26,24,26,Picking,Rack de almacenamiento,SKU-0081
+F24_C27,24,27,Empaque y Despacho,Rack de almacenamiento,SKU-0202
+F24_C28,24,28,Empaque y Despacho,Rack de almacenamiento,SKU-0251
+F24_C29,24,29,Empaque y Despacho,Rack de almacenamiento,SKU-0137
+F24_C30,24,30,Empaque y Despacho,Rack de almacenamiento,SKU-0411
+F24_C31,24,31,Empaque y Despacho,Rack de almacenamiento,SKU-0384
+F24_C32,24,32,Empaque y Despacho,Rack de almacenamiento,SKU-0003
+F24_C33,24,33,Empaque y Despacho,Rack de almacenamiento,SKU-0094
+F24_C34,24,34,Empaque y Despacho,Rack de almacenamiento,SKU-0238
+F24_C35,24,35,Empaque y Despacho,Rack de almacenamiento,SKU-0529
+F24_C36,24,36,Empaque y Despacho,Rack de almacenamiento,SKU-0243
+F24_C37,24,37,Empaque y Despacho,Rack de almacenamiento,SKU-0256
+F24_C38,24,38,Empaque y Despacho,Rack de almacenamiento,SKU-0403
+F24_C39,24,39,Empaque y Despacho,Estación de trabajo,
+F25_C00,25,0,Recepción y Almacenamiento,Estación de trabajo,
+F25_C01,25,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0473
+F25_C02,25,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0117
+F25_C03,25,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0403
+F25_C04,25,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0526
+F25_C05,25,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0534
+F25_C06,25,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0196
+F25_C07,25,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0462
+F25_C08,25,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0497
+F25_C09,25,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0092
+F25_C10,25,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0497
+F25_C11,25,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0557
+F25_C12,25,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0531
+F25_C13,25,13,Picking,Rack de almacenamiento,SKU-0523
+F25_C14,25,14,Picking,Rack de almacenamiento,SKU-0156
+F25_C15,25,15,Picking,Rack de almacenamiento,SKU-0300
+F25_C16,25,16,Picking,Rack de almacenamiento,SKU-0504
+F25_C17,25,17,Picking,Rack de almacenamiento,SKU-0054
+F25_C18,25,18,Picking,Rack de almacenamiento,SKU-0139
+F25_C19,25,19,Picking,Rack de almacenamiento,SKU-0125
+F25_C20,25,20,Picking,Rack de almacenamiento,SKU-0240
+F25_C21,25,21,Picking,Rack de almacenamiento,SKU-0069
+F25_C22,25,22,Picking,Rack de almacenamiento,SKU-0107
+F25_C23,25,23,Picking,Rack de almacenamiento,SKU-0592
+F25_C24,25,24,Picking,Rack de almacenamiento,SKU-0291
+F25_C25,25,25,Picking,Rack de almacenamiento,SKU-0490
+F25_C26,25,26,Picking,Rack de almacenamiento,SKU-0046
+F25_C27,25,27,Empaque y Despacho,Rack de almacenamiento,SKU-0031
+F25_C28,25,28,Empaque y Despacho,Rack de almacenamiento,SKU-0575
+F25_C29,25,29,Empaque y Despacho,Rack de almacenamiento,SKU-0577
+F25_C30,25,30,Empaque y Despacho,Rack de almacenamiento,SKU-0008
+F25_C31,25,31,Empaque y Despacho,Rack de almacenamiento,SKU-0147
+F25_C32,25,32,Empaque y Despacho,Rack de almacenamiento,SKU-0298
+F25_C33,25,33,Empaque y Despacho,Rack de almacenamiento,SKU-0386
+F25_C34,25,34,Empaque y Despacho,Rack de almacenamiento,SKU-0503
+F25_C35,25,35,Empaque y Despacho,Rack de almacenamiento,SKU-0006
+F25_C36,25,36,Empaque y Despacho,Rack de almacenamiento,SKU-0080
+F25_C37,25,37,Empaque y Despacho,Rack de almacenamiento,SKU-0014
+F25_C38,25,38,Empaque y Despacho,Rack de almacenamiento,SKU-0359
+F25_C39,25,39,Empaque y Despacho,Estación de trabajo,
+F26_C00,26,0,Recepción y Almacenamiento,Estación de trabajo,
+F26_C01,26,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0325
+F26_C02,26,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0319
+F26_C03,26,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0121
+F26_C04,26,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0455
+F26_C05,26,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0549
+F26_C06,26,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0420
+F26_C07,26,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0591
+F26_C08,26,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0496
+F26_C09,26,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0051
+F26_C10,26,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0476
+F26_C11,26,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0372
+F26_C12,26,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0350
+F26_C13,26,13,Picking,Rack de almacenamiento,SKU-0121
+F26_C14,26,14,Picking,Rack de almacenamiento,SKU-0210
+F26_C15,26,15,Picking,Rack de almacenamiento,SKU-0214
+F26_C16,26,16,Picking,Rack de almacenamiento,SKU-0065
+F26_C17,26,17,Picking,Rack de almacenamiento,SKU-0201
+F26_C18,26,18,Picking,Rack de almacenamiento,SKU-0099
+F26_C19,26,19,Picking,Rack de almacenamiento,SKU-0274
+F26_C20,26,20,Picking,Rack de almacenamiento,SKU-0523
+F26_C21,26,21,Picking,Rack de almacenamiento,SKU-0446
+F26_C22,26,22,Picking,Rack de almacenamiento,SKU-0160
+F26_C23,26,23,Picking,Rack de almacenamiento,SKU-0350
+F26_C24,26,24,Picking,Rack de almacenamiento,SKU-0537
+F26_C25,26,25,Picking,Rack de almacenamiento,SKU-0570
+F26_C26,26,26,Picking,Rack de almacenamiento,SKU-0184
+F26_C27,26,27,Empaque y Despacho,Rack de almacenamiento,SKU-0185
+F26_C28,26,28,Empaque y Despacho,Rack de almacenamiento,SKU-0035
+F26_C29,26,29,Empaque y Despacho,Rack de almacenamiento,SKU-0460
+F26_C30,26,30,Empaque y Despacho,Rack de almacenamiento,SKU-0174
+F26_C31,26,31,Empaque y Despacho,Rack de almacenamiento,SKU-0214
+F26_C32,26,32,Empaque y Despacho,Rack de almacenamiento,SKU-0231
+F26_C33,26,33,Empaque y Despacho,Rack de almacenamiento,SKU-0060
+F26_C34,26,34,Empaque y Despacho,Rack de almacenamiento,SKU-0063
+F26_C35,26,35,Empaque y Despacho,Rack de almacenamiento,SKU-0350
+F26_C36,26,36,Empaque y Despacho,Rack de almacenamiento,SKU-0258
+F26_C37,26,37,Empaque y Despacho,Rack de almacenamiento,SKU-0198
+F26_C38,26,38,Empaque y Despacho,Rack de almacenamiento,SKU-0479
+F26_C39,26,39,Empaque y Despacho,Estación de trabajo,
+F27_C00,27,0,Recepción y Almacenamiento,Estación de trabajo,
+F27_C01,27,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0130
+F27_C02,27,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0249
+F27_C03,27,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0190
+F27_C04,27,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0297
+F27_C05,27,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0080
+F27_C06,27,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0600
+F27_C07,27,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0176
+F27_C08,27,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0130
+F27_C09,27,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0420
+F27_C10,27,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0327
+F27_C11,27,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0447
+F27_C12,27,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0593
+F27_C13,27,13,Picking,Estación de trabajo,
+F27_C14,27,14,Picking,Rack de almacenamiento,SKU-0419
+F27_C15,27,15,Picking,Rack de almacenamiento,SKU-0298
+F27_C16,27,16,Picking,Rack de almacenamiento,SKU-0194
+F27_C17,27,17,Picking,Rack de almacenamiento,SKU-0355
+F27_C18,27,18,Picking,Rack de almacenamiento,SKU-0547
+F27_C19,27,19,Picking,Rack de almacenamiento,SKU-0329
+F27_C20,27,20,Picking,Rack de almacenamiento,SKU-0332
+F27_C21,27,21,Picking,Rack de almacenamiento,SKU-0070
+F27_C22,27,22,Picking,Rack de almacenamiento,SKU-0264
+F27_C23,27,23,Picking,Rack de almacenamiento,SKU-0430
+F27_C24,27,24,Picking,Rack de almacenamiento,SKU-0493
+F27_C25,27,25,Picking,Rack de almacenamiento,SKU-0548
+F27_C26,27,26,Picking,Estación de trabajo,
+F27_C27,27,27,Empaque y Despacho,Rack de almacenamiento,SKU-0390
+F27_C28,27,28,Empaque y Despacho,Rack de almacenamiento,SKU-0556
+F27_C29,27,29,Empaque y Despacho,Rack de almacenamiento,SKU-0038
+F27_C30,27,30,Empaque y Despacho,Rack de almacenamiento,SKU-0353
+F27_C31,27,31,Empaque y Despacho,Rack de almacenamiento,SKU-0155
+F27_C32,27,32,Empaque y Despacho,Rack de almacenamiento,SKU-0212
+F27_C33,27,33,Empaque y Despacho,Rack de almacenamiento,SKU-0568
+F27_C34,27,34,Empaque y Despacho,Rack de almacenamiento,SKU-0406
+F27_C35,27,35,Empaque y Despacho,Rack de almacenamiento,SKU-0267
+F27_C36,27,36,Empaque y Despacho,Rack de almacenamiento,SKU-0567
+F27_C37,27,37,Empaque y Despacho,Rack de almacenamiento,SKU-0239
+F27_C38,27,38,Empaque y Despacho,Rack de almacenamiento,SKU-0587
+F27_C39,27,39,Empaque y Despacho,Estación de trabajo,
+F28_C00,28,0,Recepción y Almacenamiento,Estación de trabajo,
+F28_C01,28,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0176
+F28_C02,28,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0170
+F28_C03,28,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0386
+F28_C04,28,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0562
+F28_C05,28,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0048
+F28_C06,28,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0439
+F28_C07,28,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0249
+F28_C08,28,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0524
+F28_C09,28,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0468
+F28_C10,28,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0101
+F28_C11,28,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0403
+F28_C12,28,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0586
+F28_C13,28,13,Picking,Rack de almacenamiento,SKU-0089
+F28_C14,28,14,Picking,Rack de almacenamiento,SKU-0453
+F28_C15,28,15,Picking,Rack de almacenamiento,SKU-0066
+F28_C16,28,16,Picking,Rack de almacenamiento,SKU-0100
+F28_C17,28,17,Picking,Rack de almacenamiento,SKU-0157
+F28_C18,28,18,Picking,Rack de almacenamiento,SKU-0325
+F28_C19,28,19,Picking,Rack de almacenamiento,SKU-0471
+F28_C20,28,20,Picking,Rack de almacenamiento,SKU-0067
+F28_C21,28,21,Picking,Rack de almacenamiento,SKU-0024
+F28_C22,28,22,Picking,Rack de almacenamiento,SKU-0435
+F28_C23,28,23,Picking,Rack de almacenamiento,SKU-0195
+F28_C24,28,24,Picking,Rack de almacenamiento,SKU-0358
+F28_C25,28,25,Picking,Rack de almacenamiento,SKU-0255
+F28_C26,28,26,Picking,Rack de almacenamiento,SKU-0347
+F28_C27,28,27,Empaque y Despacho,Rack de almacenamiento,SKU-0199
+F28_C28,28,28,Empaque y Despacho,Rack de almacenamiento,SKU-0509
+F28_C29,28,29,Empaque y Despacho,Rack de almacenamiento,SKU-0070
+F28_C30,28,30,Empaque y Despacho,Rack de almacenamiento,SKU-0462
+F28_C31,28,31,Empaque y Despacho,Rack de almacenamiento,SKU-0257
+F28_C32,28,32,Empaque y Despacho,Rack de almacenamiento,SKU-0056
+F28_C33,28,33,Empaque y Despacho,Rack de almacenamiento,SKU-0541
+F28_C34,28,34,Empaque y Despacho,Rack de almacenamiento,SKU-0458
+F28_C35,28,35,Empaque y Despacho,Rack de almacenamiento,SKU-0093
+F28_C36,28,36,Empaque y Despacho,Rack de almacenamiento,SKU-0325
+F28_C37,28,37,Empaque y Despacho,Rack de almacenamiento,SKU-0094
+F28_C38,28,38,Empaque y Despacho,Rack de almacenamiento,SKU-0114
+F28_C39,28,39,Empaque y Despacho,Estación de trabajo,
+F29_C00,29,0,Recepción y Almacenamiento,Estación de trabajo,
+F29_C01,29,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0178
+F29_C02,29,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0209
+F29_C03,29,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0591
+F29_C04,29,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0306
+F29_C05,29,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0252
+F29_C06,29,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0516
+F29_C07,29,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0023
+F29_C08,29,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0530
+F29_C09,29,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0023
+F29_C10,29,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0062
+F29_C11,29,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0020
+F29_C12,29,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0266
+F29_C13,29,13,Picking,Rack de almacenamiento,SKU-0588
+F29_C14,29,14,Picking,Rack de almacenamiento,SKU-0507
+F29_C15,29,15,Picking,Rack de almacenamiento,SKU-0043
+F29_C16,29,16,Picking,Rack de almacenamiento,SKU-0362
+F29_C17,29,17,Picking,Rack de almacenamiento,SKU-0563
+F29_C18,29,18,Picking,Rack de almacenamiento,SKU-0514
+F29_C19,29,19,Picking,Rack de almacenamiento,SKU-0169
+F29_C20,29,20,Picking,Rack de almacenamiento,SKU-0359
+F29_C21,29,21,Picking,Rack de almacenamiento,SKU-0212
+F29_C22,29,22,Picking,Rack de almacenamiento,SKU-0134
+F29_C23,29,23,Picking,Rack de almacenamiento,SKU-0530
+F29_C24,29,24,Picking,Rack de almacenamiento,SKU-0302
+F29_C25,29,25,Picking,Rack de almacenamiento,SKU-0286
+F29_C26,29,26,Picking,Rack de almacenamiento,SKU-0310
+F29_C27,29,27,Empaque y Despacho,Rack de almacenamiento,SKU-0127
+F29_C28,29,28,Empaque y Despacho,Rack de almacenamiento,SKU-0537
+F29_C29,29,29,Empaque y Despacho,Rack de almacenamiento,SKU-0359
+F29_C30,29,30,Empaque y Despacho,Rack de almacenamiento,SKU-0214
+F29_C31,29,31,Empaque y Despacho,Rack de almacenamiento,SKU-0360
+F29_C32,29,32,Empaque y Despacho,Rack de almacenamiento,SKU-0141
+F29_C33,29,33,Empaque y Despacho,Rack de almacenamiento,SKU-0293
+F29_C34,29,34,Empaque y Despacho,Rack de almacenamiento,SKU-0450
+F29_C35,29,35,Empaque y Despacho,Rack de almacenamiento,SKU-0498
+F29_C36,29,36,Empaque y Despacho,Rack de almacenamiento,SKU-0252
+F29_C37,29,37,Empaque y Despacho,Rack de almacenamiento,SKU-0430
+F29_C38,29,38,Empaque y Despacho,Rack de almacenamiento,SKU-0291
+F29_C39,29,39,Empaque y Despacho,Estación de trabajo,
+F30_C00,30,0,Recepción y Almacenamiento,Estación de trabajo,
+F30_C01,30,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0047
+F30_C02,30,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0586
+F30_C03,30,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0522
+F30_C04,30,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0405
+F30_C05,30,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0031
+F30_C06,30,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0404
+F30_C07,30,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0143
+F30_C08,30,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0561
+F30_C09,30,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0054
+F30_C10,30,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0430
+F30_C11,30,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0235
+F30_C12,30,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0573
+F30_C13,30,13,Picking,Rack de almacenamiento,SKU-0470
+F30_C14,30,14,Picking,Rack de almacenamiento,SKU-0380
+F30_C15,30,15,Picking,Rack de almacenamiento,SKU-0313
+F30_C16,30,16,Picking,Rack de almacenamiento,SKU-0353
+F30_C17,30,17,Picking,Rack de almacenamiento,SKU-0368
+F30_C18,30,18,Picking,Rack de almacenamiento,SKU-0171
+F30_C19,30,19,Picking,Rack de almacenamiento,SKU-0322
+F30_C20,30,20,Picking,Rack de almacenamiento,SKU-0139
+F30_C21,30,21,Picking,Rack de almacenamiento,SKU-0165
+F30_C22,30,22,Picking,Rack de almacenamiento,SKU-0319
+F30_C23,30,23,Picking,Rack de almacenamiento,SKU-0381
+F30_C24,30,24,Picking,Rack de almacenamiento,SKU-0036
+F30_C25,30,25,Picking,Rack de almacenamiento,SKU-0590
+F30_C26,30,26,Picking,Rack de almacenamiento,SKU-0101
+F30_C27,30,27,Empaque y Despacho,Rack de almacenamiento,SKU-0332
+F30_C28,30,28,Empaque y Despacho,Rack de almacenamiento,SKU-0426
+F30_C29,30,29,Empaque y Despacho,Rack de almacenamiento,SKU-0162
+F30_C30,30,30,Empaque y Despacho,Rack de almacenamiento,SKU-0408
+F30_C31,30,31,Empaque y Despacho,Rack de almacenamiento,SKU-0305
+F30_C32,30,32,Empaque y Despacho,Rack de almacenamiento,SKU-0018
+F30_C33,30,33,Empaque y Despacho,Rack de almacenamiento,SKU-0522
+F30_C34,30,34,Empaque y Despacho,Rack de almacenamiento,SKU-0098
+F30_C35,30,35,Empaque y Despacho,Rack de almacenamiento,SKU-0073
+F30_C36,30,36,Empaque y Despacho,Rack de almacenamiento,SKU-0371
+F30_C37,30,37,Empaque y Despacho,Rack de almacenamiento,SKU-0115
+F30_C38,30,38,Empaque y Despacho,Rack de almacenamiento,SKU-0245
+F30_C39,30,39,Empaque y Despacho,Estación de trabajo,
+F31_C00,31,0,Recepción y Almacenamiento,Estación de trabajo,
+F31_C01,31,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0021
+F31_C02,31,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0354
+F31_C03,31,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0526
+F31_C04,31,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0078
+F31_C05,31,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0344
+F31_C06,31,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0518
+F31_C07,31,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0129
+F31_C08,31,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0156
+F31_C09,31,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0276
+F31_C10,31,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0225
+F31_C11,31,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0051
+F31_C12,31,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0270
+F31_C13,31,13,Picking,Rack de almacenamiento,SKU-0550
+F31_C14,31,14,Picking,Rack de almacenamiento,SKU-0356
+F31_C15,31,15,Picking,Rack de almacenamiento,SKU-0191
+F31_C16,31,16,Picking,Rack de almacenamiento,SKU-0589
+F31_C17,31,17,Picking,Rack de almacenamiento,SKU-0053
+F31_C18,31,18,Picking,Rack de almacenamiento,SKU-0126
+F31_C19,31,19,Picking,Rack de almacenamiento,SKU-0593
+F31_C20,31,20,Picking,Rack de almacenamiento,SKU-0098
+F31_C21,31,21,Picking,Rack de almacenamiento,SKU-0489
+F31_C22,31,22,Picking,Rack de almacenamiento,SKU-0088
+F31_C23,31,23,Picking,Rack de almacenamiento,SKU-0135
+F31_C24,31,24,Picking,Rack de almacenamiento,SKU-0465
+F31_C25,31,25,Picking,Rack de almacenamiento,SKU-0392
+F31_C26,31,26,Picking,Rack de almacenamiento,SKU-0230
+F31_C27,31,27,Empaque y Despacho,Rack de almacenamiento,SKU-0161
+F31_C28,31,28,Empaque y Despacho,Rack de almacenamiento,SKU-0557
+F31_C29,31,29,Empaque y Despacho,Rack de almacenamiento,SKU-0278
+F31_C30,31,30,Empaque y Despacho,Rack de almacenamiento,SKU-0040
+F31_C31,31,31,Empaque y Despacho,Rack de almacenamiento,SKU-0474
+F31_C32,31,32,Empaque y Despacho,Rack de almacenamiento,SKU-0319
+F31_C33,31,33,Empaque y Despacho,Rack de almacenamiento,SKU-0102
+F31_C34,31,34,Empaque y Despacho,Rack de almacenamiento,SKU-0455
+F31_C35,31,35,Empaque y Despacho,Rack de almacenamiento,SKU-0310
+F31_C36,31,36,Empaque y Despacho,Rack de almacenamiento,SKU-0305
+F31_C37,31,37,Empaque y Despacho,Rack de almacenamiento,SKU-0509
+F31_C38,31,38,Empaque y Despacho,Rack de almacenamiento,SKU-0244
+F31_C39,31,39,Empaque y Despacho,Estación de trabajo,
+F32_C00,32,0,Recepción y Almacenamiento,Estación de trabajo,
+F32_C01,32,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0026
+F32_C02,32,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0487
+F32_C03,32,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0124
+F32_C04,32,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0306
+F32_C05,32,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0259
+F32_C06,32,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0544
+F32_C07,32,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0013
+F32_C08,32,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0144
+F32_C09,32,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0228
+F32_C10,32,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0360
+F32_C11,32,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0131
+F32_C12,32,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0381
+F32_C13,32,13,Picking,Rack de almacenamiento,SKU-0106
+F32_C14,32,14,Picking,Rack de almacenamiento,SKU-0545
+F32_C15,32,15,Picking,Rack de almacenamiento,SKU-0562
+F32_C16,32,16,Picking,Rack de almacenamiento,SKU-0056
+F32_C17,32,17,Picking,Rack de almacenamiento,SKU-0366
+F32_C18,32,18,Picking,Rack de almacenamiento,SKU-0484
+F32_C19,32,19,Picking,Rack de almacenamiento,SKU-0212
+F32_C20,32,20,Picking,Rack de almacenamiento,SKU-0411
+F32_C21,32,21,Picking,Rack de almacenamiento,SKU-0481
+F32_C22,32,22,Picking,Rack de almacenamiento,SKU-0517
+F32_C23,32,23,Picking,Rack de almacenamiento,SKU-0350
+F32_C24,32,24,Picking,Rack de almacenamiento,SKU-0366
+F32_C25,32,25,Picking,Rack de almacenamiento,SKU-0086
+F32_C26,32,26,Picking,Rack de almacenamiento,SKU-0273
+F32_C27,32,27,Empaque y Despacho,Rack de almacenamiento,SKU-0435
+F32_C28,32,28,Empaque y Despacho,Rack de almacenamiento,SKU-0478
+F32_C29,32,29,Empaque y Despacho,Rack de almacenamiento,SKU-0209
+F32_C30,32,30,Empaque y Despacho,Rack de almacenamiento,SKU-0171
+F32_C31,32,31,Empaque y Despacho,Rack de almacenamiento,SKU-0428
+F32_C32,32,32,Empaque y Despacho,Rack de almacenamiento,SKU-0034
+F32_C33,32,33,Empaque y Despacho,Rack de almacenamiento,SKU-0129
+F32_C34,32,34,Empaque y Despacho,Rack de almacenamiento,SKU-0450
+F32_C35,32,35,Empaque y Despacho,Rack de almacenamiento,SKU-0405
+F32_C36,32,36,Empaque y Despacho,Rack de almacenamiento,SKU-0488
+F32_C37,32,37,Empaque y Despacho,Rack de almacenamiento,SKU-0465
+F32_C38,32,38,Empaque y Despacho,Rack de almacenamiento,SKU-0498
+F32_C39,32,39,Empaque y Despacho,Estación de trabajo,
+F33_C00,33,0,Recepción y Almacenamiento,Estación de trabajo,
+F33_C01,33,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0194
+F33_C02,33,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0269
+F33_C03,33,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0365
+F33_C04,33,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0440
+F33_C05,33,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0227
+F33_C06,33,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0429
+F33_C07,33,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0108
+F33_C08,33,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0174
+F33_C09,33,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0402
+F33_C10,33,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0460
+F33_C11,33,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0046
+F33_C12,33,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0579
+F33_C13,33,13,Picking,Rack de almacenamiento,SKU-0474
+F33_C14,33,14,Picking,Rack de almacenamiento,SKU-0212
+F33_C15,33,15,Picking,Rack de almacenamiento,SKU-0392
+F33_C16,33,16,Picking,Rack de almacenamiento,SKU-0165
+F33_C17,33,17,Picking,Rack de almacenamiento,SKU-0068
+F33_C18,33,18,Picking,Rack de almacenamiento,SKU-0351
+F33_C19,33,19,Picking,Rack de almacenamiento,SKU-0538
+F33_C20,33,20,Picking,Rack de almacenamiento,SKU-0527
+F33_C21,33,21,Picking,Rack de almacenamiento,SKU-0048
+F33_C22,33,22,Picking,Rack de almacenamiento,SKU-0365
+F33_C23,33,23,Picking,Rack de almacenamiento,SKU-0045
+F33_C24,33,24,Picking,Rack de almacenamiento,SKU-0583
+F33_C25,33,25,Picking,Rack de almacenamiento,SKU-0248
+F33_C26,33,26,Picking,Rack de almacenamiento,SKU-0554
+F33_C27,33,27,Empaque y Despacho,Rack de almacenamiento,SKU-0307
+F33_C28,33,28,Empaque y Despacho,Rack de almacenamiento,SKU-0427
+F33_C29,33,29,Empaque y Despacho,Rack de almacenamiento,SKU-0010
+F33_C30,33,30,Empaque y Despacho,Rack de almacenamiento,SKU-0425
+F33_C31,33,31,Empaque y Despacho,Rack de almacenamiento,SKU-0359
+F33_C32,33,32,Empaque y Despacho,Rack de almacenamiento,SKU-0107
+F33_C33,33,33,Empaque y Despacho,Rack de almacenamiento,SKU-0270
+F33_C34,33,34,Empaque y Despacho,Rack de almacenamiento,SKU-0205
+F33_C35,33,35,Empaque y Despacho,Rack de almacenamiento,SKU-0019
+F33_C36,33,36,Empaque y Despacho,Rack de almacenamiento,SKU-0487
+F33_C37,33,37,Empaque y Despacho,Rack de almacenamiento,SKU-0406
+F33_C38,33,38,Empaque y Despacho,Rack de almacenamiento,SKU-0241
+F33_C39,33,39,Empaque y Despacho,Estación de trabajo,
+F34_C00,34,0,Recepción y Almacenamiento,Estación de trabajo,
+F34_C01,34,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0184
+F34_C02,34,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0137
+F34_C03,34,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0457
+F34_C04,34,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0038
+F34_C05,34,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0309
+F34_C06,34,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0134
+F34_C07,34,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0047
+F34_C08,34,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0347
+F34_C09,34,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0168
+F34_C10,34,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0555
+F34_C11,34,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0426
+F34_C12,34,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0235
+F34_C13,34,13,Picking,Rack de almacenamiento,SKU-0592
+F34_C14,34,14,Picking,Rack de almacenamiento,SKU-0474
+F34_C15,34,15,Picking,Rack de almacenamiento,SKU-0299
+F34_C16,34,16,Picking,Rack de almacenamiento,SKU-0078
+F34_C17,34,17,Picking,Rack de almacenamiento,SKU-0047
+F34_C18,34,18,Picking,Rack de almacenamiento,SKU-0494
+F34_C19,34,19,Picking,Rack de almacenamiento,SKU-0283
+F34_C20,34,20,Picking,Rack de almacenamiento,SKU-0557
+F34_C21,34,21,Picking,Rack de almacenamiento,SKU-0290
+F34_C22,34,22,Picking,Rack de almacenamiento,SKU-0302
+F34_C23,34,23,Picking,Rack de almacenamiento,SKU-0496
+F34_C24,34,24,Picking,Rack de almacenamiento,SKU-0273
+F34_C25,34,25,Picking,Rack de almacenamiento,SKU-0312
+F34_C26,34,26,Picking,Rack de almacenamiento,SKU-0545
+F34_C27,34,27,Empaque y Despacho,Rack de almacenamiento,SKU-0144
+F34_C28,34,28,Empaque y Despacho,Rack de almacenamiento,SKU-0137
+F34_C29,34,29,Empaque y Despacho,Rack de almacenamiento,SKU-0558
+F34_C30,34,30,Empaque y Despacho,Rack de almacenamiento,SKU-0553
+F34_C31,34,31,Empaque y Despacho,Rack de almacenamiento,SKU-0590
+F34_C32,34,32,Empaque y Despacho,Rack de almacenamiento,SKU-0551
+F34_C33,34,33,Empaque y Despacho,Rack de almacenamiento,SKU-0012
+F34_C34,34,34,Empaque y Despacho,Rack de almacenamiento,SKU-0575
+F34_C35,34,35,Empaque y Despacho,Rack de almacenamiento,SKU-0094
+F34_C36,34,36,Empaque y Despacho,Rack de almacenamiento,SKU-0535
+F34_C37,34,37,Empaque y Despacho,Rack de almacenamiento,SKU-0415
+F34_C38,34,38,Empaque y Despacho,Rack de almacenamiento,SKU-0316
+F34_C39,34,39,Empaque y Despacho,Estación de trabajo,
+F35_C00,35,0,Recepción y Almacenamiento,Estación de trabajo,
+F35_C01,35,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0273
+F35_C02,35,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0410
+F35_C03,35,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0392
+F35_C04,35,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0320
+F35_C05,35,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0049
+F35_C06,35,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0182
+F35_C07,35,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0107
+F35_C08,35,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0595
+F35_C09,35,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0505
+F35_C10,35,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0015
+F35_C11,35,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0375
+F35_C12,35,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0151
+F35_C13,35,13,Picking,Rack de almacenamiento,SKU-0304
+F35_C14,35,14,Picking,Rack de almacenamiento,SKU-0558
+F35_C15,35,15,Picking,Rack de almacenamiento,SKU-0354
+F35_C16,35,16,Picking,Rack de almacenamiento,SKU-0572
+F35_C17,35,17,Picking,Rack de almacenamiento,SKU-0195
+F35_C18,35,18,Picking,Rack de almacenamiento,SKU-0168
+F35_C19,35,19,Picking,Rack de almacenamiento,SKU-0505
+F35_C20,35,20,Picking,Rack de almacenamiento,SKU-0600
+F35_C21,35,21,Picking,Rack de almacenamiento,SKU-0393
+F35_C22,35,22,Picking,Rack de almacenamiento,SKU-0488
+F35_C23,35,23,Picking,Rack de almacenamiento,SKU-0241
+F35_C24,35,24,Picking,Rack de almacenamiento,SKU-0467
+F35_C25,35,25,Picking,Rack de almacenamiento,SKU-0107
+F35_C26,35,26,Picking,Rack de almacenamiento,SKU-0344
+F35_C27,35,27,Empaque y Despacho,Rack de almacenamiento,SKU-0447
+F35_C28,35,28,Empaque y Despacho,Rack de almacenamiento,SKU-0237
+F35_C29,35,29,Empaque y Despacho,Rack de almacenamiento,SKU-0166
+F35_C30,35,30,Empaque y Despacho,Rack de almacenamiento,SKU-0006
+F35_C31,35,31,Empaque y Despacho,Rack de almacenamiento,SKU-0277
+F35_C32,35,32,Empaque y Despacho,Rack de almacenamiento,SKU-0220
+F35_C33,35,33,Empaque y Despacho,Rack de almacenamiento,SKU-0396
+F35_C34,35,34,Empaque y Despacho,Rack de almacenamiento,SKU-0225
+F35_C35,35,35,Empaque y Despacho,Rack de almacenamiento,SKU-0429
+F35_C36,35,36,Empaque y Despacho,Rack de almacenamiento,SKU-0049
+F35_C37,35,37,Empaque y Despacho,Rack de almacenamiento,SKU-0595
+F35_C38,35,38,Empaque y Despacho,Rack de almacenamiento,SKU-0051
+F35_C39,35,39,Empaque y Despacho,Estación de trabajo,
+F36_C00,36,0,Recepción y Almacenamiento,Estación de trabajo,
+F36_C01,36,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0214
+F36_C02,36,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0159
+F36_C03,36,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0479
+F36_C04,36,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0297
+F36_C05,36,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0451
+F36_C06,36,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0465
+F36_C07,36,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0389
+F36_C08,36,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0354
+F36_C09,36,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0307
+F36_C10,36,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0325
+F36_C11,36,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0466
+F36_C12,36,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0478
+F36_C13,36,13,Picking,Estación de trabajo,
+F36_C14,36,14,Picking,Rack de almacenamiento,SKU-0274
+F36_C15,36,15,Picking,Rack de almacenamiento,SKU-0509
+F36_C16,36,16,Picking,Rack de almacenamiento,SKU-0012
+F36_C17,36,17,Picking,Rack de almacenamiento,SKU-0264
+F36_C18,36,18,Picking,Rack de almacenamiento,SKU-0413
+F36_C19,36,19,Picking,Rack de almacenamiento,SKU-0365
+F36_C20,36,20,Picking,Rack de almacenamiento,SKU-0245
+F36_C21,36,21,Picking,Rack de almacenamiento,SKU-0553
+F36_C22,36,22,Picking,Rack de almacenamiento,SKU-0040
+F36_C23,36,23,Picking,Rack de almacenamiento,SKU-0048
+F36_C24,36,24,Picking,Rack de almacenamiento,SKU-0281
+F36_C25,36,25,Picking,Rack de almacenamiento,SKU-0366
+F36_C26,36,26,Picking,Estación de trabajo,
+F36_C27,36,27,Empaque y Despacho,Rack de almacenamiento,SKU-0247
+F36_C28,36,28,Empaque y Despacho,Rack de almacenamiento,SKU-0466
+F36_C29,36,29,Empaque y Despacho,Rack de almacenamiento,SKU-0387
+F36_C30,36,30,Empaque y Despacho,Rack de almacenamiento,SKU-0257
+F36_C31,36,31,Empaque y Despacho,Rack de almacenamiento,SKU-0173
+F36_C32,36,32,Empaque y Despacho,Rack de almacenamiento,SKU-0450
+F36_C33,36,33,Empaque y Despacho,Rack de almacenamiento,SKU-0295
+F36_C34,36,34,Empaque y Despacho,Rack de almacenamiento,SKU-0505
+F36_C35,36,35,Empaque y Despacho,Rack de almacenamiento,SKU-0123
+F36_C36,36,36,Empaque y Despacho,Rack de almacenamiento,SKU-0459
+F36_C37,36,37,Empaque y Despacho,Rack de almacenamiento,SKU-0423
+F36_C38,36,38,Empaque y Despacho,Rack de almacenamiento,SKU-0323
+F36_C39,36,39,Empaque y Despacho,Estación de trabajo,
+F37_C00,37,0,Recepción y Almacenamiento,Estación de trabajo,
+F37_C01,37,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0571
+F37_C02,37,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0435
+F37_C03,37,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0557
+F37_C04,37,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0426
+F37_C05,37,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0175
+F37_C06,37,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0231
+F37_C07,37,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0532
+F37_C08,37,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0013
+F37_C09,37,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0549
+F37_C10,37,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0570
+F37_C11,37,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0504
+F37_C12,37,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0281
+F37_C13,37,13,Picking,Rack de almacenamiento,SKU-0413
+F37_C14,37,14,Picking,Rack de almacenamiento,SKU-0180
+F37_C15,37,15,Picking,Rack de almacenamiento,SKU-0109
+F37_C16,37,16,Picking,Rack de almacenamiento,SKU-0151
+F37_C17,37,17,Picking,Rack de almacenamiento,SKU-0537
+F37_C18,37,18,Picking,Rack de almacenamiento,SKU-0240
+F37_C19,37,19,Picking,Rack de almacenamiento,SKU-0430
+F37_C20,37,20,Picking,Rack de almacenamiento,SKU-0347
+F37_C21,37,21,Picking,Rack de almacenamiento,SKU-0594
+F37_C22,37,22,Picking,Rack de almacenamiento,SKU-0311
+F37_C23,37,23,Picking,Rack de almacenamiento,SKU-0266
+F37_C24,37,24,Picking,Rack de almacenamiento,SKU-0230
+F37_C25,37,25,Picking,Rack de almacenamiento,SKU-0405
+F37_C26,37,26,Picking,Rack de almacenamiento,SKU-0047
+F37_C27,37,27,Empaque y Despacho,Rack de almacenamiento,SKU-0579
+F37_C28,37,28,Empaque y Despacho,Rack de almacenamiento,SKU-0589
+F37_C29,37,29,Empaque y Despacho,Rack de almacenamiento,SKU-0061
+F37_C30,37,30,Empaque y Despacho,Rack de almacenamiento,SKU-0010
+F37_C31,37,31,Empaque y Despacho,Rack de almacenamiento,SKU-0528
+F37_C32,37,32,Empaque y Despacho,Rack de almacenamiento,SKU-0552
+F37_C33,37,33,Empaque y Despacho,Rack de almacenamiento,SKU-0277
+F37_C34,37,34,Empaque y Despacho,Rack de almacenamiento,SKU-0020
+F37_C35,37,35,Empaque y Despacho,Rack de almacenamiento,SKU-0062
+F37_C36,37,36,Empaque y Despacho,Rack de almacenamiento,SKU-0304
+F37_C37,37,37,Empaque y Despacho,Rack de almacenamiento,SKU-0568
+F37_C38,37,38,Empaque y Despacho,Rack de almacenamiento,SKU-0472
+F37_C39,37,39,Empaque y Despacho,Estación de trabajo,
+F38_C00,38,0,Recepción y Almacenamiento,Estación de trabajo,
+F38_C01,38,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0018
+F38_C02,38,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0399
+F38_C03,38,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0486
+F38_C04,38,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0424
+F38_C05,38,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0262
+F38_C06,38,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0059
+F38_C07,38,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0440
+F38_C08,38,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0519
+F38_C09,38,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0328
+F38_C10,38,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0390
+F38_C11,38,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0061
+F38_C12,38,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0566
+F38_C13,38,13,Picking,Rack de almacenamiento,SKU-0215
+F38_C14,38,14,Picking,Rack de almacenamiento,SKU-0598
+F38_C15,38,15,Picking,Rack de almacenamiento,SKU-0093
+F38_C16,38,16,Picking,Rack de almacenamiento,SKU-0453
+F38_C17,38,17,Picking,Rack de almacenamiento,SKU-0451
+F38_C18,38,18,Picking,Rack de almacenamiento,SKU-0484
+F38_C19,38,19,Picking,Rack de almacenamiento,SKU-0162
+F38_C20,38,20,Picking,Rack de almacenamiento,SKU-0577
+F38_C21,38,21,Picking,Rack de almacenamiento,SKU-0247
+F38_C22,38,22,Picking,Rack de almacenamiento,SKU-0432
+F38_C23,38,23,Picking,Rack de almacenamiento,SKU-0050
+F38_C24,38,24,Picking,Rack de almacenamiento,SKU-0368
+F38_C25,38,25,Picking,Rack de almacenamiento,SKU-0154
+F38_C26,38,26,Picking,Rack de almacenamiento,SKU-0317
+F38_C27,38,27,Empaque y Despacho,Rack de almacenamiento,SKU-0443
+F38_C28,38,28,Empaque y Despacho,Rack de almacenamiento,SKU-0314
+F38_C29,38,29,Empaque y Despacho,Rack de almacenamiento,SKU-0043
+F38_C30,38,30,Empaque y Despacho,Rack de almacenamiento,SKU-0384
+F38_C31,38,31,Empaque y Despacho,Rack de almacenamiento,SKU-0216
+F38_C32,38,32,Empaque y Despacho,Rack de almacenamiento,SKU-0375
+F38_C33,38,33,Empaque y Despacho,Rack de almacenamiento,SKU-0412
+F38_C34,38,34,Empaque y Despacho,Rack de almacenamiento,SKU-0001
+F38_C35,38,35,Empaque y Despacho,Rack de almacenamiento,SKU-0168
+F38_C36,38,36,Empaque y Despacho,Rack de almacenamiento,SKU-0090
+F38_C37,38,37,Empaque y Despacho,Rack de almacenamiento,SKU-0415
+F38_C38,38,38,Empaque y Despacho,Rack de almacenamiento,SKU-0251
+F38_C39,38,39,Empaque y Despacho,Estación de trabajo,
+F39_C00,39,0,Recepción y Almacenamiento,Estación de trabajo,
+F39_C01,39,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0060
+F39_C02,39,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0173
+F39_C03,39,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0574
+F39_C04,39,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0405
+F39_C05,39,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0237
+F39_C06,39,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0595
+F39_C07,39,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0405
+F39_C08,39,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0160
+F39_C09,39,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0096
+F39_C10,39,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0487
+F39_C11,39,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0186
+F39_C12,39,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0223
+F39_C13,39,13,Picking,Rack de almacenamiento,SKU-0152
+F39_C14,39,14,Picking,Rack de almacenamiento,SKU-0435
+F39_C15,39,15,Picking,Rack de almacenamiento,SKU-0088
+F39_C16,39,16,Picking,Rack de almacenamiento,SKU-0054
+F39_C17,39,17,Picking,Rack de almacenamiento,SKU-0352
+F39_C18,39,18,Picking,Rack de almacenamiento,SKU-0375
+F39_C19,39,19,Picking,Rack de almacenamiento,SKU-0383
+F39_C20,39,20,Picking,Rack de almacenamiento,SKU-0313
+F39_C21,39,21,Picking,Rack de almacenamiento,SKU-0149
+F39_C22,39,22,Picking,Rack de almacenamiento,SKU-0498
+F39_C23,39,23,Picking,Rack de almacenamiento,SKU-0589
+F39_C24,39,24,Picking,Rack de almacenamiento,SKU-0072
+F39_C25,39,25,Picking,Rack de almacenamiento,SKU-0185
+F39_C26,39,26,Picking,Rack de almacenamiento,SKU-0314
+F39_C27,39,27,Empaque y Despacho,Rack de almacenamiento,SKU-0251
+F39_C28,39,28,Empaque y Despacho,Rack de almacenamiento,SKU-0519
+F39_C29,39,29,Empaque y Despacho,Rack de almacenamiento,SKU-0580
+F39_C30,39,30,Empaque y Despacho,Rack de almacenamiento,SKU-0417
+F39_C31,39,31,Empaque y Despacho,Rack de almacenamiento,SKU-0239
+F39_C32,39,32,Empaque y Despacho,Rack de almacenamiento,SKU-0097
+F39_C33,39,33,Empaque y Despacho,Rack de almacenamiento,SKU-0449
+F39_C34,39,34,Empaque y Despacho,Rack de almacenamiento,SKU-0513
+F39_C35,39,35,Empaque y Despacho,Rack de almacenamiento,SKU-0578
+F39_C36,39,36,Empaque y Despacho,Rack de almacenamiento,SKU-0139
+F39_C37,39,37,Empaque y Despacho,Rack de almacenamiento,SKU-0374
+F39_C38,39,38,Empaque y Despacho,Rack de almacenamiento,SKU-0045
+F39_C39,39,39,Empaque y Despacho,Estación de trabajo,
+F40_C00,40,0,Recepción y Almacenamiento,Estación de trabajo,
+F40_C01,40,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0572
+F40_C02,40,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0051
+F40_C03,40,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0475
+F40_C04,40,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0471
+F40_C05,40,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0276
+F40_C06,40,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0505
+F40_C07,40,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0037
+F40_C08,40,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0529
+F40_C09,40,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0216
+F40_C10,40,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0453
+F40_C11,40,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0075
+F40_C12,40,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0537
+F40_C13,40,13,Picking,Rack de almacenamiento,SKU-0093
+F40_C14,40,14,Picking,Rack de almacenamiento,SKU-0557
+F40_C15,40,15,Picking,Rack de almacenamiento,SKU-0178
+F40_C16,40,16,Picking,Rack de almacenamiento,SKU-0323
+F40_C17,40,17,Picking,Rack de almacenamiento,SKU-0413
+F40_C18,40,18,Picking,Rack de almacenamiento,SKU-0380
+F40_C19,40,19,Picking,Rack de almacenamiento,SKU-0335
+F40_C20,40,20,Picking,Rack de almacenamiento,SKU-0573
+F40_C21,40,21,Picking,Rack de almacenamiento,SKU-0362
+F40_C22,40,22,Picking,Rack de almacenamiento,SKU-0309
+F40_C23,40,23,Picking,Rack de almacenamiento,SKU-0045
+F40_C24,40,24,Picking,Rack de almacenamiento,SKU-0145
+F40_C25,40,25,Picking,Rack de almacenamiento,SKU-0276
+F40_C26,40,26,Picking,Rack de almacenamiento,SKU-0564
+F40_C27,40,27,Empaque y Despacho,Rack de almacenamiento,SKU-0314
+F40_C28,40,28,Empaque y Despacho,Rack de almacenamiento,SKU-0031
+F40_C29,40,29,Empaque y Despacho,Rack de almacenamiento,SKU-0125
+F40_C30,40,30,Empaque y Despacho,Rack de almacenamiento,SKU-0351
+F40_C31,40,31,Empaque y Despacho,Rack de almacenamiento,SKU-0086
+F40_C32,40,32,Empaque y Despacho,Rack de almacenamiento,SKU-0558
+F40_C33,40,33,Empaque y Despacho,Rack de almacenamiento,SKU-0123
+F40_C34,40,34,Empaque y Despacho,Rack de almacenamiento,SKU-0447
+F40_C35,40,35,Empaque y Despacho,Rack de almacenamiento,SKU-0453
+F40_C36,40,36,Empaque y Despacho,Rack de almacenamiento,SKU-0364
+F40_C37,40,37,Empaque y Despacho,Rack de almacenamiento,SKU-0348
+F40_C38,40,38,Empaque y Despacho,Rack de almacenamiento,SKU-0292
+F40_C39,40,39,Empaque y Despacho,Estación de trabajo,
+F41_C00,41,0,Recepción y Almacenamiento,Estación de trabajo,
+F41_C01,41,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0120
+F41_C02,41,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0164
+F41_C03,41,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0271
+F41_C04,41,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0339
+F41_C05,41,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0518
+F41_C06,41,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0444
+F41_C07,41,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0591
+F41_C08,41,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0337
+F41_C09,41,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0270
+F41_C10,41,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0460
+F41_C11,41,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0291
+F41_C12,41,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0581
+F41_C13,41,13,Picking,Rack de almacenamiento,SKU-0326
+F41_C14,41,14,Picking,Rack de almacenamiento,SKU-0384
+F41_C15,41,15,Picking,Rack de almacenamiento,SKU-0562
+F41_C16,41,16,Picking,Rack de almacenamiento,SKU-0425
+F41_C17,41,17,Picking,Rack de almacenamiento,SKU-0223
+F41_C18,41,18,Picking,Rack de almacenamiento,SKU-0510
+F41_C19,41,19,Picking,Rack de almacenamiento,SKU-0557
+F41_C20,41,20,Picking,Rack de almacenamiento,SKU-0332
+F41_C21,41,21,Picking,Rack de almacenamiento,SKU-0506
+F41_C22,41,22,Picking,Rack de almacenamiento,SKU-0174
+F41_C23,41,23,Picking,Rack de almacenamiento,SKU-0292
+F41_C24,41,24,Picking,Rack de almacenamiento,SKU-0477
+F41_C25,41,25,Picking,Rack de almacenamiento,SKU-0115
+F41_C26,41,26,Picking,Rack de almacenamiento,SKU-0495
+F41_C27,41,27,Empaque y Despacho,Rack de almacenamiento,SKU-0551
+F41_C28,41,28,Empaque y Despacho,Rack de almacenamiento,SKU-0588
+F41_C29,41,29,Empaque y Despacho,Rack de almacenamiento,SKU-0091
+F41_C30,41,30,Empaque y Despacho,Rack de almacenamiento,SKU-0013
+F41_C31,41,31,Empaque y Despacho,Rack de almacenamiento,SKU-0218
+F41_C32,41,32,Empaque y Despacho,Rack de almacenamiento,SKU-0305
+F41_C33,41,33,Empaque y Despacho,Rack de almacenamiento,SKU-0312
+F41_C34,41,34,Empaque y Despacho,Rack de almacenamiento,SKU-0037
+F41_C35,41,35,Empaque y Despacho,Rack de almacenamiento,SKU-0398
+F41_C36,41,36,Empaque y Despacho,Rack de almacenamiento,SKU-0298
+F41_C37,41,37,Empaque y Despacho,Rack de almacenamiento,SKU-0208
+F41_C38,41,38,Empaque y Despacho,Rack de almacenamiento,SKU-0287
+F41_C39,41,39,Empaque y Despacho,Estación de trabajo,
+F42_C00,42,0,Recepción y Almacenamiento,Estación de trabajo,
+F42_C01,42,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0338
+F42_C02,42,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0132
+F42_C03,42,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0453
+F42_C04,42,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0600
+F42_C05,42,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0214
+F42_C06,42,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0446
+F42_C07,42,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0037
+F42_C08,42,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0232
+F42_C09,42,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0334
+F42_C10,42,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0477
+F42_C11,42,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0187
+F42_C12,42,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0149
+F42_C13,42,13,Picking,Rack de almacenamiento,SKU-0520
+F42_C14,42,14,Picking,Rack de almacenamiento,SKU-0171
+F42_C15,42,15,Picking,Rack de almacenamiento,SKU-0126
+F42_C16,42,16,Picking,Rack de almacenamiento,SKU-0466
+F42_C17,42,17,Picking,Rack de almacenamiento,SKU-0054
+F42_C18,42,18,Picking,Rack de almacenamiento,SKU-0418
+F42_C19,42,19,Picking,Rack de almacenamiento,SKU-0281
+F42_C20,42,20,Picking,Rack de almacenamiento,SKU-0471
+F42_C21,42,21,Picking,Rack de almacenamiento,SKU-0513
+F42_C22,42,22,Picking,Rack de almacenamiento,SKU-0234
+F42_C23,42,23,Picking,Rack de almacenamiento,SKU-0149
+F42_C24,42,24,Picking,Rack de almacenamiento,SKU-0111
+F42_C25,42,25,Picking,Rack de almacenamiento,SKU-0433
+F42_C26,42,26,Picking,Rack de almacenamiento,SKU-0261
+F42_C27,42,27,Empaque y Despacho,Rack de almacenamiento,SKU-0482
+F42_C28,42,28,Empaque y Despacho,Rack de almacenamiento,SKU-0445
+F42_C29,42,29,Empaque y Despacho,Rack de almacenamiento,SKU-0599
+F42_C30,42,30,Empaque y Despacho,Rack de almacenamiento,SKU-0508
+F42_C31,42,31,Empaque y Despacho,Rack de almacenamiento,SKU-0550
+F42_C32,42,32,Empaque y Despacho,Rack de almacenamiento,SKU-0542
+F42_C33,42,33,Empaque y Despacho,Rack de almacenamiento,SKU-0547
+F42_C34,42,34,Empaque y Despacho,Rack de almacenamiento,SKU-0596
+F42_C35,42,35,Empaque y Despacho,Rack de almacenamiento,SKU-0227
+F42_C36,42,36,Empaque y Despacho,Rack de almacenamiento,SKU-0188
+F42_C37,42,37,Empaque y Despacho,Rack de almacenamiento,SKU-0358
+F42_C38,42,38,Empaque y Despacho,Rack de almacenamiento,SKU-0503
+F42_C39,42,39,Empaque y Despacho,Estación de trabajo,
+F43_C00,43,0,Recepción y Almacenamiento,Estación de trabajo,
+F43_C01,43,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0109
+F43_C02,43,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0600
+F43_C03,43,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0181
+F43_C04,43,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0168
+F43_C05,43,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0239
+F43_C06,43,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0004
+F43_C07,43,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0238
+F43_C08,43,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0086
+F43_C09,43,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0481
+F43_C10,43,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0467
+F43_C11,43,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0380
+F43_C12,43,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0483
+F43_C13,43,13,Picking,Rack de almacenamiento,SKU-0099
+F43_C14,43,14,Picking,Rack de almacenamiento,SKU-0156
+F43_C15,43,15,Picking,Rack de almacenamiento,SKU-0530
+F43_C16,43,16,Picking,Rack de almacenamiento,SKU-0565
+F43_C17,43,17,Picking,Rack de almacenamiento,SKU-0163
+F43_C18,43,18,Picking,Rack de almacenamiento,SKU-0142
+F43_C19,43,19,Picking,Rack de almacenamiento,SKU-0070
+F43_C20,43,20,Picking,Rack de almacenamiento,SKU-0438
+F43_C21,43,21,Picking,Rack de almacenamiento,SKU-0397
+F43_C22,43,22,Picking,Rack de almacenamiento,SKU-0111
+F43_C23,43,23,Picking,Rack de almacenamiento,SKU-0370
+F43_C24,43,24,Picking,Rack de almacenamiento,SKU-0455
+F43_C25,43,25,Picking,Rack de almacenamiento,SKU-0179
+F43_C26,43,26,Picking,Rack de almacenamiento,SKU-0031
+F43_C27,43,27,Empaque y Despacho,Rack de almacenamiento,SKU-0133
+F43_C28,43,28,Empaque y Despacho,Rack de almacenamiento,SKU-0355
+F43_C29,43,29,Empaque y Despacho,Rack de almacenamiento,SKU-0311
+F43_C30,43,30,Empaque y Despacho,Rack de almacenamiento,SKU-0210
+F43_C31,43,31,Empaque y Despacho,Rack de almacenamiento,SKU-0334
+F43_C32,43,32,Empaque y Despacho,Rack de almacenamiento,SKU-0396
+F43_C33,43,33,Empaque y Despacho,Rack de almacenamiento,SKU-0571
+F43_C34,43,34,Empaque y Despacho,Rack de almacenamiento,SKU-0533
+F43_C35,43,35,Empaque y Despacho,Rack de almacenamiento,SKU-0410
+F43_C36,43,36,Empaque y Despacho,Rack de almacenamiento,SKU-0194
+F43_C37,43,37,Empaque y Despacho,Rack de almacenamiento,SKU-0240
+F43_C38,43,38,Empaque y Despacho,Rack de almacenamiento,SKU-0571
+F43_C39,43,39,Empaque y Despacho,Estación de trabajo,
+F44_C00,44,0,Recepción y Almacenamiento,Estación de trabajo,
+F44_C01,44,1,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0199
+F44_C02,44,2,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0272
+F44_C03,44,3,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0595
+F44_C04,44,4,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0240
+F44_C05,44,5,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0473
+F44_C06,44,6,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0123
+F44_C07,44,7,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0240
+F44_C08,44,8,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0034
+F44_C09,44,9,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0506
+F44_C10,44,10,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0037
+F44_C11,44,11,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0495
+F44_C12,44,12,Recepción y Almacenamiento,Rack de almacenamiento,SKU-0511
+F44_C13,44,13,Picking,Rack de almacenamiento,SKU-0098
+F44_C14,44,14,Picking,Rack de almacenamiento,SKU-0005
+F44_C15,44,15,Picking,Rack de almacenamiento,SKU-0578
+F44_C16,44,16,Picking,Rack de almacenamiento,SKU-0389
+F44_C17,44,17,Picking,Rack de almacenamiento,SKU-0350
+F44_C18,44,18,Picking,Rack de almacenamiento,SKU-0366
+F44_C19,44,19,Picking,Rack de almacenamiento,SKU-0454
+F44_C20,44,20,Picking,Rack de almacenamiento,SKU-0353
+F44_C21,44,21,Picking,Rack de almacenamiento,SKU-0456
+F44_C22,44,22,Picking,Rack de almacenamiento,SKU-0276
+F44_C23,44,23,Picking,Rack de almacenamiento,SKU-0014
+F44_C24,44,24,Picking,Rack de almacenamiento,SKU-0039
+F44_C25,44,25,Picking,Rack de almacenamiento,SKU-0453
+F44_C26,44,26,Picking,Rack de almacenamiento,SKU-0116
+F44_C27,44,27,Empaque y Despacho,Rack de almacenamiento,SKU-0061
+F44_C28,44,28,Empaque y Despacho,Rack de almacenamiento,SKU-0417
+F44_C29,44,29,Empaque y Despacho,Rack de almacenamiento,SKU-0096
+F44_C30,44,30,Empaque y Despacho,Rack de almacenamiento,SKU-0535
+F44_C31,44,31,Empaque y Despacho,Rack de almacenamiento,SKU-0188
+F44_C32,44,32,Empaque y Despacho,Rack de almacenamiento,SKU-0290
+F44_C33,44,33,Empaque y Despacho,Rack de almacenamiento,SKU-0261
+F44_C34,44,34,Empaque y Despacho,Rack de almacenamiento,SKU-0235
+F44_C35,44,35,Empaque y Despacho,Rack de almacenamiento,SKU-0370
+F44_C36,44,36,Empaque y Despacho,Rack de almacenamiento,SKU-0501
+F44_C37,44,37,Empaque y Despacho,Rack de almacenamiento,SKU-0147
+F44_C38,44,38,Empaque y Despacho,Rack de almacenamiento,SKU-0025
+F44_C39,44,39,Empaque y Despacho,Estación de trabajo,
+`,
+  aristas: `Nodo_Origen,Nodo_Destino,Pasillo,Distancia_m,Frecuencia_Pedidos,Distancia_Ajustada_m,Tiempo_Estimado_s,Zona_Origen,Zona_Destino
+F00_C00,F00_C01,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C00,F01_C00,PV00,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C01,F00_C02,PH00,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C01,F01_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C02,F00_C03,PH00,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C02,F01_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C03,F00_C04,PH00,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C03,F01_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C04,F00_C05,PH00,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C04,F01_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C05,F00_C06,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C05,F01_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C06,F00_C07,PH00,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C06,F01_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C07,F00_C08,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C07,F01_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C08,F00_C09,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C08,F01_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C09,F00_C10,PH00,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C09,F01_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C10,F00_C11,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C10,F01_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C11,F00_C12,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C11,F01_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C12,F00_C13,PH00,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F00_C12,F01_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F00_C13,F00_C14,PH00,1.5,Baja,1.5,1.364,Picking,Picking
+F00_C13,F01_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C14,F00_C15,PH00,1.5,Baja,1.5,1.364,Picking,Picking
+F00_C14,F01_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F00_C15,F00_C16,PH00,1.5,Media,2.25,2.045,Picking,Picking
+F00_C15,F01_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C16,F00_C17,PH00,1.5,Alta,3.0,2.727,Picking,Picking
+F00_C16,F01_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C17,F00_C18,PH00,1.5,Baja,1.5,1.364,Picking,Picking
+F00_C17,F01_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F00_C18,F00_C19,PH00,1.5,Media,2.25,2.045,Picking,Picking
+F00_C18,F01_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F00_C19,F00_C20,PH00,1.5,Alta,3.0,2.727,Picking,Picking
+F00_C19,F01_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F00_C20,F00_C21,PH00,1.5,Media,2.25,2.045,Picking,Picking
+F00_C20,F01_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F00_C21,F00_C22,PH00,1.5,Media,2.25,2.045,Picking,Picking
+F00_C21,F01_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C22,F00_C23,PH00,1.5,Alta,3.0,2.727,Picking,Picking
+F00_C22,F01_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C23,F00_C24,PH00,1.5,Alta,3.0,2.727,Picking,Picking
+F00_C23,F01_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C24,F00_C25,PH00,1.5,Alta,3.0,2.727,Picking,Picking
+F00_C24,F01_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C25,F00_C26,PH00,1.5,Media,2.25,2.045,Picking,Picking
+F00_C25,F01_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F00_C26,F00_C27,PH00,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F00_C26,F01_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F00_C27,F00_C28,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C27,F01_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F00_C28,F00_C29,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C28,F01_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F00_C29,F00_C30,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C29,F01_C29,PV29,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F00_C30,F00_C31,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C30,F01_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F00_C31,F00_C32,PH00,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F00_C31,F01_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F00_C32,F00_C33,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C32,F01_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F00_C33,F00_C34,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C33,F01_C33,PV33,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F00_C34,F00_C35,PH00,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F00_C34,F01_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F00_C35,F00_C36,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C35,F01_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F00_C36,F00_C37,PH00,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F00_C36,F01_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F00_C37,F00_C38,PH00,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F00_C37,F01_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F00_C38,F00_C39,PH00,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F00_C38,F01_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F00_C39,F01_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F01_C00,F01_C01,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C00,F02_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C01,F01_C02,PH01,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C01,F02_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C02,F01_C03,PH01,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C02,F02_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C03,F01_C04,PH01,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C03,F02_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C04,F01_C05,PH01,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C04,F02_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C05,F01_C06,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C05,F02_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C06,F01_C07,PH01,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C06,F02_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C07,F01_C08,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C07,F02_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C08,F01_C09,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C08,F02_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C09,F01_C10,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C09,F02_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C10,F01_C11,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C10,F02_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C11,F01_C12,PH01,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C11,F02_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C12,F01_C13,PH01,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F01_C12,F02_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F01_C13,F01_C14,PH01,1.5,Baja,1.5,1.364,Picking,Picking
+F01_C13,F02_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C14,F01_C15,PH01,1.5,Alta,3.0,2.727,Picking,Picking
+F01_C14,F02_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F01_C15,F01_C16,PH01,1.5,Baja,1.5,1.364,Picking,Picking
+F01_C15,F02_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C16,F01_C17,PH01,1.5,Media,2.25,2.045,Picking,Picking
+F01_C16,F02_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F01_C17,F01_C18,PH01,1.5,Baja,1.5,1.364,Picking,Picking
+F01_C17,F02_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C18,F01_C19,PH01,1.5,Alta,3.0,2.727,Picking,Picking
+F01_C18,F02_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F01_C19,F01_C20,PH01,1.5,Baja,1.5,1.364,Picking,Picking
+F01_C19,F02_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C20,F01_C21,PH01,1.5,Media,2.25,2.045,Picking,Picking
+F01_C20,F02_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F01_C21,F01_C22,PH01,1.5,Alta,3.0,2.727,Picking,Picking
+F01_C21,F02_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C22,F01_C23,PH01,1.5,Baja,1.5,1.364,Picking,Picking
+F01_C22,F02_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F01_C23,F01_C24,PH01,1.5,Media,2.25,2.045,Picking,Picking
+F01_C23,F02_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C24,F01_C25,PH01,1.5,Media,2.25,2.045,Picking,Picking
+F01_C24,F02_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F01_C25,F01_C26,PH01,1.5,Alta,3.0,2.727,Picking,Picking
+F01_C25,F02_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F01_C26,F01_C27,PH01,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F01_C26,F02_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F01_C27,F01_C28,PH01,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F01_C27,F02_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F01_C28,F01_C29,PH01,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F01_C28,F02_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F01_C29,F01_C30,PH01,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F01_C29,F02_C29,PV29,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F01_C30,F01_C31,PH01,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F01_C30,F02_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F01_C31,F01_C32,PH01,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F01_C31,F02_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F01_C32,F01_C33,PH01,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F01_C32,F02_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F01_C33,F01_C34,PH01,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F01_C33,F02_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F01_C34,F01_C35,PH01,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F01_C34,F02_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F01_C35,F01_C36,PH01,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F01_C35,F02_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F01_C36,F01_C37,PH01,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F01_C36,F02_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F01_C37,F01_C38,PH01,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F01_C37,F02_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F01_C38,F01_C39,PH01,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F01_C38,F02_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F01_C39,F02_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C00,F02_C01,PH02,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C00,F03_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C01,F02_C02,PH02,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C01,F03_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C02,F02_C03,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C02,F03_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C03,F02_C04,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C03,F03_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C04,F02_C05,PH02,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C04,F03_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C05,F02_C06,PH02,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C05,F03_C05,PV05,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C06,F02_C07,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C06,F03_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C07,F02_C08,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C07,F03_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C08,F02_C09,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C08,F03_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C09,F02_C10,PH02,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C09,F03_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C10,F02_C11,PH02,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C10,F03_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C11,F02_C12,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C11,F03_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C12,F02_C13,PH02,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Picking
+F02_C12,F03_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F02_C13,F02_C14,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C13,F03_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F02_C14,F02_C15,PH02,1.5,Baja,1.5,1.364,Picking,Picking
+F02_C14,F03_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F02_C15,F02_C16,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C15,F03_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F02_C16,F02_C17,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C16,F03_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F02_C17,F02_C18,PH02,1.5,Media,2.25,2.045,Picking,Picking
+F02_C17,F03_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F02_C18,F02_C19,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C18,F03_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F02_C19,F02_C20,PH02,1.5,Media,2.25,2.045,Picking,Picking
+F02_C19,F03_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F02_C20,F02_C21,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C20,F03_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F02_C21,F02_C22,PH02,1.5,Baja,1.5,1.364,Picking,Picking
+F02_C21,F03_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F02_C22,F02_C23,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C22,F03_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F02_C23,F02_C24,PH02,1.5,Media,2.25,2.045,Picking,Picking
+F02_C23,F03_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F02_C24,F02_C25,PH02,1.5,Alta,3.0,2.727,Picking,Picking
+F02_C24,F03_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F02_C25,F02_C26,PH02,1.5,Baja,1.5,1.364,Picking,Picking
+F02_C25,F03_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F02_C26,F02_C27,PH02,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F02_C26,F03_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F02_C27,F02_C28,PH02,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F02_C27,F03_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F02_C28,F02_C29,PH02,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F02_C28,F03_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F02_C29,F02_C30,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C29,F03_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C30,F02_C31,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C30,F03_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F02_C31,F02_C32,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C31,F03_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F02_C32,F02_C33,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C32,F03_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F02_C33,F02_C34,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C33,F03_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C34,F02_C35,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C34,F03_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C35,F02_C36,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C35,F03_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C36,F02_C37,PH02,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F02_C36,F03_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C37,F02_C38,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C37,F03_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F02_C38,F02_C39,PH02,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F02_C38,F03_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F02_C39,F03_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C00,F03_C01,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C00,F04_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C01,F03_C02,PH03,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C01,F04_C01,PV01,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C02,F03_C03,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C02,F04_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C03,F03_C04,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C03,F04_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C04,F03_C05,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C04,F04_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C05,F03_C06,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C05,F04_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C06,F03_C07,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C06,F04_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C07,F03_C08,PH03,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C07,F04_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C08,F03_C09,PH03,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C08,F04_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C09,F03_C10,PH03,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C09,F04_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C10,F03_C11,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C10,F04_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C11,F03_C12,PH03,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C11,F04_C11,PV11,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C12,F03_C13,PH03,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F03_C12,F04_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F03_C13,F03_C14,PH03,1.5,Alta,3.0,2.727,Picking,Picking
+F03_C13,F04_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F03_C14,F03_C15,PH03,1.5,Media,2.25,2.045,Picking,Picking
+F03_C14,F04_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F03_C15,F03_C16,PH03,1.5,Media,2.25,2.045,Picking,Picking
+F03_C15,F04_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F03_C16,F03_C17,PH03,1.5,Alta,3.0,2.727,Picking,Picking
+F03_C16,F04_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F03_C17,F03_C18,PH03,1.5,Baja,1.5,1.364,Picking,Picking
+F03_C17,F04_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F03_C18,F03_C19,PH03,1.5,Baja,1.5,1.364,Picking,Picking
+F03_C18,F04_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F03_C19,F03_C20,PH03,1.5,Baja,1.5,1.364,Picking,Picking
+F03_C19,F04_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F03_C20,F03_C21,PH03,1.5,Alta,3.0,2.727,Picking,Picking
+F03_C20,F04_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F03_C21,F03_C22,PH03,1.5,Media,2.25,2.045,Picking,Picking
+F03_C21,F04_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F03_C22,F03_C23,PH03,1.5,Alta,3.0,2.727,Picking,Picking
+F03_C22,F04_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F03_C23,F03_C24,PH03,1.5,Alta,3.0,2.727,Picking,Picking
+F03_C23,F04_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F03_C24,F03_C25,PH03,1.5,Baja,1.5,1.364,Picking,Picking
+F03_C24,F04_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F03_C25,F03_C26,PH03,1.5,Alta,3.0,2.727,Picking,Picking
+F03_C25,F04_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F03_C26,F03_C27,PH03,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F03_C26,F04_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F03_C27,F03_C28,PH03,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F03_C27,F04_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F03_C28,F03_C29,PH03,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F03_C28,F04_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F03_C29,F03_C30,PH03,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F03_C29,F04_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C30,F03_C31,PH03,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F03_C30,F04_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C31,F03_C32,PH03,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F03_C31,F04_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C32,F03_C33,PH03,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F03_C32,F04_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F03_C33,F03_C34,PH03,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F03_C33,F04_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F03_C34,F03_C35,PH03,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F03_C34,F04_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C35,F03_C36,PH03,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F03_C35,F04_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C36,F03_C37,PH03,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F03_C36,F04_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C37,F03_C38,PH03,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F03_C37,F04_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C38,F03_C39,PH03,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F03_C38,F04_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F03_C39,F04_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F04_C00,F04_C01,PH04,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C00,F05_C00,PV00,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C01,F04_C02,PH04,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C01,F05_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C02,F04_C03,PH04,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C02,F05_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C03,F04_C04,PH04,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C03,F05_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C04,F04_C05,PH04,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C04,F05_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C05,F04_C06,PH04,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C05,F05_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C06,F04_C07,PH04,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C06,F05_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C07,F04_C08,PH04,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C07,F05_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C08,F04_C09,PH04,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C08,F05_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C09,F04_C10,PH04,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C09,F05_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C10,F04_C11,PH04,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C10,F05_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C11,F04_C12,PH04,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C11,F05_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C12,F04_C13,PH04,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F04_C12,F05_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F04_C13,F04_C14,PH04,1.5,Alta,3.0,2.727,Picking,Picking
+F04_C13,F05_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F04_C14,F04_C15,PH04,1.5,Baja,1.5,1.364,Picking,Picking
+F04_C14,F05_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F04_C15,F04_C16,PH04,1.5,Media,2.25,2.045,Picking,Picking
+F04_C15,F05_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F04_C16,F04_C17,PH04,1.5,Baja,1.5,1.364,Picking,Picking
+F04_C16,F05_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F04_C17,F04_C18,PH04,1.5,Media,2.25,2.045,Picking,Picking
+F04_C17,F05_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F04_C18,F04_C19,PH04,1.5,Alta,3.0,2.727,Picking,Picking
+F04_C18,F05_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F04_C19,F04_C20,PH04,1.5,Baja,1.5,1.364,Picking,Picking
+F04_C19,F05_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F04_C20,F04_C21,PH04,1.5,Baja,1.5,1.364,Picking,Picking
+F04_C20,F05_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F04_C21,F04_C22,PH04,1.5,Media,2.25,2.045,Picking,Picking
+F04_C21,F05_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F04_C22,F04_C23,PH04,1.5,Alta,3.0,2.727,Picking,Picking
+F04_C22,F05_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F04_C23,F04_C24,PH04,1.5,Media,2.25,2.045,Picking,Picking
+F04_C23,F05_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F04_C24,F04_C25,PH04,1.5,Baja,1.5,1.364,Picking,Picking
+F04_C24,F05_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F04_C25,F04_C26,PH04,1.5,Baja,1.5,1.364,Picking,Picking
+F04_C25,F05_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F04_C26,F04_C27,PH04,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F04_C26,F05_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F04_C27,F04_C28,PH04,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F04_C27,F05_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F04_C28,F04_C29,PH04,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F04_C28,F05_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F04_C29,F04_C30,PH04,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F04_C29,F05_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F04_C30,F04_C31,PH04,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F04_C30,F05_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F04_C31,F04_C32,PH04,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F04_C31,F05_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F04_C32,F04_C33,PH04,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F04_C32,F05_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F04_C33,F04_C34,PH04,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F04_C33,F05_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F04_C34,F04_C35,PH04,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F04_C34,F05_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F04_C35,F04_C36,PH04,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F04_C35,F05_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F04_C36,F04_C37,PH04,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F04_C36,F05_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F04_C37,F04_C38,PH04,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F04_C37,F05_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F04_C38,F04_C39,PH04,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F04_C38,F05_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F04_C39,F05_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F05_C00,F05_C01,PH05,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C00,F06_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C01,F05_C02,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C01,F06_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C02,F05_C03,PH05,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C02,F06_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C03,F05_C04,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C03,F06_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C04,F05_C05,PH05,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C04,F06_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C05,F05_C06,PH05,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C05,F06_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C06,F05_C07,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C06,F06_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C07,F05_C08,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C07,F06_C07,PV07,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C08,F05_C09,PH05,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C08,F06_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C09,F05_C10,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C09,F06_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C10,F05_C11,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C10,F06_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C11,F05_C12,PH05,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C11,F06_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C12,F05_C13,PH05,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F05_C12,F06_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F05_C13,F05_C14,PH05,1.5,Baja,1.5,1.364,Picking,Picking
+F05_C13,F06_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F05_C14,F05_C15,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C14,F06_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C15,F05_C16,PH05,1.5,Alta,3.0,2.727,Picking,Picking
+F05_C15,F06_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F05_C16,F05_C17,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C16,F06_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F05_C17,F05_C18,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C17,F06_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C18,F05_C19,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C18,F06_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C19,F05_C20,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C19,F06_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C20,F05_C21,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C20,F06_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C21,F05_C22,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C21,F06_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C22,F05_C23,PH05,1.5,Baja,1.5,1.364,Picking,Picking
+F05_C22,F06_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F05_C23,F05_C24,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C23,F06_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F05_C24,F05_C25,PH05,1.5,Baja,1.5,1.364,Picking,Picking
+F05_C24,F06_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F05_C25,F05_C26,PH05,1.5,Media,2.25,2.045,Picking,Picking
+F05_C25,F06_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F05_C26,F05_C27,PH05,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F05_C26,F06_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F05_C27,F05_C28,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C27,F06_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F05_C28,F05_C29,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C28,F06_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F05_C29,F05_C30,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C29,F06_C29,PV29,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F05_C30,F05_C31,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C30,F06_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F05_C31,F05_C32,PH05,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F05_C31,F06_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F05_C32,F05_C33,PH05,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F05_C32,F06_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F05_C33,F05_C34,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C33,F06_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F05_C34,F05_C35,PH05,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F05_C34,F06_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F05_C35,F05_C36,PH05,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F05_C35,F06_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F05_C36,F05_C37,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C36,F06_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F05_C37,F05_C38,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C37,F06_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F05_C38,F05_C39,PH05,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F05_C38,F06_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F05_C39,F06_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C00,F06_C01,PH06,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C00,F07_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C01,F06_C02,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C01,F07_C01,PV01,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C02,F06_C03,PH06,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C02,F07_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C03,F06_C04,PH06,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C03,F07_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C04,F06_C05,PH06,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C04,F07_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C05,F06_C06,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C05,F07_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C06,F06_C07,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C06,F07_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C07,F06_C08,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C07,F07_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C08,F06_C09,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C08,F07_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C09,F06_C10,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C09,F07_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C10,F06_C11,PH06,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C10,F07_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C11,F06_C12,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C11,F07_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C12,F06_C13,PH06,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Picking
+F06_C12,F07_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F06_C13,F06_C14,PH06,1.5,Baja,1.5,1.364,Picking,Picking
+F06_C13,F07_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F06_C14,F06_C15,PH06,1.5,Media,2.25,2.045,Picking,Picking
+F06_C14,F07_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F06_C15,F06_C16,PH06,1.5,Media,2.25,2.045,Picking,Picking
+F06_C15,F07_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C16,F06_C17,PH06,1.5,Media,2.25,2.045,Picking,Picking
+F06_C16,F07_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F06_C17,F06_C18,PH06,1.5,Alta,3.0,2.727,Picking,Picking
+F06_C17,F07_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C18,F06_C19,PH06,1.5,Alta,3.0,2.727,Picking,Picking
+F06_C18,F07_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F06_C19,F06_C20,PH06,1.5,Baja,1.5,1.364,Picking,Picking
+F06_C19,F07_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C20,F06_C21,PH06,1.5,Media,2.25,2.045,Picking,Picking
+F06_C20,F07_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C21,F06_C22,PH06,1.5,Baja,1.5,1.364,Picking,Picking
+F06_C21,F07_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F06_C22,F06_C23,PH06,1.5,Alta,3.0,2.727,Picking,Picking
+F06_C22,F07_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F06_C23,F06_C24,PH06,1.5,Alta,3.0,2.727,Picking,Picking
+F06_C23,F07_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C24,F06_C25,PH06,1.5,Baja,1.5,1.364,Picking,Picking
+F06_C24,F07_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F06_C25,F06_C26,PH06,1.5,Media,2.25,2.045,Picking,Picking
+F06_C25,F07_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C26,F06_C27,PH06,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F06_C26,F07_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F06_C27,F06_C28,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C27,F07_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F06_C28,F06_C29,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C28,F07_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C29,F06_C30,PH06,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F06_C29,F07_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F06_C30,F06_C31,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C30,F07_C30,PV30,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F06_C31,F06_C32,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C31,F07_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C32,F06_C33,PH06,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F06_C32,F07_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C33,F06_C34,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C33,F07_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C34,F06_C35,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C34,F07_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F06_C35,F06_C36,PH06,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F06_C35,F07_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C36,F06_C37,PH06,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F06_C36,F07_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C37,F06_C38,PH06,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F06_C37,F07_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C38,F06_C39,PH06,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F06_C38,F07_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F06_C39,F07_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C00,F07_C01,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C00,F08_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C01,F07_C02,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C01,F08_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C02,F07_C03,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C02,F08_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C03,F07_C04,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C03,F08_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C04,F07_C05,PH07,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C04,F08_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C05,F07_C06,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C05,F08_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C06,F07_C07,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C06,F08_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C07,F07_C08,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C07,F08_C07,PV07,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C08,F07_C09,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C08,F08_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C09,F07_C10,PH07,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C09,F08_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C10,F07_C11,PH07,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C10,F08_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C11,F07_C12,PH07,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C11,F08_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C12,F07_C13,PH07,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F07_C12,F08_C12,PV12,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F07_C13,F07_C14,PH07,1.5,Alta,3.0,2.727,Picking,Picking
+F07_C13,F08_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F07_C14,F07_C15,PH07,1.5,Alta,3.0,2.727,Picking,Picking
+F07_C14,F08_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F07_C15,F07_C16,PH07,1.5,Baja,1.5,1.364,Picking,Picking
+F07_C15,F08_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F07_C16,F07_C17,PH07,1.5,Baja,1.5,1.364,Picking,Picking
+F07_C16,F08_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F07_C17,F07_C18,PH07,1.5,Baja,1.5,1.364,Picking,Picking
+F07_C17,F08_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F07_C18,F07_C19,PH07,1.5,Baja,1.5,1.364,Picking,Picking
+F07_C18,F08_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F07_C19,F07_C20,PH07,1.5,Baja,1.5,1.364,Picking,Picking
+F07_C19,F08_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F07_C20,F07_C21,PH07,1.5,Alta,3.0,2.727,Picking,Picking
+F07_C20,F08_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F07_C21,F07_C22,PH07,1.5,Media,2.25,2.045,Picking,Picking
+F07_C21,F08_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F07_C22,F07_C23,PH07,1.5,Media,2.25,2.045,Picking,Picking
+F07_C22,F08_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F07_C23,F07_C24,PH07,1.5,Alta,3.0,2.727,Picking,Picking
+F07_C23,F08_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F07_C24,F07_C25,PH07,1.5,Alta,3.0,2.727,Picking,Picking
+F07_C24,F08_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F07_C25,F07_C26,PH07,1.5,Baja,1.5,1.364,Picking,Picking
+F07_C25,F08_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F07_C26,F07_C27,PH07,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F07_C26,F08_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F07_C27,F07_C28,PH07,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F07_C27,F08_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F07_C28,F07_C29,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C28,F08_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C29,F07_C30,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C29,F08_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C30,F07_C31,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C30,F08_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C31,F07_C32,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C31,F08_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F07_C32,F07_C33,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C32,F08_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F07_C33,F07_C34,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C33,F08_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C34,F07_C35,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C34,F08_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F07_C35,F07_C36,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C35,F08_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C36,F07_C37,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C36,F08_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F07_C37,F07_C38,PH07,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F07_C37,F08_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F07_C38,F07_C39,PH07,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F07_C38,F08_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F07_C39,F08_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C00,F08_C01,PH08,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C00,F09_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C01,F08_C02,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C01,F09_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C02,F08_C03,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C02,F09_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C03,F08_C04,PH08,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C03,F09_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C04,F08_C05,PH08,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C04,F09_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C05,F08_C06,PH08,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C05,F09_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C06,F08_C07,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C06,F09_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C07,F08_C08,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C07,F09_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C08,F08_C09,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C08,F09_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C09,F08_C10,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C09,F09_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C10,F08_C11,PH08,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C10,F09_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C11,F08_C12,PH08,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C11,F09_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C12,F08_C13,PH08,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F08_C12,F09_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F08_C13,F08_C14,PH08,1.5,Alta,3.0,2.727,Picking,Picking
+F08_C13,F09_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F08_C14,F08_C15,PH08,1.5,Baja,1.5,1.364,Picking,Picking
+F08_C14,F09_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F08_C15,F08_C16,PH08,1.5,Alta,3.0,2.727,Picking,Picking
+F08_C15,F09_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F08_C16,F08_C17,PH08,1.5,Baja,1.5,1.364,Picking,Picking
+F08_C16,F09_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F08_C17,F08_C18,PH08,1.5,Media,2.25,2.045,Picking,Picking
+F08_C17,F09_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F08_C18,F08_C19,PH08,1.5,Baja,1.5,1.364,Picking,Picking
+F08_C18,F09_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F08_C19,F08_C20,PH08,1.5,Baja,1.5,1.364,Picking,Picking
+F08_C19,F09_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F08_C20,F08_C21,PH08,1.5,Alta,3.0,2.727,Picking,Picking
+F08_C20,F09_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F08_C21,F08_C22,PH08,1.5,Alta,3.0,2.727,Picking,Picking
+F08_C21,F09_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F08_C22,F08_C23,PH08,1.5,Media,2.25,2.045,Picking,Picking
+F08_C22,F09_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F08_C23,F08_C24,PH08,1.5,Alta,3.0,2.727,Picking,Picking
+F08_C23,F09_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F08_C24,F08_C25,PH08,1.5,Media,2.25,2.045,Picking,Picking
+F08_C24,F09_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F08_C25,F08_C26,PH08,1.5,Alta,3.0,2.727,Picking,Picking
+F08_C25,F09_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F08_C26,F08_C27,PH08,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F08_C26,F09_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F08_C27,F08_C28,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C27,F09_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C28,F08_C29,PH08,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F08_C28,F09_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C29,F08_C30,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C29,F09_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C30,F08_C31,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C30,F09_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F08_C31,F08_C32,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C31,F09_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F08_C32,F08_C33,PH08,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F08_C32,F09_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F08_C33,F08_C34,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C33,F09_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C34,F08_C35,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C34,F09_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C35,F08_C36,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C35,F09_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F08_C36,F08_C37,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C36,F09_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C37,F08_C38,PH08,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F08_C37,F09_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C38,F08_C39,PH08,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F08_C38,F09_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F08_C39,F09_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C00,F09_C01,PH09,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C00,F10_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C01,F09_C02,PH09,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C01,F10_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C02,F09_C03,PH09,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C02,F10_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C03,F09_C04,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C03,F10_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C04,F09_C05,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C04,F10_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C05,F09_C06,PH09,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C05,F10_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C06,F09_C07,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C06,F10_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C07,F09_C08,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C07,F10_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C08,F09_C09,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C08,F10_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C09,F09_C10,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C09,F10_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C10,F09_C11,PH09,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C10,F10_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C11,F09_C12,PH09,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C11,F10_C11,PV11,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C12,F09_C13,PH09,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Picking
+F09_C12,F10_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F09_C13,F09_C14,PH09,1.5,Media,2.25,2.045,Picking,Picking
+F09_C13,F10_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F09_C14,F09_C15,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C14,F10_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F09_C15,F09_C16,PH09,1.5,Media,2.25,2.045,Picking,Picking
+F09_C15,F10_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F09_C16,F09_C17,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C16,F10_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F09_C17,F09_C18,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C17,F10_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F09_C18,F09_C19,PH09,1.5,Baja,1.5,1.364,Picking,Picking
+F09_C18,F10_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F09_C19,F09_C20,PH09,1.5,Media,2.25,2.045,Picking,Picking
+F09_C19,F10_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F09_C20,F09_C21,PH09,1.5,Baja,1.5,1.364,Picking,Picking
+F09_C20,F10_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F09_C21,F09_C22,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C21,F10_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F09_C22,F09_C23,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C22,F10_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F09_C23,F09_C24,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C23,F10_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F09_C24,F09_C25,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C24,F10_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F09_C25,F09_C26,PH09,1.5,Alta,3.0,2.727,Picking,Picking
+F09_C25,F10_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F09_C26,F09_C27,PH09,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F09_C26,F10_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F09_C27,F09_C28,PH09,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F09_C27,F10_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C28,F09_C29,PH09,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F09_C28,F10_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F09_C29,F09_C30,PH09,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F09_C29,F10_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C30,F09_C31,PH09,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F09_C30,F10_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C31,F09_C32,PH09,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F09_C31,F10_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F09_C32,F09_C33,PH09,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F09_C32,F10_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C33,F09_C34,PH09,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F09_C33,F10_C33,PV33,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F09_C34,F09_C35,PH09,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F09_C34,F10_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C35,F09_C36,PH09,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F09_C35,F10_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C36,F09_C37,PH09,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F09_C36,F10_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C37,F09_C38,PH09,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F09_C37,F10_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F09_C38,F09_C39,PH09,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F09_C38,F10_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F09_C39,F10_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F10_C00,F10_C01,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C00,F11_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C01,F10_C02,PH10,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C01,F11_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C02,F10_C03,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C02,F11_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C03,F10_C04,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C03,F11_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C04,F10_C05,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C04,F11_C04,PV04,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C05,F10_C06,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C05,F11_C05,PV05,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C06,F10_C07,PH10,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C06,F11_C06,PV06,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C07,F10_C08,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C07,F11_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C08,F10_C09,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C08,F11_C08,PV08,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C09,F10_C10,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C09,F11_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C10,F10_C11,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C10,F11_C10,PV10,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C11,F10_C12,PH10,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C11,F11_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C12,F10_C13,PH10,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F10_C12,F11_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F10_C13,F10_C14,PH10,1.5,Media,2.25,2.045,Picking,Picking
+F10_C13,F11_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F10_C14,F10_C15,PH10,1.5,Media,2.25,2.045,Picking,Picking
+F10_C14,F11_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F10_C15,F10_C16,PH10,1.5,Baja,1.5,1.364,Picking,Picking
+F10_C15,F11_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F10_C16,F10_C17,PH10,1.5,Alta,3.0,2.727,Picking,Picking
+F10_C16,F11_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F10_C17,F10_C18,PH10,1.5,Alta,3.0,2.727,Picking,Picking
+F10_C17,F11_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F10_C18,F10_C19,PH10,1.5,Media,2.25,2.045,Picking,Picking
+F10_C18,F11_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F10_C19,F10_C20,PH10,1.5,Baja,1.5,1.364,Picking,Picking
+F10_C19,F11_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F10_C20,F10_C21,PH10,1.5,Alta,3.0,2.727,Picking,Picking
+F10_C20,F11_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F10_C21,F10_C22,PH10,1.5,Alta,3.0,2.727,Picking,Picking
+F10_C21,F11_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F10_C22,F10_C23,PH10,1.5,Baja,1.5,1.364,Picking,Picking
+F10_C22,F11_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F10_C23,F10_C24,PH10,1.5,Alta,3.0,2.727,Picking,Picking
+F10_C23,F11_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F10_C24,F10_C25,PH10,1.5,Baja,1.5,1.364,Picking,Picking
+F10_C24,F11_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F10_C25,F10_C26,PH10,1.5,Media,2.25,2.045,Picking,Picking
+F10_C25,F11_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F10_C26,F10_C27,PH10,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F10_C26,F11_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F10_C27,F10_C28,PH10,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F10_C27,F11_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C28,F10_C29,PH10,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F10_C28,F11_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C29,F10_C30,PH10,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F10_C29,F11_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F10_C30,F10_C31,PH10,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F10_C30,F11_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C31,F10_C32,PH10,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F10_C31,F11_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C32,F10_C33,PH10,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F10_C32,F11_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C33,F10_C34,PH10,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F10_C33,F11_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C34,F10_C35,PH10,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F10_C34,F11_C34,PV34,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F10_C35,F10_C36,PH10,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F10_C35,F11_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C36,F10_C37,PH10,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F10_C36,F11_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C37,F10_C38,PH10,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F10_C37,F11_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F10_C38,F10_C39,PH10,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F10_C38,F11_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F10_C39,F11_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F11_C00,F11_C01,PH11,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C00,F12_C00,PV00,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C01,F11_C02,PH11,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C01,F12_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C02,F11_C03,PH11,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C02,F12_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C03,F11_C04,PH11,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C03,F12_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C04,F11_C05,PH11,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C04,F12_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C05,F11_C06,PH11,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C05,F12_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C06,F11_C07,PH11,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C06,F12_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C07,F11_C08,PH11,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C07,F12_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C08,F11_C09,PH11,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C08,F12_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C09,F11_C10,PH11,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C09,F12_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C10,F11_C11,PH11,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C10,F12_C10,PV10,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C11,F11_C12,PH11,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C11,F12_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C12,F11_C13,PH11,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F11_C12,F12_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F11_C13,F11_C14,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C13,F12_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F11_C14,F11_C15,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C14,F12_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F11_C15,F11_C16,PH11,1.5,Baja,1.5,1.364,Picking,Picking
+F11_C15,F12_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F11_C16,F11_C17,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C16,F12_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F11_C17,F11_C18,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C17,F12_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F11_C18,F11_C19,PH11,1.5,Media,2.25,2.045,Picking,Picking
+F11_C18,F12_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F11_C19,F11_C20,PH11,1.5,Media,2.25,2.045,Picking,Picking
+F11_C19,F12_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F11_C20,F11_C21,PH11,1.5,Media,2.25,2.045,Picking,Picking
+F11_C20,F12_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F11_C21,F11_C22,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C21,F12_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F11_C22,F11_C23,PH11,1.5,Baja,1.5,1.364,Picking,Picking
+F11_C22,F12_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F11_C23,F11_C24,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C23,F12_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F11_C24,F11_C25,PH11,1.5,Baja,1.5,1.364,Picking,Picking
+F11_C24,F12_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F11_C25,F11_C26,PH11,1.5,Alta,3.0,2.727,Picking,Picking
+F11_C25,F12_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F11_C26,F11_C27,PH11,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F11_C26,F12_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F11_C27,F11_C28,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C27,F12_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F11_C28,F11_C29,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C28,F12_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F11_C29,F11_C30,PH11,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F11_C29,F12_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F11_C30,F11_C31,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C30,F12_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F11_C31,F11_C32,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C31,F12_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F11_C32,F11_C33,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C32,F12_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F11_C33,F11_C34,PH11,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F11_C33,F12_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F11_C34,F11_C35,PH11,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F11_C34,F12_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F11_C35,F11_C36,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C35,F12_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F11_C36,F11_C37,PH11,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F11_C36,F12_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F11_C37,F11_C38,PH11,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F11_C37,F12_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F11_C38,F11_C39,PH11,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F11_C38,F12_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F11_C39,F12_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C00,F12_C01,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C00,F13_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C01,F12_C02,PH12,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C01,F13_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C02,F12_C03,PH12,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C02,F13_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C03,F12_C04,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C03,F13_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C04,F12_C05,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C04,F13_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C05,F12_C06,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C05,F13_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C06,F12_C07,PH12,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C06,F13_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C07,F12_C08,PH12,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C07,F13_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C08,F12_C09,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C08,F13_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C09,F12_C10,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C09,F13_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C10,F12_C11,PH12,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C10,F13_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C11,F12_C12,PH12,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C11,F13_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C12,F12_C13,PH12,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F12_C12,F13_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F12_C13,F12_C14,PH12,1.5,Baja,1.5,1.364,Picking,Picking
+F12_C13,F13_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F12_C14,F12_C15,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C14,F13_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F12_C15,F12_C16,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C15,F13_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F12_C16,F12_C17,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C16,F13_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F12_C17,F12_C18,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C17,F13_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F12_C18,F12_C19,PH12,1.5,Baja,1.5,1.364,Picking,Picking
+F12_C18,F13_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F12_C19,F12_C20,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C19,F13_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F12_C20,F12_C21,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C20,F13_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F12_C21,F12_C22,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C21,F13_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F12_C22,F12_C23,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C22,F13_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F12_C23,F12_C24,PH12,1.5,Alta,3.0,2.727,Picking,Picking
+F12_C23,F13_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F12_C24,F12_C25,PH12,1.5,Media,2.25,2.045,Picking,Picking
+F12_C24,F13_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F12_C25,F12_C26,PH12,1.5,Alta,3.0,2.727,Picking,Picking
+F12_C25,F13_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F12_C26,F12_C27,PH12,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F12_C26,F13_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F12_C27,F12_C28,PH12,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F12_C27,F13_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F12_C28,F12_C29,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C28,F13_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C29,F12_C30,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C29,F13_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C30,F12_C31,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C30,F13_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F12_C31,F12_C32,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C31,F13_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F12_C32,F12_C33,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C32,F13_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F12_C33,F12_C34,PH12,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F12_C33,F13_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C34,F12_C35,PH12,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F12_C34,F13_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F12_C35,F12_C36,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C35,F13_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C36,F12_C37,PH12,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F12_C36,F13_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C37,F12_C38,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C37,F13_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F12_C38,F12_C39,PH12,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F12_C38,F13_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F12_C39,F13_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C00,F13_C01,PH13,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C00,F14_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C01,F13_C02,PH13,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C01,F14_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C02,F13_C03,PH13,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C02,F14_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C03,F13_C04,PH13,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C03,F14_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C04,F13_C05,PH13,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C04,F14_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C05,F13_C06,PH13,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C05,F14_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C06,F13_C07,PH13,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C06,F14_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C07,F13_C08,PH13,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C07,F14_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C08,F13_C09,PH13,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C08,F14_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C09,F13_C10,PH13,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C09,F14_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C10,F13_C11,PH13,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C10,F14_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C11,F13_C12,PH13,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C11,F14_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C12,F13_C13,PH13,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F13_C12,F14_C12,PV12,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F13_C13,F13_C14,PH13,1.5,Baja,1.5,1.364,Picking,Picking
+F13_C13,F14_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F13_C14,F13_C15,PH13,1.5,Alta,3.0,2.727,Picking,Picking
+F13_C14,F14_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F13_C15,F13_C16,PH13,1.5,Media,2.25,2.045,Picking,Picking
+F13_C15,F14_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F13_C16,F13_C17,PH13,1.5,Baja,1.5,1.364,Picking,Picking
+F13_C16,F14_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F13_C17,F13_C18,PH13,1.5,Baja,1.5,1.364,Picking,Picking
+F13_C17,F14_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F13_C18,F13_C19,PH13,1.5,Alta,3.0,2.727,Picking,Picking
+F13_C18,F14_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F13_C19,F13_C20,PH13,1.5,Alta,3.0,2.727,Picking,Picking
+F13_C19,F14_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F13_C20,F13_C21,PH13,1.5,Baja,1.5,1.364,Picking,Picking
+F13_C20,F14_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F13_C21,F13_C22,PH13,1.5,Media,2.25,2.045,Picking,Picking
+F13_C21,F14_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F13_C22,F13_C23,PH13,1.5,Media,2.25,2.045,Picking,Picking
+F13_C22,F14_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F13_C23,F13_C24,PH13,1.5,Baja,1.5,1.364,Picking,Picking
+F13_C23,F14_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F13_C24,F13_C25,PH13,1.5,Media,2.25,2.045,Picking,Picking
+F13_C24,F14_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F13_C25,F13_C26,PH13,1.5,Baja,1.5,1.364,Picking,Picking
+F13_C25,F14_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F13_C26,F13_C27,PH13,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F13_C26,F14_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F13_C27,F13_C28,PH13,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F13_C27,F14_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F13_C28,F13_C29,PH13,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F13_C28,F14_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C29,F13_C30,PH13,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F13_C29,F14_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C30,F13_C31,PH13,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F13_C30,F14_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F13_C31,F13_C32,PH13,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F13_C31,F14_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C32,F13_C33,PH13,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F13_C32,F14_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C33,F13_C34,PH13,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F13_C33,F14_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C34,F13_C35,PH13,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F13_C34,F14_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C35,F13_C36,PH13,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F13_C35,F14_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F13_C36,F13_C37,PH13,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F13_C36,F14_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C37,F13_C38,PH13,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F13_C37,F14_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F13_C38,F13_C39,PH13,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F13_C38,F14_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F13_C39,F14_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C00,F14_C01,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C00,F15_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C01,F14_C02,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C01,F15_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C02,F14_C03,PH14,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C02,F15_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C03,F14_C04,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C03,F15_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C04,F14_C05,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C04,F15_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C05,F14_C06,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C05,F15_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C06,F14_C07,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C06,F15_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C07,F14_C08,PH14,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C07,F15_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C08,F14_C09,PH14,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C08,F15_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C09,F14_C10,PH14,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C09,F15_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C10,F14_C11,PH14,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C10,F15_C10,PV10,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C11,F14_C12,PH14,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C11,F15_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C12,F14_C13,PH14,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F14_C12,F15_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F14_C13,F14_C14,PH14,1.5,Media,2.25,2.045,Picking,Picking
+F14_C13,F15_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C14,F14_C15,PH14,1.5,Alta,3.0,2.727,Picking,Picking
+F14_C14,F15_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F14_C15,F14_C16,PH14,1.5,Alta,3.0,2.727,Picking,Picking
+F14_C15,F15_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F14_C16,F14_C17,PH14,1.5,Baja,1.5,1.364,Picking,Picking
+F14_C16,F15_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F14_C17,F14_C18,PH14,1.5,Alta,3.0,2.727,Picking,Picking
+F14_C17,F15_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F14_C18,F14_C19,PH14,1.5,Media,2.25,2.045,Picking,Picking
+F14_C18,F15_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F14_C19,F14_C20,PH14,1.5,Media,2.25,2.045,Picking,Picking
+F14_C19,F15_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C20,F14_C21,PH14,1.5,Media,2.25,2.045,Picking,Picking
+F14_C20,F15_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F14_C21,F14_C22,PH14,1.5,Baja,1.5,1.364,Picking,Picking
+F14_C21,F15_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C22,F14_C23,PH14,1.5,Media,2.25,2.045,Picking,Picking
+F14_C22,F15_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C23,F14_C24,PH14,1.5,Baja,1.5,1.364,Picking,Picking
+F14_C23,F15_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C24,F14_C25,PH14,1.5,Alta,3.0,2.727,Picking,Picking
+F14_C24,F15_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C25,F14_C26,PH14,1.5,Media,2.25,2.045,Picking,Picking
+F14_C25,F15_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C26,F14_C27,PH14,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F14_C26,F15_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F14_C27,F14_C28,PH14,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F14_C27,F15_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F14_C28,F14_C29,PH14,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F14_C28,F15_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C29,F14_C30,PH14,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F14_C29,F15_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C30,F14_C31,PH14,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F14_C30,F15_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F14_C31,F14_C32,PH14,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F14_C31,F15_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F14_C32,F14_C33,PH14,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F14_C32,F15_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C33,F14_C34,PH14,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F14_C33,F15_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C34,F14_C35,PH14,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F14_C34,F15_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C35,F14_C36,PH14,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F14_C35,F15_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F14_C36,F14_C37,PH14,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F14_C36,F15_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C37,F14_C38,PH14,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F14_C37,F15_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F14_C38,F14_C39,PH14,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F14_C38,F15_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F14_C39,F15_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F15_C00,F15_C01,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C00,F16_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C01,F15_C02,PH15,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C01,F16_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C02,F15_C03,PH15,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C02,F16_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C03,F15_C04,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C03,F16_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C04,F15_C05,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C04,F16_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C05,F15_C06,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C05,F16_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C06,F15_C07,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C06,F16_C06,PV06,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C07,F15_C08,PH15,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C07,F16_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C08,F15_C09,PH15,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C08,F16_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C09,F15_C10,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C09,F16_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C10,F15_C11,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C10,F16_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C11,F15_C12,PH15,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C11,F16_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C12,F15_C13,PH15,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F15_C12,F16_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F15_C13,F15_C14,PH15,1.5,Baja,1.5,1.364,Picking,Picking
+F15_C13,F16_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F15_C14,F15_C15,PH15,1.5,Alta,3.0,2.727,Picking,Picking
+F15_C14,F16_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F15_C15,F15_C16,PH15,1.5,Media,2.25,2.045,Picking,Picking
+F15_C15,F16_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F15_C16,F15_C17,PH15,1.5,Alta,3.0,2.727,Picking,Picking
+F15_C16,F16_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F15_C17,F15_C18,PH15,1.5,Media,2.25,2.045,Picking,Picking
+F15_C17,F16_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F15_C18,F15_C19,PH15,1.5,Baja,1.5,1.364,Picking,Picking
+F15_C18,F16_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F15_C19,F15_C20,PH15,1.5,Baja,1.5,1.364,Picking,Picking
+F15_C19,F16_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F15_C20,F15_C21,PH15,1.5,Media,2.25,2.045,Picking,Picking
+F15_C20,F16_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F15_C21,F15_C22,PH15,1.5,Media,2.25,2.045,Picking,Picking
+F15_C21,F16_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F15_C22,F15_C23,PH15,1.5,Media,2.25,2.045,Picking,Picking
+F15_C22,F16_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F15_C23,F15_C24,PH15,1.5,Baja,1.5,1.364,Picking,Picking
+F15_C23,F16_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F15_C24,F15_C25,PH15,1.5,Baja,1.5,1.364,Picking,Picking
+F15_C24,F16_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F15_C25,F15_C26,PH15,1.5,Media,2.25,2.045,Picking,Picking
+F15_C25,F16_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F15_C26,F15_C27,PH15,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F15_C26,F16_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F15_C27,F15_C28,PH15,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F15_C27,F16_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F15_C28,F15_C29,PH15,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F15_C28,F16_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F15_C29,F15_C30,PH15,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F15_C29,F16_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F15_C30,F15_C31,PH15,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F15_C30,F16_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F15_C31,F15_C32,PH15,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F15_C31,F16_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F15_C32,F15_C33,PH15,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F15_C32,F16_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F15_C33,F15_C34,PH15,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F15_C33,F16_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F15_C34,F15_C35,PH15,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F15_C34,F16_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F15_C35,F15_C36,PH15,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F15_C35,F16_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F15_C36,F15_C37,PH15,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F15_C36,F16_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F15_C37,F15_C38,PH15,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F15_C37,F16_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F15_C38,F15_C39,PH15,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F15_C38,F16_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F15_C39,F16_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F16_C00,F16_C01,PH16,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C00,F17_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C01,F16_C02,PH16,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C01,F17_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C02,F16_C03,PH16,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C02,F17_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C03,F16_C04,PH16,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C03,F17_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C04,F16_C05,PH16,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C04,F17_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C05,F16_C06,PH16,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C05,F17_C05,PV05,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C06,F16_C07,PH16,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C06,F17_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C07,F16_C08,PH16,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C07,F17_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C08,F16_C09,PH16,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C08,F17_C08,PV08,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C09,F16_C10,PH16,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C09,F17_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C10,F16_C11,PH16,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C10,F17_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C11,F16_C12,PH16,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C11,F17_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C12,F16_C13,PH16,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F16_C12,F17_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F16_C13,F16_C14,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C13,F17_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F16_C14,F16_C15,PH16,1.5,Alta,3.0,2.727,Picking,Picking
+F16_C14,F17_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F16_C15,F16_C16,PH16,1.5,Alta,3.0,2.727,Picking,Picking
+F16_C15,F17_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F16_C16,F16_C17,PH16,1.5,Baja,1.5,1.364,Picking,Picking
+F16_C16,F17_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F16_C17,F16_C18,PH16,1.5,Alta,3.0,2.727,Picking,Picking
+F16_C17,F17_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F16_C18,F16_C19,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C18,F17_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F16_C19,F16_C20,PH16,1.5,Baja,1.5,1.364,Picking,Picking
+F16_C19,F17_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F16_C20,F16_C21,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C20,F17_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F16_C21,F16_C22,PH16,1.5,Alta,3.0,2.727,Picking,Picking
+F16_C21,F17_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F16_C22,F16_C23,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C22,F17_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F16_C23,F16_C24,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C23,F17_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F16_C24,F16_C25,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C24,F17_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F16_C25,F16_C26,PH16,1.5,Media,2.25,2.045,Picking,Picking
+F16_C25,F17_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F16_C26,F16_C27,PH16,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F16_C26,F17_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F16_C27,F16_C28,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C27,F17_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F16_C28,F16_C29,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C28,F17_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F16_C29,F16_C30,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C29,F17_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F16_C30,F16_C31,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C30,F17_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F16_C31,F16_C32,PH16,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F16_C31,F17_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F16_C32,F16_C33,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C32,F17_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F16_C33,F16_C34,PH16,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F16_C33,F17_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F16_C34,F16_C35,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C34,F17_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F16_C35,F16_C36,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C35,F17_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F16_C36,F16_C37,PH16,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F16_C36,F17_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F16_C37,F16_C38,PH16,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F16_C37,F17_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F16_C38,F16_C39,PH16,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F16_C38,F17_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F16_C39,F17_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F17_C00,F17_C01,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C00,F18_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C01,F17_C02,PH17,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C01,F18_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C02,F17_C03,PH17,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C02,F18_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C03,F17_C04,PH17,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C03,F18_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C04,F17_C05,PH17,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C04,F18_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C05,F17_C06,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C05,F18_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C06,F17_C07,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C06,F18_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C07,F17_C08,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C07,F18_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C08,F17_C09,PH17,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C08,F18_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C09,F17_C10,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C09,F18_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C10,F17_C11,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C10,F18_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C11,F17_C12,PH17,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C11,F18_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C12,F17_C13,PH17,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F17_C12,F18_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F17_C13,F17_C14,PH17,1.5,Baja,1.5,1.364,Picking,Picking
+F17_C13,F18_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F17_C14,F17_C15,PH17,1.5,Baja,1.5,1.364,Picking,Picking
+F17_C14,F18_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F17_C15,F17_C16,PH17,1.5,Media,2.25,2.045,Picking,Picking
+F17_C15,F18_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F17_C16,F17_C17,PH17,1.5,Alta,3.0,2.727,Picking,Picking
+F17_C16,F18_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F17_C17,F17_C18,PH17,1.5,Media,2.25,2.045,Picking,Picking
+F17_C17,F18_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F17_C18,F17_C19,PH17,1.5,Baja,1.5,1.364,Picking,Picking
+F17_C18,F18_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F17_C19,F17_C20,PH17,1.5,Baja,1.5,1.364,Picking,Picking
+F17_C19,F18_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F17_C20,F17_C21,PH17,1.5,Alta,3.0,2.727,Picking,Picking
+F17_C20,F18_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F17_C21,F17_C22,PH17,1.5,Baja,1.5,1.364,Picking,Picking
+F17_C21,F18_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F17_C22,F17_C23,PH17,1.5,Baja,1.5,1.364,Picking,Picking
+F17_C22,F18_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F17_C23,F17_C24,PH17,1.5,Alta,3.0,2.727,Picking,Picking
+F17_C23,F18_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F17_C24,F17_C25,PH17,1.5,Alta,3.0,2.727,Picking,Picking
+F17_C24,F18_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F17_C25,F17_C26,PH17,1.5,Alta,3.0,2.727,Picking,Picking
+F17_C25,F18_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F17_C26,F17_C27,PH17,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F17_C26,F18_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F17_C27,F17_C28,PH17,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F17_C27,F18_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F17_C28,F17_C29,PH17,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F17_C28,F18_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F17_C29,F17_C30,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C29,F18_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F17_C30,F17_C31,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C30,F18_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F17_C31,F17_C32,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C31,F18_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F17_C32,F17_C33,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C32,F18_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F17_C33,F17_C34,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C33,F18_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F17_C34,F17_C35,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C34,F18_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F17_C35,F17_C36,PH17,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F17_C35,F18_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F17_C36,F17_C37,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C36,F18_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F17_C37,F17_C38,PH17,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F17_C37,F18_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F17_C38,F17_C39,PH17,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F17_C38,F18_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F17_C39,F18_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F18_C00,F18_C01,PH18,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C00,F19_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C01,F18_C02,PH18,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C01,F19_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C02,F18_C03,PH18,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C02,F19_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C03,F18_C04,PH18,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C03,F19_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C04,F18_C05,PH18,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C04,F19_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C05,F18_C06,PH18,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C05,F19_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C06,F18_C07,PH18,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C06,F19_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C07,F18_C08,PH18,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C07,F19_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C08,F18_C09,PH18,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C08,F19_C08,PV08,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C09,F18_C10,PH18,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C09,F19_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C10,F18_C11,PH18,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C10,F19_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C11,F18_C12,PH18,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C11,F19_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C12,F18_C13,PH18,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F18_C12,F19_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F18_C13,F18_C14,PH18,1.5,Alta,3.0,2.727,Picking,Picking
+F18_C13,F19_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F18_C14,F18_C15,PH18,1.5,Baja,1.5,1.364,Picking,Picking
+F18_C14,F19_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F18_C15,F18_C16,PH18,1.5,Media,2.25,2.045,Picking,Picking
+F18_C15,F19_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F18_C16,F18_C17,PH18,1.5,Media,2.25,2.045,Picking,Picking
+F18_C16,F19_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F18_C17,F18_C18,PH18,1.5,Media,2.25,2.045,Picking,Picking
+F18_C17,F19_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F18_C18,F18_C19,PH18,1.5,Media,2.25,2.045,Picking,Picking
+F18_C18,F19_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F18_C19,F18_C20,PH18,1.5,Alta,3.0,2.727,Picking,Picking
+F18_C19,F19_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F18_C20,F18_C21,PH18,1.5,Media,2.25,2.045,Picking,Picking
+F18_C20,F19_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F18_C21,F18_C22,PH18,1.5,Alta,3.0,2.727,Picking,Picking
+F18_C21,F19_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F18_C22,F18_C23,PH18,1.5,Media,2.25,2.045,Picking,Picking
+F18_C22,F19_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F18_C23,F18_C24,PH18,1.5,Baja,1.5,1.364,Picking,Picking
+F18_C23,F19_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F18_C24,F18_C25,PH18,1.5,Alta,3.0,2.727,Picking,Picking
+F18_C24,F19_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F18_C25,F18_C26,PH18,1.5,Baja,1.5,1.364,Picking,Picking
+F18_C25,F19_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F18_C26,F18_C27,PH18,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F18_C26,F19_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F18_C27,F18_C28,PH18,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F18_C27,F19_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F18_C28,F18_C29,PH18,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F18_C28,F19_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F18_C29,F18_C30,PH18,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F18_C29,F19_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F18_C30,F18_C31,PH18,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F18_C30,F19_C30,PV30,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F18_C31,F18_C32,PH18,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F18_C31,F19_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F18_C32,F18_C33,PH18,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F18_C32,F19_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F18_C33,F18_C34,PH18,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F18_C33,F19_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F18_C34,F18_C35,PH18,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F18_C34,F19_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F18_C35,F18_C36,PH18,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F18_C35,F19_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F18_C36,F18_C37,PH18,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F18_C36,F19_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F18_C37,F18_C38,PH18,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F18_C37,F19_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F18_C38,F18_C39,PH18,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F18_C38,F19_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F18_C39,F19_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C00,F19_C01,PH19,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C00,F20_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C01,F19_C02,PH19,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C01,F20_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C02,F19_C03,PH19,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C02,F20_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C03,F19_C04,PH19,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C03,F20_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C04,F19_C05,PH19,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C04,F20_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C05,F19_C06,PH19,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C05,F20_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C06,F19_C07,PH19,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C06,F20_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C07,F19_C08,PH19,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C07,F20_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C08,F19_C09,PH19,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C08,F20_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C09,F19_C10,PH19,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C09,F20_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C10,F19_C11,PH19,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C10,F20_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C11,F19_C12,PH19,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C11,F20_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C12,F19_C13,PH19,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F19_C12,F20_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F19_C13,F19_C14,PH19,1.5,Alta,3.0,2.727,Picking,Picking
+F19_C13,F20_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F19_C14,F19_C15,PH19,1.5,Alta,3.0,2.727,Picking,Picking
+F19_C14,F20_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F19_C15,F19_C16,PH19,1.5,Alta,3.0,2.727,Picking,Picking
+F19_C15,F20_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F19_C16,F19_C17,PH19,1.5,Alta,3.0,2.727,Picking,Picking
+F19_C16,F20_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F19_C17,F19_C18,PH19,1.5,Alta,3.0,2.727,Picking,Picking
+F19_C17,F20_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F19_C18,F19_C19,PH19,1.5,Media,2.25,2.045,Picking,Picking
+F19_C18,F20_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F19_C19,F19_C20,PH19,1.5,Media,2.25,2.045,Picking,Picking
+F19_C19,F20_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F19_C20,F19_C21,PH19,1.5,Media,2.25,2.045,Picking,Picking
+F19_C20,F20_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F19_C21,F19_C22,PH19,1.5,Media,2.25,2.045,Picking,Picking
+F19_C21,F20_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F19_C22,F19_C23,PH19,1.5,Baja,1.5,1.364,Picking,Picking
+F19_C22,F20_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F19_C23,F19_C24,PH19,1.5,Media,2.25,2.045,Picking,Picking
+F19_C23,F20_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F19_C24,F19_C25,PH19,1.5,Media,2.25,2.045,Picking,Picking
+F19_C24,F20_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F19_C25,F19_C26,PH19,1.5,Alta,3.0,2.727,Picking,Picking
+F19_C25,F20_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F19_C26,F19_C27,PH19,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F19_C26,F20_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F19_C27,F19_C28,PH19,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F19_C27,F20_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C28,F19_C29,PH19,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F19_C28,F20_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F19_C29,F19_C30,PH19,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F19_C29,F20_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C30,F19_C31,PH19,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F19_C30,F20_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C31,F19_C32,PH19,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F19_C31,F20_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F19_C32,F19_C33,PH19,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F19_C32,F20_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C33,F19_C34,PH19,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F19_C33,F20_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F19_C34,F19_C35,PH19,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F19_C34,F20_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F19_C35,F19_C36,PH19,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F19_C35,F20_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C36,F19_C37,PH19,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F19_C36,F20_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C37,F19_C38,PH19,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F19_C37,F20_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F19_C38,F19_C39,PH19,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F19_C38,F20_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F19_C39,F20_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F20_C00,F20_C01,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C00,F21_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C01,F20_C02,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C01,F21_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C02,F20_C03,PH20,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C02,F21_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C03,F20_C04,PH20,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C03,F21_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C04,F20_C05,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C04,F21_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C05,F20_C06,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C05,F21_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C06,F20_C07,PH20,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C06,F21_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C07,F20_C08,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C07,F21_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C08,F20_C09,PH20,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C08,F21_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C09,F20_C10,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C09,F21_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C10,F20_C11,PH20,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C10,F21_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C11,F20_C12,PH20,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C11,F21_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C12,F20_C13,PH20,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F20_C12,F21_C12,PV12,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F20_C13,F20_C14,PH20,1.5,Baja,1.5,1.364,Picking,Picking
+F20_C13,F21_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F20_C14,F20_C15,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C14,F21_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F20_C15,F20_C16,PH20,1.5,Alta,3.0,2.727,Picking,Picking
+F20_C15,F21_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F20_C16,F20_C17,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C16,F21_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F20_C17,F20_C18,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C17,F21_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F20_C18,F20_C19,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C18,F21_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F20_C19,F20_C20,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C19,F21_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F20_C20,F20_C21,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C20,F21_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F20_C21,F20_C22,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C21,F21_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F20_C22,F20_C23,PH20,1.5,Alta,3.0,2.727,Picking,Picking
+F20_C22,F21_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F20_C23,F20_C24,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C23,F21_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F20_C24,F20_C25,PH20,1.5,Alta,3.0,2.727,Picking,Picking
+F20_C24,F21_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F20_C25,F20_C26,PH20,1.5,Media,2.25,2.045,Picking,Picking
+F20_C25,F21_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F20_C26,F20_C27,PH20,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F20_C26,F21_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F20_C27,F20_C28,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C27,F21_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C28,F20_C29,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C28,F21_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C29,F20_C30,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C29,F21_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C30,F20_C31,PH20,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F20_C30,F21_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C31,F20_C32,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C31,F21_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F20_C32,F20_C33,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C32,F21_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F20_C33,F20_C34,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C33,F21_C33,PV33,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F20_C34,F20_C35,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C34,F21_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F20_C35,F20_C36,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C35,F21_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C36,F20_C37,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C36,F21_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C37,F20_C38,PH20,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F20_C37,F21_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F20_C38,F20_C39,PH20,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F20_C38,F21_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F20_C39,F21_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C00,F21_C01,PH21,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C00,F22_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C01,F21_C02,PH21,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C01,F22_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C02,F21_C03,PH21,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C02,F22_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C03,F21_C04,PH21,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C03,F22_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C04,F21_C05,PH21,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C04,F22_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C05,F21_C06,PH21,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C05,F22_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C06,F21_C07,PH21,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C06,F22_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C07,F21_C08,PH21,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C07,F22_C07,PV07,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C08,F21_C09,PH21,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C08,F22_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C09,F21_C10,PH21,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C09,F22_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C10,F21_C11,PH21,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C10,F22_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C11,F21_C12,PH21,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C11,F22_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C12,F21_C13,PH21,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F21_C12,F22_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F21_C13,F21_C14,PH21,1.5,Media,2.25,2.045,Picking,Picking
+F21_C13,F22_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F21_C14,F21_C15,PH21,1.5,Alta,3.0,2.727,Picking,Picking
+F21_C14,F22_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F21_C15,F21_C16,PH21,1.5,Alta,3.0,2.727,Picking,Picking
+F21_C15,F22_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C16,F21_C17,PH21,1.5,Alta,3.0,2.727,Picking,Picking
+F21_C16,F22_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F21_C17,F21_C18,PH21,1.5,Alta,3.0,2.727,Picking,Picking
+F21_C17,F22_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C18,F21_C19,PH21,1.5,Alta,3.0,2.727,Picking,Picking
+F21_C18,F22_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F21_C19,F21_C20,PH21,1.5,Media,2.25,2.045,Picking,Picking
+F21_C19,F22_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C20,F21_C21,PH21,1.5,Baja,1.5,1.364,Picking,Picking
+F21_C20,F22_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F21_C21,F21_C22,PH21,1.5,Media,2.25,2.045,Picking,Picking
+F21_C21,F22_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F21_C22,F21_C23,PH21,1.5,Media,2.25,2.045,Picking,Picking
+F21_C22,F22_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C23,F21_C24,PH21,1.5,Baja,1.5,1.364,Picking,Picking
+F21_C23,F22_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F21_C24,F21_C25,PH21,1.5,Alta,3.0,2.727,Picking,Picking
+F21_C24,F22_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C25,F21_C26,PH21,1.5,Media,2.25,2.045,Picking,Picking
+F21_C25,F22_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C26,F21_C27,PH21,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F21_C26,F22_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F21_C27,F21_C28,PH21,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F21_C27,F22_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C28,F21_C29,PH21,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F21_C28,F22_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C29,F21_C30,PH21,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F21_C29,F22_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F21_C30,F21_C31,PH21,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F21_C30,F22_C30,PV30,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F21_C31,F21_C32,PH21,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F21_C31,F22_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C32,F21_C33,PH21,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F21_C32,F22_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C33,F21_C34,PH21,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F21_C33,F22_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C34,F21_C35,PH21,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F21_C34,F22_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C35,F21_C36,PH21,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F21_C35,F22_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F21_C36,F21_C37,PH21,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F21_C36,F22_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F21_C37,F21_C38,PH21,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F21_C37,F22_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C38,F21_C39,PH21,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F21_C38,F22_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F21_C39,F22_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F22_C00,F22_C01,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C00,F23_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C01,F22_C02,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C01,F23_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C02,F22_C03,PH22,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C02,F23_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C03,F22_C04,PH22,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C03,F23_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C04,F22_C05,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C04,F23_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C05,F22_C06,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C05,F23_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C06,F22_C07,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C06,F23_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C07,F22_C08,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C07,F23_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C08,F22_C09,PH22,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C08,F23_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C09,F22_C10,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C09,F23_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C10,F22_C11,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C10,F23_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C11,F22_C12,PH22,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C11,F23_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C12,F22_C13,PH22,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F22_C12,F23_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F22_C13,F22_C14,PH22,1.5,Baja,1.5,1.364,Picking,Picking
+F22_C13,F23_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F22_C14,F22_C15,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C14,F23_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F22_C15,F22_C16,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C15,F23_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F22_C16,F22_C17,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C16,F23_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F22_C17,F22_C18,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C17,F23_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F22_C18,F22_C19,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C18,F23_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F22_C19,F22_C20,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C19,F23_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F22_C20,F22_C21,PH22,1.5,Baja,1.5,1.364,Picking,Picking
+F22_C20,F23_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F22_C21,F22_C22,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C21,F23_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F22_C22,F22_C23,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C22,F23_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F22_C23,F22_C24,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C23,F23_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F22_C24,F22_C25,PH22,1.5,Alta,3.0,2.727,Picking,Picking
+F22_C24,F23_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F22_C25,F22_C26,PH22,1.5,Media,2.25,2.045,Picking,Picking
+F22_C25,F23_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F22_C26,F22_C27,PH22,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F22_C26,F23_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F22_C27,F22_C28,PH22,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F22_C27,F23_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C28,F22_C29,PH22,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F22_C28,F23_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C29,F22_C30,PH22,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F22_C29,F23_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C30,F22_C31,PH22,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F22_C30,F23_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F22_C31,F22_C32,PH22,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F22_C31,F23_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C32,F22_C33,PH22,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F22_C32,F23_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C33,F22_C34,PH22,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F22_C33,F23_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F22_C34,F22_C35,PH22,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F22_C34,F23_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F22_C35,F22_C36,PH22,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F22_C35,F23_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F22_C36,F22_C37,PH22,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F22_C36,F23_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C37,F22_C38,PH22,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F22_C37,F23_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C38,F22_C39,PH22,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F22_C38,F23_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F22_C39,F23_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C00,F23_C01,PH23,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C00,F24_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C01,F23_C02,PH23,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C01,F24_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C02,F23_C03,PH23,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C02,F24_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C03,F23_C04,PH23,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C03,F24_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C04,F23_C05,PH23,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C04,F24_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C05,F23_C06,PH23,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C05,F24_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C06,F23_C07,PH23,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C06,F24_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C07,F23_C08,PH23,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C07,F24_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C08,F23_C09,PH23,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C08,F24_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C09,F23_C10,PH23,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C09,F24_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C10,F23_C11,PH23,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C10,F24_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C11,F23_C12,PH23,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C11,F24_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C12,F23_C13,PH23,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F23_C12,F24_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F23_C13,F23_C14,PH23,1.5,Alta,3.0,2.727,Picking,Picking
+F23_C13,F24_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F23_C14,F23_C15,PH23,1.5,Alta,3.0,2.727,Picking,Picking
+F23_C14,F24_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F23_C15,F23_C16,PH23,1.5,Media,2.25,2.045,Picking,Picking
+F23_C15,F24_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F23_C16,F23_C17,PH23,1.5,Baja,1.5,1.364,Picking,Picking
+F23_C16,F24_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F23_C17,F23_C18,PH23,1.5,Baja,1.5,1.364,Picking,Picking
+F23_C17,F24_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F23_C18,F23_C19,PH23,1.5,Media,2.25,2.045,Picking,Picking
+F23_C18,F24_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F23_C19,F23_C20,PH23,1.5,Media,2.25,2.045,Picking,Picking
+F23_C19,F24_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F23_C20,F23_C21,PH23,1.5,Media,2.25,2.045,Picking,Picking
+F23_C20,F24_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F23_C21,F23_C22,PH23,1.5,Media,2.25,2.045,Picking,Picking
+F23_C21,F24_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F23_C22,F23_C23,PH23,1.5,Media,2.25,2.045,Picking,Picking
+F23_C22,F24_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F23_C23,F23_C24,PH23,1.5,Baja,1.5,1.364,Picking,Picking
+F23_C23,F24_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F23_C24,F23_C25,PH23,1.5,Alta,3.0,2.727,Picking,Picking
+F23_C24,F24_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F23_C25,F23_C26,PH23,1.5,Baja,1.5,1.364,Picking,Picking
+F23_C25,F24_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F23_C26,F23_C27,PH23,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F23_C26,F24_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F23_C27,F23_C28,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C27,F24_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F23_C28,F23_C29,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C28,F24_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C29,F23_C30,PH23,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F23_C29,F24_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F23_C30,F23_C31,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C30,F24_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C31,F23_C32,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C31,F24_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C32,F23_C33,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C32,F24_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F23_C33,F23_C34,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C33,F24_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F23_C34,F23_C35,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C34,F24_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C35,F23_C36,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C35,F24_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C36,F23_C37,PH23,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F23_C36,F24_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C37,F23_C38,PH23,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F23_C37,F24_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F23_C38,F23_C39,PH23,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F23_C38,F24_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F23_C39,F24_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C00,F24_C01,PH24,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C00,F25_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C01,F24_C02,PH24,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C01,F25_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C02,F24_C03,PH24,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C02,F25_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C03,F24_C04,PH24,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C03,F25_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C04,F24_C05,PH24,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C04,F25_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C05,F24_C06,PH24,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C05,F25_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C06,F24_C07,PH24,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C06,F25_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C07,F24_C08,PH24,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C07,F25_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C08,F24_C09,PH24,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C08,F25_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C09,F24_C10,PH24,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C09,F25_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C10,F24_C11,PH24,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C10,F25_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C11,F24_C12,PH24,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C11,F25_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C12,F24_C13,PH24,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F24_C12,F25_C12,PV12,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F24_C13,F24_C14,PH24,1.5,Baja,1.5,1.364,Picking,Picking
+F24_C13,F25_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F24_C14,F24_C15,PH24,1.5,Media,2.25,2.045,Picking,Picking
+F24_C14,F25_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C15,F24_C16,PH24,1.5,Alta,3.0,2.727,Picking,Picking
+F24_C15,F25_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C16,F24_C17,PH24,1.5,Media,2.25,2.045,Picking,Picking
+F24_C16,F25_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F24_C17,F24_C18,PH24,1.5,Alta,3.0,2.727,Picking,Picking
+F24_C17,F25_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C18,F24_C19,PH24,1.5,Media,2.25,2.045,Picking,Picking
+F24_C18,F25_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C19,F24_C20,PH24,1.5,Media,2.25,2.045,Picking,Picking
+F24_C19,F25_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F24_C20,F24_C21,PH24,1.5,Alta,3.0,2.727,Picking,Picking
+F24_C20,F25_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F24_C21,F24_C22,PH24,1.5,Media,2.25,2.045,Picking,Picking
+F24_C21,F25_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F24_C22,F24_C23,PH24,1.5,Baja,1.5,1.364,Picking,Picking
+F24_C22,F25_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F24_C23,F24_C24,PH24,1.5,Alta,3.0,2.727,Picking,Picking
+F24_C23,F25_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C24,F24_C25,PH24,1.5,Baja,1.5,1.364,Picking,Picking
+F24_C24,F25_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F24_C25,F24_C26,PH24,1.5,Alta,3.0,2.727,Picking,Picking
+F24_C25,F25_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C26,F24_C27,PH24,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F24_C26,F25_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F24_C27,F24_C28,PH24,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F24_C27,F25_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C28,F24_C29,PH24,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F24_C28,F25_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C29,F24_C30,PH24,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F24_C29,F25_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C30,F24_C31,PH24,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F24_C30,F25_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F24_C31,F24_C32,PH24,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F24_C31,F25_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F24_C32,F24_C33,PH24,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F24_C32,F25_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F24_C33,F24_C34,PH24,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F24_C33,F25_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C34,F24_C35,PH24,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F24_C34,F25_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C35,F24_C36,PH24,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F24_C35,F25_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C36,F24_C37,PH24,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F24_C36,F25_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C37,F24_C38,PH24,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F24_C37,F25_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F24_C38,F24_C39,PH24,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F24_C38,F25_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F24_C39,F25_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C00,F25_C01,PH25,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C00,F26_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C01,F25_C02,PH25,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C01,F26_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C02,F25_C03,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C02,F26_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C03,F25_C04,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C03,F26_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C04,F25_C05,PH25,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C04,F26_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C05,F25_C06,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C05,F26_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C06,F25_C07,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C06,F26_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C07,F25_C08,PH25,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C07,F26_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C08,F25_C09,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C08,F26_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C09,F25_C10,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C09,F26_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C10,F25_C11,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C10,F26_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C11,F25_C12,PH25,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C11,F26_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C12,F25_C13,PH25,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Picking
+F25_C12,F26_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F25_C13,F25_C14,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C13,F26_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F25_C14,F25_C15,PH25,1.5,Baja,1.5,1.364,Picking,Picking
+F25_C14,F26_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F25_C15,F25_C16,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C15,F26_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F25_C16,F25_C17,PH25,1.5,Alta,3.0,2.727,Picking,Picking
+F25_C16,F26_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F25_C17,F25_C18,PH25,1.5,Alta,3.0,2.727,Picking,Picking
+F25_C17,F26_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F25_C18,F25_C19,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C18,F26_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F25_C19,F25_C20,PH25,1.5,Alta,3.0,2.727,Picking,Picking
+F25_C19,F26_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F25_C20,F25_C21,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C20,F26_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F25_C21,F25_C22,PH25,1.5,Baja,1.5,1.364,Picking,Picking
+F25_C21,F26_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F25_C22,F25_C23,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C22,F26_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F25_C23,F25_C24,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C23,F26_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F25_C24,F25_C25,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C24,F26_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F25_C25,F25_C26,PH25,1.5,Media,2.25,2.045,Picking,Picking
+F25_C25,F26_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F25_C26,F25_C27,PH25,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F25_C26,F26_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F25_C27,F25_C28,PH25,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F25_C27,F26_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C28,F25_C29,PH25,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F25_C28,F26_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C29,F25_C30,PH25,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F25_C29,F26_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F25_C30,F25_C31,PH25,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F25_C30,F26_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F25_C31,F25_C32,PH25,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F25_C31,F26_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C32,F25_C33,PH25,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F25_C32,F26_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C33,F25_C34,PH25,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F25_C33,F26_C33,PV33,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F25_C34,F25_C35,PH25,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F25_C34,F26_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C35,F25_C36,PH25,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F25_C35,F26_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C36,F25_C37,PH25,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F25_C36,F26_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F25_C37,F25_C38,PH25,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F25_C37,F26_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F25_C38,F25_C39,PH25,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F25_C38,F26_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F25_C39,F26_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F26_C00,F26_C01,PH26,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C00,F27_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C01,F26_C02,PH26,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C01,F27_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C02,F26_C03,PH26,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C02,F27_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C03,F26_C04,PH26,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C03,F27_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C04,F26_C05,PH26,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C04,F27_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C05,F26_C06,PH26,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C05,F27_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C06,F26_C07,PH26,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C06,F27_C06,PV06,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C07,F26_C08,PH26,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C07,F27_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C08,F26_C09,PH26,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C08,F27_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C09,F26_C10,PH26,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C09,F27_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C10,F26_C11,PH26,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C10,F27_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C11,F26_C12,PH26,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C11,F27_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C12,F26_C13,PH26,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F26_C12,F27_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F26_C13,F26_C14,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C13,F27_C13,PV13,2.5,Baja,2.5,2.273,Picking,Picking
+F26_C14,F26_C15,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C14,F27_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F26_C15,F26_C16,PH26,1.5,Baja,1.5,1.364,Picking,Picking
+F26_C15,F27_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F26_C16,F26_C17,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C16,F27_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F26_C17,F26_C18,PH26,1.5,Baja,1.5,1.364,Picking,Picking
+F26_C17,F27_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F26_C18,F26_C19,PH26,1.5,Media,2.25,2.045,Picking,Picking
+F26_C18,F27_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F26_C19,F26_C20,PH26,1.5,Media,2.25,2.045,Picking,Picking
+F26_C19,F27_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F26_C20,F26_C21,PH26,1.5,Media,2.25,2.045,Picking,Picking
+F26_C20,F27_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F26_C21,F26_C22,PH26,1.5,Baja,1.5,1.364,Picking,Picking
+F26_C21,F27_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F26_C22,F26_C23,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C22,F27_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F26_C23,F26_C24,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C23,F27_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F26_C24,F26_C25,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C24,F27_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F26_C25,F26_C26,PH26,1.5,Alta,3.0,2.727,Picking,Picking
+F26_C25,F27_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F26_C26,F26_C27,PH26,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F26_C26,F27_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F26_C27,F26_C28,PH26,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F26_C27,F27_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F26_C28,F26_C29,PH26,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F26_C28,F27_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F26_C29,F26_C30,PH26,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F26_C29,F27_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F26_C30,F26_C31,PH26,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F26_C30,F27_C30,PV30,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F26_C31,F26_C32,PH26,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F26_C31,F27_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F26_C32,F26_C33,PH26,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F26_C32,F27_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F26_C33,F26_C34,PH26,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F26_C33,F27_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F26_C34,F26_C35,PH26,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F26_C34,F27_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F26_C35,F26_C36,PH26,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F26_C35,F27_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F26_C36,F26_C37,PH26,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F26_C36,F27_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F26_C37,F26_C38,PH26,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F26_C37,F27_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F26_C38,F26_C39,PH26,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F26_C38,F27_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F26_C39,F27_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C00,F27_C01,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C00,F28_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C01,F27_C02,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C01,F28_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C02,F27_C03,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C02,F28_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C03,F27_C04,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C03,F28_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C04,F27_C05,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C04,F28_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C05,F27_C06,PH27,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C05,F28_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C06,F27_C07,PH27,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C06,F28_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C07,F27_C08,PH27,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C07,F28_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C08,F27_C09,PH27,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C08,F28_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C09,F27_C10,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C09,F28_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C10,F27_C11,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C10,F28_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C11,F27_C12,PH27,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C11,F28_C11,PV11,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C12,F27_C13,PH27,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F27_C12,F28_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F27_C13,F27_C14,PH27,1.5,Baja,1.5,1.364,Picking,Picking
+F27_C13,F28_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F27_C14,F27_C15,PH27,1.5,Media,2.25,2.045,Picking,Picking
+F27_C14,F28_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F27_C15,F27_C16,PH27,1.5,Baja,1.5,1.364,Picking,Picking
+F27_C15,F28_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F27_C16,F27_C17,PH27,1.5,Media,2.25,2.045,Picking,Picking
+F27_C16,F28_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F27_C17,F27_C18,PH27,1.5,Alta,3.0,2.727,Picking,Picking
+F27_C17,F28_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F27_C18,F27_C19,PH27,1.5,Media,2.25,2.045,Picking,Picking
+F27_C18,F28_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F27_C19,F27_C20,PH27,1.5,Media,2.25,2.045,Picking,Picking
+F27_C19,F28_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F27_C20,F27_C21,PH27,1.5,Alta,3.0,2.727,Picking,Picking
+F27_C20,F28_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F27_C21,F27_C22,PH27,1.5,Alta,3.0,2.727,Picking,Picking
+F27_C21,F28_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F27_C22,F27_C23,PH27,1.5,Alta,3.0,2.727,Picking,Picking
+F27_C22,F28_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F27_C23,F27_C24,PH27,1.5,Media,2.25,2.045,Picking,Picking
+F27_C23,F28_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F27_C24,F27_C25,PH27,1.5,Alta,3.0,2.727,Picking,Picking
+F27_C24,F28_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F27_C25,F27_C26,PH27,1.5,Baja,1.5,1.364,Picking,Picking
+F27_C25,F28_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F27_C26,F27_C27,PH27,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F27_C26,F28_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F27_C27,F27_C28,PH27,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F27_C27,F28_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F27_C28,F27_C29,PH27,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F27_C28,F28_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F27_C29,F27_C30,PH27,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F27_C29,F28_C29,PV29,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F27_C30,F27_C31,PH27,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F27_C30,F28_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C31,F27_C32,PH27,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F27_C31,F28_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C32,F27_C33,PH27,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F27_C32,F28_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F27_C33,F27_C34,PH27,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F27_C33,F28_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C34,F27_C35,PH27,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F27_C34,F28_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C35,F27_C36,PH27,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F27_C35,F28_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F27_C36,F27_C37,PH27,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F27_C36,F28_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C37,F27_C38,PH27,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F27_C37,F28_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F27_C38,F27_C39,PH27,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F27_C38,F28_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F27_C39,F28_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C00,F28_C01,PH28,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C00,F29_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C01,F28_C02,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C01,F29_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C02,F28_C03,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C02,F29_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C03,F28_C04,PH28,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C03,F29_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C04,F28_C05,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C04,F29_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C05,F28_C06,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C05,F29_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C06,F28_C07,PH28,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C06,F29_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C07,F28_C08,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C07,F29_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C08,F28_C09,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C08,F29_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C09,F28_C10,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C09,F29_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C10,F28_C11,PH28,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C10,F29_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C11,F28_C12,PH28,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C11,F29_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C12,F28_C13,PH28,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F28_C12,F29_C12,PV12,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F28_C13,F28_C14,PH28,1.5,Baja,1.5,1.364,Picking,Picking
+F28_C13,F29_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F28_C14,F28_C15,PH28,1.5,Alta,3.0,2.727,Picking,Picking
+F28_C14,F29_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F28_C15,F28_C16,PH28,1.5,Media,2.25,2.045,Picking,Picking
+F28_C15,F29_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F28_C16,F28_C17,PH28,1.5,Media,2.25,2.045,Picking,Picking
+F28_C16,F29_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F28_C17,F28_C18,PH28,1.5,Media,2.25,2.045,Picking,Picking
+F28_C17,F29_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F28_C18,F28_C19,PH28,1.5,Baja,1.5,1.364,Picking,Picking
+F28_C18,F29_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F28_C19,F28_C20,PH28,1.5,Media,2.25,2.045,Picking,Picking
+F28_C19,F29_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F28_C20,F28_C21,PH28,1.5,Alta,3.0,2.727,Picking,Picking
+F28_C20,F29_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F28_C21,F28_C22,PH28,1.5,Alta,3.0,2.727,Picking,Picking
+F28_C21,F29_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F28_C22,F28_C23,PH28,1.5,Media,2.25,2.045,Picking,Picking
+F28_C22,F29_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F28_C23,F28_C24,PH28,1.5,Media,2.25,2.045,Picking,Picking
+F28_C23,F29_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F28_C24,F28_C25,PH28,1.5,Alta,3.0,2.727,Picking,Picking
+F28_C24,F29_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F28_C25,F28_C26,PH28,1.5,Alta,3.0,2.727,Picking,Picking
+F28_C25,F29_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F28_C26,F28_C27,PH28,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F28_C26,F29_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F28_C27,F28_C28,PH28,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F28_C27,F29_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F28_C28,F28_C29,PH28,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F28_C28,F29_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C29,F28_C30,PH28,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F28_C29,F29_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F28_C30,F28_C31,PH28,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F28_C30,F29_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C31,F28_C32,PH28,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F28_C31,F29_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C32,F28_C33,PH28,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F28_C32,F29_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F28_C33,F28_C34,PH28,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F28_C33,F29_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C34,F28_C35,PH28,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F28_C34,F29_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C35,F28_C36,PH28,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F28_C35,F29_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C36,F28_C37,PH28,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F28_C36,F29_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C37,F28_C38,PH28,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F28_C37,F29_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F28_C38,F28_C39,PH28,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F28_C38,F29_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F28_C39,F29_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F29_C00,F29_C01,PH29,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C00,F30_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C01,F29_C02,PH29,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C01,F30_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C02,F29_C03,PH29,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C02,F30_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C03,F29_C04,PH29,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C03,F30_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C04,F29_C05,PH29,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C04,F30_C04,PV04,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C05,F29_C06,PH29,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C05,F30_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C06,F29_C07,PH29,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C06,F30_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C07,F29_C08,PH29,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C07,F30_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C08,F29_C09,PH29,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C08,F30_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C09,F29_C10,PH29,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C09,F30_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C10,F29_C11,PH29,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C10,F30_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C11,F29_C12,PH29,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C11,F30_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C12,F29_C13,PH29,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F29_C12,F30_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F29_C13,F29_C14,PH29,1.5,Baja,1.5,1.364,Picking,Picking
+F29_C13,F30_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F29_C14,F29_C15,PH29,1.5,Media,2.25,2.045,Picking,Picking
+F29_C14,F30_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F29_C15,F29_C16,PH29,1.5,Media,2.25,2.045,Picking,Picking
+F29_C15,F30_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F29_C16,F29_C17,PH29,1.5,Media,2.25,2.045,Picking,Picking
+F29_C16,F30_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F29_C17,F29_C18,PH29,1.5,Alta,3.0,2.727,Picking,Picking
+F29_C17,F30_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F29_C18,F29_C19,PH29,1.5,Baja,1.5,1.364,Picking,Picking
+F29_C18,F30_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F29_C19,F29_C20,PH29,1.5,Media,2.25,2.045,Picking,Picking
+F29_C19,F30_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F29_C20,F29_C21,PH29,1.5,Baja,1.5,1.364,Picking,Picking
+F29_C20,F30_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F29_C21,F29_C22,PH29,1.5,Media,2.25,2.045,Picking,Picking
+F29_C21,F30_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F29_C22,F29_C23,PH29,1.5,Alta,3.0,2.727,Picking,Picking
+F29_C22,F30_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F29_C23,F29_C24,PH29,1.5,Alta,3.0,2.727,Picking,Picking
+F29_C23,F30_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F29_C24,F29_C25,PH29,1.5,Alta,3.0,2.727,Picking,Picking
+F29_C24,F30_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F29_C25,F29_C26,PH29,1.5,Media,2.25,2.045,Picking,Picking
+F29_C25,F30_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F29_C26,F29_C27,PH29,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F29_C26,F30_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F29_C27,F29_C28,PH29,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F29_C27,F30_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F29_C28,F29_C29,PH29,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F29_C28,F30_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F29_C29,F29_C30,PH29,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F29_C29,F30_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C30,F29_C31,PH29,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F29_C30,F30_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F29_C31,F29_C32,PH29,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F29_C31,F30_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C32,F29_C33,PH29,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F29_C32,F30_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C33,F29_C34,PH29,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F29_C33,F30_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C34,F29_C35,PH29,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F29_C34,F30_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F29_C35,F29_C36,PH29,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F29_C35,F30_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C36,F29_C37,PH29,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F29_C36,F30_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C37,F29_C38,PH29,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F29_C37,F30_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C38,F29_C39,PH29,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F29_C38,F30_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F29_C39,F30_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F30_C00,F30_C01,PH30,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C00,F31_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C01,F30_C02,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C01,F31_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C02,F30_C03,PH30,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C02,F31_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C03,F30_C04,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C03,F31_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C04,F30_C05,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C04,F31_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C05,F30_C06,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C05,F31_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C06,F30_C07,PH30,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C06,F31_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C07,F30_C08,PH30,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C07,F31_C07,PV07,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C08,F30_C09,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C08,F31_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C09,F30_C10,PH30,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C09,F31_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C10,F30_C11,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C10,F31_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C11,F30_C12,PH30,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C11,F31_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C12,F30_C13,PH30,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F30_C12,F31_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F30_C13,F30_C14,PH30,1.5,Alta,3.0,2.727,Picking,Picking
+F30_C13,F31_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F30_C14,F30_C15,PH30,1.5,Baja,1.5,1.364,Picking,Picking
+F30_C14,F31_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F30_C15,F30_C16,PH30,1.5,Baja,1.5,1.364,Picking,Picking
+F30_C15,F31_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F30_C16,F30_C17,PH30,1.5,Media,2.25,2.045,Picking,Picking
+F30_C16,F31_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F30_C17,F30_C18,PH30,1.5,Media,2.25,2.045,Picking,Picking
+F30_C17,F31_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F30_C18,F30_C19,PH30,1.5,Media,2.25,2.045,Picking,Picking
+F30_C18,F31_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F30_C19,F30_C20,PH30,1.5,Alta,3.0,2.727,Picking,Picking
+F30_C19,F31_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F30_C20,F30_C21,PH30,1.5,Baja,1.5,1.364,Picking,Picking
+F30_C20,F31_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F30_C21,F30_C22,PH30,1.5,Baja,1.5,1.364,Picking,Picking
+F30_C21,F31_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F30_C22,F30_C23,PH30,1.5,Media,2.25,2.045,Picking,Picking
+F30_C22,F31_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F30_C23,F30_C24,PH30,1.5,Alta,3.0,2.727,Picking,Picking
+F30_C23,F31_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F30_C24,F30_C25,PH30,1.5,Media,2.25,2.045,Picking,Picking
+F30_C24,F31_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F30_C25,F30_C26,PH30,1.5,Media,2.25,2.045,Picking,Picking
+F30_C25,F31_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F30_C26,F30_C27,PH30,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F30_C26,F31_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F30_C27,F30_C28,PH30,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F30_C27,F31_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F30_C28,F30_C29,PH30,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F30_C28,F31_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F30_C29,F30_C30,PH30,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F30_C29,F31_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F30_C30,F30_C31,PH30,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F30_C30,F31_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F30_C31,F30_C32,PH30,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F30_C31,F31_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F30_C32,F30_C33,PH30,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F30_C32,F31_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F30_C33,F30_C34,PH30,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F30_C33,F31_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F30_C34,F30_C35,PH30,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F30_C34,F31_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F30_C35,F30_C36,PH30,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F30_C35,F31_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F30_C36,F30_C37,PH30,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F30_C36,F31_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F30_C37,F30_C38,PH30,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F30_C37,F31_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F30_C38,F30_C39,PH30,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F30_C38,F31_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F30_C39,F31_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C00,F31_C01,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C00,F32_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C01,F31_C02,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C01,F32_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C02,F31_C03,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C02,F32_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C03,F31_C04,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C03,F32_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C04,F31_C05,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C04,F32_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C05,F31_C06,PH31,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C05,F32_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C06,F31_C07,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C06,F32_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C07,F31_C08,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C07,F32_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C08,F31_C09,PH31,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C08,F32_C08,PV08,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C09,F31_C10,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C09,F32_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C10,F31_C11,PH31,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C10,F32_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C11,F31_C12,PH31,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C11,F32_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C12,F31_C13,PH31,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F31_C12,F32_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F31_C13,F31_C14,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C13,F32_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F31_C14,F31_C15,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C14,F32_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F31_C15,F31_C16,PH31,1.5,Baja,1.5,1.364,Picking,Picking
+F31_C15,F32_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F31_C16,F31_C17,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C16,F32_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F31_C17,F31_C18,PH31,1.5,Baja,1.5,1.364,Picking,Picking
+F31_C17,F32_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F31_C18,F31_C19,PH31,1.5,Alta,3.0,2.727,Picking,Picking
+F31_C18,F32_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F31_C19,F31_C20,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C19,F32_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F31_C20,F31_C21,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C20,F32_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F31_C21,F31_C22,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C21,F32_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F31_C22,F31_C23,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C22,F32_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F31_C23,F31_C24,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C23,F32_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F31_C24,F31_C25,PH31,1.5,Media,2.25,2.045,Picking,Picking
+F31_C24,F32_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F31_C25,F31_C26,PH31,1.5,Baja,1.5,1.364,Picking,Picking
+F31_C25,F32_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F31_C26,F31_C27,PH31,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F31_C26,F32_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F31_C27,F31_C28,PH31,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F31_C27,F32_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F31_C28,F31_C29,PH31,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F31_C28,F32_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F31_C29,F31_C30,PH31,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F31_C29,F32_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C30,F31_C31,PH31,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F31_C30,F32_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C31,F31_C32,PH31,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F31_C31,F32_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F31_C32,F31_C33,PH31,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F31_C32,F32_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C33,F31_C34,PH31,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F31_C33,F32_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C34,F31_C35,PH31,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F31_C34,F32_C34,PV34,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F31_C35,F31_C36,PH31,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F31_C35,F32_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C36,F31_C37,PH31,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F31_C36,F32_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C37,F31_C38,PH31,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F31_C37,F32_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F31_C38,F31_C39,PH31,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F31_C38,F32_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F31_C39,F32_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F32_C00,F32_C01,PH32,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C00,F33_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C01,F32_C02,PH32,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C01,F33_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C02,F32_C03,PH32,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C02,F33_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C03,F32_C04,PH32,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C03,F33_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C04,F32_C05,PH32,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C04,F33_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C05,F32_C06,PH32,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C05,F33_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C06,F32_C07,PH32,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C06,F33_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C07,F32_C08,PH32,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C07,F33_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C08,F32_C09,PH32,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C08,F33_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C09,F32_C10,PH32,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C09,F33_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C10,F32_C11,PH32,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C10,F33_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C11,F32_C12,PH32,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C11,F33_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C12,F32_C13,PH32,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F32_C12,F33_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F32_C13,F32_C14,PH32,1.5,Baja,1.5,1.364,Picking,Picking
+F32_C13,F33_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F32_C14,F32_C15,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C14,F33_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F32_C15,F32_C16,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C15,F33_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F32_C16,F32_C17,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C16,F33_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F32_C17,F32_C18,PH32,1.5,Baja,1.5,1.364,Picking,Picking
+F32_C17,F33_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F32_C18,F32_C19,PH32,1.5,Alta,3.0,2.727,Picking,Picking
+F32_C18,F33_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F32_C19,F32_C20,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C19,F33_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F32_C20,F32_C21,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C20,F33_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F32_C21,F32_C22,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C21,F33_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F32_C22,F32_C23,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C22,F33_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F32_C23,F32_C24,PH32,1.5,Alta,3.0,2.727,Picking,Picking
+F32_C23,F33_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F32_C24,F32_C25,PH32,1.5,Baja,1.5,1.364,Picking,Picking
+F32_C24,F33_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F32_C25,F32_C26,PH32,1.5,Media,2.25,2.045,Picking,Picking
+F32_C25,F33_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F32_C26,F32_C27,PH32,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F32_C26,F33_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F32_C27,F32_C28,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C27,F33_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F32_C28,F32_C29,PH32,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F32_C28,F33_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F32_C29,F32_C30,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C29,F33_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F32_C30,F32_C31,PH32,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F32_C30,F33_C30,PV30,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F32_C31,F32_C32,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C31,F33_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F32_C32,F32_C33,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C32,F33_C32,PV32,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F32_C33,F32_C34,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C33,F33_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F32_C34,F32_C35,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C34,F33_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F32_C35,F32_C36,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C35,F33_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F32_C36,F32_C37,PH32,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F32_C36,F33_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F32_C37,F32_C38,PH32,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F32_C37,F33_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F32_C38,F32_C39,PH32,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F32_C38,F33_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F32_C39,F33_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F33_C00,F33_C01,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C00,F34_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C01,F33_C02,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C01,F34_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C02,F33_C03,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C02,F34_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C03,F33_C04,PH33,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C03,F34_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C04,F33_C05,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C04,F34_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C05,F33_C06,PH33,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C05,F34_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C06,F33_C07,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C06,F34_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C07,F33_C08,PH33,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C07,F34_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C08,F33_C09,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C08,F34_C08,PV08,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C09,F33_C10,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C09,F34_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C10,F33_C11,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C10,F34_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C11,F33_C12,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C11,F34_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C12,F33_C13,PH33,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Picking
+F33_C12,F34_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F33_C13,F33_C14,PH33,1.5,Alta,3.0,2.727,Picking,Picking
+F33_C13,F34_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F33_C14,F33_C15,PH33,1.5,Media,2.25,2.045,Picking,Picking
+F33_C14,F34_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C15,F33_C16,PH33,1.5,Alta,3.0,2.727,Picking,Picking
+F33_C15,F34_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C16,F33_C17,PH33,1.5,Baja,1.5,1.364,Picking,Picking
+F33_C16,F34_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C17,F33_C18,PH33,1.5,Alta,3.0,2.727,Picking,Picking
+F33_C17,F34_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C18,F33_C19,PH33,1.5,Baja,1.5,1.364,Picking,Picking
+F33_C18,F34_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F33_C19,F33_C20,PH33,1.5,Media,2.25,2.045,Picking,Picking
+F33_C19,F34_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C20,F33_C21,PH33,1.5,Media,2.25,2.045,Picking,Picking
+F33_C20,F34_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F33_C21,F33_C22,PH33,1.5,Media,2.25,2.045,Picking,Picking
+F33_C21,F34_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F33_C22,F33_C23,PH33,1.5,Alta,3.0,2.727,Picking,Picking
+F33_C22,F34_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C23,F33_C24,PH33,1.5,Alta,3.0,2.727,Picking,Picking
+F33_C23,F34_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F33_C24,F33_C25,PH33,1.5,Baja,1.5,1.364,Picking,Picking
+F33_C24,F34_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F33_C25,F33_C26,PH33,1.5,Baja,1.5,1.364,Picking,Picking
+F33_C25,F34_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F33_C26,F33_C27,PH33,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F33_C26,F34_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F33_C27,F33_C28,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C27,F34_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F33_C28,F33_C29,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C28,F34_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F33_C29,F33_C30,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C29,F34_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F33_C30,F33_C31,PH33,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F33_C30,F34_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F33_C31,F33_C32,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C31,F34_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F33_C32,F33_C33,PH33,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F33_C32,F34_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F33_C33,F33_C34,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C33,F34_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F33_C34,F33_C35,PH33,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F33_C34,F34_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F33_C35,F33_C36,PH33,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F33_C35,F34_C35,PV35,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F33_C36,F33_C37,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C36,F34_C36,PV36,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F33_C37,F33_C38,PH33,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F33_C37,F34_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F33_C38,F33_C39,PH33,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F33_C38,F34_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F33_C39,F34_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C00,F34_C01,PH34,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C00,F35_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C01,F34_C02,PH34,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C01,F35_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C02,F34_C03,PH34,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C02,F35_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C03,F34_C04,PH34,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C03,F35_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C04,F34_C05,PH34,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C04,F35_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C05,F34_C06,PH34,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C05,F35_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C06,F34_C07,PH34,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C06,F35_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C07,F34_C08,PH34,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C07,F35_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C08,F34_C09,PH34,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C08,F35_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C09,F34_C10,PH34,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C09,F35_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C10,F34_C11,PH34,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C10,F35_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C11,F34_C12,PH34,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C11,F35_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C12,F34_C13,PH34,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F34_C12,F35_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F34_C13,F34_C14,PH34,1.5,Media,2.25,2.045,Picking,Picking
+F34_C13,F35_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F34_C14,F34_C15,PH34,1.5,Media,2.25,2.045,Picking,Picking
+F34_C14,F35_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F34_C15,F34_C16,PH34,1.5,Alta,3.0,2.727,Picking,Picking
+F34_C15,F35_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F34_C16,F34_C17,PH34,1.5,Media,2.25,2.045,Picking,Picking
+F34_C16,F35_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F34_C17,F34_C18,PH34,1.5,Alta,3.0,2.727,Picking,Picking
+F34_C17,F35_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F34_C18,F34_C19,PH34,1.5,Baja,1.5,1.364,Picking,Picking
+F34_C18,F35_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F34_C19,F34_C20,PH34,1.5,Baja,1.5,1.364,Picking,Picking
+F34_C19,F35_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F34_C20,F34_C21,PH34,1.5,Alta,3.0,2.727,Picking,Picking
+F34_C20,F35_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F34_C21,F34_C22,PH34,1.5,Media,2.25,2.045,Picking,Picking
+F34_C21,F35_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F34_C22,F34_C23,PH34,1.5,Alta,3.0,2.727,Picking,Picking
+F34_C22,F35_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F34_C23,F34_C24,PH34,1.5,Media,2.25,2.045,Picking,Picking
+F34_C23,F35_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F34_C24,F34_C25,PH34,1.5,Baja,1.5,1.364,Picking,Picking
+F34_C24,F35_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F34_C25,F34_C26,PH34,1.5,Alta,3.0,2.727,Picking,Picking
+F34_C25,F35_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F34_C26,F34_C27,PH34,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F34_C26,F35_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F34_C27,F34_C28,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C27,F35_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F34_C28,F34_C29,PH34,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F34_C28,F35_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C29,F34_C30,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C29,F35_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C30,F34_C31,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C30,F35_C30,PV30,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F34_C31,F34_C32,PH34,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F34_C31,F35_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C32,F34_C33,PH34,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F34_C32,F35_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C33,F34_C34,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C33,F35_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F34_C34,F34_C35,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C34,F35_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C35,F34_C36,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C35,F35_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F34_C36,F34_C37,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C36,F35_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F34_C37,F34_C38,PH34,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F34_C37,F35_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F34_C38,F34_C39,PH34,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F34_C38,F35_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F34_C39,F35_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F35_C00,F35_C01,PH35,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C00,F36_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C01,F35_C02,PH35,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C01,F36_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C02,F35_C03,PH35,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C02,F36_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C03,F35_C04,PH35,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C03,F36_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C04,F35_C05,PH35,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C04,F36_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C05,F35_C06,PH35,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C05,F36_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C06,F35_C07,PH35,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C06,F36_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C07,F35_C08,PH35,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C07,F36_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C08,F35_C09,PH35,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C08,F36_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C09,F35_C10,PH35,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C09,F36_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C10,F35_C11,PH35,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C10,F36_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C11,F35_C12,PH35,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C11,F36_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C12,F35_C13,PH35,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F35_C12,F36_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F35_C13,F35_C14,PH35,1.5,Baja,1.5,1.364,Picking,Picking
+F35_C13,F36_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F35_C14,F35_C15,PH35,1.5,Baja,1.5,1.364,Picking,Picking
+F35_C14,F36_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F35_C15,F35_C16,PH35,1.5,Alta,3.0,2.727,Picking,Picking
+F35_C15,F36_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F35_C16,F35_C17,PH35,1.5,Baja,1.5,1.364,Picking,Picking
+F35_C16,F36_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F35_C17,F35_C18,PH35,1.5,Alta,3.0,2.727,Picking,Picking
+F35_C17,F36_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F35_C18,F35_C19,PH35,1.5,Alta,3.0,2.727,Picking,Picking
+F35_C18,F36_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F35_C19,F35_C20,PH35,1.5,Alta,3.0,2.727,Picking,Picking
+F35_C19,F36_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F35_C20,F35_C21,PH35,1.5,Alta,3.0,2.727,Picking,Picking
+F35_C20,F36_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F35_C21,F35_C22,PH35,1.5,Media,2.25,2.045,Picking,Picking
+F35_C21,F36_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F35_C22,F35_C23,PH35,1.5,Alta,3.0,2.727,Picking,Picking
+F35_C22,F36_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F35_C23,F35_C24,PH35,1.5,Media,2.25,2.045,Picking,Picking
+F35_C23,F36_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F35_C24,F35_C25,PH35,1.5,Media,2.25,2.045,Picking,Picking
+F35_C24,F36_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F35_C25,F35_C26,PH35,1.5,Media,2.25,2.045,Picking,Picking
+F35_C25,F36_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F35_C26,F35_C27,PH35,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F35_C26,F36_C26,PV26,2.5,Baja,2.5,2.273,Picking,Picking
+F35_C27,F35_C28,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C27,F36_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F35_C28,F35_C29,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C28,F36_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F35_C29,F35_C30,PH35,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F35_C29,F36_C29,PV29,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F35_C30,F35_C31,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C30,F36_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F35_C31,F35_C32,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C31,F36_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F35_C32,F35_C33,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C32,F36_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F35_C33,F35_C34,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C33,F36_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F35_C34,F35_C35,PH35,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F35_C34,F36_C34,PV34,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F35_C35,F35_C36,PH35,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F35_C35,F36_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F35_C36,F35_C37,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C36,F36_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F35_C37,F35_C38,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C37,F36_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F35_C38,F35_C39,PH35,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F35_C38,F36_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F35_C39,F36_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C00,F36_C01,PH36,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C00,F37_C00,PV00,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C01,F36_C02,PH36,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C01,F37_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C02,F36_C03,PH36,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C02,F37_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C03,F36_C04,PH36,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C03,F37_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C04,F36_C05,PH36,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C04,F37_C04,PV04,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C05,F36_C06,PH36,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C05,F37_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C06,F36_C07,PH36,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C06,F37_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C07,F36_C08,PH36,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C07,F37_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C08,F36_C09,PH36,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C08,F37_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C09,F36_C10,PH36,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C09,F37_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C10,F36_C11,PH36,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C10,F37_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C11,F36_C12,PH36,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C11,F37_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C12,F36_C13,PH36,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F36_C12,F37_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F36_C13,F36_C14,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C13,F37_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F36_C14,F36_C15,PH36,1.5,Alta,3.0,2.727,Picking,Picking
+F36_C14,F37_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F36_C15,F36_C16,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C15,F37_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C16,F36_C17,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C16,F37_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C17,F36_C18,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C17,F37_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F36_C18,F36_C19,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C18,F37_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C19,F36_C20,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C19,F37_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C20,F36_C21,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C20,F37_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F36_C21,F36_C22,PH36,1.5,Baja,1.5,1.364,Picking,Picking
+F36_C21,F37_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C22,F36_C23,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C22,F37_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C23,F36_C24,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C23,F37_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F36_C24,F36_C25,PH36,1.5,Alta,3.0,2.727,Picking,Picking
+F36_C24,F37_C24,PV24,2.5,Baja,2.5,2.273,Picking,Picking
+F36_C25,F36_C26,PH36,1.5,Media,2.25,2.045,Picking,Picking
+F36_C25,F37_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F36_C26,F36_C27,PH36,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F36_C26,F37_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F36_C27,F36_C28,PH36,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F36_C27,F37_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C28,F36_C29,PH36,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F36_C28,F37_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F36_C29,F36_C30,PH36,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F36_C29,F37_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F36_C30,F36_C31,PH36,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F36_C30,F37_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C31,F36_C32,PH36,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F36_C31,F37_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C32,F36_C33,PH36,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F36_C32,F37_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C33,F36_C34,PH36,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F36_C33,F37_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F36_C34,F36_C35,PH36,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F36_C34,F37_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C35,F36_C36,PH36,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F36_C35,F37_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C36,F36_C37,PH36,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F36_C36,F37_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F36_C37,F36_C38,PH36,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F36_C37,F37_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F36_C38,F36_C39,PH36,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F36_C38,F37_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F36_C39,F37_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F37_C00,F37_C01,PH37,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C00,F38_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C01,F37_C02,PH37,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C01,F38_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C02,F37_C03,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C02,F38_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C03,F37_C04,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C03,F38_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C04,F37_C05,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C04,F38_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C05,F37_C06,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C05,F38_C05,PV05,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C06,F37_C07,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C06,F38_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C07,F37_C08,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C07,F38_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C08,F37_C09,PH37,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C08,F38_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C09,F37_C10,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C09,F38_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C10,F37_C11,PH37,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C10,F38_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C11,F37_C12,PH37,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C11,F38_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C12,F37_C13,PH37,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F37_C12,F38_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F37_C13,F37_C14,PH37,1.5,Baja,1.5,1.364,Picking,Picking
+F37_C13,F38_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F37_C14,F37_C15,PH37,1.5,Baja,1.5,1.364,Picking,Picking
+F37_C14,F38_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F37_C15,F37_C16,PH37,1.5,Media,2.25,2.045,Picking,Picking
+F37_C15,F38_C15,PV15,2.5,Media,3.75,3.409,Picking,Picking
+F37_C16,F37_C17,PH37,1.5,Baja,1.5,1.364,Picking,Picking
+F37_C16,F38_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F37_C17,F37_C18,PH37,1.5,Media,2.25,2.045,Picking,Picking
+F37_C17,F38_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F37_C18,F37_C19,PH37,1.5,Alta,3.0,2.727,Picking,Picking
+F37_C18,F38_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F37_C19,F37_C20,PH37,1.5,Alta,3.0,2.727,Picking,Picking
+F37_C19,F38_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F37_C20,F37_C21,PH37,1.5,Alta,3.0,2.727,Picking,Picking
+F37_C20,F38_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F37_C21,F37_C22,PH37,1.5,Alta,3.0,2.727,Picking,Picking
+F37_C21,F38_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F37_C22,F37_C23,PH37,1.5,Media,2.25,2.045,Picking,Picking
+F37_C22,F38_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F37_C23,F37_C24,PH37,1.5,Media,2.25,2.045,Picking,Picking
+F37_C23,F38_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F37_C24,F37_C25,PH37,1.5,Media,2.25,2.045,Picking,Picking
+F37_C24,F38_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F37_C25,F37_C26,PH37,1.5,Baja,1.5,1.364,Picking,Picking
+F37_C25,F38_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F37_C26,F37_C27,PH37,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F37_C26,F38_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F37_C27,F37_C28,PH37,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F37_C27,F38_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F37_C28,F37_C29,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C28,F38_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F37_C29,F37_C30,PH37,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F37_C29,F38_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F37_C30,F37_C31,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C30,F38_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F37_C31,F37_C32,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C31,F38_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F37_C32,F37_C33,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C32,F38_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F37_C33,F37_C34,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C33,F38_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F37_C34,F37_C35,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C34,F38_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F37_C35,F37_C36,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C35,F38_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F37_C36,F37_C37,PH37,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F37_C36,F38_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F37_C37,F37_C38,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C37,F38_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F37_C38,F37_C39,PH37,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F37_C38,F38_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F37_C39,F38_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C00,F38_C01,PH38,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C00,F39_C00,PV00,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C01,F38_C02,PH38,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C01,F39_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C02,F38_C03,PH38,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C02,F39_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C03,F38_C04,PH38,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C03,F39_C03,PV03,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C04,F38_C05,PH38,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C04,F39_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C05,F38_C06,PH38,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C05,F39_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C06,F38_C07,PH38,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C06,F39_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C07,F38_C08,PH38,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C07,F39_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C08,F38_C09,PH38,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C08,F39_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C09,F38_C10,PH38,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C09,F39_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C10,F38_C11,PH38,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C10,F39_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C11,F38_C12,PH38,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C11,F39_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C12,F38_C13,PH38,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F38_C12,F39_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F38_C13,F38_C14,PH38,1.5,Baja,1.5,1.364,Picking,Picking
+F38_C13,F39_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F38_C14,F38_C15,PH38,1.5,Media,2.25,2.045,Picking,Picking
+F38_C14,F39_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F38_C15,F38_C16,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C15,F39_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C16,F38_C17,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C16,F39_C16,PV16,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C17,F38_C18,PH38,1.5,Media,2.25,2.045,Picking,Picking
+F38_C17,F39_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C18,F38_C19,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C18,F39_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F38_C19,F38_C20,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C19,F39_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F38_C20,F38_C21,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C20,F39_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C21,F38_C22,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C21,F39_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C22,F38_C23,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C22,F39_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F38_C23,F38_C24,PH38,1.5,Media,2.25,2.045,Picking,Picking
+F38_C23,F39_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F38_C24,F38_C25,PH38,1.5,Baja,1.5,1.364,Picking,Picking
+F38_C24,F39_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C25,F38_C26,PH38,1.5,Alta,3.0,2.727,Picking,Picking
+F38_C25,F39_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F38_C26,F38_C27,PH38,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F38_C26,F39_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F38_C27,F38_C28,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C27,F39_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C28,F38_C29,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C28,F39_C28,PV28,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F38_C29,F38_C30,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C29,F39_C29,PV29,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F38_C30,F38_C31,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C30,F39_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C31,F38_C32,PH38,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F38_C31,F39_C31,PV31,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F38_C32,F38_C33,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C32,F39_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C33,F38_C34,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C33,F39_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C34,F38_C35,PH38,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F38_C34,F39_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F38_C35,F38_C36,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C35,F39_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F38_C36,F38_C37,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C36,F39_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C37,F38_C38,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C37,F39_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C38,F38_C39,PH38,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F38_C38,F39_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F38_C39,F39_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C00,F39_C01,PH39,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C00,F40_C00,PV00,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C01,F39_C02,PH39,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C01,F40_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C02,F39_C03,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C02,F40_C02,PV02,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C03,F39_C04,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C03,F40_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C04,F39_C05,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C04,F40_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C05,F39_C06,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C05,F40_C05,PV05,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C06,F39_C07,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C06,F40_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C07,F39_C08,PH39,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C07,F40_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C08,F39_C09,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C08,F40_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C09,F39_C10,PH39,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C09,F40_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C10,F39_C11,PH39,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C10,F40_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C11,F39_C12,PH39,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C11,F40_C11,PV11,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C12,F39_C13,PH39,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F39_C12,F40_C12,PV12,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F39_C13,F39_C14,PH39,1.5,Alta,3.0,2.727,Picking,Picking
+F39_C13,F40_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F39_C14,F39_C15,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C14,F40_C14,PV14,2.5,Baja,2.5,2.273,Picking,Picking
+F39_C15,F39_C16,PH39,1.5,Alta,3.0,2.727,Picking,Picking
+F39_C15,F40_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F39_C16,F39_C17,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C16,F40_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F39_C17,F39_C18,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C17,F40_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F39_C18,F39_C19,PH39,1.5,Baja,1.5,1.364,Picking,Picking
+F39_C18,F40_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F39_C19,F39_C20,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C19,F40_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F39_C20,F39_C21,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C20,F40_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F39_C21,F39_C22,PH39,1.5,Alta,3.0,2.727,Picking,Picking
+F39_C21,F40_C21,PV21,2.5,Media,3.75,3.409,Picking,Picking
+F39_C22,F39_C23,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C22,F40_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F39_C23,F39_C24,PH39,1.5,Baja,1.5,1.364,Picking,Picking
+F39_C23,F40_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F39_C24,F39_C25,PH39,1.5,Media,2.25,2.045,Picking,Picking
+F39_C24,F40_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F39_C25,F39_C26,PH39,1.5,Alta,3.0,2.727,Picking,Picking
+F39_C25,F40_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F39_C26,F39_C27,PH39,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F39_C26,F40_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F39_C27,F39_C28,PH39,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F39_C27,F40_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C28,F39_C29,PH39,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F39_C28,F40_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C29,F39_C30,PH39,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F39_C29,F40_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C30,F39_C31,PH39,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F39_C30,F40_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C31,F39_C32,PH39,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F39_C31,F40_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C32,F39_C33,PH39,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F39_C32,F40_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C33,F39_C34,PH39,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F39_C33,F40_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C34,F39_C35,PH39,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F39_C34,F40_C34,PV34,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F39_C35,F39_C36,PH39,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F39_C35,F40_C35,PV35,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F39_C36,F39_C37,PH39,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F39_C36,F40_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F39_C37,F39_C38,PH39,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F39_C37,F40_C37,PV37,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F39_C38,F39_C39,PH39,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F39_C38,F40_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F39_C39,F40_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F40_C00,F40_C01,PH40,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C00,F41_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C01,F40_C02,PH40,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C01,F41_C01,PV01,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C02,F40_C03,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C02,F41_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C03,F40_C04,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C03,F41_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C04,F40_C05,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C04,F41_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C05,F40_C06,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C05,F41_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C06,F40_C07,PH40,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C06,F41_C06,PV06,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C07,F40_C08,PH40,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C07,F41_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C08,F40_C09,PH40,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C08,F41_C08,PV08,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C09,F40_C10,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C09,F41_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C10,F40_C11,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C10,F41_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C11,F40_C12,PH40,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C11,F41_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C12,F40_C13,PH40,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Picking
+F40_C12,F41_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F40_C13,F40_C14,PH40,1.5,Baja,1.5,1.364,Picking,Picking
+F40_C13,F41_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F40_C14,F40_C15,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C14,F41_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F40_C15,F40_C16,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C15,F41_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F40_C16,F40_C17,PH40,1.5,Alta,3.0,2.727,Picking,Picking
+F40_C16,F41_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F40_C17,F40_C18,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C17,F41_C17,PV17,2.5,Media,3.75,3.409,Picking,Picking
+F40_C18,F40_C19,PH40,1.5,Alta,3.0,2.727,Picking,Picking
+F40_C18,F41_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F40_C19,F40_C20,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C19,F41_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F40_C20,F40_C21,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C20,F41_C20,PV20,2.5,Baja,2.5,2.273,Picking,Picking
+F40_C21,F40_C22,PH40,1.5,Baja,1.5,1.364,Picking,Picking
+F40_C21,F41_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F40_C22,F40_C23,PH40,1.5,Alta,3.0,2.727,Picking,Picking
+F40_C22,F41_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F40_C23,F40_C24,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C23,F41_C23,PV23,2.5,Media,3.75,3.409,Picking,Picking
+F40_C24,F40_C25,PH40,1.5,Baja,1.5,1.364,Picking,Picking
+F40_C24,F41_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F40_C25,F40_C26,PH40,1.5,Media,2.25,2.045,Picking,Picking
+F40_C25,F41_C25,PV25,2.5,Alta,5.0,4.545,Picking,Picking
+F40_C26,F40_C27,PH40,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F40_C26,F41_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F40_C27,F40_C28,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C27,F41_C27,PV27,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F40_C28,F40_C29,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C28,F41_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F40_C29,F40_C30,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C29,F41_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F40_C30,F40_C31,PH40,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F40_C30,F41_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F40_C31,F40_C32,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C31,F41_C31,PV31,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F40_C32,F40_C33,PH40,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F40_C32,F41_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F40_C33,F40_C34,PH40,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F40_C33,F41_C33,PV33,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F40_C34,F40_C35,PH40,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F40_C34,F41_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F40_C35,F40_C36,PH40,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F40_C35,F41_C35,PV35,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F40_C36,F40_C37,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C36,F41_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F40_C37,F40_C38,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C37,F41_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F40_C38,F40_C39,PH40,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F40_C38,F41_C38,PV38,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F40_C39,F41_C39,PV39,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F41_C00,F41_C01,PH41,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C00,F42_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C01,F41_C02,PH41,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C01,F42_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C02,F41_C03,PH41,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C02,F42_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C03,F41_C04,PH41,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C03,F42_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C04,F41_C05,PH41,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C04,F42_C04,PV04,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C05,F41_C06,PH41,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C05,F42_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C06,F41_C07,PH41,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C06,F42_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C07,F41_C08,PH41,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C07,F42_C07,PV07,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C08,F41_C09,PH41,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C08,F42_C08,PV08,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C09,F41_C10,PH41,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C09,F42_C09,PV09,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C10,F41_C11,PH41,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C10,F42_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C11,F41_C12,PH41,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C11,F42_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C12,F41_C13,PH41,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F41_C12,F42_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F41_C13,F41_C14,PH41,1.5,Alta,3.0,2.727,Picking,Picking
+F41_C13,F42_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F41_C14,F41_C15,PH41,1.5,Baja,1.5,1.364,Picking,Picking
+F41_C14,F42_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F41_C15,F41_C16,PH41,1.5,Baja,1.5,1.364,Picking,Picking
+F41_C15,F42_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F41_C16,F41_C17,PH41,1.5,Media,2.25,2.045,Picking,Picking
+F41_C16,F42_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F41_C17,F41_C18,PH41,1.5,Media,2.25,2.045,Picking,Picking
+F41_C17,F42_C17,PV17,2.5,Baja,2.5,2.273,Picking,Picking
+F41_C18,F41_C19,PH41,1.5,Alta,3.0,2.727,Picking,Picking
+F41_C18,F42_C18,PV18,2.5,Alta,5.0,4.545,Picking,Picking
+F41_C19,F41_C20,PH41,1.5,Baja,1.5,1.364,Picking,Picking
+F41_C19,F42_C19,PV19,2.5,Baja,2.5,2.273,Picking,Picking
+F41_C20,F41_C21,PH41,1.5,Alta,3.0,2.727,Picking,Picking
+F41_C20,F42_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F41_C21,F41_C22,PH41,1.5,Media,2.25,2.045,Picking,Picking
+F41_C21,F42_C21,PV21,2.5,Alta,5.0,4.545,Picking,Picking
+F41_C22,F41_C23,PH41,1.5,Media,2.25,2.045,Picking,Picking
+F41_C22,F42_C22,PV22,2.5,Baja,2.5,2.273,Picking,Picking
+F41_C23,F41_C24,PH41,1.5,Baja,1.5,1.364,Picking,Picking
+F41_C23,F42_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F41_C24,F41_C25,PH41,1.5,Alta,3.0,2.727,Picking,Picking
+F41_C24,F42_C24,PV24,2.5,Media,3.75,3.409,Picking,Picking
+F41_C25,F41_C26,PH41,1.5,Media,2.25,2.045,Picking,Picking
+F41_C25,F42_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F41_C26,F41_C27,PH41,1.5,Baja,1.5,1.364,Picking,Empaque y Despacho
+F41_C26,F42_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F41_C27,F41_C28,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C27,F42_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C28,F41_C29,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C28,F42_C28,PV28,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F41_C29,F41_C30,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C29,F42_C29,PV29,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F41_C30,F41_C31,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C30,F42_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C31,F41_C32,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C31,F42_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C32,F41_C33,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C32,F42_C32,PV32,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C33,F41_C34,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C33,F42_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F41_C34,F41_C35,PH41,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F41_C34,F42_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C35,F41_C36,PH41,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F41_C35,F42_C35,PV35,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C36,F41_C37,PH41,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F41_C36,F42_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F41_C37,F41_C38,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C37,F42_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F41_C38,F41_C39,PH41,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F41_C38,F42_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F41_C39,F42_C39,PV39,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F42_C00,F42_C01,PH42,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C00,F43_C00,PV00,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C01,F42_C02,PH42,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C01,F43_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C02,F42_C03,PH42,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C02,F43_C02,PV02,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C03,F42_C04,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C03,F43_C03,PV03,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C04,F42_C05,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C04,F43_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C05,F42_C06,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C05,F43_C05,PV05,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C06,F42_C07,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C06,F43_C06,PV06,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C07,F42_C08,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C07,F43_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C08,F42_C09,PH42,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C08,F43_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C09,F42_C10,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C09,F43_C09,PV09,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C10,F42_C11,PH42,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C10,F43_C10,PV10,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C11,F42_C12,PH42,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C11,F43_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C12,F42_C13,PH42,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F42_C12,F43_C12,PV12,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F42_C13,F42_C14,PH42,1.5,Media,2.25,2.045,Picking,Picking
+F42_C13,F43_C13,PV13,2.5,Alta,5.0,4.545,Picking,Picking
+F42_C14,F42_C15,PH42,1.5,Baja,1.5,1.364,Picking,Picking
+F42_C14,F43_C14,PV14,2.5,Alta,5.0,4.545,Picking,Picking
+F42_C15,F42_C16,PH42,1.5,Alta,3.0,2.727,Picking,Picking
+F42_C15,F43_C15,PV15,2.5,Baja,2.5,2.273,Picking,Picking
+F42_C16,F42_C17,PH42,1.5,Alta,3.0,2.727,Picking,Picking
+F42_C16,F43_C16,PV16,2.5,Media,3.75,3.409,Picking,Picking
+F42_C17,F42_C18,PH42,1.5,Media,2.25,2.045,Picking,Picking
+F42_C17,F43_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F42_C18,F42_C19,PH42,1.5,Media,2.25,2.045,Picking,Picking
+F42_C18,F43_C18,PV18,2.5,Media,3.75,3.409,Picking,Picking
+F42_C19,F42_C20,PH42,1.5,Alta,3.0,2.727,Picking,Picking
+F42_C19,F43_C19,PV19,2.5,Media,3.75,3.409,Picking,Picking
+F42_C20,F42_C21,PH42,1.5,Alta,3.0,2.727,Picking,Picking
+F42_C20,F43_C20,PV20,2.5,Alta,5.0,4.545,Picking,Picking
+F42_C21,F42_C22,PH42,1.5,Alta,3.0,2.727,Picking,Picking
+F42_C21,F43_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F42_C22,F42_C23,PH42,1.5,Media,2.25,2.045,Picking,Picking
+F42_C22,F43_C22,PV22,2.5,Media,3.75,3.409,Picking,Picking
+F42_C23,F42_C24,PH42,1.5,Media,2.25,2.045,Picking,Picking
+F42_C23,F43_C23,PV23,2.5,Baja,2.5,2.273,Picking,Picking
+F42_C24,F42_C25,PH42,1.5,Baja,1.5,1.364,Picking,Picking
+F42_C24,F43_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F42_C25,F42_C26,PH42,1.5,Alta,3.0,2.727,Picking,Picking
+F42_C25,F43_C25,PV25,2.5,Baja,2.5,2.273,Picking,Picking
+F42_C26,F42_C27,PH42,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F42_C26,F43_C26,PV26,2.5,Media,3.75,3.409,Picking,Picking
+F42_C27,F42_C28,PH42,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F42_C27,F43_C27,PV27,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F42_C28,F42_C29,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C28,F43_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F42_C29,F42_C30,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C29,F43_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F42_C30,F42_C31,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C30,F43_C30,PV30,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F42_C31,F42_C32,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C31,F43_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F42_C32,F42_C33,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C32,F43_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F42_C33,F42_C34,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C33,F43_C33,PV33,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F42_C34,F42_C35,PH42,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F42_C34,F43_C34,PV34,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F42_C35,F42_C36,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C35,F43_C35,PV35,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F42_C36,F42_C37,PH42,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F42_C36,F43_C36,PV36,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F42_C37,F42_C38,PH42,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F42_C37,F43_C37,PV37,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F42_C38,F42_C39,PH42,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F42_C38,F43_C38,PV38,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F42_C39,F43_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F43_C00,F43_C01,PH43,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C00,F44_C00,PV00,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C01,F43_C02,PH43,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C01,F44_C01,PV01,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C02,F43_C03,PH43,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C02,F44_C02,PV02,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C03,F43_C04,PH43,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C03,F44_C03,PV03,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C04,F43_C05,PH43,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C04,F44_C04,PV04,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C05,F43_C06,PH43,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C05,F44_C05,PV05,2.5,Media,3.75,3.409,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C06,F43_C07,PH43,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C06,F44_C06,PV06,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C07,F43_C08,PH43,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C07,F44_C07,PV07,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C08,F43_C09,PH43,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C08,F44_C08,PV08,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C09,F43_C10,PH43,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C09,F44_C09,PV09,2.5,Alta,5.0,4.545,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C10,F43_C11,PH43,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C10,F44_C10,PV10,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C11,F43_C12,PH43,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C11,F44_C11,PV11,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C12,F43_C13,PH43,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Picking
+F43_C12,F44_C12,PV12,2.5,Baja,2.5,2.273,Recepción y Almacenamiento,Recepción y Almacenamiento
+F43_C13,F43_C14,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C13,F44_C13,PV13,2.5,Media,3.75,3.409,Picking,Picking
+F43_C14,F43_C15,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C14,F44_C14,PV14,2.5,Media,3.75,3.409,Picking,Picking
+F43_C15,F43_C16,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C15,F44_C15,PV15,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C16,F43_C17,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C16,F44_C16,PV16,2.5,Baja,2.5,2.273,Picking,Picking
+F43_C17,F43_C18,PH43,1.5,Media,2.25,2.045,Picking,Picking
+F43_C17,F44_C17,PV17,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C18,F43_C19,PH43,1.5,Media,2.25,2.045,Picking,Picking
+F43_C18,F44_C18,PV18,2.5,Baja,2.5,2.273,Picking,Picking
+F43_C19,F43_C20,PH43,1.5,Baja,1.5,1.364,Picking,Picking
+F43_C19,F44_C19,PV19,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C20,F43_C21,PH43,1.5,Baja,1.5,1.364,Picking,Picking
+F43_C20,F44_C20,PV20,2.5,Media,3.75,3.409,Picking,Picking
+F43_C21,F43_C22,PH43,1.5,Media,2.25,2.045,Picking,Picking
+F43_C21,F44_C21,PV21,2.5,Baja,2.5,2.273,Picking,Picking
+F43_C22,F43_C23,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C22,F44_C22,PV22,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C23,F43_C24,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C23,F44_C23,PV23,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C24,F43_C25,PH43,1.5,Alta,3.0,2.727,Picking,Picking
+F43_C24,F44_C24,PV24,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C25,F43_C26,PH43,1.5,Media,2.25,2.045,Picking,Picking
+F43_C25,F44_C25,PV25,2.5,Media,3.75,3.409,Picking,Picking
+F43_C26,F43_C27,PH43,1.5,Alta,3.0,2.727,Picking,Empaque y Despacho
+F43_C26,F44_C26,PV26,2.5,Alta,5.0,4.545,Picking,Picking
+F43_C27,F43_C28,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C27,F44_C27,PV27,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F43_C28,F43_C29,PH43,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F43_C28,F44_C28,PV28,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F43_C29,F43_C30,PH43,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F43_C29,F44_C29,PV29,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F43_C30,F43_C31,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C30,F44_C30,PV30,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F43_C31,F43_C32,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C31,F44_C31,PV31,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F43_C32,F43_C33,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C32,F44_C32,PV32,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F43_C33,F43_C34,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C33,F44_C33,PV33,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F43_C34,F43_C35,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C34,F44_C34,PV34,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F43_C35,F43_C36,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C35,F44_C35,PV35,2.5,Alta,5.0,4.545,Empaque y Despacho,Empaque y Despacho
+F43_C36,F43_C37,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C36,F44_C36,PV36,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F43_C37,F43_C38,PH43,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F43_C37,F44_C37,PV37,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F43_C38,F43_C39,PH43,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F43_C38,F44_C38,PV38,2.5,Media,3.75,3.409,Empaque y Despacho,Empaque y Despacho
+F43_C39,F44_C39,PV39,2.5,Baja,2.5,2.273,Empaque y Despacho,Empaque y Despacho
+F44_C00,F44_C01,PH44,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C01,F44_C02,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C02,F44_C03,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C03,F44_C04,PH44,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C04,F44_C05,PH44,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C05,F44_C06,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C06,F44_C07,PH44,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C07,F44_C08,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C08,F44_C09,PH44,1.5,Media,2.25,2.045,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C09,F44_C10,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C10,F44_C11,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C11,F44_C12,PH44,1.5,Baja,1.5,1.364,Recepción y Almacenamiento,Recepción y Almacenamiento
+F44_C12,F44_C13,PH44,1.5,Alta,3.0,2.727,Recepción y Almacenamiento,Picking
+F44_C13,F44_C14,PH44,1.5,Baja,1.5,1.364,Picking,Picking
+F44_C14,F44_C15,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C15,F44_C16,PH44,1.5,Alta,3.0,2.727,Picking,Picking
+F44_C16,F44_C17,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C17,F44_C18,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C18,F44_C19,PH44,1.5,Baja,1.5,1.364,Picking,Picking
+F44_C19,F44_C20,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C20,F44_C21,PH44,1.5,Alta,3.0,2.727,Picking,Picking
+F44_C21,F44_C22,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C22,F44_C23,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C23,F44_C24,PH44,1.5,Baja,1.5,1.364,Picking,Picking
+F44_C24,F44_C25,PH44,1.5,Baja,1.5,1.364,Picking,Picking
+F44_C25,F44_C26,PH44,1.5,Media,2.25,2.045,Picking,Picking
+F44_C26,F44_C27,PH44,1.5,Media,2.25,2.045,Picking,Empaque y Despacho
+F44_C27,F44_C28,PH44,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F44_C28,F44_C29,PH44,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F44_C29,F44_C30,PH44,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+F44_C30,F44_C31,PH44,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F44_C31,F44_C32,PH44,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F44_C32,F44_C33,PH44,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F44_C33,F44_C34,PH44,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F44_C34,F44_C35,PH44,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F44_C35,F44_C36,PH44,1.5,Baja,1.5,1.364,Empaque y Despacho,Empaque y Despacho
+F44_C36,F44_C37,PH44,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F44_C37,F44_C38,PH44,1.5,Media,2.25,2.045,Empaque y Despacho,Empaque y Despacho
+F44_C38,F44_C39,PH44,1.5,Alta,3.0,2.727,Empaque y Despacho,Empaque y Despacho
+`
+};
