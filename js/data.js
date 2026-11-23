@@ -47,6 +47,12 @@
     edmonds_karp: "Edmonds-Karp",
   };
 
+  KF.MODELOS_SIM = {
+    bfs: "BFS (Menos pasillos)",
+    bellman_ford: "Bellman-Ford (Menor tiempo)",
+    edmonds_karp: "Edmonds-Karp + B-F (Anti-cuellos)",
+  };
+
   KF.COMPLEJIDAD = {
     bfs: { tiempo: "O(V + E)", espacio: "O(V)" },
     bellman_ford: { tiempo: "O(V · E)", espacio: "O(V)" },
@@ -96,8 +102,9 @@
   };
 
   function parseCSV(text) {
-    const lines = text.trim().split(/\r?\n/);
-    const headers = lines[0].split(",").map((h) => h.trim());
+    const clean = text.replace(/^\uFEFF/, "").trim();
+    const lines = clean.split(/\r?\n/);
+    const headers = lines[0].split(",").map((h) => h.replace(/^\uFEFF/, "").trim());
     const rows = new Array(lines.length - 1);
     for (let i = 1; i < lines.length; i++) {
       const cols = lines[i].split(",");
@@ -132,6 +139,7 @@
     const estaciones = [];
     const estacionesDespacho = [];
     const racks = [];
+    const racksPicking = [];
     const skuMap = new Map();
     const zoneCounts = {};
 
@@ -155,6 +163,7 @@
         if (nodo.zona === "Empaque y Despacho") estacionesDespacho.push(nodo.id);
       } else {
         racks.push(nodo.id);
+        if (nodo.zona === "Picking") racksPicking.push(nodo.id);
       }
       if (nodo.sku) {
         if (!skuMap.has(nodo.sku)) skuMap.set(nodo.sku, []);
@@ -225,6 +234,27 @@
       return cap;
     }
 
+    function nearestRackForSku(sku, fromNodeId, excludedSet) {
+      const candidates = skuMap.get((sku || "").trim().toUpperCase());
+      if (!candidates || candidates.length === 0) return null;
+      const excl = excludedSet || new Set();
+      const avail = candidates.filter((id) => !excl.has(id));
+      const pool = avail.length > 0 ? avail : candidates;
+      const ref = nodos[fromNodeId];
+      if (!ref) return pool[0];
+      let bestId = pool[0];
+      let bestDist = Infinity;
+      for (const id of pool) {
+        const n = nodos[id];
+        const d = Math.abs(n.fila - ref.fila) + Math.abs(n.col - ref.col);
+        if (d < bestDist) {
+          bestDist = d;
+          bestId = id;
+        }
+      }
+      return bestId;
+    }
+
     const data = {
       nodos,
       nodeList,
@@ -234,7 +264,9 @@
       estaciones,
       estacionesDespacho,
       racks,
+      racksPicking,
       skuMap,
+      nearestRackForSku,
       zoneCounts,
       freqCounts,
       graphs,

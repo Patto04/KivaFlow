@@ -3,7 +3,7 @@
    1. BFS (Búsqueda en Anchura)             — O(V + E)
    2. Bellman-Ford (con salida anticipada)  — O(V · E)
    3. Edmonds-Karp (Flujo Máximo / Min-Cut) — O(V · E²)
-   + Oráculo Dijkstra para la verificación en vivo
+   + Certificado de optimalidad de caminos mínimos (sin algoritmos externos)
    ========================================================= */
 (function (global) {
   "use strict";
@@ -297,62 +297,33 @@
     return KF.edmondsKarp(cap, SUPER_S, SUPER_T, recordSteps);
   };
 
-  /* ---------- Oráculo Dijkstra (solo para Verificación independiente) ---------- */
-  KF.dijkstraOracle = function (adj, start, target) {
-    const dist = new Map([[start, 0]]);
-    const visited = new Set();
-    // Binary min-heap
-    const heap = [[0, start]];
-    function push(item) {
-      heap.push(item);
-      let i = heap.length - 1;
-      while (i > 0) {
-        const p = (i - 1) >> 1;
-        if (heap[p][0] <= heap[i][0]) break;
-        const tmp = heap[p];
-        heap[p] = heap[i];
-        heap[i] = tmp;
-        i = p;
+  /* ---------- Certificado de optimalidad de Bellman-Ford (sin otro algoritmo) ---------- */
+  KF.certificarBellmanFord = function (dist, parent, directedEdges, edgeMap, start, target, profile) {
+    let maxError = 0;
+    // 1. Condición dual de optimalidad en todas las aristas dirigidas: dist[v] <= dist[u] + w
+    for (let i = 0; i < directedEdges.length; i++) {
+      const [u, v, w] = directedEdges[i];
+      const du = dist.get(u);
+      const dv = dist.get(v);
+      if (du !== Infinity && dv > du + w + 1e-9) {
+        const viol = dv - (du + w);
+        if (viol > maxError) maxError = viol;
       }
     }
-    function pop() {
-      const top = heap[0];
-      const last = heap.pop();
-      if (heap.length > 0) {
-        heap[0] = last;
-        let i = 0;
-        while (true) {
-          let l = 2 * i + 1;
-          let r = 2 * i + 2;
-          let s = i;
-          if (l < heap.length && heap[l][0] < heap[s][0]) s = l;
-          if (r < heap.length && heap[r][0] < heap[s][0]) s = r;
-          if (s === i) break;
-          const tmp = heap[i];
-          heap[i] = heap[s];
-          heap[s] = tmp;
-          i = s;
-        }
-      }
-      return top;
+    // 2. Condición primal: el camino reconstruido desde start hasta target existe y suma dist[target]
+    const path = reconstruct(parent, target);
+    if (!path.length || path[0] !== start || path[path.length - 1] !== target) {
+      return { ok: false, maxError: Infinity };
     }
-
-    while (heap.length > 0) {
-      const [d, u] = pop();
-      if (visited.has(u)) continue;
-      visited.add(u);
-      if (u === target) return d;
-      const neighbors = adj[u] || [];
-      for (let i = 0; i < neighbors.length; i++) {
-        const { to, w } = neighbors[i];
-        const nd = d + w;
-        if (nd < (dist.get(to) ?? Infinity)) {
-          dist.set(to, nd);
-          push([nd, to]);
-        }
-      }
+    let sumW = 0;
+    for (let i = 0; i < path.length - 1; i++) {
+      const e = edgeMap.get(KF.edgeKey(path[i], path[i + 1]));
+      if (!e) return { ok: false, maxError: Infinity };
+      sumW += profile === "valle" ? e.tiempoValle : e.tiempoPunta;
     }
-    return Infinity;
+    const errPrimal = Math.abs(sumW - (dist.get(target) ?? Infinity));
+    if (errPrimal > maxError) maxError = errPrimal;
+    return { ok: maxError < 1e-6, maxError };
   };
 
   /* ---------- Ruta de pedido multi-destino (Vecino más cercano) ---------- */
@@ -572,24 +543,80 @@
     const operators = [];
     const muelles = data.estacionesDespacho.length ? data.estacionesDespacho : data.estaciones;
 
+    const baseCaps = data.buildCapacities(null);
+    const baseEk = KF.edmondsKarpBetweenZones(
+      baseCaps,
+      data.nodos,
+      opts.zonaOrigen,
+      opts.zonaDestino,
+      null
+    );
+    const baseFlow = baseEk.maxFlow;
+
+    const isAntiBottleneck = opts.alg === "edmonds_karp";
+    const isDynamicBf = opts.alg === "bellman_ford" || isAntiBottleneck;
+    const cutKeys = new Set();
+    if (isAntiBottleneck) {
+      for (const c of baseEk.minCut) cutKeys.add(KF.edgeKey(c.u, c.v));
+    }
+    const liveUsage = new Map();
+    const baseDir = data.graphs[opts.hora].directed;
+    const racksPool = data.racksPicking && data.racksPicking.length ? data.racksPicking : data.racks;
+
+    let sumTimeS = 0;
+    let sumDistAdj = 0;
+
     for (let i = 0; i < opts.nOps; i++) {
       const start = muelles[Math.floor(rng() * muelles.length)];
       const k = 1 + Math.floor(rng() * opts.maxProd);
       const picks = [];
       const chosen = new Set([start]);
       while (picks.length < k) {
-        const cand = data.racks[Math.floor(rng() * data.racks.length)];
+        const cand = racksPool[Math.floor(rng() * racksPool.length)];
         if (!chosen.has(cand)) {
           chosen.add(cand);
           picks.push(cand);
         }
       }
-      const r = KF.rutaPedido(data, opts.hora, start, picks, opts.alg, false, true);
+
+      let r;
+      if (isDynamicBf) {
+        const customDir = new Array(baseDir.length);
+        for (let eIdx = 0; eIdx < baseDir.length; eIdx++) {
+          const [u, v, w] = baseDir[eIdx];
+          const ekKey = KF.edgeKey(u, v);
+          const crosses = liveUsage.get(ekKey) || 0;
+          if (isAntiBottleneck) {
+            const cutPenalty = cutKeys.has(ekKey) ? 1.45 : 1.0;
+            customDir[eIdx] = [u, v, w * cutPenalty * (1 + crosses * 0.28)];
+          } else {
+            customDir[eIdx] = [u, v, w * (1 + crosses * 0.12)];
+          }
+        }
+        const tempData = Object.assign({}, data, {
+          graphs: Object.assign({}, data.graphs, {
+            [opts.hora]: { adj: data.graphs[opts.hora].adj, directed: customDir },
+          }),
+        });
+        r = KF.rutaPedido(tempData, opts.hora, start, picks, "bellman_ford", false, true);
+      } else {
+        r = KF.rutaPedido(data, opts.hora, start, picks, opts.alg, false, true);
+      }
+      for (let j = 0; j < r.path.length - 1; j++) {
+        const kEdge = KF.edgeKey(r.path[j], r.path[j + 1]);
+        liveUsage.set(kEdge, (liveUsage.get(kEdge) || 0) + 1);
+      }
+
+      const met = KF.medirRuta(r.path, data.edgeMap, opts.hora);
+      sumTimeS += met.tiempoS;
+      sumDistAdj += met.distAjustada;
+
       operators.push({
         id: i + 1,
         muelle: start,
         racks: picks,
         path: r.path,
+        tiempoS: met.tiempoS,
       });
     }
 
@@ -634,20 +661,14 @@
       ekSteps
     );
 
-    const baseCaps = data.buildCapacities(null);
-    const baseFlow = KF.edmondsKarpBetweenZones(
-      baseCaps,
-      data.nodos,
-      opts.zonaOrigen,
-      opts.zonaDestino,
-      null
-    ).maxFlow;
-
     return {
+      alg: opts.alg,
       operators,
       usage,
       maxUsage,
       maxStep,
+      avgTimeS: +(sumTimeS / Math.max(1, operators.length)).toFixed(1),
+      avgDistAdj: +(sumDistAdj / Math.max(1, operators.length)).toFixed(1),
       dynamicLevels,
       flowRes,
       ekSteps,
