@@ -7,7 +7,7 @@ Algoritmos implementados:
 - Edmonds-Karp (Flujo Máximo / Min-Cut) — O(V · E²)
 """
 
-from . import bellman_ford, bfs, edmonds_karp, estilos, grafo, paleta, pedido, simulacion, verificacion
+from . import bellman_ford, bfs, edmonds_karp, grafo, paleta, pedido, simulacion, verificacion
 
 __all__ = [
     "grafo",
@@ -18,5 +18,4 @@ __all__ = [
     "simulacion",
     "verificacion",
     "paleta",
-    "estilos",
 ]

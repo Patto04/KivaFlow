@@ -1,9 +1,14 @@
-"""Verificación matemática de integridad del grafo y exactitud de BFS, Bellman-Ford y Edmonds-Karp."""
+"""Verificación matemática de integridad del grafo y exactitud de BFS, Bellman-Ford y Edmonds-Karp.
+
+Para Bellman-Ford se emplea un Certificado de Optimalidad de Caminos Mínimos (CLRS, Lema 24.10)
+sin recurrir a algoritmos externos:
+1. Factibilidad dual (desigualdad triangular): para toda arista dirigida (u, v, w), dist[v] <= dist[u] + w.
+2. Factibilidad primal (holgura complementaria): el camino reconstruido desde `origen` hasta `destino`
+   es conexo en G y la suma exacta de los pesos de sus aristas es igual a dist[destino].
+"""
 from __future__ import annotations
 
-import heapq
 import platform
-import random
 import sys
 import time
 from typing import Any
@@ -14,25 +19,44 @@ from . import edmonds_karp as ek
 from . import grafo
 
 
-def dijkstra_oraculo(ady: dict[str, list[tuple[str, float]]], origen: str, destino: str) -> float:
-    """Oráculo independiente de caminos mínimos con pesos no negativos para validar Bellman-Ford."""
-    dist: dict[str, float] = {origen: 0.0}
-    visitados: set[str] = set()
-    heap: list[tuple[float, str]] = [(0.0, origen)]
+def certificar_bellman_ford(
+    dist: dict[str, float],
+    padre: dict[str, str | None],
+    aristas_dirigidas: list[tuple[str, str, float]],
+    por_par: dict[tuple[str, str], dict[str, Any]],
+    origen: str,
+    destino: str,
+    perfil: str = "punta",
+) -> tuple[bool, float]:
+    """Comprueba las condiciones de optimalidad de Bellman-Ford sin usar otro algoritmo.
 
-    while heap:
-        d, u = heapq.heappop(heap)
-        if u in visitados:
-            continue
-        visitados.add(u)
-        if u == destino:
-            return d
-        for v, w in ady.get(u, ()):
-            nd = d + w
-            if nd < dist.get(v, float("inf")):
-                dist[v] = nd
-                heapq.heappush(heap, (nd, v))
-    return float("inf")
+    Devuelve (es_optimo, error_maximo).
+    """
+    if abs(dist.get(origen, 1.0)) > 1e-12:
+        return False, abs(dist.get(origen, 1.0))
+
+    max_violacion = 0.0
+    for u, v, w in aristas_dirigidas:
+        du = dist[u]
+        dv = dist[v]
+        if dv > du + w + 1e-9:
+            max_violacion = max(max_violacion, dv - (du + w))
+
+    camino = bfs_mod.reconstruir(padre, destino)
+    if not camino or camino[0] != origen or camino[-1] != destino:
+        return False, float("inf")
+
+    campo = "tiempo_valle" if perfil == "valle" else "tiempo_punta"
+    suma_camino = 0.0
+    for u, v in zip(camino, camino[1:]):
+        a = por_par.get(grafo.edge_key(u, v))
+        if not a:
+            return False, float("inf")
+        suma_camino += float(a[campo])
+
+    err_camino = abs(suma_camino - dist[destino])
+    error_max = max(max_violacion, err_camino)
+    return error_max < 1e-6, error_max
 
 
 def verificar_todo(
@@ -42,12 +66,12 @@ def verificar_todo(
     n_bf: int = 24,
     semilla: int = 42,
 ) -> dict[str, Any]:
-    """Ejecuta la batería de verificación sobre el dataset del almacén."""
+    """Ejecuta la batería de verificación sobre el dataset del almacén usando Mulberry32."""
     t0 = time.perf_counter()
-    rng = random.Random(semilla)
+    rng = grafo.mulberry32(semilla)
     ids = list(nodos.keys())
     ady_punta, dir_punta, por_par = grafo.construir_estructuras(nodos, aristas, "punta")
-    ady_valle, dir_valle, _ = grafo.construir_estructuras(nodos, aristas, "valle")
+    _, dir_valle, _ = grafo.construir_estructuras(nodos, aristas, "valle")
 
     # 1. Integridad del grafo
     conn = bfs_mod.bfs(ady_punta, ids[0], "__NINGUNO__")
@@ -58,7 +82,8 @@ def verificar_todo(
     # 2. BFS (longitud exacta Manhattan en la cuadrícula y camino legal)
     aciertos_bfs = 0
     for _ in range(n_bfs):
-        s, t = rng.choice(ids), rng.choice(ids)
+        s = ids[int(rng() * len(ids))]
+        t = ids[int(rng() * len(ids))]
         r = bfs_mod.bfs(ady_punta, s, t)
         camino = list(r["camino"])  # type: ignore[arg-type]
         manhattan = abs(nodos[s]["fila"] - nodos[t]["fila"]) + abs(nodos[s]["col"] - nodos[t]["col"])
@@ -71,21 +96,20 @@ def verificar_todo(
         if legal:
             aciertos_bfs += 1
 
-    # 3. Bellman-Ford vs Oráculo + 0 ciclos negativos
+    # 3. Bellman-Ford: Certificado de optimalidad (dist[v] <= dist[u] + w y suma exacta del camino) + 0 ciclos negativos
     aciertos_bf = 0
     ciclos_negativos = 0
     error_max_bf = 0.0
     for i in range(n_bf):
-        es_punta = i % 2 == 0
-        ady = ady_punta if es_punta else ady_valle
-        dirigidas = dir_punta if es_punta else dir_valle
-        s, t = rng.choice(ids), rng.choice(ids)
+        perfil = "punta" if i % 2 == 0 else "valle"
+        dirigidas = dir_punta if perfil == "punta" else dir_valle
+        s = ids[int(rng() * len(ids))]
+        t = ids[int(rng() * len(ids))]
         try:
-            res_bf = bf.ruta_minima(ids, dirigidas, s, t)
-            ref = dijkstra_oraculo(ady, s, t)
-            err = abs(float(res_bf["costo"]) - ref)
+            dist, padre, _ = bf.bellman_ford(ids, dirigidas, s)
+            ok, err = certificar_bellman_ford(dist, padre, dirigidas, por_par, s, t, perfil)
             error_max_bf = max(error_max_bf, err)
-            if err < 1e-6:
+            if ok:
                 aciertos_bf += 1
         except bf.CicloNegativoError:
             ciclos_negativos += 1
