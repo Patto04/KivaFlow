@@ -18,6 +18,7 @@
     ekOrigen: "Recepción y Almacenamiento",
     ekDestino: "Empaque y Despacho",
     sim: {
+      escala: "pedido",
       alg: "bfs",
       nOps: 24,
       maxProd: 3,
@@ -324,7 +325,11 @@
         skuMsg.hidden = false;
         return;
       }
-      const chosen = racks.find((id) => id !== STATE.inicio && !STATE.destinos.includes(id)) || racks[0];
+      const refNode = STATE.destinos.length > 0 ? STATE.destinos[STATE.destinos.length - 1] : STATE.inicio;
+      const excluded = new Set([STATE.inicio, ...STATE.destinos, ...STATE.bloqueados]);
+      const chosen = data.nearestRackForSku
+        ? data.nearestRackForSku(val, refNode, excluded)
+        : racks.find((id) => !excluded.has(id)) || racks[0];
       if (STATE.destinos.includes(chosen)) {
         skuMsg.textContent = `${val} (${chosen}) ya está en la lista de destinos.`;
         skuMsg.hidden = false;
@@ -336,6 +341,7 @@
         return;
       }
       STATE.destinos.push(chosen);
+      saveSessionState();
       onChange();
     }
     container.querySelector("#sel-sku-add").addEventListener("click", addSkuTarget);
@@ -348,9 +354,10 @@
 
     container.querySelector("#sel-azar").addEventListener("click", () => {
       const n = Math.max(1, Math.min(10, parseInt(container.querySelector("#sel-n").value, 10) || 3));
-      const pool = data.ids;
-      STATE.inicio = data.estaciones[Math.floor(Math.random() * data.estaciones.length)];
-      const chosen = new Set([STATE.inicio]);
+      const pool = data.racksPicking && data.racksPicking.length ? data.racksPicking : data.racks;
+      const muelles = data.estacionesDespacho && data.estacionesDespacho.length ? data.estacionesDespacho : data.estaciones;
+      STATE.inicio = muelles[Math.floor(Math.random() * muelles.length)];
+      const chosen = new Set([STATE.inicio, ...STATE.bloqueados]);
       const dests = [];
       while (dests.length < n) {
         const c = pool[Math.floor(Math.random() * pool.length)];
@@ -360,6 +367,7 @@
         }
       }
       STATE.destinos = dests;
+      saveSessionState();
       onChange();
     });
   }
@@ -547,9 +555,9 @@
           </div>
 
           <div class="row">
-            <a href="#comparar" class="btn btn-primary" data-nav="comparar">Comparar algoritmos</a>
-            <a href="#explorar" class="btn" data-nav="explorar">Explorar paso a paso</a>
+            <a href="#simular" class="btn btn-primary" data-nav="comparar">Simular pedido</a>
             <a href="#simular" class="btn" data-nav="simular">Simular turno</a>
+            <a href="#explorar" class="btn" data-nav="explorar">Explorar paso a paso</a>
           </div>
         </div>
 
@@ -742,7 +750,7 @@
             </div>
           </div>
           <p class="card-note" style="margin:10px 0 0">
-            Edmonds-Karp calcula cuántos operarios por minuto pueden circular simultáneamente de una zona a otra
+            Edmonds-Karp calcula la capacidad máxima en unidades de flujo que puede circular simultáneamente de una zona a otra
             (capacidad por pasillo según congestión: Baja = 3, Media = 2, Alta = 1) y marca los pasillos saturados del corte mínimo.
           </p>
         </div>
@@ -788,7 +796,7 @@
           flow: accFlow,
           delta: st.delta,
           line: 4,
-          narration: `Camino de aumento #${i + 1}: BFS halló una ruta de ${st.path.length - 1} pasillos con cuello δ = ${st.delta} op/min. Flujo acumulado = ${accFlow}.`,
+          narration: `Camino de aumento #${i + 1}: BFS halló una ruta de ${st.path.length - 1} pasillos con cuello δ = ${st.delta} unidades de flujo. Flujo acumulado = ${accFlow}.`,
         });
       }
       flowFrames.push({
@@ -798,7 +806,7 @@
         flow: res.maxFlow,
         delta: 0,
         line: 7,
-        narration: `Sin más caminos en la red residual. Flujo máximo = ${res.maxFlow} op/min; corte mínimo = ${res.minCut.length} pasillos cuello de botella.`,
+        narration: `Sin más caminos en la red residual. Flujo máximo = ${res.maxFlow} unidades de flujo; corte mínimo = ${res.minCut.length} pasillos cuello de botella.`,
       });
 
       titleEl.textContent = `Edmonds-Karp · ${STATE.ekOrigen} → ${STATE.ekDestino}`;
@@ -822,7 +830,7 @@
           narrEl.textContent = f.narration;
           highlightLine(f.line);
           statsEl.innerHTML = `
-            <div class="pseudo-stat"><div class="card-label">Flujo acumulado</div><div class="val">${f.flow} op/min</div></div>
+            <div class="pseudo-stat"><div class="card-label">Flujo acumulado</div><div class="val">${f.flow} u. flujo</div></div>
             <div class="pseudo-stat"><div class="card-label">Caminos hallados</div><div class="val">${Math.min(idx, ekSteps.length)}</div></div>
             <div class="pseudo-stat"><div class="card-label">Cuello δ actual</div><div class="val">${f.delta || "—"}</div></div>
             <div class="pseudo-stat"><div class="card-label">Aristas corte mín.</div><div class="val">${f.cut.length || "—"}</div></div>
@@ -931,22 +939,60 @@
   }
 
   /* =======================================================
-     3. COMPARAR BFS vs BELLMAN-FORD
+     3. SIMULAR (Vista unificada: Pedido individual o Turno completo)
      ======================================================= */
-  function renderComparar(main, data) {
+  function renderUnifiedSimular(main, data) {
+    const s = STATE.sim;
+    s.escala = s.escala || "pedido";
+
     main.innerHTML = `
       ${pageHeader(
-      "Comparar",
-      "dos caminos",
-      "Los mismos puntos y la misma congestión: ruta, tiempo de caminata y trabajo de cálculo sincronizados."
+      "Simular",
+      "y comparar",
+      "Analiza y compara los algoritmos en un pedido individual (con selección de puntos y bloqueos × en el mapa) o en un turno completo de múltiples operarios con flujo máximo y corte mínimo."
     )}
+      <div class="stack">
+        <div class="card row-between">
+          <div>
+            <strong>Escala del laboratorio</strong>
+            <div class="card-note">Elige entre simular un pedido específico paso a paso o un turno completo con múltiples operarios simultáneos.</div>
+          </div>
+          <div class="segmented" id="sim-escala-seg">
+            <button type="button" data-escala="pedido" class="${s.escala === "pedido" ? "active" : ""}">Pedido individual (BFS vs. Bellman-Ford)</button>
+            <button type="button" data-escala="turno" class="${s.escala === "turno" ? "active" : ""}">Turno completo (Multi-operario + Edmonds-Karp)</button>
+          </div>
+        </div>
+        <div id="sim-escala-body"></div>
+      </div>
+    `;
+
+    main.querySelectorAll("#sim-escala-seg button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        s.escala = btn.dataset.escala;
+        navigate("simular");
+      });
+    });
+
+    const bodyEl = main.querySelector("#sim-escala-body");
+    if (s.escala === "pedido") {
+      renderCompararInner(bodyEl, data);
+    } else {
+      renderTurnoInner(bodyEl, data);
+    }
+  }
+
+  function renderCompararInner(main, data) {
+    main.innerHTML = `
       <div class="stack">
         <div class="card" id="cmp-selector"></div>
         <div id="cmp-results"></div>
       </div>
     `;
 
-    mountPointSelector(main.querySelector("#cmp-selector"), data, () => navigate("comparar"));
+    mountPointSelector(main.querySelector("#cmp-selector"), data, () => {
+      STATE.sim.escala = "pedido";
+      navigate("simular");
+    });
 
     const resEl = main.querySelector("#cmp-results");
     if (!STATE.inicio || STATE.destinos.length === 0) {
@@ -962,8 +1008,9 @@
       resEl.querySelector("#cmp-load-sample").addEventListener("click", () => {
         STATE.inicio = "F22_C39";
         STATE.destinos = ["F05_C05", "F39_C10", "F11_C29"];
+        STATE.sim.escala = "pedido";
         saveSessionState();
-        navigate("comparar");
+        navigate("simular");
       });
       return;
     }
@@ -1221,34 +1268,77 @@
   }
 
   /* =======================================================
-     4. SIMULACIÓN DE UN TURNO
+     Sub-modo Turno completo (Individual o Comparativa A vs B)
      ======================================================= */
-  function renderSimular(main, data) {
+  function renderTurnoInner(main, data) {
     const s = STATE.sim;
+    s.modo = s.modo || "comparar";
+    s.algA = s.algA || "bfs";
+    s.algB = s.algB || "bellman_ford";
+    s.vistaCmp = s.vistaCmp || "calor";
     const destOpts = KF.ZONAS.filter((z) => z !== s.zOrigen);
     if (!destOpts.includes(s.zDestino)) s.zDestino = destOpts[destOpts.length - 1];
 
-    main.innerHTML = `
-      ${pageHeader(
-      "Simulación",
-      "de un turno",
-      "Varios operarios trabajan a la vez: los pasillos más cruzados se congestionan, baja su capacidad y Edmonds-Karp encuentra el nuevo corte mínimo."
-    )}
+    const modelos = KF.MODELOS_SIM || {
+      bfs: "BFS (Menos pasillos)",
+      bellman_ford: "Bellman-Ford (Menor tiempo)",
+      edmonds_karp: "Edmonds-Karp + B-F (Anti-cuellos)",
+    };
+    const usaBf =
+      (s.modo === "individual" && s.alg !== "bfs") ||
+      (s.modo === "comparar" && (s.algA !== "bfs" || s.algB !== "bfs"));
+    const maxOpsPermitidos = usaBf ? 15 : 45;
+    if (s.nOps > maxOpsPermitidos) s.nOps = 10;
 
+    main.innerHTML = `
       <div class="stack">
         <div class="card stack">
-          <div class="grid-4">
+          <div class="row-between" style="padding-bottom:12px;border-bottom:1px solid var(--border)">
             <div class="control-group">
-              <span class="control-label">Los operarios usan</span>
-              <div class="segmented" id="sim-alg">
-                <button type="button" data-val="bfs" class="${s.alg === "bfs" ? "active" : ""}">BFS</button>
-                <button type="button" data-val="bellman_ford" class="${s.alg === "bellman_ford" ? "active" : ""}">Bellman-Ford</button>
+              <span class="control-label">Modo de simulación</span>
+              <div class="segmented" id="sim-modo">
+                <button type="button" data-val="individual" class="${s.modo === "individual" ? "active" : ""}">Un solo modelo</button>
+                <button type="button" data-val="comparar" class="${s.modo === "comparar" ? "active" : ""}">Comparar 2 modelos (a elección)</button>
               </div>
             </div>
 
+            ${s.modo === "individual"
+        ? `
+              <div class="control-group" style="min-width:260px">
+                <span class="control-label">Modelo que usan los operarios</span>
+                <select id="sim-alg-select" class="select">
+                  ${Object.entries(modelos)
+          .map(([k, lbl]) => `<option value="${k}" ${s.alg === k ? "selected" : ""}>${lbl}</option>`)
+          .join("")}
+                </select>
+              </div>`
+        : `
+              <div class="row" style="gap:12px">
+                <div class="control-group" style="min-width:230px">
+                  <span class="control-label">Modelo A (Izquierda)</span>
+                  <select id="sim-alga" class="select">
+                    ${Object.entries(modelos)
+          .map(([k, lbl]) => `<option value="${k}" ${s.algA === k ? "selected" : ""}>${lbl}</option>`)
+          .join("")}
+                  </select>
+                </div>
+                <div class="control-group" style="min-width:230px">
+                  <span class="control-label">Modelo B (Derecha)</span>
+                  <select id="sim-algb" class="select">
+                    ${Object.entries(modelos)
+          .filter(([k]) => k !== s.algA)
+          .map(([k, lbl]) => `<option value="${k}" ${s.algB === k ? "selected" : ""}>${lbl}</option>`)
+          .join("")}
+                  </select>
+                </div>
+              </div>`
+      }
+          </div>
+
+          <div class="grid-3">
             <div class="control-group">
-              <span class="control-label">Operarios: <strong id="sim-nops-val">${s.nOps}</strong></span>
-              <input type="range" id="sim-nops" class="range-slider" min="5" max="${s.alg === "bellman_ford" ? 15 : 45}" value="${Math.min(s.nOps, s.alg === "bellman_ford" ? 15 : 45)}" />
+              <span class="control-label">Operarios: <strong id="sim-nops-val">${s.nOps}</strong> (máx. ${maxOpsPermitidos})</span>
+              <input type="range" id="sim-nops" class="range-slider" min="5" max="${maxOpsPermitidos}" value="${s.nOps}" />
             </div>
 
             <div class="control-group">
@@ -1257,10 +1347,10 @@
             </div>
 
             <div class="control-group">
-              <span class="control-label">Hora</span>
+              <span class="control-label">Escenario horario</span>
               <div class="segmented" id="sim-hora">
-                <button type="button" data-val="punta" class="${s.hora === "punta" ? "active" : ""}">Punta</button>
-                <button type="button" data-val="valle" class="${s.hora === "valle" ? "active" : ""}">Valle</button>
+                <button type="button" data-val="punta" class="${s.hora === "punta" ? "active" : ""}">Hora punta</button>
+                <button type="button" data-val="valle" class="${s.hora === "valle" ? "active" : ""}">Hora valle</button>
               </div>
             </div>
           </div>
@@ -1295,13 +1385,42 @@
       </div>
     `;
 
-    main.querySelectorAll("#sim-alg button").forEach((b) => {
+    main.querySelectorAll("#sim-modo button").forEach((b) => {
       b.addEventListener("click", () => {
-        s.alg = b.dataset.val;
-        if (s.alg === "bellman_ford" && s.nOps > 15) s.nOps = 10;
+        s.modo = b.dataset.val;
+        s.result = null;
+        s.resultCmp = null;
         navigate("simular");
       });
     });
+
+    const algSel = main.querySelector("#sim-alg-select");
+    if (algSel) {
+      algSel.addEventListener("change", (ev) => {
+        s.alg = ev.target.value;
+        s.result = null;
+        navigate("simular");
+      });
+    }
+
+    const algASel = main.querySelector("#sim-alga");
+    const algBSel = main.querySelector("#sim-algb");
+    if (algASel && algBSel) {
+      algASel.addEventListener("change", (ev) => {
+        s.algA = ev.target.value;
+        if (s.algB === s.algA) {
+          s.algB = Object.keys(modelos).find((k) => k !== s.algA) || "bellman_ford";
+        }
+        s.resultCmp = null;
+        navigate("simular");
+      });
+      algBSel.addEventListener("change", (ev) => {
+        s.algB = ev.target.value;
+        s.resultCmp = null;
+        navigate("simular");
+      });
+    }
+
     main.querySelectorAll("#sim-hora button").forEach((b) => {
       b.addEventListener("click", () => {
         s.hora = b.dataset.val;
@@ -1318,6 +1437,8 @@
     });
     main.querySelector("#sim-zo").addEventListener("change", (ev) => {
       s.zOrigen = ev.target.value;
+      s.result = null;
+      s.resultCmp = null;
       navigate("simular");
     });
     main.querySelector("#sim-zd").addEventListener("change", (ev) => {
@@ -1332,26 +1453,234 @@
     function runAndShow() {
       outEl.innerHTML = renderSkeletonBlock(4, false);
       setTimeout(() => {
-        s.result = KF.simularTurno(data, {
-          alg: s.alg,
-          nOps: s.nOps,
-          maxProd: s.maxProd,
-          hora: s.hora,
-          zonaOrigen: s.zOrigen,
-          zonaDestino: s.zDestino,
-          semilla: s.semilla,
-        });
-        renderSimResult(outEl, data, s);
+        if (s.modo === "comparar") {
+          if (s.algB === s.algA) {
+            s.algB = Object.keys(modelos).find((k) => k !== s.algA) || "bellman_ford";
+          }
+          const rA = KF.simularTurno(data, {
+            alg: s.algA,
+            nOps: s.nOps,
+            maxProd: s.maxProd,
+            hora: s.hora,
+            zonaOrigen: s.zOrigen,
+            zonaDestino: s.zDestino,
+            semilla: s.semilla,
+          });
+          const rB = KF.simularTurno(data, {
+            alg: s.algB,
+            nOps: s.nOps,
+            maxProd: s.maxProd,
+            hora: s.hora,
+            zonaOrigen: s.zOrigen,
+            zonaDestino: s.zDestino,
+            semilla: s.semilla,
+          });
+          s.resultCmp = { rA, rB };
+          renderSimCompareResult(outEl, data, s, modelos);
+        } else {
+          s.result = KF.simularTurno(data, {
+            alg: s.alg,
+            nOps: s.nOps,
+            maxProd: s.maxProd,
+            hora: s.hora,
+            zonaOrigen: s.zOrigen,
+            zonaDestino: s.zDestino,
+            semilla: s.semilla,
+          });
+          renderSimResult(outEl, data, s);
+        }
       }, 60);
     }
 
     main.querySelector("#sim-run").addEventListener("click", runAndShow);
 
-    if (s.result) {
+    if (s.modo === "comparar" && s.resultCmp) {
+      renderSimCompareResult(outEl, data, s, modelos);
+    } else if (s.modo === "individual" && s.result) {
       renderSimResult(outEl, data, s);
     } else {
       runAndShow();
     }
+  }
+
+  function renderSimCompareResult(outEl, data, s, modelos) {
+    const { rA, rB } = s.resultCmp;
+    const nameA = modelos[s.algA] || KF.NOMBRE[s.algA];
+    const nameB = modelos[s.algB] || KF.NOMBRE[s.algB];
+    const colorA = KF.PALETA.ALGORITMO[s.algA] || KF.PALETA.TINTA;
+    const colorB = KF.PALETA.ALGORITMO[s.algB] || KF.PALETA.ALGORITMO.bellman_ford;
+
+    const diffTime = rA.avgTimeS - rB.avgTimeS;
+    const fasterName = diffTime > 0.1 ? nameB : diffTime < -0.1 ? nameA : "Ambos";
+    const betterFlowName =
+      rB.flowRes.maxFlow > rA.flowRes.maxFlow
+        ? `${nameB} conserva mayor capacidad (${rB.flowRes.maxFlow} vs. ${rA.flowRes.maxFlow} unidades de flujo)`
+        : rA.flowRes.maxFlow > rB.flowRes.maxFlow
+        ? `${nameA} conserva mayor capacidad (${rA.flowRes.maxFlow} vs. ${rB.flowRes.maxFlow} unidades de flujo)`
+        : `ambos mantienen un flujo máximo de ${rA.flowRes.maxFlow} unidades de flujo`;
+
+    const conclusion = `Sobre los mismos <strong>${rA.operators.length} pedidos</strong> (semilla #${s.semilla}): <strong>${fasterName}</strong> logra menor tiempo medio de caminata por operario (<strong>${rA.avgTimeS} s</strong> en ${KF.NOMBRE[s.algA]} vs. <strong>${rB.avgTimeS} s</strong> en ${KF.NOMBRE[s.algB]}), mientras que tras la congestión del turno <strong>${betterFlowName}</strong> entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em>.`;
+
+    outEl.innerHTML = `
+      <div class="stack">
+        <div class="grid-4">
+          <div class="card kpi-1">
+            <div class="card-label">Caminata media / operario</div>
+            <div class="card-num">${rA.avgTimeS}s<small>vs ${rB.avgTimeS}s</small></div>
+            <div class="card-note">${KF.NOMBRE[s.algA]} vs. ${KF.NOMBRE[s.algB]}</div>
+          </div>
+          <div class="card kpi-2">
+            <div class="card-label">Pasillos usados</div>
+            <div class="card-num">${rA.usage.size}<small>vs ${rB.usage.size}</small></div>
+            <div class="card-note">dispersión de rutas en el almacén</div>
+          </div>
+          <div class="card kpi-3">
+            <div class="card-label">Pasillo más saturado</div>
+            <div class="card-num">${rA.maxUsage}<small>vs ${rB.maxUsage}</small></div>
+            <div class="card-note">cruces máximos en un solo pasillo</div>
+          </div>
+          <div class="card kpi-4">
+            <div class="card-label">Flujo máx. (Edmonds-Karp)</div>
+            <div class="card-num">${rA.flowRes.maxFlow}<small>vs ${rB.flowRes.maxFlow} u. flujo</small></div>
+            <div class="card-note">capacidad base sin turno: ${rA.baseFlow} unidades de flujo</div>
+          </div>
+        </div>
+
+        <div class="canvas-card" style="padding:22px 24px">
+          <div class="row-between" style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div>
+              <div class="canvas-title" style="font-size:1.35rem">Comparación de turno en vivo: ${KF.NOMBRE[s.algA]} vs. ${KF.NOMBRE[s.algB]}</div>
+              <div class="canvas-subtitle" style="margin-bottom:0">
+                Los mismos ${rA.operators.length} operarios y pedidos ejecutados con dos modelos distintos. Alterna entre el mapa de calor y el corte mínimo resultante.
+              </div>
+            </div>
+            <div class="row">
+              <div class="segmented" id="sim-cmp-view">
+                <button type="button" data-v="calor" class="${s.vistaCmp === "calor" ? "active" : ""}">Mapa de calor y operarios</button>
+                <button type="button" data-v="corte" class="${s.vistaCmp === "corte" ? "active" : ""}">Corte mínimo (Edmonds-Karp)</button>
+              </div>
+              <span class="chip chip-dark" id="sim-cmp-step" style="font-size:13px;padding:5px 12px">Paso 1</span>
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap:22px">
+            <div class="stack" style="gap:12px">
+              <div class="row-between">
+                <div class="row">
+                  <h3 style="color:${colorA}">Modelo A · ${nameA}</h3>
+                </div>
+                <span class="chip" id="sim-st-a">en curso</span>
+              </div>
+              <div class="mini-metrics">
+                <div class="mini-metric"><div class="card-label">Caminata med.</div><div class="card-num">${rA.avgTimeS} s</div></div>
+                <div class="mini-metric"><div class="card-label">Pasillos</div><div class="card-num">${rA.usage.size}</div></div>
+                <div class="mini-metric"><div class="card-label">Cruces máx.</div><div class="card-num">${rA.maxUsage}</div></div>
+                <div class="mini-metric"><div class="card-label">Flujo E-K</div><div class="card-num">${rA.flowRes.maxFlow}</div></div>
+              </div>
+              <div class="canvas-wrap"><canvas id="sim-cmp-ca"></canvas></div>
+            </div>
+
+            <div class="stack" style="gap:12px">
+              <div class="row-between">
+                <div class="row">
+                  <h3 style="color:${colorB}">Modelo B · ${nameB}</h3>
+                </div>
+                <span class="chip" id="sim-st-b">en curso</span>
+              </div>
+              <div class="mini-metrics">
+                <div class="mini-metric"><div class="card-label">Caminata med.</div><div class="card-num">${rB.avgTimeS} s</div></div>
+                <div class="mini-metric"><div class="card-label">Pasillos</div><div class="card-num">${rB.usage.size}</div></div>
+                <div class="mini-metric"><div class="card-label">Cruces máx.</div><div class="card-num">${rB.maxUsage}</div></div>
+                <div class="mini-metric"><div class="card-label">Flujo E-K</div><div class="card-num">${rB.flowRes.maxFlow}</div></div>
+              </div>
+              <div class="canvas-wrap"><canvas id="sim-cmp-cb"></canvas></div>
+            </div>
+          </div>
+
+          <div id="sim-cmp-ctrl" style="margin-top:6px"></div>
+        </div>
+
+        <div class="card stack" style="gap:14px">
+          <div class="conclusion-box">${conclusion}</div>
+        </div>
+      </div>
+    `;
+
+    const cA = new KF.WarehouseCanvas(outEl.querySelector("#sim-cmp-ca"), data, {
+      width: 640,
+      height: 440,
+      customLevels: s.vistaCmp === "corte" ? rA.dynamicLevels : null,
+      strongCongestion: s.vistaCmp === "corte",
+    });
+    const cB = new KF.WarehouseCanvas(outEl.querySelector("#sim-cmp-cb"), data, {
+      width: 640,
+      height: 440,
+      customLevels: s.vistaCmp === "corte" ? rB.dynamicLevels : null,
+      strongCongestion: s.vistaCmp === "corte",
+    });
+
+    const stepChip = outEl.querySelector("#sim-cmp-step");
+    const stA = outEl.querySelector("#sim-st-a");
+    const stB = outEl.querySelector("#sim-st-b");
+    const totalSteps = Math.max(2, rA.maxStep, rB.maxStep);
+    const globalMaxUsage = Math.max(1, rA.maxUsage, rB.maxUsage);
+
+    function partialTurnState(res, t, col) {
+      const partialUsage = new Map();
+      const workers = [];
+      let active = 0;
+      for (const op of res.operators) {
+        const lim = Math.min(t, op.path.length - 1);
+        if (t < op.path.length - 1) active++;
+        workers.push({ node: op.path[lim], color: col, radius: 4.8 });
+        for (let i = 0; i < lim; i++) {
+          const k = KF.edgeKey(op.path[i], op.path[i + 1]);
+          partialUsage.set(k, (partialUsage.get(k) || 0) + 1);
+        }
+      }
+      return { partialUsage, workers, active };
+    }
+
+    const ctrl = new KF.PlaybackController(
+      outEl.querySelector("#sim-cmp-ctrl"),
+      totalSteps,
+      (t) => {
+        stepChip.textContent = `Paso ${t + 1} / ${totalSteps}`;
+        if (s.vistaCmp === "corte") {
+          stA.textContent = `corte mínimo: ${rA.flowRes.minCut.length} pasillos (${rA.flowRes.maxFlow} unidades de flujo)`;
+          stB.textContent = `corte mínimo: ${rB.flowRes.minCut.length} pasillos (${rB.flowRes.maxFlow} unidades de flujo)`;
+          cA.render({ minCut: rA.flowRes.minCut });
+          cB.render({ minCut: rB.flowRes.minCut });
+          return;
+        }
+        const pA = partialTurnState(rA, t, colorA);
+        const pB = partialTurnState(rB, t, colorB);
+        stA.textContent = pA.active === 0 ? `completado ✓ (${pA.partialUsage.size} pasillos)` : `${pA.active} en ruta · ${pA.partialUsage.size} pasillos`;
+        stB.textContent = pB.active === 0 ? `completado ✓ (${pB.partialUsage.size} pasillos)` : `${pB.active} en ruta · ${pB.partialUsage.size} pasillos`;
+        cA.render({ usageMap: pA.partialUsage, maxUsage: globalMaxUsage, workers: pA.workers });
+        cB.render({ usageMap: pB.partialUsage, maxUsage: globalMaxUsage, workers: pB.workers });
+      },
+      70
+    );
+    ctrl.play(1);
+
+    outEl.querySelectorAll("#sim-cmp-view button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        s.vistaCmp = btn.dataset.v;
+        outEl.querySelectorAll("#sim-cmp-view button").forEach((b) => b.classList.toggle("active", b === btn));
+        const isCut = s.vistaCmp === "corte";
+        cA.updateCustomLevels(isCut ? rA.dynamicLevels : null, isCut);
+        cB.updateCustomLevels(isCut ? rB.dynamicLevels : null, isCut);
+        ctrl.pause();
+        ctrl.goTo(ctrl.index);
+      });
+    });
+
+    registerCleanup(() => {
+      ctrl.destroy();
+      cA.destroy();
+      cB.destroy();
+    });
   }
 
   function renderSimResult(outEl, data, s) {
@@ -1393,8 +1722,8 @@
     const flowDiff = r.baseFlow - r.flowRes.maxFlow;
     const simConclusion =
       flowDiff > 0
-        ? `El tráfico simultáneo de <strong>${r.operators.length} operarios</strong> (${KF.NOMBRE[s.alg]}) elevó a <strong>${KF.formatNum(lvlCounts.Alta)} pasillos</strong> en congestión Alta, reduciendo la capacidad máxima entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em> de <strong>${r.baseFlow}</strong> a <strong>${r.flowRes.maxFlow} op/min</strong> (−${flowDiff} op/min) con un corte mínimo de <strong>${r.flowRes.minCut.length} pasillos</strong>.`
-        : `Con <strong>${r.operators.length} operarios</strong> (${KF.NOMBRE[s.alg]}), los cruces adicionales se distribuyeron sin reducir el cuello principal entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em>, manteniendo un flujo máximo de <strong>${r.flowRes.maxFlow} op/min</strong> (${r.flowRes.minCut.length} pasillos en el corte mínimo).`;
+        ? `El tráfico simultáneo de <strong>${r.operators.length} operarios</strong> (${KF.NOMBRE[s.alg]}) elevó a <strong>${KF.formatNum(lvlCounts.Alta)} pasillos</strong> en congestión Alta, reduciendo la capacidad máxima entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em> de <strong>${r.baseFlow}</strong> a <strong>${r.flowRes.maxFlow} unidades de flujo</strong> (−${flowDiff} unidades de flujo) con un corte mínimo de <strong>${r.flowRes.minCut.length} pasillos</strong>.`
+        : `Con <strong>${r.operators.length} operarios</strong> (${KF.NOMBRE[s.alg]}), los cruces adicionales se distribuyeron sin reducir el cuello principal entre <em>${s.zOrigen}</em> y <em>${s.zDestino}</em>, manteniendo un flujo máximo de <strong>${r.flowRes.maxFlow} unidades de flujo</strong> (${r.flowRes.minCut.length} pasillos en el corte mínimo).`;
 
     outEl.innerHTML = `
       <div class="stack">
@@ -1416,8 +1745,8 @@
           </div>
           <div class="card kpi-4">
             <div class="card-label">Flujo máximo resultante</div>
-            <div class="card-num">${r.flowRes.maxFlow}<small>op/min</small></div>
-            <div class="card-note">capacidad base del dataset: ${r.baseFlow} op/min</div>
+            <div class="card-num">${r.flowRes.maxFlow}<small>u. flujo</small></div>
+            <div class="card-note">capacidad base del dataset: ${r.baseFlow} unidades de flujo</div>
           </div>
         </div>
 
@@ -1539,8 +1868,8 @@
             : `${activeCount} operarios en ruta · ${partialUsage.size} pasillos`;
         flowSt.textContent =
           ekIdx === ekFrames.length - 1
-            ? `corte mínimo: ${ef.cut.length} pasillos (${ef.flow} op/min) ✓`
-            : `flujo: ${ef.flow} op/min (camino #${ef.paths})`;
+            ? `corte mínimo: ${ef.cut.length} pasillos (${ef.flow} unidades de flujo) ✓`
+            : `flujo: ${ef.flow} unidades de flujo (camino #${ef.paths})`;
 
         cTurn.render({
           usageMap: partialUsage,
@@ -1651,7 +1980,8 @@
       ];
 
       const rng = KF.mulberry32(seed);
-      const muelles = data.estacionesDespacho;
+      const muelles = data.estacionesDespacho && data.estacionesDespacho.length ? data.estacionesDespacho : data.estaciones;
+      const racksPool = data.racksPicking && data.racksPicking.length ? data.racksPicking : data.racks;
       const rows = [];
 
       for (let sIdx = 0; sIdx < scenarios.length; sIdx++) {
@@ -1673,7 +2003,7 @@
           const picks = [];
           const seen = new Set([start]);
           while (picks.length < sc.prod) {
-            const cand = data.racks[Math.floor(rng() * data.racks.length)];
+            const cand = racksPool[Math.floor(rng() * racksPool.length)];
             if (!seen.has(cand)) {
               seen.add(cand);
               picks.push(cand);
@@ -1791,7 +2121,7 @@
           </div>
           <div class="card kpi-3">
             <div class="card-label">Flujo máximo (Recepción → Despacho)</div>
-            <div class="card-num">${exp.ekRes.maxFlow}<small>op/min</small></div>
+            <div class="card-num">${exp.ekRes.maxFlow}<small>u. flujo</small></div>
             <div class="card-note">${exp.ekRes.augmentingPaths} caminos de aumento (${exp.ekMs.toFixed(1)} ms)</div>
           </div>
           <div class="card kpi-4">
@@ -1866,7 +2196,7 @@
                 <div class="canvas-title" id="exp-sample-title">Inspector del escenario seleccionado</div>
                 <div class="canvas-subtitle" id="exp-sample-sub"></div>
               </div>
-              <button type="button" id="exp-open-cmp" class="btn btn-sm">Abrir en Comparar →</button>
+              <button type="button" id="exp-open-cmp" class="btn btn-sm">Abrir en Simular →</button>
             </div>
             <div class="canvas-wrap"><canvas id="res-sample-canvas"></canvas></div>
             ${renderLegend([
@@ -1879,7 +2209,7 @@
 
           <div class="canvas-card">
             <div class="canvas-title">Corte mínimo (Edmonds-Karp) · Recepción → Despacho</div>
-            <div class="canvas-subtitle">Los ${exp.ekRes.minCut.length} pasillos resaltados en rojo carmesí saturan la capacidad máxima de ${exp.ekRes.maxFlow} operarios/min.</div>
+            <div class="canvas-subtitle">Los ${exp.ekRes.minCut.length} pasillos resaltados en rojo carmesí saturan la capacidad máxima de ${exp.ekRes.maxFlow} unidades de flujo.</div>
             <div class="canvas-wrap"><canvas id="res-cut-canvas"></canvas></div>
             ${renderLegend([
           { color: KF.PALETA.ALGORITMO.edmonds_karp, label: "Corte mínimo (45 pasillos cuello de botella)" },
@@ -1969,7 +2299,7 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "kivaflow_resultados_tb1.csv";
+      a.download = "kivaflow_resultados_tb2.csv";
       a.click();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
@@ -1983,13 +2313,13 @@
       ${pageHeader(
       "Resultados de",
       "la verificación",
-      "Comprobación automática de integridad del grafo y corrección de BFS, Bellman-Ford y Edmonds-Karp frente a oráculos independientes y el teorema flujo máximo–corte mínimo."
+      "Comprobación automática de integridad del grafo y corrección de BFS, Bellman-Ford y Edmonds-Karp mediante certificados matemáticos de optimalidad y el teorema flujo máximo–corte mínimo."
     )}
       <div class="stack">
         <div class="card row-between">
           <div>
-            <strong>Suite de pruebas en vivo (en tu navegador)</strong>
-            <div class="card-note">Valida conectividad del grafo, 60 consultas BFS, 40 consultas Bellman-Ford contra Dijkstra y los 6 pares ordenados de zonas en Edmonds-Karp.</div>
+            <strong>Suite de pruebas en vivo (Certificado de optimalidad)</strong>
+            <div class="card-note">Valida conectividad del grafo, 60 consultas BFS, 24 certificados duales/primales de Bellman-Ford (dist[v] ≤ dist[u] + w) y los 6 pares ordenados de zonas en Edmonds-Karp.</div>
           </div>
           <button type="button" id="verif-run" class="btn btn-primary">Ejecutar verificación ahora</button>
         </div>
@@ -2018,8 +2348,8 @@
       fill.style.width = "25%";
       await new Promise((r) => setTimeout(r, 15));
 
-      // 2. BFS (60 consultas aleatorias)
-      const rng = KF.mulberry32(Math.floor(Math.random() * 10000));
+      // 2. BFS (60 consultas con semilla reproducible)
+      const rng = KF.mulberry32(42);
       let bfsOk = 0;
       const bfsN = 60;
       for (let i = 0; i < bfsN; i++) {
@@ -2038,7 +2368,7 @@
       fill.style.width = "55%";
       await new Promise((r) => setTimeout(r, 15));
 
-      // 3. Bellman-Ford vs oráculo independiente (24 consultas) + detección de ciclos negativos
+      // 3. Bellman-Ford con Certificado de Optimalidad (24 consultas) + detección de ciclos negativos
       let bfOk = 0;
       let bfMaxErr = 0;
       let ciclosNeg = 0;
@@ -2048,11 +2378,18 @@
         const s = data.ids[Math.floor(rng() * data.ids.length)];
         const t = data.ids[Math.floor(rng() * data.ids.length)];
         try {
-          const rbf = KF.bellmanFordPath(data.ids, data.graphs[prof].directed, s, t);
-          const ref = KF.dijkstraOracle(data.graphs[prof].adj, s, t);
-          const err = Math.abs(rbf.cost - ref);
-          if (err > bfMaxErr) bfMaxErr = err;
-          if (err < 1e-6) bfOk++;
+          const resBf = KF.bellmanFord(data.ids, data.graphs[prof].directed, s);
+          const cert = KF.certificarBellmanFord(
+            resBf.dist,
+            resBf.parent,
+            data.graphs[prof].directed,
+            data.edgeMap,
+            s,
+            t,
+            prof
+          );
+          if (cert.maxError > bfMaxErr) bfMaxErr = cert.maxError;
+          if (cert.ok) bfOk++;
         } catch (_) {
           ciclosNeg++;
         }
@@ -2116,7 +2453,7 @@
           <div class="card kpi-2">
             <div class="card-label">Bellman-Ford</div>
             <div class="card-num">${v.bfOk}<small>/ ${v.bfN}</small></div>
-            <div class="card-note">error máx. ${v.bfMaxErr.toExponential(1)} · ${v.ciclosNeg} ciclos negativos detectados</div>
+            <div class="card-note">certificado dist[v] ≤ dist[u]+w · error máx. ${v.bfMaxErr.toExponential(1)} · ${v.ciclosNeg} ciclos neg.</div>
           </div>
           <div class="card kpi-3">
             <div class="card-label">Edmonds-Karp</div>
@@ -2131,9 +2468,10 @@
         </div>
 
         <div class="conclusion-box">
-          <strong>Nota metodológica (TB1):</strong> conforme a la propuesta aprobada del curso, los algoritmos del sistema son
-          <strong>BFS</strong>, <strong>Bellman-Ford</strong> y <strong>Edmonds-Karp</strong>. En esta pantalla se emplea un oráculo independiente
-          (<em>Dijkstra</em>, equivalente a la referencia de NetworkX) exclusivamente para comprobar la exactitud numérica de Bellman-Ford y la ausencia de ciclos negativos.
+          <strong>Nota metodológica (TB2 — Certificado de optimalidad):</strong> conforme a los lineamientos del curso, los tres algoritmos implementados son
+          <strong>BFS</strong>, <strong>Bellman-Ford</strong> y <strong>Edmonds-Karp</strong>. Para verificar la optimalidad de Bellman-Ford sin emplear ningún otro algoritmo de caminos mínimos,
+          se comprueba directamente el <em>certificado de optimalidad</em> en cada consulta: (1) factibilidad dual <code>dist[v] ≤ dist[u] + w(u,v)</code> en las 7 030 aristas dirigidas del almacén y
+          (2) factibilidad primal donde la suma exacta de los pesos del camino reconstruido coincide con <code>dist[destino]</code>.
         </div>
 
         <div class="table-wrap">
@@ -2153,8 +2491,8 @@
           (p) => `
                 <tr>
                   <td>${p.z1} → ${p.z2}</td>
-                  <td class="num">${p.maxFlow} op/min</td>
-                  <td class="num">${p.cutCap} op/min</td>
+                  <td class="num">${p.maxFlow} unidades de flujo</td>
+                  <td class="num">${p.cutCap} unidades de flujo</td>
                   <td class="num">${p.cutEdges}</td>
                   <td><span class="${p.ok ? "badge-ok" : "badge-warn"}">${p.ok ? "Verificado ✓" : "Revisar"}</span></td>
                 </tr>`
@@ -2239,7 +2577,7 @@
               Pasillos horizontales: <strong>1.5 m</strong> (<code>PHxx</code>); verticales: <strong>2.5 m</strong> (<code>PVxx</code>).
               Velocidad promedio: <strong>1.1 m/s</strong>. Penalizaciones de congestión en hora punta: Baja ×1.0, Media ×1.5, Alta ×2.0
               (${data.freqCounts.Baja} Baja · ${data.freqCounts.Media} Media · ${data.freqCounts.Alta} Alta).
-              Capacidades para flujo máximo: 3, 2 y 1 operarios/min respectivamente.
+              Capacidades para flujo máximo: 3, 2 y 1 unidades de flujo respectivamente.
             </p>
           </div>
 
@@ -2256,7 +2594,7 @@
         <div class="canvas-card">
           <div class="row-between" style="margin-bottom:10px">
             <div>
-              <div class="canvas-title">Visualización del grafo completo y subgrafos por zona (TB1 · Sección 3)</div>
+              <div class="canvas-title">Visualización del grafo completo y subgrafos por zona (TB2 · Sección 3)</div>
               <div class="canvas-subtitle" id="subgrafo-desc">Mostrando las 1 800 ubicaciones y 3 515 pasillos del almacén completo.</div>
             </div>
             <div class="segmented" id="subgrafo-seg">
@@ -2267,39 +2605,6 @@
             </div>
           </div>
           <div class="canvas-wrap"><canvas id="subgrafo-canvas"></canvas></div>
-        </div>
-
-        <div class="card">
-          <h3>Anexos · Bitácora de uso de herramientas de IA (TB1)</h3>
-          <div class="table-wrap" style="margin-top:12px">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Fecha</th>
-                  <th>Herramienta</th>
-                  <th>Qué consultamos</th>
-                  <th>Resultado y validación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="num" style="text-align:left">1</td>
-                  <td>03-10-2026</td>
-                  <td>Claude</td>
-                  <td>Generación del dataset sintético del almacén</td>
-                  <td>Generación de <code>nodos.csv</code> y <code>aristas.csv</code>; validado: 1 800 nodos, 3 515 aristas, conexo y 0 aislados.</td>
-                </tr>
-                <tr>
-                  <td class="num" style="text-align:left">2</td>
-                  <td>04-10-2026</td>
-                  <td>Gemini</td>
-                  <td>Revisión del informe TB1 frente a los comentarios del profesor</td>
-                  <td>Se reemplazó Dijkstra por Bellman-Ford y se actualizaron secciones 2, 4.2, Conclusiones y Anexos.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
     `;
@@ -2336,14 +2641,18 @@
   const ROUTES = {
     inicio: renderInicio,
     explorar: renderExplorar,
-    comparar: renderComparar,
-    simular: renderSimular,
+    comparar: renderUnifiedSimular,
+    simular: renderUnifiedSimular,
     resultados: renderResultados,
     verificar: renderVerificar,
     acerca: renderAcerca,
   };
 
   function navigate(page) {
+    if (page === "comparar") {
+      STATE.sim.escala = "pedido";
+      page = "simular";
+    }
     if (!ROUTES[page]) page = "inicio";
     STATE.page = page;
     if (location.hash !== `#${page}`) {
@@ -2419,7 +2728,15 @@
       const link = ev.target.closest("[data-nav]");
       if (link) {
         ev.preventDefault();
-        navigate(link.dataset.nav);
+        if (link.dataset.nav === "comparar") {
+          STATE.sim.escala = "pedido";
+          navigate("simular");
+        } else if (link.dataset.nav === "simular" && link.textContent.toLowerCase().includes("turno")) {
+          STATE.sim.escala = "turno";
+          navigate("simular");
+        } else {
+          navigate(link.dataset.nav);
+        }
       }
     });
 
@@ -2433,6 +2750,20 @@
       restoreSessionState(KF.DATA);
       const initial = (location.hash || "#inicio").replace("#", "");
       navigate(ROUTES[initial] ? initial : "inicio");
+
+      // Si se sirve desde `python app.py`, conectar con /api/estado y reflejarlo en la barra lateral
+      if (location.protocol === "http:" || location.protocol === "https:") {
+        fetch("/api/estado")
+          .then((r) => (r.ok ? r.json() : null))
+          .then((st) => {
+            if (st && st.ok) {
+              STATE.pythonApi = true;
+              const statusStrong = document.querySelector(".sidebar-footer .status-row strong");
+              if (statusStrong) statusStrong.textContent = "Motor Python (/api)";
+            }
+          })
+          .catch(() => {});
+      }
     } catch (err) {
       const main = document.getElementById("app-main");
       main.innerHTML = `<div class="card"><h2>Error al cargar el dataset</h2><p class="card-note" id="kf-err-msg"></p></div>`;
