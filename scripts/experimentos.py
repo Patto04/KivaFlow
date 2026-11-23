@@ -1,11 +1,11 @@
 """Script de experimentos comparativos en Python (BFS vs. Bellman-Ford y Edmonds-Karp).
 
-Genera `resultados/experimentos.csv` con escenarios de 1, 5 y 10 productos en hora valle y hora punta.
+Usa el generador determinista Mulberry32 y racks de la zona de Picking para coincidir exactamente
+con la interfaz web. Genera `resultados/experimentos.csv`.
 """
 from __future__ import annotations
 
 import csv
-import random
 import sys
 import time
 from pathlib import Path
@@ -22,8 +22,8 @@ def ejecutar_experimentos(pedidos_por_escenario: int = 10, semilla: int = 42) ->
     aristas = grafo.leer_aristas()
     ids = list(nodos.keys())
     muelles = [nid for nid, d in nodos.items() if d["es_estacion"] and d["zona"] == "Empaque y Despacho"]
-    racks = [nid for nid, d in nodos.items() if not d["es_estacion"]]
-    rng = random.Random(semilla)
+    racks = [nid for nid, d in nodos.items() if not d["es_estacion"] and d["zona"] == "Picking"]
+    rng = grafo.mulberry32(semilla)
 
     filas: list[dict[str, object]] = []
     escenarios = [("valle", 1), ("valle", 5), ("valle", 10), ("punta", 1), ("punta", 5), ("punta", 10)]
@@ -36,8 +36,14 @@ def ejecutar_experimentos(pedidos_por_escenario: int = 10, semilla: int = 42) ->
         pas_bfs = pas_bf = dist_bfs = dist_bf = t_bfs = t_bf = vis_bfs = rel_bf = ms_bfs = ms_bf = 0.0
 
         for _ in range(pedidos_por_escenario):
-            inicio = rng.choice(muelles)
-            destinos = rng.sample(racks, n_prod)
+            inicio = muelles[int(rng() * len(muelles))]
+            destinos: list[str] = []
+            vistos = {inicio}
+            while len(destinos) < n_prod:
+                cand = racks[int(rng() * len(racks))]
+                if cand not in vistos:
+                    vistos.add(cand)
+                    destinos.append(cand)
 
             t0 = time.perf_counter()
             rb = pedido.ruta_pedido(ids, ady, dirigidas, inicio, destinos, "bfs", regresar=True)
@@ -91,7 +97,10 @@ def ejecutar_experimentos(pedidos_por_escenario: int = 10, semilla: int = 42) ->
 
     res_ek = ek.entre_zonas(grafo.capacidades(aristas), nodos, "Recepción y Almacenamiento", "Empaque y Despacho")
     print("-" * 68)
-    print(f"Edmonds-Karp (Recepción -> Despacho): flujo máximo = {res_ek['flujo_maximo']} op/min, corte = {len(res_ek['corte_minimo'])} pasillos")
+    print(
+        f"Edmonds-Karp (Recepción -> Despacho): flujo máximo = {res_ek['flujo_maximo']} unidades de flujo, "
+        f"corte = {len(res_ek['corte_minimo'])} pasillos"
+    )
     print(f"Resultados exportados en: {csv_path}")
     return filas
 

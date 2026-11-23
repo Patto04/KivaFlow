@@ -1,4 +1,6 @@
 # KivaFlow funciona con la librería estándar de Python 3.10+ (sin dependencias obligatorias).
-# Paquetes opcionales para análisis adicional y pruebas:
+# Paquetes opcionales para generación del dataset (scripts/generar_dataset.py) y pruebas:
 networkx>=3.2
+numpy>=1.26
+pandas>=2.2
 pytest>=8.0
