@@ -99,10 +99,18 @@ class KivaFlowHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urllib.parse.urlparse(self.path)
         params = urllib.parse.parse_qs(parsed.query)
 
-        if parsed.path == "/css/styles.css":
-            cuerpo = estilos.generar_css().encode("utf-8")
+        if parsed.path in ("/", "/index.html"):
+            html = (RAIZ / "index.html").read_text(encoding="utf-8")
+            css_dinamico = estilos.generar_css()
+            marca_ini = "/* __PYTHON_CSS_START__ */"
+            marca_fin = "/* __PYTHON_CSS_END__ */"
+            if marca_ini in html and marca_fin in html:
+                i0 = html.index(marca_ini) + len(marca_ini)
+                i1 = html.index(marca_fin)
+                html = html[:i0] + "\n" + css_dinamico + "\n" + html[i1:]
+            cuerpo = html.encode("utf-8")
             self.send_response(200)
-            self.send_header("Content-Type", "text/css; charset=utf-8")
+            self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(cuerpo)))
             self.end_headers()
             self.wfile.write(cuerpo)
@@ -206,7 +214,6 @@ def main() -> None:
     args = parser.parse_args()
 
     api = KivaFlowAPI()
-    estilos.exportar_css()
     resumen_consola(api)
 
     if args.cli:
