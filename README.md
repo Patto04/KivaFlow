@@ -28,7 +28,7 @@ KivaFlow-1/
 │   ├── nodos.csv              # 1 800 ubicaciones (45 × 40) en 3 zonas (585 / 630 / 585)
 │   ├── aristas.csv            # 3 515 pasillos con distancias, congestión y tiempos
 │   └── dataset.js             # Empaquetado offline para la interfaz gráfica
-└── index.html, css/, js/      # Interfaz gráfica interactiva (servida por app.py o abrible directo)
+└── index.html, js/            # Interfaz gráfica interactiva (con estilos inyectados desde Python)
 ```
 
 ## Cómo ejecutar el programa en Python
