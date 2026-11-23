@@ -1,0 +1,4 @@
+# KivaFlow funciona con la librería estándar de Python 3.10+ (sin dependencias obligatorias).
+# Paquetes opcionales para análisis adicional y pruebas:
+networkx>=3.2
+pytest>=8.0
